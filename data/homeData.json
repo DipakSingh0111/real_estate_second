@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "logoText": "REAL ESTATE",
+    "subLogoText": "COMPANY",
+    "navLinks": [
+      { "label": "HOME", "href": "/", "hasDropdown": false },
+      { "label": "SHOP", "href": "#", "hasDropdown": true },
+      { "label": "LISTINGS", "href": "#", "hasDropdown": true },
+      { "label": "BLOG", "href": "#", "hasDropdown": true },
+      { "label": "PAGES", "href": "#", "hasDropdown": true },
+      { "label": "CONTACT", "href": "#", "hasDropdown": false }
+    ]
+  },
+  "heroBanner": {
+    "badgeTag": "TRENDING",
+    "badgeLocation": "2024 FORT CLAYTON",
+    "title": "Find Your Dream Home With Us",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    "priceTag": {
+      "label": "Starting at",
+      "amount": "$20,500"
+    },
+    "backgroundImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600&auto=format&fit=crop"
+  }
+}
