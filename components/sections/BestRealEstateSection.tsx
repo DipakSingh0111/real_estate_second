@@ -16,9 +16,9 @@ export default function BestRealEstateSection({
   return (
     <section
       id="featured-property"
-      className="bg-white px-5 py-14 sm:px-8 lg:px-12 lg:py-20"
+      className="bg-white py-14 lg:py-20"
     >
-      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 lg:grid-cols-[1.16fr_0.84fr] lg:gap-[78px]">
+      <div className="page-container grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.16fr_0.84fr] lg:gap-[78px]">
         <div className="relative pb-10 pl-9 pt-3 sm:pl-12">
           <div className="pointer-events-none absolute -left-1 top-7 z-20 grid grid-cols-4 gap-x-[19px] gap-y-[17px]">
             {Array.from({ length: 16 }, (_, index) => (

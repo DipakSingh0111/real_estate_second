@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
@@ -14,6 +15,7 @@ import {
   Maximize2,
 } from "lucide-react";
 import type { TopDealsSectionData } from "@/types/home";
+import { propertySlug } from "@/lib/property";
 
 // Import Swiper styles
 import "swiper/css";
@@ -30,9 +32,9 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
   return (
     <section
       id="deals"
-      className="bg-[#F8F9FC] px-4 py-14 font-sans md:px-12 lg:px-20 lg:py-20"
+      className="bg-[#F8F9FC] py-14 font-sans lg:py-20"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="page-container">
         {/* Header Section */}
         <div className="flex items-center justify-between mb-10">
           <div>
@@ -90,82 +92,72 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
         >
           {data.deals.map((item, index) => (
             <SwiperSlide key={item.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col justify-between h-full cursor-pointer"
+              <Link
+                href={`/property-listing/${propertySlug(item.title)}`}
+                className="block h-full"
               >
-                {/* Image & Price Tag Container */}
-                <div>
-                  <div className="relative w-full h-56 overflow-hidden rounded-t-[24px]">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                    />
-
-                    {/* Price Tag Badge */}
-                    <div className="absolute bottom-3 right-3 bg-[#2A39CE] text-white font-extrabold text-sm px-4 py-2 rounded-xl shadow-lg">
-                      {item.price}
-                    </div>
-                  </div>
-
-                  {/* Card Main Info */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-extrabold text-[#0B132A] mb-3 leading-snug group-hover:text-[#2A39CE] transition-colors">
-                      {item.title}
-                    </h3>
-
-                    {/* Location */}
-                    <div className="flex items-center gap-1.5 text-[#2A39CE] text-xs font-bold uppercase tracking-wider mb-6">
-                      <MapPin className="w-3.5 h-3.5 stroke-[3]" />
-                      <span>{item.location}</span>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="group flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
+                >
+                  <div>
+                    <div className="relative h-56 w-full overflow-hidden rounded-t-[24px]">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                      />
+                      <div className="absolute bottom-3 right-3 rounded-xl bg-[#2A39CE] px-4 py-2 text-sm font-extrabold text-white shadow-lg">
+                        {item.price}
+                      </div>
                     </div>
 
-                    {/* Divider */}
-                    <div className="w-full h-[1px] bg-gray-100 mb-6" />
-
-                    {/* Features (Bed, Bath, Sqft) */}
-                    <div className="grid grid-cols-3 gap-2 text-gray-500">
-                      {/* Bedrooms */}
-                      <div>
-                        <div className="flex items-center gap-1.5 text-xs text-gray-400 font-semibold mb-2">
-                          <Bed className="w-4 h-4 text-[#2A39CE]" />
-                          <span>{data.propertyLabels.bedrooms}</span>
-                        </div>
-                        <p className="text-lg font-bold text-[#0B132A]">
-                          {item.bedrooms}
-                        </p>
+                    <div className="p-6">
+                      <h3 className="mb-3 text-xl font-extrabold leading-snug text-[#0B132A] transition-colors group-hover:text-[#2A39CE]">
+                        {item.title}
+                      </h3>
+                      <div className="mb-6 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2A39CE]">
+                        <MapPin className="h-3.5 w-3.5 stroke-[3]" />
+                        <span>{item.location}</span>
                       </div>
-
-                      {/* Bathrooms */}
-                      <div>
-                        <div className="flex items-center gap-1.5 text-xs text-gray-400 font-semibold mb-2">
-                          <Bath className="w-4 h-4 text-[#2A39CE]" />
-                          <span>{data.propertyLabels.bathrooms}</span>
+                      <div className="mb-6 h-px w-full bg-gray-100" />
+                      <div className="grid grid-cols-3 gap-2 text-gray-500">
+                        <div>
+                          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                            <Bed className="h-4 w-4 text-[#2A39CE]" />
+                            <span>{data.propertyLabels.bedrooms}</span>
+                          </div>
+                          <p className="text-lg font-bold text-[#0B132A]">
+                            {item.bedrooms}
+                          </p>
                         </div>
-                        <p className="text-lg font-bold text-[#0B132A]">
-                          {item.bathrooms}
-                        </p>
-                      </div>
-
-                      {/* Square Feet */}
-                      <div>
-                        <div className="flex items-center gap-1.5 text-xs text-gray-400 font-semibold mb-2">
-                          <Maximize2 className="w-4 h-4 text-[#2A39CE]" />
-                          <span>{data.propertyLabels.squareFeet}</span>
+                        <div>
+                          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                            <Bath className="h-4 w-4 text-[#2A39CE]" />
+                            <span>{data.propertyLabels.bathrooms}</span>
+                          </div>
+                          <p className="text-lg font-bold text-[#0B132A]">
+                            {item.bathrooms}
+                          </p>
                         </div>
-                        <p className="text-lg font-bold text-[#0B132A]">
-                          {item.sqft}
-                        </p>
+                        <div>
+                          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                            <Maximize2 className="h-4 w-4 text-[#2A39CE]" />
+                            <span>{data.propertyLabels.squareFeet}</span>
+                          </div>
+                          <p className="text-lg font-bold text-[#0B132A]">
+                            {item.sqft}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -13,7 +13,7 @@
       },
       {
         "label": "SHOP",
-        "href": "#shop",
+        "href": "/shop",
         "hasDropdown": true,
         "dropdown": [
           {
@@ -71,26 +71,42 @@
       },
       {
         "label": "BLOG",
-        "href": "#blog",
+        "href": "/blog",
         "hasDropdown": true,
         "dropdown": [
           {
-            "label": "BLOG GRID",
-            "href": "/blog-grid"
-          },
-          {
-            "label": "BLOG LIST SIDEBAR",
-            "href": "/blog-list-sidebar"
+            "label": "BLOG",
+            "href": "/blog"
           },
           {
             "label": "BLOG DETAIL",
             "href": "/blog-detail"
+          },
+          {
+            "label": "Awards",
+            "href": "/awards"
+          },
+          {
+            "label": "Industries We Serve",
+            "href": "/industries-we-serve"
+          },
+          {
+            "label": "Our Partners",
+            "href": "/our-partners"
+          },
+          {
+            "label": "SITE MAP",
+            "href": "/site-map"
+          },
+          {
+            "label": "GET-A-QUOTES",
+            "href": "/get-a-quotes"
           }
         ]
       },
       {
         "label": "PAGES",
-        "href": "#pages",
+        "href": "/pages",
         "hasDropdown": true,
         "dropdown": [
           {
@@ -106,8 +122,8 @@
             "href": "/team-detail"
           },
           {
-            "label": "LOCATION",
-            "href": "/location"
+            "label": "Gallery",
+            "href": "/gallery"
           },
           {
             "label": "ERROR 404",
@@ -130,38 +146,31 @@
             "href": "/privacy-policy"
           },
           {
-            "label": "PORTFOLIO",
-            "href": "/portfolio",
-            "children": [
-              {
-                "label": "PORTFOLIO",
-                "href": "/portfolio"
-              },
-              {
-                "label": "PORTFOLIO DETAIL",
-                "href": "/portfolio-detail"
-              }
-            ]
+            "label": "SERVICES",
+            "href": "/services"
           },
           {
-            "label": "SERVICE",
-            "href": "/service",
-            "children": [
-              {
-                "label": "SERVICES",
-                "href": "/services"
-              },
-              {
-                "label": "SERVICE DETAIL",
-                "href": "/service-detail"
-              }
-            ]
+            "label": "ENQUIRY",
+            "href": "/enquiry"
+          },
+          {
+            "label": "BROCHURE",
+            "href": "/brochure"
+          },
+          {
+            "label": "TERMS & CONDITIONS",
+            "href": "/terms-and-conditions"
           }
         ]
       },
       {
+        "label": "CAREERS",
+        "href": "/careers",
+        "hasDropdown": false
+      },
+      {
         "label": "CONTACT",
-        "href": "#contact",
+        "href": "/contact",
         "hasDropdown": false
       }
     ]
@@ -176,14 +185,14 @@
       "label": "Starting at",
       "amount": "$20,500"
     },
-    "backgroundImage": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop"
+    "backgroundImage": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg"
   },
   "aboutSection": {
     "badge": "ABOUT US",
     "heading": "The Leading Real Estate Company.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "buttonLabel": "Explore More",
-    "imageUrl": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop",
+    "imageUrl": "/images/modern-buildings.jpg",
     "imageAlt": "Elegant living room interior",
     "services": [
       {
@@ -216,7 +225,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "buttonLabel": "Discover More",
     "buttonLink": "#",
-    "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
+    "imageUrl": "/images/hero-banner.png",
     "imageAlt": "Modern house architecture",
     "stat": {
       "value": "25+",
@@ -240,7 +249,7 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "sqft": 950,
-        "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/cityscape (1).jpg"
       },
       {
         "id": 2,
@@ -250,7 +259,7 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "sqft": 1050,
-        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/contemporary-apartment-buildings-stand-tall-against-majestic-backdrop-tian-shan-mountains-almaty-kazakhstan.jpg"
       },
       {
         "id": 3,
@@ -260,7 +269,7 @@
         "bedrooms": 4,
         "bathrooms": 2,
         "sqft": 1150,
-        "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/modern-architecture.jpg"
       },
       {
         "id": 4,
@@ -270,7 +279,7 @@
         "bedrooms": 3,
         "bathrooms": 3,
         "sqft": 1400,
-        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/tall-apartment-buildings-with-modern-design.jpg"
       },
       {
         "id": 5,
@@ -280,7 +289,7 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "sqft": 1100,
-        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/miami-beach-florida-united-states-america.jpg"
       },
       {
         "id": 6,
@@ -290,7 +299,7 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "sqft": 980,
-        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/beautiful-bildings-with-lights-hong-kong.jpg"
       },
       {
         "id": 7,
@@ -300,7 +309,7 @@
         "bedrooms": 5,
         "bathrooms": 4,
         "sqft": 2500,
-        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/aerial-view-modern-buildings-city.jpg"
       },
       {
         "id": 8,
@@ -310,7 +319,7 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "sqft": 820,
-        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/city-night-view.jpg"
       },
       {
         "id": 9,
@@ -320,7 +329,7 @@
         "bedrooms": 4,
         "bathrooms": 3,
         "sqft": 1650,
-        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/view-city-with-buildings-trees.jpg"
       },
       {
         "id": 10,
@@ -330,7 +339,7 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "sqft": 1300,
-        "image": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1000&auto=format&fit=crop"
+        "image": "/images/modern-buildings.jpg"
       }
     ]
   },
@@ -340,15 +349,15 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        "src": "/images/aerial-view-modern-buildings-city.jpg",
         "alt": "Modern real estate architecture"
       },
       {
-        "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
+        "src": "/images/modern-architecture.jpg",
         "alt": "Contemporary luxury home exterior"
       },
       {
-        "src": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop",
+        "src": "/images/contemporary-apartment-buildings-stand-tall-against-majestic-backdrop-tian-shan-mountains-almaty-kazakhstan.jpg",
         "alt": "Luxury residential property"
       }
     ],
@@ -359,7 +368,7 @@
   "teamPage": {
     "hero": {
       "title": "Our Teams",
-      "backgroundImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop",
+      "backgroundImage": "/images/hero-banner.png",
       "subtitle": "Meet the people who make your dream home possible"
     },
     "members": [
@@ -367,7 +376,7 @@
         "role": "Director",
         "name": "Mr. Rahul Mehra",
         "description": "With over 20 years of experience in the real estate industry, Mr. Rahul Mehra has been the driving force behind the success and growth of DreamHome Realty.",
-        "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop",
+        "imageUrl": "/images/team_05.avif",
         "imageAlt": "Mr Rahul Mehra",
         "stats": [
           { "value": "20+", "label": "Years Experience" },
@@ -379,7 +388,7 @@
         "role": "Director",
         "name": "Ms. Priya Sharma",
         "description": "A dynamic and results-driven leader, Ms. Priya Sharma oversees business development and client relations at DreamHome Realty.",
-        "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop",
+        "imageUrl": "/images/team_01.avif",
         "imageAlt": "Ms Priya Sharma",
         "stats": [
           { "value": "15+", "label": "Years Experience" },
@@ -391,7 +400,7 @@
         "role": "Director",
         "name": "Mr. Arjun Verma",
         "description": "As a visionary and energetic leader, Mr. Arjun Verma specializes in project planning and operations to deliver exceptional property experiences.",
-        "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop",
+        "imageUrl": "/images/team_02.avif",
         "imageAlt": "Mr Arjun Verma",
         "stats": [
           { "value": "10+", "label": "Years Experience" },
@@ -407,8 +416,221 @@
     "callLabel": "Call Us Anytime",
     "phoneNumber": "+1 234 567 8900",
     "phoneHref": "tel:+12345678900",
-    "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
-    "imageAlt": "Support team helping a customer"
+    "imageUrl": "https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1200&auto=format&fit=crop",
+    "imageAlt": "Two professionals shaking hands in a modern office"
+  },
+  "pageBanners": {
+    "about": {
+      "title": "About Us",
+      "description": "Learn more about our trusted real estate services and our mission to help you find the perfect home.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "About Us" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with our team for property inquiries, support, or to schedule a viewing.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Contact Us" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "faq": {
+      "title": "FAQ's",
+      "description": "Find answers to the most common questions about our services, listings, and buying process.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "FAQ" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "description": "Explore beautiful property photography from our recent listings and design highlights.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Gallery" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "pricing": {
+      "title": "Pricing",
+      "description": "Compare our simple, transparent plans created for real estate professionals and property investors.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Pricing" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Read our policy on data protection and how we keep your information safe and secure.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Privacy Policy" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Hear from our clients who found their dream homes with the help of our expert team.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Testimonials" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "propertyListing": {
+      "title": "Property Collections",
+      "description": "Browse our featured listings and discover premium properties for sale and rent.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Listings", "href": "/property-listing" },
+        { "label": "Property Listing" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "awards": {
+      "title": "Awards",
+      "description": "Explore the honors and achievements that reflect our work in real estate.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Awards" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Read our latest real estate insights, market news, and expert property tips.",
+      "breadcrumb": [{ "label": "Home", "href": "/" }, { "label": "Blog" }],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "brochure": {
+      "title": "Brochure",
+      "description": "Download our brochures to explore premium properties and project highlights.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Brochure" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "careers": {
+      "title": "Careers",
+      "description": "Join our team and build a rewarding career in the real estate industry.",
+      "breadcrumb": [{ "label": "Home", "href": "/" }, { "label": "Careers" }],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "enquiry": {
+      "title": "Enquiry",
+      "description": "Send your enquiry and our experts will get back to you with personalized assistance.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Enquiry" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "get-a-quotes": {
+      "title": "Get A Quotes",
+      "description": "Request a quote for your property needs and let our team provide a tailored plan.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Get A Quotes" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "industries-we-serve": {
+      "title": "Industries We Serve",
+      "description": "Discover the industries we serve with custom real estate solutions and expert support.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Industries We Serve" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "our-partners": {
+      "title": "Our Partners",
+      "description": "Meet our trusted partners who help us deliver exceptional property experiences.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Our Partners" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "services": {
+      "title": "Services",
+      "description": "Explore the full range of real estate services we provide for buyers, sellers and investors.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Services" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "site-map": {
+      "title": "Site Map",
+      "description": "Navigate our entire site quickly with the page map and section overview.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Site Map" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "terms-and-conditions": {
+      "title": "Terms & Conditions",
+      "description": "Review the terms and conditions that govern your use of our real estate services.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Terms & Conditions" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "team": {
+      "title": "Our Teams",
+      "description": "Meet the people who make your dream home possible with expertise and care.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pages", "href": "/pages" },
+        { "label": "Team" }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    }
   },
   "footer": {
     "logo": {
@@ -501,6 +723,6 @@
       "address": ["77 Highfield Road", "London N36 7SB"],
       "phoneNumber": "987 654 3210"
     },
-    "copyright": "Copyright © 2026. All rights reserved."
+    "copyright": "Copyright Ã‚Â© 2026. All rights reserved."
   }
 }

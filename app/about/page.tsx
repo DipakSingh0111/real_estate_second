@@ -10,39 +10,14 @@ import {
   Headphones,
 } from "lucide-react";
 import homeData from "@/data/homeData.json";
-import SupportBanner from "@/components/common/SupportBanner";
-
+import PageBanner from "@/components/common/PageBanner";
 export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen font-sans text-gray-800">
-      {/* 1. TOP HERO BANNER */}
-      <section className="relative w-full h-[260px] sm:h-[320px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop"
-          alt="About Us Banner Background"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-slate-900/45 backdrop-blur-[1px]" />
-
-        <div className="relative z-10 text-center">
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-wide">
-            About Us
-          </h1>
-          <div className="mt-4 text-sm text-white/75 flex items-center justify-center gap-2">
-            <Link href="/" className="hover:text-white">
-              Home
-            </Link>
-            <span className="text-white/60">/</span>
-            <span className="font-semibold">About Us</span>
-          </div>
-          <div className="w-16 h-[4px] bg-white rounded-full mx-auto mt-3" />
-        </div>
-      </section>
+      <PageBanner data={homeData.pageBanners.about} />
 
       {/* 2. MAIN ABOUT SECTION */}
-      <section className="max-w-[1360px] mx-auto py-16 px-6 md:px-12 lg:px-12">
+      <section className="page-container py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* LEFT COLUMN: HEXAGON COLLAGE */}
           <div className="lg:col-span-7 relative flex justify-start py-6">
@@ -324,8 +299,6 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        {/* Support Banner */}
-        <SupportBanner data={homeData.supportBanner} />
       </section>
     </div>
   );

@@ -23,7 +23,7 @@ const socialIconMap = {
 export default function Footer({ data }: FooterProps) {
   return (
     <footer className="w-full bg-white">
-      <div className="mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-[70px]">
+      <div className="page-container">
         <div className="grid grid-cols-1 gap-12 py-[38px] md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.35fr] lg:gap-[55px]">
           <div>
             <Link href="/" className="inline-block">

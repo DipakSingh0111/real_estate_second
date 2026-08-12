@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import SupportBanner from "@/components/common/SupportBanner";
 import Footer from "@/components/Footer";
 import homeData from "@/data/homeData.json";
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-white text-slate-900">
         <NavBar data={homeData.navbar} />
         <main className="flex-1">{children}</main>
+        <SupportBanner data={homeData.supportBanner} />
         <Footer data={homeData.footer} />
       </body>
     </html>

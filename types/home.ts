@@ -22,6 +22,19 @@ export type NavbarData = {
   navLinks: NavLink[];
 };
 
+export type BreadcrumbItem = {
+  label: string;
+  href?: string;
+};
+
+export type PageBannerData = {
+  title: string;
+  description: string;
+  breadcrumb: BreadcrumbItem[];
+  backgroundImage: string;
+  backgroundImageAlt: string;
+};
+
 export type HeroPriceTag = {
   label: string;
   amount: string;
@@ -179,5 +192,6 @@ export type SiteData = {
   bestRealEstateSection: BestRealEstateSectionData;
   teamPage: TeamPageData;
   supportBanner: SupportBannerData;
+  pageBanners: Record<string, PageBannerData>;
   footer: FooterData;
 };

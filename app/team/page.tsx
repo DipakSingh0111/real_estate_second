@@ -1,57 +1,34 @@
 import Image from "next/image";
 import homeData from "@/data/homeData.json";
 import type { TeamPageData } from "@/types/home";
-
+import PageBanner from "@/components/common/PageBanner";
 const data: TeamPageData = homeData.teamPage;
 
 export default function TeamPage() {
   return (
     <main className="bg-white font-sans text-slate-900">
-      <section className="relative h-[360px] overflow-hidden bg-slate-900">
-        <Image
-          src={data.hero.backgroundImage}
-          alt={data.hero.title}
-          fill
-          className="object-cover opacity-80"
-          priority
-        />
-        <div className="absolute inset-0 bg-slate-900/60" />
-        <div className="relative z-10 mx-auto flex h-full mt-7 max-w-[1280px] flex-col items-center justify-center px-6 text-center text-white">
-          <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl">
-            {data.hero.title}
-          </h1>
-          <div className="mt-3 flex items-center gap-2 text-sm text-slate-200/80">
-            <span className="uppercase tracking-[0.24em]">Home</span>
-            <span>/</span>
-            <span className="font-semibold">Team</span>
-          </div>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base">
-            {data.hero.subtitle}
-          </p>
-        </div>
-      </section>
+      <PageBanner data={homeData.pageBanners.team} />
 
-      <section className="mx-auto max-w-[1360px] space-y-12 px-6 py-10 md:px-12">
+      <section className="page-container space-y-10 py-10">
         {data.members.map((member, index) => {
           const isEven = index % 2 === 1;
-
           return (
             <div
               key={member.name}
-              className="grid gap-6 rounded-[40px] border border-slate-200 bg-white p-5 shadow-sm lg:grid-cols-2 lg:p-0"
+              className="grid gap-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm lg:grid-cols-2"
             >
               <div
-                className={`flex flex-col justify-center gap-6 rounded-[40px] p-8 sm:p-10 lg:p-12 ${
+                className={`flex flex-col justify-center gap-5 rounded-[28px] p-6 sm:p-8 ${
                   isEven ? "order-2 bg-[#f7f9ff]" : "order-1 bg-white"
                 }`}
               >
-                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1A43BF]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#1A43BF]">
                   {member.role}
                 </span>
-                <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                   {member.name}
                 </h2>
-                <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+                <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
                   {member.description}
                 </p>
 
@@ -59,12 +36,12 @@ export default function TeamPage() {
                   {member.stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="rounded-[24px] border border-slate-100 bg-white p-5 text-center shadow-sm"
+                      className="rounded-[20px] border border-slate-100 bg-white p-4 text-center shadow-sm"
                     >
-                      <p className="text-3xl font-extrabold text-slate-900">
+                      <p className="text-2xl font-extrabold text-slate-900">
                         {stat.value}
                       </p>
-                      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">
+                      <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-slate-500">
                         {stat.label}
                       </p>
                     </div>
@@ -73,18 +50,17 @@ export default function TeamPage() {
               </div>
 
               <div
-                className={`relative overflow-hidden rounded-[40px] border border-slate-100 bg-slate-100 ${
+                className={`relative overflow-hidden rounded-[28px] border border-slate-100 bg-slate-100 ${
                   isEven ? "order-1" : "order-2"
                 }`}
               >
                 <div className="absolute inset-0 bg-[#1A43BF] opacity-5" />
-                <div className="relative overflow-hidden rounded-[32px] bg-white shadow-xl m-6">
+                <div className="relative mx-4 my-4 h-[320px] overflow-hidden rounded-[26px] bg-white shadow-xl sm:mx-6 sm:my-6 lg:h-[280px]">
                   <Image
                     src={member.imageUrl}
                     alt={member.imageAlt}
-                    width={720}
-                    height={720}
-                    className="aspect-[4/5] w-full object-cover"
+                    fill
+                    className="object-cover"
                     priority
                   />
                 </div>

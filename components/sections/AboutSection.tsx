@@ -13,8 +13,8 @@ const iconMap = {
 
 const AboutSection = ({ data }: AboutSectionProps) => {
   return (
-    <section className="bg-[#f0f2f5] py-12 px-4 md:px-12 lg:px-20 font-sans">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+    <section className="mt-10 bg-[#f0f2f5] py-12 font-sans lg:mt-16">
+      <div className="page-container grid grid-cols-1 items-stretch gap-6 md:grid-cols-12">
         {/* SECTION 1: TEXT & CTA */}
         <div className="md:col-span-4 flex flex-col justify-between pr-4">
           <div>

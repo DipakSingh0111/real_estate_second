@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, X, Send, Home, Crown, ArrowRight } from "lucide-react";
-import SupportBanner from "@/components/common/SupportBanner";
+import PageBanner from "@/components/common/PageBanner";
 import homeData from "@/data/homeData.json";
 
 const pricingPlans = [
@@ -68,28 +68,10 @@ const pricingPlans = [
 export default function PricingSection() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
-      {/* Top Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative w-full h-72 bg-cover bg-center flex flex-col justify-center items-center text-white"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80')",
-        }}
-      >
-        <h1 className="text-4xl font-bold tracking-wide">Pricing</h1>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "4rem" }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="h-1 bg-white mt-2 rounded"
-        />
-      </motion.div>
+      <PageBanner data={homeData.pageBanners.pricing} />
 
       {/* Main Content Area */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="page-container py-16">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -225,16 +207,6 @@ export default function PricingSection() {
         </div>
       </div>
 
-      {/* Bottom Support Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-6xl mx-auto px-4 pb-12"
-      >
-        <SupportBanner data={homeData.supportBanner} />
-      </motion.div>
     </div>
   );
 }

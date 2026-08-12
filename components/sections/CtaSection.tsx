@@ -12,14 +12,15 @@ export default function CtaSection({ data }: CtaSectionProps) {
   return (
     <motion.section
       id="services"
-      className="bg-[#EAEAEA] w-full px-4 py-14 font-sans md:px-8 lg:py-20"
+      className="w-full bg-[#EAEAEA] py-14 font-sans lg:py-20"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Main Banner Container */}
-      <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-4xl bg-[#03091E] p-5 text-white shadow-2xl sm:p-8 md:p-12 lg:p-16">
+      <div className="page-container">
+      <div className="relative w-full overflow-hidden rounded-4xl bg-[#03091E] p-5 text-white shadow-2xl sm:p-8 md:p-12 lg:p-16">
         {/* Background Waves Line Accent */}
         <div className="absolute inset-0 pointer-events-none opacity-30">
           <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
@@ -144,6 +145,7 @@ export default function CtaSection({ data }: CtaSectionProps) {
             </div>
           </motion.div>
         </div>
+      </div>
       </div>
     </motion.section>
   );

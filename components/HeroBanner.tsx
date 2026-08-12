@@ -19,7 +19,7 @@ export default function HeroBanner({ data }: HeroBannerProps) {
         </defs>
       </svg>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col px-5 pb-10 pt-[108px] sm:px-8 lg:min-h-[640px] lg:justify-center lg:px-12 lg:pb-24 lg:pt-[96px]">
+      <div className="page-container relative z-10 flex flex-col pb-10 pt-[108px] lg:min-h-[640px] lg:justify-center lg:pb-24 lg:pt-[96px]">
         <div className="max-w-xl lg:max-w-[38%]">
           <div className="inline-flex items-center gap-3 rounded-full border border-[#E6EBF3] bg-white py-[3px] pl-[3px] pr-5 shadow-[0_10px_24px_-16px_rgba(16,42,86,0.35)]">
             <span className="rounded-full bg-[#3F51DE] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
