@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { ArrowRight, Building2, Home, HandCoins } from "lucide-react";
 import type { AboutSectionData } from "@/types/home";

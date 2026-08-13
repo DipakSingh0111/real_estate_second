@@ -44,7 +44,7 @@
       },
       {
         "label": "LISTINGS",
-        "href": "#listings",
+        "href": "/listings",
         "hasDropdown": true,
         "dropdown": [
           {
@@ -101,6 +101,10 @@
           {
             "label": "GET-A-QUOTES",
             "href": "/get-a-quotes"
+          },
+          {
+            "label": "How It Works",
+            "href": "/how-it-work"
           }
         ]
       },
@@ -379,9 +383,18 @@
         "imageUrl": "/images/team_05.avif",
         "imageAlt": "Mr Rahul Mehra",
         "stats": [
-          { "value": "20+", "label": "Years Experience" },
-          { "value": "100+", "label": "Projects Deliver" },
-          { "value": "5000+", "label": "Happy Families" }
+          {
+            "value": "20+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "100+",
+            "label": "Projects Deliver"
+          },
+          {
+            "value": "5000+",
+            "label": "Happy Families"
+          }
         ]
       },
       {
@@ -391,9 +404,18 @@
         "imageUrl": "/images/team_01.avif",
         "imageAlt": "Ms Priya Sharma",
         "stats": [
-          { "value": "15+", "label": "Years Experience" },
-          { "value": "80+", "label": "Projects Deliver" },
-          { "value": "3000+", "label": "Happy Families" }
+          {
+            "value": "15+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "80+",
+            "label": "Projects Deliver"
+          },
+          {
+            "value": "3000+",
+            "label": "Happy Families"
+          }
         ]
       },
       {
@@ -403,9 +425,18 @@
         "imageUrl": "/images/team_02.avif",
         "imageAlt": "Mr Arjun Verma",
         "stats": [
-          { "value": "10+", "label": "Years Experience" },
-          { "value": "50+", "label": "Projects Deliver" },
-          { "value": "2000+", "label": "Happy Families" }
+          {
+            "value": "10+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "50+",
+            "label": "Projects Deliver"
+          },
+          {
+            "value": "2000+",
+            "label": "Happy Families"
+          }
         ]
       }
     ]
@@ -424,9 +455,17 @@
       "title": "About Us",
       "description": "Learn more about our trusted real estate services and our mission to help you find the perfect home.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "About Us" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "About Us"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -435,8 +474,13 @@
       "title": "Contact Us",
       "description": "Get in touch with our team for property inquiries, support, or to schedule a viewing.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Contact Us" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Contact Us"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -445,9 +489,17 @@
       "title": "FAQ's",
       "description": "Find answers to the most common questions about our services, listings, and buying process.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "FAQ" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "FAQ"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -456,9 +508,17 @@
       "title": "Gallery",
       "description": "Explore beautiful property photography from our recent listings and design highlights.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Gallery" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Gallery"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -467,9 +527,17 @@
       "title": "Pricing",
       "description": "Compare our simple, transparent plans created for real estate professionals and property investors.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Pricing" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Pricing"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -478,9 +546,17 @@
       "title": "Privacy Policy",
       "description": "Read our policy on data protection and how we keep your information safe and secure.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Privacy Policy" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Privacy Policy"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -489,9 +565,17 @@
       "title": "Testimonial",
       "description": "Hear from our clients who found their dream homes with the help of our expert team.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Testimonials" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Testimonials"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -500,9 +584,17 @@
       "title": "Property Collections",
       "description": "Browse our featured listings and discover premium properties for sale and rent.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Listings", "href": "/property-listing" },
-        { "label": "Property Listing" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Listings",
+          "href": "/property-listing"
+        },
+        {
+          "label": "Property Listing"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -511,9 +603,17 @@
       "title": "Awards",
       "description": "Explore the honors and achievements that reflect our work in real estate.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Blog", "href": "/blog" },
-        { "label": "Awards" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        },
+        {
+          "label": "Awards"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -521,7 +621,15 @@
     "blog": {
       "title": "Blog",
       "description": "Read our latest real estate insights, market news, and expert property tips.",
-      "breadcrumb": [{ "label": "Home", "href": "/" }, { "label": "Blog" }],
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog"
+        }
+      ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
     },
@@ -529,9 +637,17 @@
       "title": "Brochure",
       "description": "Download our brochures to explore premium properties and project highlights.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Brochure" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Brochure"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -539,7 +655,15 @@
     "careers": {
       "title": "Careers",
       "description": "Join our team and build a rewarding career in the real estate industry.",
-      "breadcrumb": [{ "label": "Home", "href": "/" }, { "label": "Careers" }],
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Careers"
+        }
+      ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
     },
@@ -547,9 +671,17 @@
       "title": "Enquiry",
       "description": "Send your enquiry and our experts will get back to you with personalized assistance.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Enquiry" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Enquiry"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -558,9 +690,17 @@
       "title": "Get A Quotes",
       "description": "Request a quote for your property needs and let our team provide a tailored plan.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Blog", "href": "/blog" },
-        { "label": "Get A Quotes" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        },
+        {
+          "label": "Get A Quotes"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -569,9 +709,17 @@
       "title": "Industries We Serve",
       "description": "Discover the industries we serve with custom real estate solutions and expert support.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Blog", "href": "/blog" },
-        { "label": "Industries We Serve" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        },
+        {
+          "label": "Industries We Serve"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -580,9 +728,17 @@
       "title": "Our Partners",
       "description": "Meet our trusted partners who help us deliver exceptional property experiences.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Blog", "href": "/blog" },
-        { "label": "Our Partners" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        },
+        {
+          "label": "Our Partners"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -591,9 +747,17 @@
       "title": "Services",
       "description": "Explore the full range of real estate services we provide for buyers, sellers and investors.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Services" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Services"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -602,9 +766,17 @@
       "title": "Site Map",
       "description": "Navigate our entire site quickly with the page map and section overview.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Blog", "href": "/blog" },
-        { "label": "Site Map" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        },
+        {
+          "label": "Site Map"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -613,9 +785,17 @@
       "title": "Terms & Conditions",
       "description": "Review the terms and conditions that govern your use of our real estate services.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Terms & Conditions" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Terms & Conditions"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
@@ -624,13 +804,179 @@
       "title": "Our Teams",
       "description": "Meet the people who make your dream home possible with expertise and care.",
       "breadcrumb": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pages", "href": "/pages" },
-        { "label": "Team" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pages",
+          "href": "/pages"
+        },
+        {
+          "label": "Team"
+        }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "how-it-work": {
+      "title": "How It Works",
+      "description": "Explore our streamlined process to buy, sell, or rent properties with ease and confidence.",
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "How It Works"
+        }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
       "backgroundImageAlt": "Real estate banner background"
     }
+  },
+  "howItWork": {
+    "pageBanner": {
+      "title": "How It Works",
+      "description": "Our streamlined process helps you buy, sell, or rent properties with ease and confidence.",
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "How It Works"
+        }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "eyebrow": "How It Works",
+    "heading": "We Make Real Estate Simple",
+    "description": "Our streamlined process helps you buy, sell, or rent properties with ease and confidence.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discover",
+        "desc": "Explore a wide range of verified properties that match your needs.",
+        "iconName": "search"
+      },
+      {
+        "number": "02",
+        "title": "Shortlist & Inquire",
+        "desc": "Shortlist your favorite properties and get in touch with our experts.",
+        "iconName": "message-square"
+      },
+      {
+        "number": "03",
+        "title": "Visit & Decide",
+        "desc": "Schedule a visit, get expert advice, and choose the right one.",
+        "iconName": "calendar"
+      },
+      {
+        "number": "04",
+        "title": "Finalize",
+        "desc": "We help you with documentation and make the process hassle-free.",
+        "iconName": "shield-check"
+      },
+      {
+        "number": "05",
+        "title": "Move In / Sell Out",
+        "desc": "Move into your dream property or close the deal successfully.",
+        "iconName": "key"
+      }
+    ]
+  },
+  "blogs": {
+    "pageBanner": {
+      "title": "Blog",
+      "description": "Read our latest real estate insights, market news, and expert property tips.",
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Blog"
+        }
+      ],
+      "backgroundImage": "/images/modern-buildings.jpg",
+      "backgroundImageAlt": "Real estate banner background"
+    },
+    "posts": [
+      {
+        "id": 1,
+        "slug": "top-10-tips-for-first-time-homebuyers",
+        "title": "Top 10 Tips for First-Time Homebuyers",
+        "date": "June 05, 2024",
+        "excerpt": "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
+        "content": "Buying your first home is one of the most important decisions you'll make in your life. In this comprehensive guide, we'll walk you through the essential tips and strategies that will help you navigate the real estate market with confidence.\n\n1. Get Pre-approved for a Mortgage: Before you start house hunting, get pre-approved for a mortgage. This will show sellers that you're a serious buyer and help you understand your budget.\n\n2. Save for a Down Payment: Start saving early for your down payment. Having a larger down payment can help you secure better loan terms and lower your monthly payments.\n\n3. Check Your Credit Score: Your credit score plays a crucial role in getting approved for a mortgage. Check your score and work on improving it if needed.\n\n4. Work with a Real Estate Agent: An experienced agent can help you find properties that match your needs and negotiate on your behalf.\n\n5. Don't Skip the Home Inspection: Always get a professional home inspection. This can reveal potential issues that might be expensive to fix later.\n\n6. Understand Your Costs: Beyond the down payment and mortgage, consider property taxes, insurance, and maintenance costs.\n\n7. Location Matters: Choose a location that fits your lifestyle and has good resale potential.\n\n8. Don't Make Major Purchases Before Closing: Avoid making large purchases or opening new credit accounts before your mortgage is finalized.\n\n9. Review Your Closing Documents: Make sure all the information in your closing documents is accurate.\n\n10. Plan for the Future: Think about your long-term goals and how this home fits into your financial plan.",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
+        "author": "Sarah Johnson",
+        "category": "Buying Guides",
+        "type": "standard"
+      },
+      {
+        "id": 2,
+        "slug": "how-to-boost-your-homes-curb-appeal",
+        "title": "How to Boost Your Home's Curb Appeal",
+        "date": "June 05, 2024",
+        "excerpt": "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
+        "content": "Your home's curb appeal is the first impression potential buyers get of your property. Whether you're planning to sell or just want to improve your home's appearance, these practical tips will help.\n\nFirst Impressions Matter: Studies show that potential buyers make their first impression within the first 15 seconds of seeing your home. That's why curb appeal is so important.\n\nPaint Your Front Door: A fresh coat of paint on your front door can instantly transform your home's exterior. Choose a color that complements your home's architecture.\n\nLandscape Your Yard: Well-maintained landscaping adds value and beauty to your property. Trim bushes, plant colorful flowers, and keep your lawn neatly mowed.\n\nUgrade Your Lighting: Install attractive outdoor lighting to make your home look welcoming at night. Consider uplighting trees or installing lights along the walkway.\n\nPower Wash Your Driveway: A clean driveway makes a huge difference. Power washing can remove years of dirt and grime.\n\nAdd Mulch to Flower Beds: Fresh mulch gives your garden a neat, polished appearance.\n\nClean Your Windows: Sparkling clean windows allow more light into your home and make it look well-maintained.\n\nUpgrade Your Hardware: Replace old house numbers, mailbox, and door hardware with modern, attractive options.\n\nAdd Planters: Place attractive planters near your entrance with seasonal flowers or plants.\n\nMaintain Your Roof: A well-maintained roof is crucial for curb appeal. Replace any missing or damaged shingles.",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
+        "author": "Mike Thompson",
+        "category": "Selling Tips",
+        "type": "video"
+      },
+      {
+        "id": 3,
+        "slug": "the-ultimate-guide-to-home-staging",
+        "title": "The Ultimate Guide to Home Staging",
+        "date": "June 05, 2024",
+        "excerpt": "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
+        "content": "Home staging is the art of preparing a property for sale by strategically arranging and decorating it to make it appeal to the widest range of potential buyers. Here's everything you need to know.\n\nWhat is Home Staging?\nHome staging involves decluttering, reorganizing, and sometimes redecorating your home to make it more attractive to potential buyers. The goal is to help buyers envision themselves living in the space.\n\nWhy Does Home Staging Matter?\nStudies show that staged homes sell faster and for more money than non-staged homes. A well-staged home can sell 17% faster on average.\n\nKey Staging Tips:\n\n1. Declutter: Remove personal items, excess furniture, and clutter from every room. A clean, spacious-feeling home is more appealing.\n\n2. Depersonalize: Remove family photos and personal collections. You want buyers to imagine their own lives in the space.\n\n3. Deep Clean: Every surface should be spotless. Pay special attention to kitchens and bathrooms.\n\n4. Maximize Space: Move large furniture pieces to make rooms appear larger and more open.\n\n5. Add Lighting: Ensure all rooms are well-lit. This makes spaces feel brighter and more inviting.\n\n6. Neutral Colors: Paint walls in neutral colors like beige, gray, or white. These appeal to more buyers.\n\n7. Appeal to the Senses: Use fresh flowers, scented candles, or fresh-baked cookies to create a welcoming atmosphere.\n\n8. Outdoor Spaces: Stage your outdoor areas too. Set up seating areas and add potted plants.\n\n9. Fix Small Issues: Repair leaky faucets, squeaky doors, and other small problems that might distract buyers.\n\n10. Professional Help: Consider hiring a professional stager. The investment often pays for itself in a higher sale price.",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
+        "author": "Emily Davis",
+        "category": "Selling Tips",
+        "type": "slider"
+      },
+      {
+        "id": 4,
+        "slug": "home-renovations-that-pay-off",
+        "title": "Home Renovations That Pay Off",
+        "date": "7 MARCH, 2024",
+        "excerpt": "Learn which home renovations provide the best return on investment and help increase your property value.",
+        "content": "Planning a home renovation? Not all upgrades will increase your home's value equally. Here are the renovations that offer the best return on investment.\n\nKitchen Renovations: Kitchen upgrades consistently rank at the top for ROI. Updated appliances, new countertops, and modern cabinetry can significantly increase your home's value.\n\nBathroom Updates: Bathroom renovations are another top investment. A modern bathroom with updated fixtures and finishes appeals to many buyers.\n\nNew Roof: If your roof is aging, replacing it can protect your home and improve its value. Buyers are often concerned about roof condition.\n\nEnergy-Efficient Windows: Upgrading to energy-efficient windows improves your home's insulation and can lower utility bills, making it attractive to buyers.\n\nHardwood Flooring: Refinishing or installing hardwood floors can dramatically improve your home's appeal.\n\nPaint: A fresh coat of paint in neutral colors is one of the most cost-effective upgrades.\n\nLandscaping: Professional landscaping improvements can boost curb appeal and increase property value.\n\nWhat NOT to Renovate:\n\n1. Swimming Pools: While nice to have, pools can actually decrease home value due to maintenance concerns.\n\n2. Home Theaters: These are too personal and expensive to appeal to most buyers.\n\n3. Expensive Wallpaper: Unique wallpaper might not appeal to future buyers.\n\n4. Over-Personalization: Avoid renovations that reflect only your personal taste.\n\nBudget Considerations: Focus on renovations that offer the best ROI. Typically, you can expect to recoup 50-80% of your renovation costs when you sell.",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+        "author": "Robert Wilson",
+        "category": "Home Design",
+        "type": "standard"
+      },
+      {
+        "id": 5,
+        "slug": "how-to-choose-the-right-real-estate-agent",
+        "title": "How to Choose the Right Real Estate Agent",
+        "date": "6 MARCH, 2024",
+        "excerpt": "Selecting the right real estate agent is crucial for a smooth buying or selling experience.",
+        "content": "Your real estate agent can make or break your buying or selling experience. Here's how to choose the right one for your needs.\n\nWhy Your Agent Matters:\nYour real estate agent is your advocate in one of the biggest financial transactions of your life. A good agent can help you navigate the market, negotiate better deals, and avoid costly mistakes.\n\nKey Qualities to Look For:\n\n1. Experience: Choose an agent with proven experience in your local market. Ask about their sales history and client testimonials.\n\n2. Local Knowledge: Your agent should know the neighborhood well, including market trends, schools, and amenities.\n\n3. Communication Skills: Your agent should be responsive and keep you informed throughout the process.\n\n4. Negotiation Skills: Whether buying or selling, your agent should be a skilled negotiator.\n\n5. Marketing Expertise: If selling, your agent should have strong marketing strategies to showcase your home.\n\n6. Technology Savvy: Your agent should use modern tools and technology effectively.\n\n7. Trustworthiness: You need to feel comfortable with your agent and trust their advice.\n\nQuestions to Ask Potential Agents:\n\n- How long have you been in real estate?\n- What's your sales record in this area?\n- How do you market homes?\n- What's your communication style?\n- What fees or commissions do you charge?\n- Can you provide references from recent clients?\n\nRed Flags:\n\n- Pressure to sign a contract immediately\n- Unwillingness to answer your questions\n- No local market knowledge\n- Poor communication\n- Unrealistic price estimates\n\nTaking Time to Find the Right Agent:\nDon't rush into choosing an agent. Interview multiple candidates and choose someone you feel confident working with.",
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
+        "author": "Jessica Martinez",
+        "category": "Buying Guides",
+        "type": "standard"
+      },
+      {
+        "id": 6,
+        "slug": "navigating-the-home-inspection-process",
+        "title": "Navigating the Home Inspection Process",
+        "date": "5 MARCH, 2024",
+        "excerpt": "Everything you need to know about home inspections and what to expect during the process.",
+        "content": "A home inspection is one of the most critical steps in the home buying process. Here's your complete guide to understanding and navigating the inspection.\n\nWhat is a Home Inspection?\nA home inspection is a detailed examination of a property's condition by a qualified professional. The inspector evaluates the structure, systems, and appliances to identify any issues or defects.\n\nWhy is it Important?\nA home inspection can reveal serious problems that might be expensive to fix. It gives you the information you need to make an informed decision about whether to proceed with the purchase or negotiate repairs.\n\nWhat Gets Inspected?\n\n1. Structural Components: Foundation, walls, roof, and overall structural integrity.\n\n2. Systems: Electrical, plumbing, HVAC, and gas systems.\n\n3. Exterior: Siding, windows, doors, gutters, and landscaping.\n\n4. Interior: Walls, ceilings, floors, and insulation.\n\n5. Appliances: Kitchen and laundry appliances included in the sale.\n\nWhat to Expect:\n\nThe inspection typically takes 2-3 hours. The inspector will thoroughly examine the property and take photos. You should attend the inspection to ask questions and learn about the property.\n\nAfter the Inspection:\n\nYou'll receive a detailed report listing any issues found. Issues are typically categorized by severity. You can then decide to:\n\n1. Accept the property as-is\n2. Request repairs from the seller\n3. Request a credit for repairs\n4. Walk away from the deal\n\nCommon Issues Found:\n\n- Roofing problems\n- Plumbing issues\n- Electrical problems\n- HVAC concerns\n- Foundation cracks\n- Water damage\n\nNegotiating After the Inspection:\nIf significant issues are found, you have leverage to negotiate with the seller. You can ask for repairs, a price reduction, or a credit toward closing costs.\n\nDon't Skip the Inspection:\nEven if the home looks good, always get a professional inspection. The $300-500 investment can save you thousands in unexpected repairs.",
+        "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=800&auto=format&fit=crop",
+        "author": "David Brown",
+        "category": "Buying Guides",
+        "type": "standard"
+      }
+    ]
   },
   "footer": {
     "logo": {

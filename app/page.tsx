@@ -1,4 +1,4 @@
-import HeroBanner from "@/components/HeroBanner";
+import HeroBanner from "@/app/home/HeroBanner";
 import AboutSection from "@/components/sections/AboutSection";
 import BestRealEstateSection from "@/components/sections/BestRealEstateSection";
 import CtaSection from "@/components/sections/CtaSection";
@@ -6,7 +6,7 @@ import TopDealsSection from "@/components/sections/TopDealsSection";
 import siteData from "@/data/homeData.json";
 import type { SiteData } from "@/types/home";
 
-const homeData: SiteData = siteData;
+const homeData = siteData as SiteData;
 
 export default function Home() {
   return (

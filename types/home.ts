@@ -153,6 +153,39 @@ export type SupportBannerData = {
   imageAlt: string;
 };
 
+export type HowItWorkStep = {
+  number: string;
+  title: string;
+  desc: string;
+  iconName: string;
+};
+
+export type HowItWorkSectionData = {
+  pageBanner: PageBannerData;
+  eyebrow: string;
+  heading: string;
+  description: string;
+  steps: HowItWorkStep[];
+};
+
+export type BlogPost = {
+  id: number;
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  author: string;
+  category: string;
+  type?: "video" | "slider" | "standard";
+};
+
+export type BlogsPageData = {
+  pageBanner: PageBannerData;
+  posts: BlogPost[];
+};
+
 export type SocialLink = {
   platform: string;
   label: string;
@@ -192,6 +225,8 @@ export type SiteData = {
   bestRealEstateSection: BestRealEstateSectionData;
   teamPage: TeamPageData;
   supportBanner: SupportBannerData;
+  howItWork: HowItWorkSectionData;
+  blogs: BlogsPageData;
   pageBanners: Record<string, PageBannerData>;
   footer: FooterData;
 };

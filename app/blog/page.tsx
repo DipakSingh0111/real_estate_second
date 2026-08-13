@@ -14,21 +14,6 @@ import {
 } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
 import PageBanner from "@/components/common/PageBanner";
-interface BlogPost {
-  id: number;
-  title: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  type?: "video" | "slider" | "standard";
-}
-
-interface RecentPost {
-  id: number;
-  title: string;
-  date: string;
-  image: string;
-}
 
 interface CategoryCard {
   id: number;
@@ -68,63 +53,6 @@ const categoryCards: CategoryCard[] = [
   },
 ];
 
-const mainBlogs: BlogPost[] = [
-  {
-    id: 1,
-    title: "Top 10 Tips for First-Time Homebuyers",
-    date: "June 05, 2024",
-    excerpt:
-      "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
-    type: "standard",
-  },
-  {
-    id: 2,
-    title: "How to Boost Your Home's Curb Appeal",
-    date: "June 05, 2024",
-    excerpt:
-      "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
-    type: "video",
-  },
-  {
-    id: 3,
-    title: "The Ultimate Guide to Home Staging",
-    date: "June 05, 2024",
-    excerpt:
-      "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
-    type: "slider",
-  },
-];
-
-const recentPosts: RecentPost[] = [
-  {
-    id: 1,
-    title: "Home Renovations That Pay Off",
-    date: "7 MARCH, 2024",
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=300&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    title: "How to Choose the Right Real Estate Agent",
-    date: "6 MARCH, 2024",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=300&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Navigating the Home Inspection Process",
-    date: "5 MARCH, 2024",
-    image:
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=300&auto=format&fit=crop",
-  },
-];
-
 const categories = [
   "Market News",
   "Buying Guides",
@@ -134,9 +62,12 @@ const categories = [
 ];
 
 export default function BlogsPage() {
+  const { blogs } = homeData;
+  const { pageBanner, posts } = blogs;
+
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.blog} />
+      <PageBanner data={pageBanner} />
 
       <div className="page-container pt-12 space-y-12">
         {/* BLOG CONTENT & SIDEBAR GRID */}
@@ -175,7 +106,7 @@ export default function BlogsPage() {
               ))}
             </div>
 
-            {mainBlogs.map((blog, idx) => (
+            {posts.map((blog, idx) => (
               <motion.div
                 key={blog.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -234,7 +165,12 @@ export default function BlogsPage() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="inline-flex items-center space-x-2 text-xs font-semibold text-blue-600 border border-blue-200 bg-blue-50/50 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-md transition-all duration-300">
+                    <button
+                      onClick={() =>
+                        window.open(`/blog/${blog.slug}`, "_blank")
+                      }
+                      className="inline-flex items-center space-x-2 text-xs font-semibold text-blue-600 border border-blue-200 bg-blue-50/50 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-md transition-all duration-300"
+                    >
                       <span>Read More</span>
                       <FaArrowRight className="text-[10px]" />
                     </button>
@@ -279,9 +215,10 @@ export default function BlogsPage() {
               <div className="w-6 h-0.5 bg-blue-600 rounded-full" />
 
               <div className="space-y-3.5 pt-1">
-                {recentPosts.map((post) => (
+                {posts.slice(0, 3).map((post) => (
                   <div
                     key={post.id}
+                    onClick={() => window.open(`/blog/${post.slug}`, "_blank")}
                     className="flex items-center space-x-3 group cursor-pointer"
                   >
                     <img
