@@ -13,57 +13,12 @@ import {
   FaFolderOpen,
 } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
+import type { BlogsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
-interface CategoryCard {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
-
-const categoryCards: CategoryCard[] = [
-  {
-    id: 1,
-    title: "Market Insights",
-    description: "Latest trends and investment tips.",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    title: "Buying Guides",
-    description: "Step-by-step advice for buyers.",
-    image:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Selling Tips",
-    description: "Maximize value with smart staging.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    title: "Home Design",
-    description: "Inspiration for beautiful living spaces.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop",
-  },
-];
-
-const categories = [
-  "Market News",
-  "Buying Guides",
-  "Selling Tips",
-  "Investment Advice",
-  "Home Design",
-];
-
 export default function BlogsPage() {
-  const { blogs } = homeData;
-  const { pageBanner, posts } = blogs;
+  const sectionData: BlogsPageData = homeData.blogs;
+  const { pageBanner, posts, categoryCards } = sectionData;
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">

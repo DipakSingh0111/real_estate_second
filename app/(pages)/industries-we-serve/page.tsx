@@ -12,71 +12,17 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
+import type { IndustriesPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
-interface IndustryCard {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  icon: React.ReactNode;
-}
 
-const industriesData: IndustryCard[] = [
-  {
-    id: 1,
-    title: "Corporate & Office",
-    description:
-      "Modern workspaces designed for productivity, collaboration, and growth.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    icon: <FaBriefcase className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 2,
-    title: "Retail & Commercial",
-    description:
-      "Spaces that attract, engage, and deliver exceptional customer experiences.",
-    image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
-    icon: <FaShoppingBag className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 3,
-    title: "Industrial & Warehousing",
-    description:
-      "Robust and efficient spaces built for operations and long-term performance.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
-    icon: <FaIndustry className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 4,
-    title: "Healthcare",
-    description:
-      "Functional and compliant spaces that support better care and healthier communities.",
-    image:
-      "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop",
-    icon: <FaHospital className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 5,
-    title: "Education",
-    description:
-      "Learning environments that inspire curiosity, collaboration, and long-term success.",
-    image:
-      "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
-    icon: <FaGraduationCap className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 6,
-    title: "Hospitality & Leisure",
-    description:
-      "Welcoming spaces that create memorable experiences for guests and communities.",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
-    icon: <FaHotel className="text-blue-600 text-lg" />,
-  },
-];
+const industryIcons: Record<string, React.ReactNode> = {
+  briefcase: <FaBriefcase className="text-blue-600 text-lg" />,
+  shoppingBag: <FaShoppingBag className="text-blue-600 text-lg" />,
+  industry: <FaIndustry className="text-blue-600 text-lg" />,
+  hospital: <FaHospital className="text-blue-600 text-lg" />,
+  graduationCap: <FaGraduationCap className="text-blue-600 text-lg" />,
+  hotel: <FaHotel className="text-blue-600 text-lg" />,
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -98,6 +44,7 @@ const itemVariants = {
 };
 
 export default function IndustryWeServePage() {
+  const sectionData: IndustriesPageData = homeData.industriesPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
       <PageBanner data={homeData.pageBanners["industries-we-serve"]} />
@@ -112,12 +59,11 @@ export default function IndustryWeServePage() {
           className="text-center space-y-2"
         >
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Solutions for Every Industry
+            {sectionData.heading}
           </h2>
           <div className="w-8 h-0.5 bg-blue-600 mx-auto rounded-full" />
           <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed">
-            From commercial spaces to specialized facilities, we create real
-            estate that supports your goals today and grows with you tomorrow.
+            {sectionData.description}
           </p>
         </motion.div>
 
@@ -129,7 +75,7 @@ export default function IndustryWeServePage() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {industriesData.map((item) => (
+          {sectionData.items.map((item) => (
             <motion.div
               key={item.id}
               variants={itemVariants}
@@ -146,7 +92,7 @@ export default function IndustryWeServePage() {
 
                 {/* Floating Round Icon Badge */}
                 <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-blue-50 border-2 border-white shadow-md flex items-center justify-center z-10">
-                  {item.icon}
+                  {industryIcons[item.iconName]}
                 </div>
               </div>
 
@@ -190,16 +136,16 @@ export default function IndustryWeServePage() {
             </div>
             <div>
               <h4 className="text-sm font-bold text-slate-900">
-                Have a project in mind?
+                {sectionData.ctaTitle}
               </h4>
               <p className="text-xs text-slate-500 mt-0.5">
-                Let's build the right solution for your industry.
+                {sectionData.ctaText}
               </p>
             </div>
           </div>
 
           <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-5 py-2.5 rounded-lg flex items-center space-x-2 shadow-sm transition-all duration-300 shrink-0">
-            <span>Contact Us</span>
+            <span>{sectionData.ctaButton}</span>
             <FaArrowRight className="text-[10px]" />
           </button>
         </motion.div>

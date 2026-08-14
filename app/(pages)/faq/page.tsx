@@ -13,47 +13,12 @@ import {
 } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
 import homeData from "@/data/homeData.json";
+import type { FaqPageData } from "@/types/home";
 
-const faqData = [
-  {
-    id: 1,
-    question: "How did my property get listed?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, nisl nec suscipit maximus, quam purus hendrerit nisl, in luctus urna nisi in arcu. Integer sit amet sem eu nibh rutrum congue in nec velit.",
-  },
-  {
-    id: 2,
-    question: "How long will it take to buy a home?",
-    answer:
-      "The timeline varies depending on financing and negotiation, but the typical process takes between 30 to 60 days from offer acceptance to closing.",
-  },
-  {
-    id: 3,
-    question: "Can I schedule a property visit online?",
-    answer:
-      "Yes! You can schedule a virtual tour or an in-person viewing directly through our online booking tool on the property detail page.",
-  },
-  {
-    id: 4,
-    question: "Do you provide home loans assistance?",
-    answer:
-      "We partner with leading financial institutions to help connect you with pre-approval options and competitive mortgage rates.",
-  },
-  {
-    id: 5,
-    question: "What documents are required to book a property?",
-    answer:
-      "Generally, you will need proof of identity (ID/Passport), proof of income/funds, and a signed initial agreement form.",
-  },
-  {
-    id: 6,
-    question: "What is your property return policy?",
-    answer:
-      "Depending on your contract stage, cancellations during the initial inspection contingency period allow for refund of earnest deposits per terms.",
-  },
-];
+const faqStatIcons = { users: Users, star: Star, home: Home };
 
 export default function FaqSection() {
+  const sectionData: FaqPageData = homeData.faqPage;
   const [openId, setOpenId] = useState<number | null>(1);
 
   const toggleFaq = (id: number) => {
@@ -74,22 +39,21 @@ export default function FaqSection() {
           className="flex-1"
         >
           <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-wider mb-2">
-            <HelpCircle className="w-4 h-4" /> FAQ
+            <HelpCircle className="w-4 h-4" /> {sectionData.eyebrow}
           </div>
 
           <h2 className="text-3xl font-extrabold text-slate-900 leading-tight">
-            Frequently Asked{" "}
-            <span className="text-blue-600 block">Questions</span>
+            {sectionData.heading}{" "}
+            <span className="text-blue-600 block">{sectionData.headingHighlight}</span>
           </h2>
 
           <p className="text-slate-500 text-sm mt-3 mb-8 max-w-md">
-            Find answers to the most common questions about our properties,
-            services, and buying process.
+            {sectionData.description}
           </p>
 
           {/* Accordion List */}
           <div className="space-y-3">
-            {faqData.map((item, index) => {
+            {sectionData.items.map((item, index) => {
               const isOpen = openId === item.id;
               return (
                 <motion.div
@@ -194,61 +158,36 @@ export default function FaqSection() {
 
             {/* Main Image */}
             <img
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-              alt="Luxury Property"
+              src={sectionData.sideImage}
+              alt={sectionData.sideImageAlt}
               className="w-full h-96 object-cover"
             />
 
             {/* Bottom Stats Footer */}
             <div className="bg-blue-700 py-5 px-3 grid grid-cols-3 gap-2 text-center text-white">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center"
-              >
-                <div className="w-9 h-9 rounded-full bg-white text-blue-700 flex items-center justify-center mb-2">
-                  <Users className="w-4 h-4" />
-                </div>
-                <span className="font-extrabold text-lg leading-none">
-                  135K+
-                </span>
-                <span className="text-[10px] text-blue-200 mt-1 leading-tight">
-                  Happy
-                  <br />
-                  Customers
-                </span>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center"
-              >
-                <div className="w-9 h-9 rounded-full bg-white text-blue-700 flex items-center justify-center mb-2">
-                  <Star className="w-4 h-4 fill-blue-700" />
-                </div>
-                <span className="font-extrabold text-lg leading-none">20+</span>
-                <span className="text-[10px] text-blue-200 mt-1 leading-tight">
-                  Years of
-                  <br />
-                  Experience
-                </span>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center"
-              >
-                <div className="w-9 h-9 rounded-full bg-white text-blue-700 flex items-center justify-center mb-2">
-                  <Home className="w-4 h-4" />
-                </div>
-                <span className="font-extrabold text-lg leading-none">
-                  10K+
-                </span>
-                <span className="text-[10px] text-blue-200 mt-1 leading-tight">
-                  Properties
-                  <br />
-                  Sold
-                </span>
-              </motion.div>
+              {sectionData.stats.map((stat) => {
+                const Icon =
+                  faqStatIcons[stat.iconName as keyof typeof faqStatIcons];
+                return (
+                  <motion.div
+                    key={stat.value}
+                    whileHover={{ scale: 1.05 }}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-white text-blue-700 flex items-center justify-center mb-2">
+                      <Icon
+                        className={`w-4 h-4${stat.iconName === "star" ? " fill-blue-700" : ""}`}
+                      />
+                    </div>
+                    <span className="font-extrabold text-lg leading-none">
+                      {stat.value}
+                    </span>
+                    <span className="text-[10px] text-blue-200 mt-1 leading-tight">
+                      {stat.label}
+                    </span>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.div>

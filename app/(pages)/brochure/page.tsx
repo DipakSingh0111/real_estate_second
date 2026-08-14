@@ -4,92 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaFilePdf, FaDownload } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
+import type { BrochurePageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
-interface BrochureItem {
-  id: number;
-  title: string;
-  subtitle: string;
-  description: string;
-  tag: string;
-  year: string;
-  bgImage: string;
-  pdfUrl: string;
-}
-
-const brochuresData: BrochureItem[] = [
-  {
-    id: 1,
-    title: "REALLOW RESIDENCY",
-    tag: "RESIDENCY",
-    subtitle: "Luxury Living Redefined",
-    description:
-      "Premium residential apartments designed for comfortable living.",
-    year: "2024 Brochure",
-    bgImage:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop",
-    pdfUrl: "#",
-  },
-  {
-    id: 2,
-    title: "REALLOW COMMERCIAL HUB",
-    tag: "COMMERCIAL HUB",
-    subtitle: "Where Business Meets Growth",
-    description: "Modern commercial spaces for our growing business community.",
-    year: "2024 Brochure",
-    bgImage:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    pdfUrl: "#",
-  },
-  {
-    id: 3,
-    title: "REALLOW VILLAS",
-    tag: "VILLAS",
-    subtitle: "Exclusive Villas For Exclusive You",
-    description:
-      "Spacious and elegant villas crafted for a luxurious lifestyle.",
-    year: "2024 Brochure",
-    bgImage:
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop",
-    pdfUrl: "#",
-  },
-  {
-    id: 4,
-    title: "INTERIOR SOLUTIONS",
-    tag: "INTERIOR SOLUTIONS",
-    subtitle: "Designing Spaces, Elevating Lives",
-    description:
-      "Innovative interior designs tailored to your personality and needs.",
-    year: "2024 Brochure",
-    bgImage:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
-    pdfUrl: "#",
-  },
-  {
-    id: 5,
-    title: "CONSTRUCTION SERVICES",
-    tag: "CONSTRUCTION SERVICES",
-    subtitle: "Building Dreams With Precision",
-    description:
-      "End-to-end construction solutions with quality and transparency.",
-    year: "2024 Brochure",
-    bgImage:
-      "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=800&auto=format&fit=crop",
-    pdfUrl: "#",
-  },
-  {
-    id: 6,
-    title: "LAND DEVELOPMENT",
-    tag: "LAND DEVELOPMENT",
-    subtitle: "Building Better Communities",
-    description: "Prime plots and integrated townships for a better tomorrow.",
-    year: "2024 Brochure",
-    bgImage:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop",
-    pdfUrl: "#",
-  },
-];
 
 export default function BrochurePage() {
+  const sectionData: BrochurePageData = homeData.brochurePage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
       <PageBanner data={homeData.pageBanners.brochure} />
@@ -97,16 +16,16 @@ export default function BrochurePage() {
       <div className="page-container pt-10 space-y-12">
         {/* SECTION TITLE */}
         <div className="text-center space-y-1.5">
-          <h2 className="text-2xl font-bold text-slate-900">Our Brochures</h2>
+          <h2 className="text-2xl font-bold text-slate-900">{sectionData.heading}</h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
           <p className="text-xs text-slate-400 pt-1">
-            Select a brochure to view more details and download.
+            {sectionData.description}
           </p>
         </div>
 
         {/* BROCHURES GRID (3 COLUMNS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {brochuresData.map((item, index) => (
+          {sectionData.items.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}

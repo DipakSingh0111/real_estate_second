@@ -19,56 +19,17 @@ import {
 } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
 import homeData from "@/data/homeData.json";
+import type { CareersPageData } from "@/types/home";
 
-// Accordion Features Data Interface & List
-interface FeatureItem {
-  id: number;
-  title: string;
-  description: string;
-  details: string;
-  icon: React.ReactNode;
-}
-
-const featuresData: FeatureItem[] = [
-  {
-    id: 1,
-    title: "Work with Industry Experts",
-    description:
-      "Collaborate with experienced professionals and learn from the best in the real estate industry.",
-    details:
-      "Work alongside top real estate leaders, gain mentorship, and participate in high-value commercial and residential projects.",
-    icon: <FaBuilding className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 2,
-    title: "Grow Your Career",
-    description:
-      "We provide continuous learning, training, and opportunities for career advancement.",
-    details:
-      "Access regular skill workshops, leadership programs, clear promotion pathways, and continuous professional certification support.",
-    icon: <FaChartLine className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 3,
-    title: "Make an Impact",
-    description:
-      "Help clients achieve their property goals and make a real difference every day.",
-    details:
-      "Guide families and businesses to find their dream spaces while contributing to sustainable urban development projects.",
-    icon: <FaUsers className="text-blue-600 text-lg" />,
-  },
-  {
-    id: 4,
-    title: "Great Benefits",
-    description:
-      "Enjoy competitive pay, health benefits, flexible work options and a supportive culture.",
-    details:
-      "Get comprehensive health coverage, performance bonuses, hybrid work policy, and a collaborative work environment.",
-    icon: <FaShieldAlt className="text-blue-600 text-lg" />,
-  },
-];
+const careerIcons: Record<string, React.ReactNode> = {
+  building: <FaBuilding className="text-blue-600 text-lg" />,
+  chartLine: <FaChartLine className="text-blue-600 text-lg" />,
+  users: <FaUsers className="text-blue-600 text-lg" />,
+  shield: <FaShieldAlt className="text-blue-600 text-lg" />,
+};
 
 export default function CareerPage() {
+  const sectionData: CareersPageData = homeData.careersPage;
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
   const toggleAccordion = (id: number) => {
@@ -97,8 +58,8 @@ export default function CareerPage() {
             >
               {/* Background Image */}
               <img
-                src="/images/hero-banner.png"
-                alt="Real Estate Career"
+                src={sectionData.heroImage}
+                alt={sectionData.heroImageAlt}
                 className="w-full h-full object-cover absolute inset-0 z-0 object-right"
               />
 
@@ -129,27 +90,24 @@ export default function CareerPage() {
                 {/* Title */}
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
-                    Careers in
+                    {sectionData.titleLine1}
                   </h2>
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3b82f6] tracking-tight leading-tight">
-                    Real Estate
+                    {sectionData.titleLine2}
                   </h2>
                   <div className="w-10 h-1 bg-[#3b82f6] mt-2 rounded-full" />
                 </div>
 
                 {/* Subtext */}
                 <p className="text-[11px] text-slate-300 leading-relaxed max-w-xs sm:max-w-sm pt-1">
-                  At DreamHome Realty, we are passionate about helping people
-                  find their perfect place. Join our team of dedicated
-                  professionals and be a part of creating better communities and
-                  brighter futures.
+                  {sectionData.description}
                 </p>
               </div>
             </motion.div>
 
             {/* ACCORDION FEATURES LIST */}
             <div className="space-y-3.5">
-              {featuresData.map((item, index) => (
+              {sectionData.features.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -163,7 +121,7 @@ export default function CareerPage() {
                   >
                     <div className="flex items-center space-x-4 pr-3">
                       <div className="w-12 h-12 rounded-2xl bg-blue-50/80 flex items-center justify-center shrink-0">
-                        {item.icon}
+                        {careerIcons[item.iconName]}
                       </div>
                       <div>
                         <h3 className="text-xs sm:text-sm font-bold text-slate-900">
@@ -216,12 +174,11 @@ export default function CareerPage() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-900">
-                  Interested in Joining Our Team?
+                  {sectionData.contactTitle}
                 </h3>
                 <div className="w-8 h-0.5 bg-blue-600 my-2 rounded-full" />
                 <p className="text-[11px] text-slate-400 leading-relaxed">
-                  Send your CV and a brief cover letter. We'd love to hear from
-                  you!
+                  {sectionData.contactText}
                 </p>
               </div>
             </div>
@@ -239,10 +196,10 @@ export default function CareerPage() {
                     Email
                   </span>
                   <a
-                    href="mailto:careers@dreamhome.com"
+                    href={`mailto:${sectionData.email}`}
                     className="text-xs font-bold text-slate-800 hover:text-blue-600 transition-colors"
                   >
-                    careers@dreamhome.com
+                    {sectionData.email}
                   </a>
                 </div>
               </div>
@@ -256,10 +213,10 @@ export default function CareerPage() {
                     Phone
                   </span>
                   <a
-                    href="tel:+919876543210"
+                    href={sectionData.phoneHref}
                     className="text-xs font-bold text-slate-800 hover:text-blue-600 transition-colors"
                   >
-                    +91 987 654 3210
+                    {sectionData.phone}
                   </a>
                 </div>
               </div>
@@ -273,11 +230,11 @@ export default function CareerPage() {
                     Office Address
                   </span>
                   <p className="text-xs font-semibold text-slate-700 leading-relaxed">
-                    DreamHome Realty Pvt. Ltd.
+                    {sectionData.addressLines[0]}
                     <br />
-                    123 Skyline Avenue, Sector 45
+                    {sectionData.addressLines[1]}
                     <br />
-                    Gurugram, Haryana 122003
+                    {sectionData.addressLines[2]}
                   </p>
                 </div>
               </div>
@@ -285,7 +242,7 @@ export default function CareerPage() {
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/919876543210"
+              href={sectionData.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1d4ed8] hover:bg-blue-700 text-white rounded-xl p-3.5 flex items-center justify-between text-xs font-bold shadow-md transition-all duration-300 group mt-4"

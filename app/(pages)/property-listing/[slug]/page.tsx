@@ -1,0 +1,29 @@
+import { notFound } from "next/navigation";
+import siteData from "@/data/homeData.json";
+import { findPropertyBySlug } from "@/lib/property";
+import PropertyDetail from "@/components/PropertyDetail";
+
+export default async function PropertyDetailPage(
+  props: PageProps<"/property-listing/[slug]">,
+) {
+  const { slug } = await props.params;
+  const deals = siteData.topDealsSection.deals;
+  const property = findPropertyBySlug(deals, slug);
+
+  if (!property) {
+    notFound();
+  }
+
+  const galleryImages = deals
+    .filter((deal) => deal.id !== property.id)
+    .map((deal) => deal.image)
+    .slice(0, 4);
+
+  return (
+    <PropertyDetail
+      property={property}
+      galleryImages={galleryImages}
+      banner={siteData.pageBanners.propertyListing}
+    />
+  );
+}

@@ -32,14 +32,17 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
   return (
     <section
       id="deals"
-      className="bg-[#F8F9FC] py-14 font-sans lg:py-20"
+      className="bg-[#F8F9FC] py-14 font-sans lg:py-20 animate-fade-in"
     >
       <div className="page-container">
         {/* Header Section */}
-        <div className="flex items-center justify-between mb-10">
+        <div
+          className="flex items-center justify-between mb-10 animate-slide-in-down"
+          style={{ animationDelay: "0.1s" }}
+        >
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-5 h-[2px] bg-[#F97316] inline-block"></span>
+              <span className="w-5 h-0.5 bg-[#F97316] inline-block"></span>
               <span className="text-xs font-bold uppercase tracking-wider text-[#F97316]">
                 {data.eyebrow}
               </span>
@@ -54,14 +57,14 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
             <button
               ref={prevRef}
               aria-label="Previous Slide"
-              className="w-10 h-10 rounded-full bg-white border border-gray-100 text-gray-700 flex items-center justify-center shadow-sm hover:bg-gray-50 hover:shadow-md transition-all active:scale-95 cursor-pointer disabled:opacity-40"
+              className="w-10 h-10 rounded-full bg-white border border-gray-100 text-gray-700 flex items-center justify-center shadow-sm hover:bg-gray-50 hover:shadow-md hover:-translate-x-1 transition-all active:scale-95 cursor-pointer disabled:opacity-40"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
             </button>
             <button
               ref={nextRef}
               aria-label="Next Slide"
-              className="w-10 h-10 rounded-full bg-white border border-gray-100 text-gray-700 flex items-center justify-center shadow-sm hover:bg-gray-50 hover:shadow-md transition-all active:scale-95 cursor-pointer disabled:opacity-40"
+              className="w-10 h-10 rounded-full bg-white border border-gray-100 text-gray-700 flex items-center justify-center shadow-sm hover:bg-gray-50 hover:shadow-md hover:translate-x-1 transition-all active:scale-95 cursor-pointer disabled:opacity-40"
             >
               <ChevronRight className="w-5 h-5 stroke-[2.5]" />
             </button>
@@ -88,7 +91,8 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className="pb-12"
+          className="pb-12 animate-slide-in-up"
+          style={{ animationDelay: "0.2s" }}
         >
           {data.deals.map((item, index) => (
             <SwiperSlide key={item.id}>

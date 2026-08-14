@@ -16,123 +16,15 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
+import type { ServicesPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
-// ================= TYPES =================
-interface ServiceItem {
-  id: number;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  isActive?: boolean;
-}
 
-interface PropertyItem {
-  id: number;
-  title: string;
-  builder: string;
-  price: string;
-  bedrooms: number;
-  bathrooms: number;
-  sqft: number;
-  image: string;
-}
-
-// ================= DATA =================
-const servicesData: ServiceItem[] = [
-  {
-    id: 1,
-    title: "Home Selling",
-    description:
-      "We help you sell your property at the right price with expert marketing, staging and negotiation support.",
-    icon: <FaHome className="text-xl" />,
-  },
-  {
-    id: 2,
-    title: "Rent Collection",
-    description:
-      "Hassle-free rent collection with timely payments, transparent reporting and dedicated tenant support.",
-    icon: <FaHandHoldingUsd className="text-xl" />,
-  },
-  {
-    id: 3,
-    title: "Escrow Services",
-    description:
-      "Secure and transparent escrow solutions that protect both buyers and sellers in every transaction.",
-    icon: <FaFileContract className="text-xl" />,
-  },
-  {
-    id: 4,
-    title: "Service",
-    description:
-      "Tailored solutions to address your unique real estate needs—from planning to execution and beyond.",
-    icon: <FaUserCog className="text-xl" />,
-  },
-  {
-    id: 5,
-    title: "Rent Collection",
-    description:
-      "Hassle-free rent collection with timely payments, transparent reporting and dedicated tenant support.",
-    icon: <FaHandHoldingUsd className="text-xl" />,
-  },
-  {
-    id: 6,
-    title: "Home Selling",
-    description:
-      "We help you sell your property at the right price with expert marketing, staging and negotiation support.",
-    icon: <FaHome className="text-xl" />,
-    isActive: true, // Blue active card from design
-  },
-  {
-    id: 7,
-    title: "Service",
-    description:
-      "Tailored solutions to address your unique real estate needs—from planning to execution and beyond.",
-    icon: <FaUserCog className="text-xl" />,
-  },
-  {
-    id: 8,
-    title: "Escrow Services",
-    description:
-      "Secure and transparent escrow solutions that protect both buyers and sellers in every transaction.",
-    icon: <FaFileContract className="text-xl" />,
-  },
-];
-
-const propertiesData: PropertyItem[] = [
-  {
-    id: 1,
-    title: "Splitting Luxury Villa in Rego Park",
-    builder: "KB Home",
-    price: "$34,500",
-    bedrooms: 4,
-    bathrooms: 2,
-    sqft: 1150,
-    image:
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    title: "Splitting Modern Apartments",
-    builder: "D. R. Horton",
-    price: "$34,500",
-    bedrooms: 4,
-    bathrooms: 2,
-    sqft: 1150,
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Splitting Modern Apartments View",
-    builder: "Toll Brothers",
-    price: "$34,500",
-    bedrooms: 4,
-    bathrooms: 2,
-    sqft: 1150,
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
-  },
-];
+const serviceIcons: Record<string, React.ReactNode> = {
+  home: <FaHome className="text-xl" />,
+  handHoldingUsd: <FaHandHoldingUsd className="text-xl" />,
+  fileContract: <FaFileContract className="text-xl" />,
+  userCog: <FaUserCog className="text-xl" />,
+};
 
 // ================= ANIMATION VARIANTS =================
 const containerVariants = {
@@ -153,7 +45,8 @@ const itemVariants = {
 };
 
 export default function ServicesPage() {
-  const [properties, setProperties] = useState(propertiesData);
+  const sectionData: ServicesPageData = homeData.servicesPage;
+  const [properties, setProperties] = useState(sectionData.properties);
 
   const handleNext = () => {
     setProperties((prev) => [...prev.slice(1), prev[0]]);
@@ -183,16 +76,15 @@ export default function ServicesPage() {
             <div className="flex items-center justify-center space-x-2">
               <span className="w-5 h-[2px] bg-[#1d4ed8]"></span>
               <span className="text-[11px] font-bold tracking-widest text-[#1d4ed8] uppercase">
-                WHAT WE DO
+                {sectionData.eyebrow}
               </span>
               <span className="w-5 h-[2px] bg-[#1d4ed8]"></span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Our Real Estate Services
+              {sectionData.heading}
             </h2>
             <p className="text-[11px] text-slate-500 max-w-lg mx-auto">
-              Professional solutions to help you buy, sell, rent, and manage
-              properties with ease.
+              {sectionData.description}
             </p>
           </motion.div>
 
@@ -204,7 +96,7 @@ export default function ServicesPage() {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-            {servicesData.map((service) => (
+            {sectionData.items.map((service) => (
               <motion.div
                 key={service.id}
                 variants={itemVariants}
@@ -222,7 +114,7 @@ export default function ServicesPage() {
                       : "bg-blue-50 text-[#1d4ed8]"
                   }`}
                 >
-                  {service.icon}
+                  {serviceIcons[service.iconName]}
                 </div>
 
                 <h3
@@ -256,18 +148,16 @@ export default function ServicesPage() {
           <div className="relative flex flex-col items-center text-center space-y-1.5">
             <div className="flex items-center space-x-2 text-[11px] font-bold text-[#1d4ed8] tracking-widest uppercase">
               <span>&rarr;</span>
-              <span>FEATURED PROPERTIES</span>
+              <span>{sectionData.featuredEyebrow}</span>
               <span>&larr;</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">
-              Top Deals Of The Week
+              {sectionData.featuredHeading}
             </h2>
 
             <p className="text-[12px] text-slate-500 max-w-md leading-relaxed">
-              Handpicked properties with great locations and unbeatable value.
-              <br className="hidden sm:inline" />
-              Find your perfect place to call home.
+              {sectionData.featuredDescription}
             </p>
 
             {/* Carousel Navigation */}
@@ -311,7 +201,7 @@ export default function ServicesPage() {
                     className="w-full h-full object-cover"
                   />
                   <span className="absolute top-3 left-3 bg-[#1d4ed8] text-white text-[10px] font-bold tracking-wider px-3 py-1 rounded-md shadow-sm uppercase">
-                    FOR SALE
+                    {sectionData.saleLabel}
                   </span>
                   <span className="absolute bottom-3 right-3 bg-[#1d4ed8] text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm">
                     {item.price}
@@ -389,10 +279,9 @@ export default function ServicesPage() {
                 <FaPhoneAlt className="text-lg" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-slate-900">Need Help?</h4>
+                <h4 className="text-sm font-bold text-slate-900">{sectionData.helpTitle}</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">
-                  Our real estate experts are here to help you find the right
-                  solution.
+                  {sectionData.helpText}
                 </p>
               </div>
             </div>
@@ -402,7 +291,7 @@ export default function ServicesPage() {
               whileTap={{ scale: 0.98 }}
               className="bg-[#1d4ed8] hover:bg-blue-700 text-white text-xs font-bold px-6 py-3 rounded-xl flex items-center space-x-2 shadow-sm transition-all shrink-0"
             >
-              <span>Contact Us Now</span>
+              <span>{sectionData.helpButton}</span>
               <FaArrowRight className="text-[10px]" />
             </motion.button>
           </motion.div>

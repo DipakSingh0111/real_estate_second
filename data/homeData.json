@@ -23,22 +23,6 @@
           {
             "label": "SHOP DETAIL",
             "href": "/shop-detail"
-          },
-          {
-            "label": "CART",
-            "href": "/cart"
-          },
-          {
-            "label": "ADD LIST",
-            "href": "/add-list"
-          },
-          {
-            "label": "CHECKOUT",
-            "href": "/checkout"
-          },
-          {
-            "label": "WISHLIST",
-            "href": "/wishlist"
           }
         ]
       },
@@ -50,22 +34,6 @@
           {
             "label": "PROPERTY LISTING",
             "href": "/property-listing"
-          },
-          {
-            "label": "DEALERS & SERVICE",
-            "href": "/dealers-service"
-          },
-          {
-            "label": "PROPERTY DETAIL",
-            "href": "/property-detail"
-          },
-          {
-            "label": "POPULAR PROPERTY",
-            "href": "/popular-property"
-          },
-          {
-            "label": "SEARCH PROPERTY",
-            "href": "/search-property"
           }
         ]
       },
@@ -77,10 +45,6 @@
           {
             "label": "BLOG",
             "href": "/blog"
-          },
-          {
-            "label": "BLOG DETAIL",
-            "href": "/blog-detail"
           },
           {
             "label": "Awards",
@@ -120,10 +84,6 @@
           {
             "label": "TEAM",
             "href": "/team"
-          },
-          {
-            "label": "TEAM DETAIL",
-            "href": "/team-detail"
           },
           {
             "label": "Gallery",
@@ -224,7 +184,11 @@
   },
   "ctaSection": {
     "eyebrow": "WE BRING YOU TO THE FUTURE",
-    "headingLines": ["Don't Worries,", "We Check All", "Of"],
+    "headingLines": [
+      "Don't Worries,",
+      "We Check All",
+      "Of"
+    ],
     "highlightedWord": "Unit",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "buttonLabel": "Discover More",
@@ -247,109 +211,243 @@
     "deals": [
       {
         "id": 1,
+        "slug": "new-apartment-nice-view",
         "title": "New Apartment Nice View",
         "location": "LEHMAN",
         "price": "$26,500",
+        "pricePerMonth": "$2,200",
         "bedrooms": 1,
         "bathrooms": 1,
         "sqft": 950,
-        "image": "/images/cityscape (1).jpg"
+        "image": "/images/cityscape (1).jpg",
+        "type": "Apartment",
+        "yearBuilt": 2020,
+        "parking": 1,
+        "description": "Experience modern living in this beautifully designed apartment with stunning city views. The open floor plan offers natural light throughout, featuring a gourmet kitchen and premium finishes.",
+        "features": [
+          "City View",
+          "Modern Design",
+          "Gym Access",
+          "Security System",
+          "Balcony"
+        ]
       },
       {
         "id": 2,
+        "slug": "mission-district-area",
         "title": "Mission District Area",
         "location": "PILTE",
         "price": "$30,500",
+        "pricePerMonth": "$2,540",
         "bedrooms": 3,
         "bathrooms": 2,
         "sqft": 1050,
-        "image": "/images/contemporary-apartment-buildings-stand-tall-against-majestic-backdrop-tian-shan-mountains-almaty-kazakhstan.jpg"
+        "image": "/images/contemporary-apartment-buildings-stand-tall-against-majestic-backdrop-tian-shan-mountains-almaty-kazakhstan.jpg",
+        "type": "Apartment",
+        "yearBuilt": 2018,
+        "parking": 2,
+        "description": "Gorgeous apartment located in the vibrant Mission District with easy access to restaurants, shops, and entertainment. Features hardwood floors, stainless steel appliances, and an in-unit laundry.",
+        "features": [
+          "Pool Access",
+          "Walkable Area",
+          "High Ceilings",
+          "In-Unit Laundry",
+          "Parking Included"
+        ]
       },
       {
         "id": 3,
+        "slug": "luxury-villa-in-rego-park",
         "title": "Luxury Villa In Rego Park",
         "location": "90 HOLMZ",
         "price": "$34,500",
+        "pricePerMonth": "$2,875",
         "bedrooms": 4,
         "bathrooms": 2,
         "sqft": 1150,
-        "image": "/images/modern-architecture.jpg"
+        "image": "/images/modern-architecture.jpg",
+        "type": "Villa",
+        "yearBuilt": 2019,
+        "parking": 3,
+        "description": "A stunning modern villa combining luxury and comfort. Featuring expansive living spaces, contemporary design elements, and premium amenities throughout this exclusive property.",
+        "features": [
+          "Gated Community",
+          "Garden",
+          "Modern Appliances",
+          "Master Suite",
+          "Media Room"
+        ]
       },
       {
         "id": 4,
+        "slug": "modern-duplex-penthouse",
         "title": "Modern Duplex Penthouse",
         "location": "MANHATTAN",
         "price": "$45,000",
+        "pricePerMonth": "$3,750",
         "bedrooms": 3,
         "bathrooms": 3,
         "sqft": 1400,
-        "image": "/images/tall-apartment-buildings-with-modern-design.jpg"
+        "image": "/images/tall-apartment-buildings-with-modern-design.jpg",
+        "type": "Penthouse",
+        "yearBuilt": 2021,
+        "parking": 2,
+        "description": "Spectacular penthouse offering unparalleled views of the Manhattan skyline. This luxury property features high-end finishes, smart home technology, and exclusive amenities.",
+        "features": [
+          "Rooftop Terrace",
+          "Skyline View",
+          "Smart Home",
+          "Premium Finishes",
+          "Concierge Service"
+        ]
       },
       {
         "id": 5,
+        "slug": "cozy-beachside-cottage",
         "title": "Cozy Beachside Cottage",
         "location": "MALIBU",
         "price": "$52,000",
+        "pricePerMonth": "$4,333",
         "bedrooms": 2,
         "bathrooms": 2,
         "sqft": 1100,
-        "image": "/images/miami-beach-florida-united-states-america.jpg"
+        "image": "/images/miami-beach-florida-united-states-america.jpg",
+        "type": "Cottage",
+        "yearBuilt": 2017,
+        "parking": 2,
+        "description": "Beautiful beachside cottage perfect for those seeking a relaxed coastal lifestyle. Steps away from pristine beaches with ocean breezes and sunset views.",
+        "features": [
+          "Beach Access",
+          "Ocean View",
+          "Patio",
+          "Fire Pit",
+          "Outdoor Shower"
+        ]
       },
       {
         "id": 6,
+        "slug": "skyline-view-haven",
         "title": "Skyline View Haven",
         "location": "BROOKLYN",
         "price": "$28,000",
+        "pricePerMonth": "$2,333",
         "bedrooms": 2,
         "bathrooms": 1,
         "sqft": 980,
-        "image": "/images/beautiful-bildings-with-lights-hong-kong.jpg"
+        "image": "/images/beautiful-bildings-with-lights-hong-kong.jpg",
+        "type": "Apartment",
+        "yearBuilt": 2019,
+        "parking": 1,
+        "description": "Contemporary apartment with spectacular skyline views in trendy Brooklyn. Perfect for young professionals and small families seeking urban living.",
+        "features": [
+          "Skyline View",
+          "Trendy Area",
+          "Hardwood Floors",
+          "Large Windows",
+          "Elevator Building"
+        ]
       },
       {
         "id": 7,
+        "slug": "grand-hillside-mansion",
         "title": "Grand Hillside Mansion",
         "location": "BEVERLY HILLS",
         "price": "$75,000",
+        "pricePerMonth": "$6,250",
         "bedrooms": 5,
         "bathrooms": 4,
         "sqft": 2500,
-        "image": "/images/aerial-view-modern-buildings-city.jpg"
+        "image": "/images/aerial-view-modern-buildings-city.jpg",
+        "type": "Mansion",
+        "yearBuilt": 2015,
+        "parking": 4,
+        "description": "Prestigious mansion in exclusive Beverly Hills community. This magnificent property features world-class architecture, manicured gardens, and premium finishes throughout.",
+        "features": [
+          "Tennis Court",
+          "Swimming Pool",
+          "Guest House",
+          "Wine Cellar",
+          "Home Theater"
+        ]
       },
       {
         "id": 8,
+        "slug": "minimalist-urban-suite",
         "title": "Minimalist Urban Suite",
         "location": "DOWNTOWN",
         "price": "$22,900",
+        "pricePerMonth": "$1,908",
         "bedrooms": 1,
         "bathrooms": 1,
         "sqft": 820,
-        "image": "/images/city-night-view.jpg"
+        "image": "/images/city-night-view.jpg",
+        "type": "Apartment",
+        "yearBuilt": 2021,
+        "parking": 1,
+        "description": "Stylish minimalist apartment in the heart of downtown. Perfect for professionals who value clean design, convenience, and vibrant urban lifestyle.",
+        "features": [
+          "Downtown Location",
+          "Minimalist Design",
+          "Modern Fixtures",
+          "High-Speed Internet",
+          "Rooftop Access"
+        ]
       },
       {
         "id": 9,
+        "slug": "suburban-family-estate",
         "title": "Suburban Family Estate",
         "location": "GREENWOOD",
         "price": "$38,000",
+        "pricePerMonth": "$3,167",
         "bedrooms": 4,
         "bathrooms": 3,
         "sqft": 1650,
-        "image": "/images/view-city-with-buildings-trees.jpg"
+        "image": "/images/view-city-with-buildings-trees.jpg",
+        "type": "House",
+        "yearBuilt": 2016,
+        "parking": 3,
+        "description": "Charming family home in peaceful suburban community. Spacious rooms, beautiful landscaping, and excellent schools nearby make it ideal for families.",
+        "features": [
+          "Large Backyard",
+          "Deck",
+          "Storage Room",
+          "New Roof",
+          "Two-Car Garage"
+        ]
       },
       {
         "id": 10,
+        "slug": "elegance-lakeview-residency",
         "title": "Elegance Lakeview Residency",
         "location": "LAKEWOOD",
         "price": "$41,200",
+        "pricePerMonth": "$3,433",
         "bedrooms": 3,
         "bathrooms": 2,
         "sqft": 1300,
-        "image": "/images/modern-buildings.jpg"
+        "image": "/images/modern-buildings.jpg",
+        "type": "Apartment",
+        "yearBuilt": 2020,
+        "parking": 2,
+        "description": "Elegant residential building with serene lakeview. Premium location near shopping, dining, and recreational facilities with 24/7 security.",
+        "features": [
+          "Lake View",
+          "Recreation Area",
+          "24/7 Security",
+          "Community Center",
+          "Walking Trails"
+        ]
       }
     ]
   },
   "bestRealEstateSection": {
     "eyebrow": "Best real estate in The World",
-    "headingLines": ["We serve you with", "best real estate", "by area"],
+    "headingLines": [
+      "We serve you with",
+      "best real estate",
+      "by area"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "images": [
       {
@@ -369,6 +467,152 @@
     "learnMoreLink": "#",
     "playButtonLabel": "Play video"
   },
+  "servicesSection": {
+    "eyebrow": "FEATURED SERVICES",
+    "heading": "Our Services",
+    "description": "We provide comprehensive real estate solutions tailored to your needs",
+    "services": [
+      {
+        "id": 1,
+        "slug": "home-selling",
+        "title": "Home Selling",
+        "description": "We help you sell your property at the right price with expert marketing, staging and negotiation support.",
+        "fullDescription": "Our professional home selling service is designed to maximize your property's value and attract qualified buyers. We provide comprehensive market analysis, professional staging, high-quality photography, and strategic marketing across multiple channels to ensure your property gets maximum exposure.",
+        "icon": "home",
+        "image": "/images/modern-architecture.jpg",
+        "benefits": [
+          "Expert pricing strategy",
+          "Professional staging",
+          "Wide buyer network",
+          "Fast sale process",
+          "Transparent communication"
+        ],
+        "features": [
+          "Market analysis",
+          "Professional photography",
+          "Online marketing",
+          "Open house coordination",
+          "Negotiation support"
+        ]
+      },
+      {
+        "id": 2,
+        "slug": "rent-collection",
+        "title": "Rent Collection",
+        "description": "Hassle-free rent collection with timely payments, transparent reporting and dedicated tenant support.",
+        "fullDescription": "Take the stress out of rent collection with our professional tenant management services. We handle all aspects of rent collection, tenant screening, lease management, and maintenance coordination to ensure consistent cash flow and property maintenance.",
+        "icon": "dollar-sign",
+        "image": "/images/modern-buildings.jpg",
+        "benefits": [
+          "Timely payments",
+          "Tenant screening",
+          "Lease management",
+          "24/7 support",
+          "Detailed reporting"
+        ],
+        "features": [
+          "Rent collection management",
+          "Tenant vetting",
+          "Maintenance coordination",
+          "Legal compliance",
+          "Monthly statements"
+        ]
+      },
+      {
+        "id": 3,
+        "slug": "escrow-services",
+        "title": "Escrow Services",
+        "description": "Secure and transparent escrow solutions that protect both buyers and sellers in every transaction.",
+        "fullDescription": "Our escrow services provide a neutral, secure environment for real estate transactions. We hold funds, verify documents, and coordinate between buyers and sellers to ensure smooth, protected transactions with complete transparency and legal compliance.",
+        "icon": "shield",
+        "image": "/images/aerial-view-modern-buildings-city.jpg",
+        "benefits": [
+          "Secure fund holding",
+          "Document verification",
+          "Legal compliance",
+          "Dispute resolution",
+          "Transparent process"
+        ],
+        "features": [
+          "Fund management",
+          "Title verification",
+          "Closing coordination",
+          "Regulatory compliance",
+          "Timeline tracking"
+        ]
+      },
+      {
+        "id": 4,
+        "slug": "property-management",
+        "title": "Property Management",
+        "description": "Tailored solutions to address your unique real estate needs—from planning to execution and beyond.",
+        "fullDescription": "Comprehensive property management services that handle every aspect of your investment property. From tenant relations to maintenance, accounting to legal compliance, we manage all operational aspects so you can focus on growing your investment portfolio.",
+        "icon": "building",
+        "image": "/images/contemporary-apartment-buildings-stand-tall-against-majestic-backdrop-tian-shan-mountains-almaty-kazakhstan.jpg",
+        "benefits": [
+          "Tenant management",
+          "Maintenance oversight",
+          "Financial reporting",
+          "Legal compliance",
+          "Emergency response"
+        ],
+        "features": [
+          "Tenant screening",
+          "Rent collection",
+          "Maintenance coordination",
+          "Accounting services",
+          "Insurance coordination"
+        ]
+      },
+      {
+        "id": 5,
+        "slug": "property-valuation",
+        "title": "Property Valuation",
+        "description": "Accurate market-based valuation of your property for investment or transaction purposes.",
+        "fullDescription": "Get precise property valuations from our certified appraisers. Whether for refinancing, investment analysis, or transaction purposes, our detailed valuations provide market-accurate assessments that inform smart real estate decisions.",
+        "icon": "calculator",
+        "image": "/images/beautiful-bildings-with-lights-hong-kong.jpg",
+        "benefits": [
+          "Certified appraisals",
+          "Market analysis",
+          "Investment insights",
+          "Transaction support",
+          "Legal compliance"
+        ],
+        "features": [
+          "Comprehensive analysis",
+          "Market comparables",
+          "Investment potential",
+          "Professional reports",
+          "Expert consultation"
+        ]
+      },
+      {
+        "id": 6,
+        "slug": "consulting-service",
+        "title": "Consulting Service",
+        "description": "Expert consultation on real estate investments, market trends, and strategic planning.",
+        "fullDescription": "Our experienced consultants provide strategic guidance on real estate investments, market opportunities, and portfolio planning. Whether you're a first-time buyer or seasoned investor, we offer insights to help you make informed decisions.",
+        "icon": "briefcase",
+        "image": "/images/city-night-view.jpg",
+        "benefits": [
+          "Market expertise",
+          "Strategic planning",
+          "Investment analysis",
+          "Risk assessment",
+          "Growth guidance"
+        ],
+        "features": [
+          "Market research",
+          "Investment analysis",
+          "Portfolio planning",
+          "Risk management",
+          "Expert advisors"
+        ],
+        "isActive": true
+      }
+    ]
+  },
   "teamPage": {
     "hero": {
       "title": "Our Teams",
@@ -377,11 +621,17 @@
     },
     "members": [
       {
+        "id": 1,
+        "slug": "rahul-mehra",
         "role": "Director",
         "name": "Mr. Rahul Mehra",
         "description": "With over 20 years of experience in the real estate industry, Mr. Rahul Mehra has been the driving force behind the success and growth of DreamHome Realty.",
         "imageUrl": "/images/team_05.avif",
         "imageAlt": "Mr Rahul Mehra",
+        "email": "rahul.mehra@dreamhome.com",
+        "phone": "+1 (555) 123-4567",
+        "specialization": "Strategic Planning & Development",
+        "bio": "Mr. Rahul Mehra is a visionary leader with an exceptional track record in the real estate industry. His strategic insights and innovative approaches have transformed DreamHome Realty into one of the most respected names in the business. He is passionate about creating sustainable communities and delivering value to every stakeholder.",
         "stats": [
           {
             "value": "20+",
@@ -398,11 +648,17 @@
         ]
       },
       {
+        "id": 2,
+        "slug": "priya-sharma",
         "role": "Director",
         "name": "Ms. Priya Sharma",
         "description": "A dynamic and results-driven leader, Ms. Priya Sharma oversees business development and client relations at DreamHome Realty.",
         "imageUrl": "/images/team_01.avif",
         "imageAlt": "Ms Priya Sharma",
+        "email": "priya.sharma@dreamhome.com",
+        "phone": "+1 (555) 234-5678",
+        "specialization": "Business Development & Client Relations",
+        "bio": "With a proven ability to build strong client relationships and drive business growth, Ms. Priya Sharma is instrumental in expanding DreamHome Realty's market presence. Her customer-centric approach and attention to detail have made her a trusted advisor to numerous clients.",
         "stats": [
           {
             "value": "15+",
@@ -419,11 +675,17 @@
         ]
       },
       {
+        "id": 3,
+        "slug": "arjun-verma",
         "role": "Director",
         "name": "Mr. Arjun Verma",
         "description": "As a visionary and energetic leader, Mr. Arjun Verma specializes in project planning and operations to deliver exceptional property experiences.",
         "imageUrl": "/images/team_02.avif",
         "imageAlt": "Mr Arjun Verma",
+        "email": "arjun.verma@dreamhome.com",
+        "phone": "+1 (555) 345-6789",
+        "specialization": "Project Planning & Operations",
+        "bio": "Mr. Arjun Verma is an operations expert who ensures that every project meets the highest standards of quality and timely delivery. His meticulous planning and execution skills have been key to the success of numerous complex real estate developments.",
         "stats": [
           {
             "value": "10+",
@@ -976,6 +1238,39 @@
         "category": "Buying Guides",
         "type": "standard"
       }
+    ],
+    "categoryCards": [
+      {
+        "id": 1,
+        "title": "Market Insights",
+        "description": "Latest trends and investment tips.",
+        "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": 2,
+        "title": "Buying Guides",
+        "description": "Step-by-step advice for buyers.",
+        "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": 3,
+        "title": "Selling Tips",
+        "description": "Maximize value with smart staging.",
+        "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": 4,
+        "title": "Home Design",
+        "description": "Inspiration for beautiful living spaces.",
+        "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop"
+      }
+    ],
+    "categories": [
+      "Market News",
+      "Buying Guides",
+      "Selling Tips",
+      "Investment Advice",
+      "Home Design"
     ]
   },
   "footer": {
@@ -1066,9 +1361,1385 @@
     ],
     "contact": {
       "heading": "Contact",
-      "address": ["77 Highfield Road", "London N36 7SB"],
+      "address": [
+        "77 Highfield Road",
+        "London N36 7SB"
+      ],
       "phoneNumber": "987 654 3210"
     },
     "copyright": "Copyright © 2026. All rights reserved."
+  },
+  "servicesPage": {
+    "eyebrow": "WHAT WE DO",
+    "heading": "Our Real Estate Services",
+    "description": "Professional solutions to help you buy, sell, rent, and manage properties with ease.",
+    "featuredEyebrow": "FEATURED PROPERTIES",
+    "featuredHeading": "Top Deals Of The Week",
+    "featuredDescription": "Handpicked properties with great locations and unbeatable value. Find your perfect place to call home.",
+    "saleLabel": "FOR SALE",
+    "helpTitle": "Need Help?",
+    "helpText": "Our real estate experts are here to help you find the right solution.",
+    "helpButton": "Contact Us Now",
+    "items": [
+      {
+        "id": 1,
+        "title": "Home Selling",
+        "description": "We help you sell your property at the right price with expert marketing, staging and negotiation support.",
+        "iconName": "home"
+      },
+      {
+        "id": 2,
+        "title": "Rent Collection",
+        "description": "Hassle-free rent collection with timely payments, transparent reporting and dedicated tenant support.",
+        "iconName": "handHoldingUsd"
+      },
+      {
+        "id": 3,
+        "title": "Escrow Services",
+        "description": "Secure and transparent escrow solutions that protect both buyers and sellers in every transaction.",
+        "iconName": "fileContract"
+      },
+      {
+        "id": 4,
+        "title": "Service",
+        "description": "Tailored solutions to address your unique real estate needs—from planning to execution and beyond.",
+        "iconName": "userCog"
+      },
+      {
+        "id": 5,
+        "title": "Rent Collection",
+        "description": "Hassle-free rent collection with timely payments, transparent reporting and dedicated tenant support.",
+        "iconName": "handHoldingUsd"
+      },
+      {
+        "id": 6,
+        "title": "Home Selling",
+        "description": "We help you sell your property at the right price with expert marketing, staging and negotiation support.",
+        "iconName": "home",
+        "isActive": true
+      },
+      {
+        "id": 7,
+        "title": "Service",
+        "description": "Tailored solutions to address your unique real estate needs—from planning to execution and beyond.",
+        "iconName": "userCog"
+      },
+      {
+        "id": 8,
+        "title": "Escrow Services",
+        "description": "Secure and transparent escrow solutions that protect both buyers and sellers in every transaction.",
+        "iconName": "fileContract"
+      }
+    ],
+    "properties": [
+      {
+        "id": 1,
+        "title": "Splitting Luxury Villa in Rego Park",
+        "builder": "KB Home",
+        "price": "$34,500",
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "sqft": 1150,
+        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": 2,
+        "title": "Splitting Modern Apartments",
+        "builder": "D. R. Horton",
+        "price": "$34,500",
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "sqft": 1150,
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": 3,
+        "title": "Splitting Modern Apartments View",
+        "builder": "Toll Brothers",
+        "price": "$34,500",
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "sqft": 1150,
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+      }
+    ]
+  },
+  "partnersPage": {
+    "heading": "Our Esteemed Partners",
+    "description": "Proud to collaborate with a diverse group of organizations that drive innovation and deliver excellence.",
+    "items": [
+      {
+        "id": 1,
+        "name": "DLF",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1d/DLF_logo.svg"
+      },
+      {
+        "id": 2,
+        "name": "Godrej Properties",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godrej_Properties_Logo.svg"
+      },
+      {
+        "id": 3,
+        "name": "Lodha",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lodha_Group_logo.svg"
+      },
+      {
+        "id": 4,
+        "name": "Tata Projects",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg"
+      },
+      {
+        "id": 5,
+        "name": "Ireo",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=IREO"
+      },
+      {
+        "id": 6,
+        "name": "Sobha Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=SOBHA"
+      },
+      {
+        "id": 7,
+        "name": "Brigade Group",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=BRIGADE"
+      },
+      {
+        "id": 8,
+        "name": "Mahindra Lifespaces",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=Mahindra"
+      },
+      {
+        "id": 9,
+        "name": "Shapoorji Pallonji",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=Shapoorji"
+      },
+      {
+        "id": 10,
+        "name": "Prestige Group",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=PRESTIGE"
+      },
+      {
+        "id": 11,
+        "name": "K Raheja Corp",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=K+RAHEJA"
+      },
+      {
+        "id": 12,
+        "name": "Puravankara",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=PURAVANKARA"
+      },
+      {
+        "id": 13,
+        "name": "Omaxe",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=OMAXE"
+      },
+      {
+        "id": 14,
+        "name": "Total Environment",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=TOTAL"
+      },
+      {
+        "id": 15,
+        "name": "JLL",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/JLL_logo.svg"
+      },
+      {
+        "id": 16,
+        "name": "CBRE",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/17/CBRE_Group_logo.svg"
+      },
+      {
+        "id": 17,
+        "name": "Colliers",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Colliers_International_logo.svg"
+      },
+      {
+        "id": 18,
+        "name": "Cushman & Wakefield",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Cushman_%26_Wakefield_logo.svg"
+      },
+      {
+        "id": 19,
+        "name": "Knight Frank",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=Knight+Frank"
+      },
+      {
+        "id": 20,
+        "name": "BPTP",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=BPTP"
+      },
+      {
+        "id": 21,
+        "name": "Emaar",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/Emaar_Properties_logo.svg"
+      },
+      {
+        "id": 22,
+        "name": "NCC",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=NCC"
+      },
+      {
+        "id": 23,
+        "name": "Hiranandani",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=Hiranandani"
+      },
+      {
+        "id": 24,
+        "name": "Piramal Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=Piramal"
+      },
+      {
+        "id": 25,
+        "name": "L&T Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=L%26T+Realty"
+      },
+      {
+        "id": 26,
+        "name": "ASBL",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ASBL"
+      },
+      {
+        "id": 27,
+        "name": "Ajmera",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ajmera"
+      },
+      {
+        "id": 28,
+        "name": "Signature Global",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=SIGNATURE"
+      },
+      {
+        "id": 29,
+        "name": "M3M",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=M3M"
+      },
+      {
+        "id": 30,
+        "name": "Ganga Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=GANGA"
+      },
+      {
+        "id": 31,
+        "name": "Rustomjee",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=Rustomjee"
+      },
+      {
+        "id": 32,
+        "name": "VTP Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=VTP+REALTY"
+      },
+      {
+        "id": 33,
+        "name": "Tata Housing",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=TATA+HOUSING"
+      },
+      {
+        "id": 34,
+        "name": "Joyville",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=JOYVILLE"
+      },
+      {
+        "id": 35,
+        "name": "Sheth Creators",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=SHETH"
+      },
+      {
+        "id": 36,
+        "name": "Kalpataru",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=KALPATARU"
+      },
+      {
+        "id": 37,
+        "name": "Arihant Superstructures",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ARIHANT"
+      },
+      {
+        "id": 38,
+        "name": "Provident Housing",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=PROVIDENT"
+      },
+      {
+        "id": 39,
+        "name": "ATS Infrastructure",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ATS"
+      },
+      {
+        "id": 40,
+        "name": "ACE Group",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ACE"
+      },
+      {
+        "id": 41,
+        "name": "Flora",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=FLORA"
+      },
+      {
+        "id": 42,
+        "name": "Anarock",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ANAROCK"
+      },
+      {
+        "id": 43,
+        "name": "Ramky",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=RAMKY"
+      },
+      {
+        "id": 44,
+        "name": "Dosti Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=DOSTI"
+      },
+      {
+        "id": 45,
+        "name": "Bhutani Infra",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=BHUTANI"
+      },
+      {
+        "id": 46,
+        "name": "The Address Makers",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=ADDRESS"
+      },
+      {
+        "id": 47,
+        "name": "Sattva Group",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=SATTVA"
+      },
+      {
+        "id": 48,
+        "name": "Srijan Realty",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=srijan"
+      },
+      {
+        "id": 49,
+        "name": "Gammon",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=GAMMON"
+      },
+      {
+        "id": 50,
+        "name": "Reliance Infra",
+        "logo": "https://placehold.co/200x80/ffffff/111827?text=RELIANCE"
+      }
+    ]
+  },
+  "pricingPage": {
+    "eyebrow": "PLANS & PRICING",
+    "heading": "Simple Plans, Powerful Solutions",
+    "description": "Choose the perfect plan for your real estate needs and grow your business.",
+    "popularLabel": "Most Popular",
+    "plans": [
+      {
+        "id": "basic",
+        "name": "Basic Plan",
+        "tagline": "Perfect for small teams getting started",
+        "price": "19",
+        "billing": "/month",
+        "iconName": "send",
+        "isPopular": false,
+        "features": [
+          {
+            "text": "Up to 10 Users",
+            "available": true
+          },
+          {
+            "text": "Access to All Features",
+            "available": true
+          },
+          {
+            "text": "Assisted Onboarding Support",
+            "available": true
+          },
+          {
+            "text": "CPM Coverage: Unlimited",
+            "available": true
+          },
+          {
+            "text": "Program Reviews 1x a Month",
+            "available": false
+          },
+          {
+            "text": "Priority Support",
+            "available": false
+          }
+        ],
+        "buttonText": "Try For Free",
+        "buttonVariant": "outline"
+      },
+      {
+        "id": "popular",
+        "name": "Popular Plan",
+        "tagline": "Great for growing real estate businesses",
+        "price": "39",
+        "billing": "/month",
+        "iconName": "home",
+        "isPopular": true,
+        "features": [
+          {
+            "text": "Up to 10 Users",
+            "available": true
+          },
+          {
+            "text": "Access to All Features",
+            "available": true
+          },
+          {
+            "text": "Assisted Onboarding Support",
+            "available": true
+          },
+          {
+            "text": "CPM Coverage: Unlimited",
+            "available": true
+          },
+          {
+            "text": "Program Reviews 1x a Month",
+            "available": true
+          },
+          {
+            "text": "Priority Support",
+            "available": false
+          }
+        ],
+        "buttonText": "Try For Free",
+        "buttonVariant": "primary"
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise Plan",
+        "tagline": "Advanced solution for large organizations",
+        "price": "69",
+        "billing": "/month",
+        "iconName": "crown",
+        "isPopular": false,
+        "features": [
+          {
+            "text": "Up to 10 Users",
+            "available": true
+          },
+          {
+            "text": "Access to All Features",
+            "available": true
+          },
+          {
+            "text": "Assisted Onboarding Support",
+            "available": true
+          },
+          {
+            "text": "CPM Coverage: Unlimited",
+            "available": true
+          },
+          {
+            "text": "Program Reviews 1x a Month",
+            "available": true
+          },
+          {
+            "text": "Priority Support",
+            "available": true
+          }
+        ],
+        "buttonText": "Try For Free",
+        "buttonVariant": "outline"
+      }
+    ]
+  },
+  "faqPage": {
+    "eyebrow": "FAQ",
+    "heading": "Frequently Asked",
+    "headingHighlight": "Questions",
+    "description": "Find answers to the most common questions about our properties, services, and buying process.",
+    "sideImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+    "sideImageAlt": "Luxury Property",
+    "stats": [
+      {
+        "value": "135K+",
+        "label": "Happy Customers",
+        "iconName": "users"
+      },
+      {
+        "value": "20+",
+        "label": "Years of Experience",
+        "iconName": "star"
+      },
+      {
+        "value": "10K+",
+        "label": "Properties Sold",
+        "iconName": "home"
+      }
+    ],
+    "items": [
+      {
+        "id": 1,
+        "question": "How did my property get listed?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, nisl nec suscipit maximus, quam purus hendrerit nisl, in luctus urna nisi in arcu. Integer sit amet sem eu nibh rutrum congue in nec velit."
+      },
+      {
+        "id": 2,
+        "question": "How long will it take to buy a home?",
+        "answer": "The timeline varies depending on financing and negotiation, but the typical process takes between 30 to 60 days from offer acceptance to closing."
+      },
+      {
+        "id": 3,
+        "question": "Can I schedule a property visit online?",
+        "answer": "Yes! You can schedule a virtual tour or an in-person viewing directly through our online booking tool on the property detail page."
+      },
+      {
+        "id": 4,
+        "question": "Do you provide home loans assistance?",
+        "answer": "We partner with leading financial institutions to help connect you with pre-approval options and competitive mortgage rates."
+      },
+      {
+        "id": 5,
+        "question": "What documents are required to book a property?",
+        "answer": "Generally, you will need proof of identity (ID/Passport), proof of income/funds, and a signed initial agreement form."
+      },
+      {
+        "id": 6,
+        "question": "What is your property return policy?",
+        "answer": "Depending on your contract stage, cancellations during the initial inspection contingency period allow for refund of earnest deposits per terms."
+      }
+    ]
+  },
+  "testimonialPage": {
+    "eyebrow": "TESTIMONIALS",
+    "heading": "What Our Clients Say",
+    "description": "Real stories from real people who found their dream property with us.",
+    "items": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "role": "Happy Homeowner",
+        "comment": "The team was incredibly helpful throughout my home buying journey. They understood my needs perfectly and helped me find the ideal home within my budget. Highly recommended!",
+        "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
+        "imagePosition": "left"
+      },
+      {
+        "id": 2,
+        "name": "Carry Mint",
+        "role": "Happy Homeowner",
+        "comment": "Excellent service and great support! From property selection to final paperwork, everything was smooth and transparent. I truly appreciate their professional approach.",
+        "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
+        "imagePosition": "right"
+      },
+      {
+        "id": 3,
+        "name": "Sarah Albert",
+        "role": "Happy Homeowner",
+        "comment": "I had a wonderful experience working with them. They were patient, knowledgeable, and always available to answer my questions. I couldn't be happier with my new home!",
+        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+        "imagePosition": "left"
+      },
+      {
+        "id": 4,
+        "name": "Stevin Mark",
+        "role": "Happy Homeowner",
+        "comment": "Professional, trustworthy, and efficient! The entire process was hassle-free and exceeded my expectations. I will definitely recommend their services to my friends and family.",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+        "imagePosition": "right"
+      }
+    ]
+  },
+  "privacyPolicyPage": {
+    "lastUpdated": "May 20, 2024",
+    "intro": "Welcome to our website. By accessing or using our website and services, you agree to be bound by the following terms and conditions.",
+    "ctaTitle": "Questions About These Terms?",
+    "ctaText": "If you have any questions, feel free to contact us.",
+    "ctaButton": "Contact Us",
+    "sections": [
+      {
+        "id": "1",
+        "title": "1. Use of Our Website",
+        "content": "You agree to use our website only for lawful purposes and in a way that does not infringe on the rights of others or restrict their use and enjoyment of the website."
+      },
+      {
+        "id": "2",
+        "title": "2. Property Information",
+        "content": "We strive to provide accurate property information, but we do not warrant that all details, prices, or availability are error-free. Information is subject to change without notice."
+      },
+      {
+        "id": "3",
+        "title": "3. User Responsibilities",
+        "content": "You are responsible for maintaining the confidentiality of your account and for all activities that occur under your account."
+      },
+      {
+        "id": "4",
+        "title": "4. Third-Party Links",
+        "content": "Our website may contain links to third-party websites. We are not responsible for the content or practices of these websites."
+      },
+      {
+        "id": "5",
+        "title": "5. Limitation of Liability",
+        "content": "We shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use our website or services."
+      },
+      {
+        "id": "6",
+        "title": "6. Changes to Terms",
+        "content": "We reserve the right to update or modify these terms at any time. Changes will be effective immediately upon posting."
+      },
+      {
+        "id": "7",
+        "title": "7. Governing Law",
+        "content": "These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which we operate."
+      }
+    ]
+  },
+  "termsPage": {
+    "lastUpdated": "May 20, 2024",
+    "intro": "Welcome to our website. By accessing or using our website and services, you agree to be bound by the following terms and conditions.",
+    "ctaTitle": "Questions About These Terms?",
+    "ctaText": "If you have any questions, feel free to contact us.",
+    "ctaButton": "Contact Us",
+    "sections": [
+      {
+        "id": 1,
+        "title": "1. Use of Our Website",
+        "content": "You agree to use our website only for lawful purposes and in a way that does not infringe on the rights of others or restrict their use and enjoyment of the website."
+      },
+      {
+        "id": 2,
+        "title": "2. Property Information",
+        "content": "We strive to provide accurate property information, but we do not warrant that all details, prices, or availability are error-free. Information is subject to change without notice."
+      },
+      {
+        "id": 3,
+        "title": "3. User Responsibilities",
+        "content": "You are responsible for maintaining the confidentiality of your account and for all activities that occur under your account."
+      },
+      {
+        "id": 4,
+        "title": "4. Third-Party Links",
+        "content": "Our website may contain links to third-party websites. We are not responsible for the content or practices of these websites."
+      },
+      {
+        "id": 5,
+        "title": "5. Limitation of Liability",
+        "content": "We shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use our website or services."
+      },
+      {
+        "id": 6,
+        "title": "6. Changes to Terms",
+        "content": "We reserve the right to update or modify these terms at any time. Changes will be effective immediately upon posting."
+      },
+      {
+        "id": 7,
+        "title": "7. Governing Law",
+        "content": "These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which we operate."
+      }
+    ]
+  },
+  "galleryPage": {
+    "eyebrow": "OUR GALLERY",
+    "heading": "Explore Our Beautiful Properties",
+    "description": "Browse through our handpicked collection of stunning properties and elegant interiors.",
+    "images": [
+      {
+        "id": 1,
+        "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
+        "alt": "Modern Luxury Villa with Pool"
+      },
+      {
+        "id": 2,
+        "src": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
+        "alt": "Spacious Living Room"
+      },
+      {
+        "id": 3,
+        "src": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop",
+        "alt": "Modern Apartment Exterior"
+      },
+      {
+        "id": 4,
+        "src": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop",
+        "alt": "Modern Open Kitchen"
+      },
+      {
+        "id": 5,
+        "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
+        "alt": "Luxury House Entrance"
+      },
+      {
+        "id": 6,
+        "src": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800&auto=format&fit=crop",
+        "alt": "Cozy Bedroom Interior"
+      },
+      {
+        "id": 7,
+        "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
+        "alt": "Elegant Living Lounge"
+      },
+      {
+        "id": 8,
+        "src": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop",
+        "alt": "Suburban House Lawn"
+      },
+      {
+        "id": 9,
+        "src": "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800&auto=format&fit=crop",
+        "alt": "Bright Dining Room"
+      },
+      {
+        "id": 10,
+        "src": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+        "alt": "Luxury Bathroom Interior"
+      },
+      {
+        "id": 11,
+        "src": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800&auto=format&fit=crop",
+        "alt": "Villa Poolside View"
+      },
+      {
+        "id": 12,
+        "src": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800&auto=format&fit=crop",
+        "alt": "Dark Modern Kitchen Bar"
+      }
+    ]
+  },
+  "awardsPage": {
+    "heading": "Honors That Reflect Our Commitment",
+    "description": "These awards are a testament to our dedication, innovation, and the trust our clients place in us.",
+    "items": [
+      {
+        "id": 1,
+        "year": "2024",
+        "title": "Real Estate Excellence Awards",
+        "subtitle": "Excellence in Residential Development",
+        "icon": "🏆"
+      },
+      {
+        "id": 2,
+        "year": "2024",
+        "title": "Asia Property Awards",
+        "subtitle": "Best Commercial Development",
+        "icon": "🗿"
+      },
+      {
+        "id": 3,
+        "year": "2023",
+        "title": "Business Leadership Award",
+        "subtitle": "Outstanding Leadership in Real Estate",
+        "icon": "⭐"
+      },
+      {
+        "id": 4,
+        "year": "2023",
+        "title": "National Quality Excellence Award",
+        "subtitle": "For Quality Construction and Innovation",
+        "icon": "🥇"
+      },
+      {
+        "id": 5,
+        "year": "2023",
+        "title": "Customer Satisfaction Award",
+        "subtitle": "Highest Customer Satisfaction in Real Estate",
+        "icon": "🏅"
+      },
+      {
+        "id": 6,
+        "year": "2022",
+        "title": "Top Developers Award",
+        "subtitle": "Recognized Among Top Real Estate Developers",
+        "icon": "🌟"
+      },
+      {
+        "id": 7,
+        "year": "2022",
+        "title": "Industry Innovation Award",
+        "subtitle": "For Innovative Design and Technology",
+        "icon": "🛡️"
+      },
+      {
+        "id": 8,
+        "year": "2022",
+        "title": "Sustainable Building Award",
+        "subtitle": "For Commitment to Sustainability",
+        "icon": "💎"
+      },
+      {
+        "id": 9,
+        "year": "2021",
+        "title": "Best Luxury Project Award",
+        "subtitle": "For Excellence in Luxury Residential Projects",
+        "icon": "👑"
+      },
+      {
+        "id": 10,
+        "year": "2021",
+        "title": "Trusted Brand Award",
+        "subtitle": "Most Trusted Real Estate Brand",
+        "icon": "📜"
+      },
+      {
+        "id": 11,
+        "year": "2020",
+        "title": "Emerging Developer Award",
+        "subtitle": "For Fastest Growth and Market Impact",
+        "icon": "✨"
+      },
+      {
+        "id": 12,
+        "year": "2020",
+        "title": "Design Excellence Award",
+        "subtitle": "For Architectural Design Excellence",
+        "icon": "🔹"
+      },
+      {
+        "id": 13,
+        "year": "2019",
+        "title": "Excellence in Delivery Award",
+        "subtitle": "Timely Delivery with Highest Standards",
+        "icon": "🗽"
+      },
+      {
+        "id": 14,
+        "year": "2019",
+        "title": "Community Impact Award",
+        "subtitle": "For Contribution to Communities",
+        "icon": "🏛️"
+      },
+      {
+        "id": 15,
+        "year": "2018",
+        "title": "Rising Star Award",
+        "subtitle": "For Outstanding Performance and Potential",
+        "icon": "🌠"
+      }
+    ]
+  },
+  "careersPage": {
+    "heroImage": "/images/hero-banner.png",
+    "heroImageAlt": "Real Estate Career",
+    "titleLine1": "Careers in",
+    "titleLine2": "Real Estate",
+    "description": "At DreamHome Realty, we are passionate about helping people find their perfect place. Join our team of dedicated professionals and be a part of creating better communities and brighter futures.",
+    "contactTitle": "Interested in Joining Our Team?",
+    "contactText": "Send your CV and a brief cover letter. We'd love to hear from you!",
+    "email": "careers@dreamhome.com",
+    "phone": "+91 987 654 3210",
+    "phoneHref": "tel:+919876543210",
+    "whatsappHref": "https://wa.me/919876543210",
+    "addressLines": [
+      "DreamHome Realty Pvt. Ltd.",
+      "123 Skyline Avenue, Sector 45",
+      "Gurugram, Haryana 122003"
+    ],
+    "features": [
+      {
+        "id": 1,
+        "title": "Work with Industry Experts",
+        "description": "Collaborate with experienced professionals and learn from the best in the real estate industry.",
+        "details": "Work alongside top real estate leaders, gain mentorship, and participate in high-value commercial and residential projects.",
+        "iconName": "building"
+      },
+      {
+        "id": 2,
+        "title": "Grow Your Career",
+        "description": "We provide continuous learning, training, and opportunities for career advancement.",
+        "details": "Access regular skill workshops, leadership programs, clear promotion pathways, and continuous professional certification support.",
+        "iconName": "chartLine"
+      },
+      {
+        "id": 3,
+        "title": "Make an Impact",
+        "description": "Help clients achieve their property goals and make a real difference every day.",
+        "details": "Guide families and businesses to find their dream spaces while contributing to sustainable urban development projects.",
+        "iconName": "users"
+      },
+      {
+        "id": 4,
+        "title": "Great Benefits",
+        "description": "Enjoy competitive pay, health benefits, flexible work options and a supportive culture.",
+        "details": "Get comprehensive health coverage, performance bonuses, hybrid work policy, and a collaborative work environment.",
+        "iconName": "shield"
+      }
+    ]
+  },
+  "brochurePage": {
+    "heading": "Our Brochures",
+    "description": "Select a brochure to view more details and download.",
+    "items": [
+      {
+        "id": 1,
+        "title": "REALLOW RESIDENCY",
+        "tag": "RESIDENCY",
+        "subtitle": "Luxury Living Redefined",
+        "description": "Premium residential apartments designed for comfortable living.",
+        "year": "2024 Brochure",
+        "bgImage": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop",
+        "pdfUrl": "#"
+      },
+      {
+        "id": 2,
+        "title": "REALLOW COMMERCIAL HUB",
+        "tag": "COMMERCIAL HUB",
+        "subtitle": "Where Business Meets Growth",
+        "description": "Modern commercial spaces for our growing business community.",
+        "year": "2024 Brochure",
+        "bgImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+        "pdfUrl": "#"
+      },
+      {
+        "id": 3,
+        "title": "REALLOW VILLAS",
+        "tag": "VILLAS",
+        "subtitle": "Exclusive Villas For Exclusive You",
+        "description": "Spacious and elegant villas crafted for a luxurious lifestyle.",
+        "year": "2024 Brochure",
+        "bgImage": "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop",
+        "pdfUrl": "#"
+      },
+      {
+        "id": 4,
+        "title": "INTERIOR SOLUTIONS",
+        "tag": "INTERIOR SOLUTIONS",
+        "subtitle": "Designing Spaces, Elevating Lives",
+        "description": "Innovative interior designs tailored to your personality and needs.",
+        "year": "2024 Brochure",
+        "bgImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
+        "pdfUrl": "#"
+      },
+      {
+        "id": 5,
+        "title": "CONSTRUCTION SERVICES",
+        "tag": "CONSTRUCTION SERVICES",
+        "subtitle": "Building Dreams With Precision",
+        "description": "End-to-end construction solutions with quality and transparency.",
+        "year": "2024 Brochure",
+        "bgImage": "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=800&auto=format&fit=crop",
+        "pdfUrl": "#"
+      },
+      {
+        "id": 6,
+        "title": "LAND DEVELOPMENT",
+        "tag": "LAND DEVELOPMENT",
+        "subtitle": "Building Better Communities",
+        "description": "Prime plots and integrated townships for a better tomorrow.",
+        "year": "2024 Brochure",
+        "bgImage": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop",
+        "pdfUrl": "#"
+      }
+    ]
+  },
+  "industriesPage": {
+    "heading": "Solutions for Every Industry",
+    "description": "From commercial spaces to specialized facilities, we create real estate that supports your goals today and grows with you tomorrow.",
+    "ctaTitle": "Have a project in mind?",
+    "ctaText": "Let's build the right solution for your industry.",
+    "ctaButton": "Contact Us",
+    "items": [
+      {
+        "id": 1,
+        "title": "Corporate & Office",
+        "description": "Modern workspaces designed for productivity, collaboration, and growth.",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+        "iconName": "briefcase"
+      },
+      {
+        "id": 2,
+        "title": "Retail & Commercial",
+        "description": "Spaces that attract, engage, and deliver exceptional customer experiences.",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        "iconName": "shoppingBag"
+      },
+      {
+        "id": 3,
+        "title": "Industrial & Warehousing",
+        "description": "Robust and efficient spaces built for operations and long-term performance.",
+        "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
+        "iconName": "industry"
+      },
+      {
+        "id": 4,
+        "title": "Healthcare",
+        "description": "Functional and compliant spaces that support better care and healthier communities.",
+        "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop",
+        "iconName": "hospital"
+      },
+      {
+        "id": 5,
+        "title": "Education",
+        "description": "Learning environments that inspire curiosity, collaboration, and long-term success.",
+        "image": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
+        "iconName": "graduationCap"
+      },
+      {
+        "id": 6,
+        "title": "Hospitality & Leisure",
+        "description": "Welcoming spaces that create memorable experiences for guests and communities.",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
+        "iconName": "hotel"
+      }
+    ]
+  },
+  "sitemapPage": {
+    "heading": "Quick Navigation to Everything You Need",
+    "description": "Find what you're looking for with ease.",
+    "ctaTitle": "Can't Find What You're Looking For?",
+    "ctaText": "Our support team is here to help you. Feel free to reach out to us anytime.",
+    "ctaButton": "Contact Us",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Home",
+        "iconName": "home",
+        "links": [
+          {
+            "name": "Banner",
+            "href": "/"
+          },
+          {
+            "name": "Featured Properties",
+            "href": "/#featured"
+          },
+          {
+            "name": "About Us",
+            "href": "/about"
+          },
+          {
+            "name": "Why Choose Us",
+            "href": "/#why-us"
+          },
+          {
+            "name": "Our Projects",
+            "href": "/projects"
+          },
+          {
+            "name": "Testimonials",
+            "href": "/#testimonials"
+          },
+          {
+            "name": "Latest News",
+            "href": "/news"
+          },
+          {
+            "name": "Contact Us",
+            "href": "/contact"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "About Us",
+        "iconName": "userFriends",
+        "links": [
+          {
+            "name": "Company Overview",
+            "href": "/about"
+          },
+          {
+            "name": "Our Mission",
+            "href": "/about#mission"
+          },
+          {
+            "name": "Our Vision",
+            "href": "/about#vision"
+          },
+          {
+            "name": "Our Values",
+            "href": "/about#values"
+          },
+          {
+            "name": "Our Team",
+            "href": "/about#team"
+          },
+          {
+            "name": "Awards & Achievements",
+            "href": "/about#awards"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Properties",
+        "iconName": "building",
+        "links": [
+          {
+            "name": "All Properties",
+            "href": "/properties"
+          },
+          {
+            "name": "Residential Properties",
+            "href": "/properties?type=residential"
+          },
+          {
+            "name": "Commercial Properties",
+            "href": "/properties?type=commercial"
+          },
+          {
+            "name": "Luxury Properties",
+            "href": "/properties?type=luxury"
+          },
+          {
+            "name": "Property Listing",
+            "href": "/properties"
+          },
+          {
+            "name": "Property Details",
+            "href": "/properties/1"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Services",
+        "iconName": "briefcase",
+        "links": [
+          {
+            "name": "Property Buying",
+            "href": "/services#buying"
+          },
+          {
+            "name": "Property Selling",
+            "href": "/services#selling"
+          },
+          {
+            "name": "Property Leasing",
+            "href": "/services#leasing"
+          },
+          {
+            "name": "Property Management",
+            "href": "/services#management"
+          },
+          {
+            "name": "Investment Consultation",
+            "href": "/services#consultation"
+          },
+          {
+            "name": "Legal Assistance",
+            "href": "/services#legal"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Industry We Serve",
+        "iconName": "industry",
+        "links": [
+          {
+            "name": "Residential",
+            "href": "/services"
+          },
+          {
+            "name": "Commercial",
+            "href": "/services"
+          },
+          {
+            "name": "Retail",
+            "href": "/services"
+          },
+          {
+            "name": "Hospitality",
+            "href": "/services"
+          },
+          {
+            "name": "Industrial",
+            "href": "/services"
+          },
+          {
+            "name": "Land Development",
+            "href": "/services"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Projects",
+        "iconName": "projectDiagram",
+        "links": [
+          {
+            "name": "Ongoing Projects",
+            "href": "/projects?status=ongoing"
+          },
+          {
+            "name": "Completed Projects",
+            "href": "/projects?status=completed"
+          },
+          {
+            "name": "Upcoming Projects",
+            "href": "/projects?status=upcoming"
+          },
+          {
+            "name": "Project Gallery",
+            "href": "/projects"
+          },
+          {
+            "name": "Project Details",
+            "href": "/projects/1"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Testimonials",
+        "iconName": "quoteRight",
+        "links": [
+          {
+            "name": "Client Reviews",
+            "href": "/#testimonials"
+          },
+          {
+            "name": "Success Stories",
+            "href": "/#testimonials"
+          },
+          {
+            "name": "Video Testimonials",
+            "href": "/#testimonials"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Awards",
+        "iconName": "award",
+        "links": [
+          {
+            "name": "Our Achievements",
+            "href": "/about#awards"
+          },
+          {
+            "name": "Recognitions",
+            "href": "/about#awards"
+          },
+          {
+            "name": "Certificates",
+            "href": "/about#awards"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "News & Blogs",
+        "iconName": "newspaper",
+        "links": [
+          {
+            "name": "Latest News",
+            "href": "/news"
+          },
+          {
+            "name": "Blog Articles",
+            "href": "/news"
+          },
+          {
+            "name": "Market Insights",
+            "href": "/news"
+          },
+          {
+            "name": "Press Releases",
+            "href": "/news"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Career",
+        "iconName": "userTie",
+        "links": [
+          {
+            "name": "Why Join Us",
+            "href": "/career"
+          },
+          {
+            "name": "Current Openings",
+            "href": "/career"
+          },
+          {
+            "name": "Apply Now",
+            "href": "/career"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Contact Us",
+        "iconName": "phone",
+        "links": [
+          {
+            "name": "Get in Touch",
+            "href": "/contact"
+          },
+          {
+            "name": "Office Locations",
+            "href": "/contact"
+          },
+          {
+            "name": "Enquiry Form",
+            "href": "/enquiry"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Support",
+        "iconName": "headset",
+        "links": [
+          {
+            "name": "FAQs",
+            "href": "/faq"
+          },
+          {
+            "name": "Terms & Conditions",
+            "href": "/terms"
+          },
+          {
+            "name": "Privacy Policy",
+            "href": "/privacy"
+          },
+          {
+            "name": "Sitemap",
+            "href": "/sitemap"
+          }
+        ]
+      }
+    ]
+  },
+  "aboutPage": {
+    "mainImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    "mainImageAlt": "Modern Real Estate Property",
+    "secondaryImage": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=600&auto=format&fit=crop",
+    "secondaryImageAlt": "Secondary Property",
+    "badgeValue": "15+",
+    "badgeLabel": "Years of Excellence",
+    "eyebrow": "ABOUT US",
+    "heading": "Building Trust.",
+    "headingHighlight": "Creating Better Living.",
+    "paragraphs": [
+      "DreamHome Realty is a premier real estate company committed to helping people find their dream properties and make smart investments. With a strong foundation built on trust, transparency, and expertise, we have earned a reputation for delivering exceptional real estate solutions.",
+      "Our experienced team offers a wide range of residential, commercial, and investment properties tailored to meet the unique needs of our clients. From prime locations to modern amenities, we ensure quality and value in every property we offer.",
+      "At DreamHome Realty, our goal is simple – to create lasting relationships and build communities where people love to live, work, and grow."
+    ],
+    "visionTitle": "Vision",
+    "visionText": "To be the most trusted real estate brand, recognized for delivering exceptional properties and creating spaces that enhance lives and communities.",
+    "missionTitle": "Mission",
+    "missionText": "To provide reliable real estate solutions with integrity, innovation, and customer focus, helping our clients achieve their property goals and build a better tomorrow.",
+    "whyEyebrow": "WHY CHOOSE US",
+    "whyHeading": "Your Trusted Partner in",
+    "whyHeadingHighlight": "Real Estate.",
+    "whyDescription": "We combine local expertise with a client-first approach to deliver the best real estate experience. Here's what sets us apart.",
+    "whyImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop",
+    "whyImageAlt": "Luxury Pool Property",
+    "whyStatValue": "500+",
+    "whyStatLabel": "Happy Families",
+    "whyFeatures": [
+      {
+        "title": "Wide Range of Properties",
+        "text": "Explore residential, commercial, and investment properties in prime locations.",
+        "iconName": "home"
+      },
+      {
+        "title": "Expert Guidance",
+        "text": "Our experienced professionals provide honest advice and personalized support.",
+        "iconName": "userCheck"
+      },
+      {
+        "title": "Transparent Deals",
+        "text": "We believe in complete transparency and ensure secure, hassle-free transactions.",
+        "iconName": "shieldCheck"
+      },
+      {
+        "title": "Quality & Value",
+        "text": "We are committed to delivering properties that offer the best value and long-term satisfaction.",
+        "iconName": "award"
+      },
+      {
+        "title": "After-Sales Support",
+        "text": "Our relationship doesn't end at the deal — we're here for you, always.",
+        "iconName": "headphones"
+      }
+    ]
   }
 }

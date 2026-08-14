@@ -20,159 +20,26 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
+import type { SitemapPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
-interface SitemapSection {
-  id: number;
-  title: string;
-  icon: React.ReactNode;
-  links: { name: string; href: string }[];
-}
 
-const sitemapData: SitemapSection[] = [
-  {
-    id: 1,
-    title: "Home",
-    icon: <FaHome className="text-red-500 text-base" />,
-    links: [
-      { name: "Banner", href: "/" },
-      { name: "Featured Properties", href: "/#featured" },
-      { name: "About Us", href: "/about" },
-      { name: "Why Choose Us", href: "/#why-us" },
-      { name: "Our Projects", href: "/projects" },
-      { name: "Testimonials", href: "/#testimonials" },
-      { name: "Latest News", href: "/news" },
-      { name: "Contact Us", href: "/contact" },
-    ],
-  },
-  {
-    id: 2,
-    title: "About Us",
-    icon: <FaUserFriends className="text-red-500 text-base" />,
-    links: [
-      { name: "Company Overview", href: "/about" },
-      { name: "Our Mission", href: "/about#mission" },
-      { name: "Our Vision", href: "/about#vision" },
-      { name: "Our Values", href: "/about#values" },
-      { name: "Our Team", href: "/about#team" },
-      { name: "Awards & Achievements", href: "/about#awards" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Properties",
-    icon: <FaBuilding className="text-red-500 text-base" />,
-    links: [
-      { name: "All Properties", href: "/properties" },
-      { name: "Residential Properties", href: "/properties?type=residential" },
-      { name: "Commercial Properties", href: "/properties?type=commercial" },
-      { name: "Luxury Properties", href: "/properties?type=luxury" },
-      { name: "Property Listing", href: "/properties" },
-      { name: "Property Details", href: "/properties/1" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Services",
-    icon: <FaBriefcase className="text-red-500 text-base" />,
-    links: [
-      { name: "Property Buying", href: "/services#buying" },
-      { name: "Property Selling", href: "/services#selling" },
-      { name: "Property Leasing", href: "/services#leasing" },
-      { name: "Property Management", href: "/services#management" },
-      { name: "Investment Consultation", href: "/services#consultation" },
-      { name: "Legal Assistance", href: "/services#legal" },
-    ],
-  },
-  {
-    id: 5,
-    title: "Industry We Serve",
-    icon: <FaIndustry className="text-red-500 text-base" />,
-    links: [
-      { name: "Residential", href: "/services" },
-      { name: "Commercial", href: "/services" },
-      { name: "Retail", href: "/services" },
-      { name: "Hospitality", href: "/services" },
-      { name: "Industrial", href: "/services" },
-      { name: "Land Development", href: "/services" },
-    ],
-  },
-  {
-    id: 6,
-    title: "Projects",
-    icon: <FaProjectDiagram className="text-red-500 text-base" />,
-    links: [
-      { name: "Ongoing Projects", href: "/projects?status=ongoing" },
-      { name: "Completed Projects", href: "/projects?status=completed" },
-      { name: "Upcoming Projects", href: "/projects?status=upcoming" },
-      { name: "Project Gallery", href: "/projects" },
-      { name: "Project Details", href: "/projects/1" },
-    ],
-  },
-  {
-    id: 7,
-    title: "Testimonials",
-    icon: <FaQuoteRight className="text-red-500 text-base" />,
-    links: [
-      { name: "Client Reviews", href: "/#testimonials" },
-      { name: "Success Stories", href: "/#testimonials" },
-      { name: "Video Testimonials", href: "/#testimonials" },
-    ],
-  },
-  {
-    id: 8,
-    title: "Awards",
-    icon: <FaAward className="text-red-500 text-base" />,
-    links: [
-      { name: "Our Achievements", href: "/about#awards" },
-      { name: "Recognitions", href: "/about#awards" },
-      { name: "Certificates", href: "/about#awards" },
-    ],
-  },
-  {
-    id: 9,
-    title: "News & Blogs",
-    icon: <FaNewspaper className="text-red-500 text-base" />,
-    links: [
-      { name: "Latest News", href: "/news" },
-      { name: "Blog Articles", href: "/news" },
-      { name: "Market Insights", href: "/news" },
-      { name: "Press Releases", href: "/news" },
-    ],
-  },
-  {
-    id: 10,
-    title: "Career",
-    icon: <FaUserTie className="text-red-500 text-base" />,
-    links: [
-      { name: "Why Join Us", href: "/career" },
-      { name: "Current Openings", href: "/career" },
-      { name: "Apply Now", href: "/career" },
-    ],
-  },
-  {
-    id: 11,
-    title: "Contact Us",
-    icon: <FaPhoneAlt className="text-red-500 text-base" />,
-    links: [
-      { name: "Get in Touch", href: "/contact" },
-      { name: "Office Locations", href: "/contact" },
-      { name: "Enquiry Form", href: "/enquiry" },
-    ],
-  },
-  {
-    id: 12,
-    title: "Support",
-    icon: <FaHeadset className="text-red-500 text-base" />,
-    links: [
-      { name: "FAQs", href: "/faq" },
-      { name: "Terms & Conditions", href: "/terms" },
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Sitemap", href: "/sitemap" },
-    ],
-  },
-];
+const sitemapIcons: Record<string, React.ReactNode> = {
+  home: <FaHome className="text-red-500 text-base" />,
+  userFriends: <FaUserFriends className="text-red-500 text-base" />,
+  building: <FaBuilding className="text-red-500 text-base" />,
+  briefcase: <FaBriefcase className="text-red-500 text-base" />,
+  industry: <FaIndustry className="text-red-500 text-base" />,
+  projectDiagram: <FaProjectDiagram className="text-red-500 text-base" />,
+  quoteRight: <FaQuoteRight className="text-red-500 text-base" />,
+  award: <FaAward className="text-red-500 text-base" />,
+  newspaper: <FaNewspaper className="text-red-500 text-base" />,
+  userTie: <FaUserTie className="text-red-500 text-base" />,
+  phone: <FaPhoneAlt className="text-red-500 text-base" />,
+  headset: <FaHeadset className="text-red-500 text-base" />,
+};
 
 export default function SitemapPage() {
+  const sectionData: SitemapPageData = homeData.sitemapPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
       <PageBanner data={homeData.pageBanners["site-map"]} />
@@ -185,17 +52,17 @@ export default function SitemapPage() {
             <FaSitemap className="text-xl" />
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-            Quick Navigation to Everything You Need
+            {sectionData.heading}
           </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
           <p className="text-xs text-slate-400 pt-1">
-            Find what you're looking for with ease.
+            {sectionData.description}
           </p>
         </div>
 
         {/* SITEMAP GRID (3 COLUMNS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sitemapData.map((section, index) => (
+          {sectionData.sections.map((section, index) => (
             <motion.div
               key={section.id}
               initial={{ opacity: 0, y: 25 }}
@@ -208,7 +75,7 @@ export default function SitemapPage() {
               {/* Card Header */}
               <div className="flex items-center space-x-3 pb-3 border-b border-slate-100">
                 <div className="w-9 h-9 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
-                  {section.icon}
+                  {sitemapIcons[section.iconName]}
                 </div>
                 <h3 className="text-sm font-bold text-slate-900">
                   {section.title}
@@ -247,11 +114,10 @@ export default function SitemapPage() {
             </div>
             <div>
               <h4 className="text-sm font-bold text-slate-900">
-                Can't Find What You're Looking For?
+                {sectionData.ctaTitle}
               </h4>
               <p className="text-[11px] text-slate-500 mt-0.5">
-                Our support team is here to help you. Feel free to reach out to
-                us anytime.
+                {sectionData.ctaText}
               </p>
             </div>
           </div>
@@ -262,7 +128,7 @@ export default function SitemapPage() {
               whileTap={{ scale: 0.95 }}
               className="bg-[#e11d48] hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-xs font-bold shadow-md transition-all flex items-center space-x-2 shrink-0"
             >
-              <span>Contact Us</span>
+              <span>{sectionData.ctaButton}</span>
               <FaArrowRight className="text-[10px]" />
             </motion.button>
           </Link>

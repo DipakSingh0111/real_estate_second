@@ -19,18 +19,24 @@ export default function HeroBanner({ data }: HeroBannerProps) {
         </defs>
       </svg>
 
-      <div className="page-container relative z-10 flex flex-col pb-10 pt-[108px] lg:min-h-[640px] lg:justify-center lg:pb-24 lg:pt-[96px]">
-        <div className="max-w-xl lg:max-w-[38%]">
-          <div className="inline-flex items-center gap-3 rounded-full border border-[#E6EBF3] bg-white py-[3px] pl-[3px] pr-5 shadow-[0_10px_24px_-16px_rgba(16,42,86,0.35)]">
-            <span className="rounded-full bg-[#3F51DE] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+      <div className="page-container relative z-10 flex flex-col pb-6 pt-16 sm:pb-8 sm:pt-20 lg:min-h-[640px] lg:justify-center lg:pb-24 lg:pt-24">
+        <div
+          className="w-full max-w-xl sm:max-w-2xl lg:max-w-[38%] animate-slide-in-left"
+          style={{ animationDelay: "0.1s" }}
+        >
+          <div
+            className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-[#E6EBF3] bg-white py-2 sm:py-2.5 pl-2 sm:pl-3 pr-3 sm:pr-5 shadow-[0_10px_24px_-16px_rgba(16,42,86,0.35)] animate-scale-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <span className="rounded-full bg-[#3F51DE] px-3 sm:px-5 py-1.5 sm:py-2 text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-white whitespace-nowrap">
               {data.badgeTag}
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#9AA3B5]">
+            <span className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.14em] text-[#9AA3B5] truncate">
               {data.badgeLocation}
             </span>
           </div>
 
-          <h1 className="mt-8 text-[2.55rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0B1A33] sm:text-[3.1rem] lg:text-[3.45rem]">
+          <h1 className="mt-4 sm:mt-6 lg:mt-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight sm:leading-[1.15] lg:leading-[1.05] tracking-tight sm:tracking-[-0.01em] lg:tracking-[-0.03em] text-[#0B1A33]">
             {hasHighlight ? (
               <>
                 <span className="block">{beforeHighlight.trim()}</span>
@@ -44,24 +50,27 @@ export default function HeroBanner({ data }: HeroBannerProps) {
             )}
           </h1>
 
-          <p className="mt-7 max-w-[27rem] text-[0.9rem] leading-[1.75] text-[#8A93A5]">
+          <p className="mt-4 sm:mt-5 lg:mt-7 max-w-sm sm:max-w-2xl lg:max-w-[27rem] text-xs sm:text-sm md:text-base lg:text-base leading-relaxed sm:leading-[1.6] lg:leading-[1.75] text-[#8A93A5]">
             {data.description}
           </p>
         </div>
       </div>
 
-      <div className="relative mx-5 mb-10 h-[280px] overflow-hidden rounded-[28px] sm:mx-8 sm:h-[360px] lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:mb-0 lg:h-full lg:w-[62%] lg:rounded-none lg:[clip-path:url(#hero-media-clip)]">
+      <div
+        className="relative mx-4 mb-6 h-64 overflow-hidden rounded-2xl sm:mx-6 sm:mb-8 sm:h-80 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:mb-0 lg:h-full lg:w-[62%] lg:rounded-none lg:[clip-path:url(#hero-media-clip)] animate-slide-in-right"
+        style={{ animationDelay: "0.3s" }}
+      >
         <Image
           src={data.backgroundImage}
           alt={data.title}
           fill
           priority
-          sizes="(min-width: 1024px) 62vw, 100vw"
+          sizes="(min-width: 1024px) 62vw, (min-width: 768px) 100vw, 100vw"
           className="object-cover object-[62%_center] lg:object-[70%_center]"
         />
         <PriceTag
           data={data.priceTag}
-          className="absolute right-4 top-4 sm:right-6 sm:top-6 lg:right-[18%] lg:top-[92px]"
+          className="absolute right-3 top-3 sm:right-4 sm:top-4 md:right-6 md:top-6 lg:right-[18%] lg:top-[92px]"
         />
       </div>
     </section>
@@ -77,10 +86,12 @@ function PriceTag({
 }) {
   return (
     <div
-      className={`rounded-[10px] bg-[#3F51DE] px-6 py-3.5 text-center text-white shadow-[0_20px_40px_-18px_rgba(31,45,150,0.7)] ${className ?? ""}`}
+      className={`rounded-lg sm:rounded-xl bg-[#3F51DE] px-4 sm:px-6 py-2.5 sm:py-3.5 text-center text-white shadow-[0_20px_40px_-18px_rgba(31,45,150,0.7)] ${className ?? ""}`}
     >
-      <p className="text-[0.78rem] leading-none text-white/90">{data.label}</p>
-      <p className="mt-2 text-[1.35rem] font-bold leading-none tracking-[-0.02em]">
+      <p className="text-[0.7rem] sm:text-[0.78rem] leading-none text-white/90">
+        {data.label}
+      </p>
+      <p className="mt-1.5 sm:mt-2 text-lg sm:text-xl lg:text-2xl font-bold leading-none tracking-tight sm:tracking-[-0.02em]">
         {data.amount}
       </p>
     </div>

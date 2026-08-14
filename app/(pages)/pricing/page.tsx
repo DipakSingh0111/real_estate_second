@@ -4,68 +4,12 @@ import { motion } from "framer-motion";
 import { Check, X, Send, Home, Crown, ArrowRight } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
 import homeData from "@/data/homeData.json";
+import type { PricingPageData } from "@/types/home";
 
-const pricingPlans = [
-  {
-    id: "basic",
-    name: "Basic Plan",
-    tagline: "Perfect for small teams getting started",
-    price: "19",
-    billing: "/month",
-    icon: Send,
-    isPopular: false,
-    features: [
-      { text: "Up to 10 Users", available: true },
-      { text: "Access to All Features", available: true },
-      { text: "Assisted Onboarding Support", available: true },
-      { text: "CPM Coverage: Unlimited", available: true },
-      { text: "Program Reviews 1x a Month", available: false },
-      { text: "Priority Support", available: false },
-    ],
-    buttonText: "Try For Free",
-    buttonVariant: "outline",
-  },
-  {
-    id: "popular",
-    name: "Popular Plan",
-    tagline: "Great for growing real estate businesses",
-    price: "39",
-    billing: "/month",
-    icon: Home,
-    isPopular: true,
-    features: [
-      { text: "Up to 10 Users", available: true },
-      { text: "Access to All Features", available: true },
-      { text: "Assisted Onboarding Support", available: true },
-      { text: "CPM Coverage: Unlimited", available: true },
-      { text: "Program Reviews 1x a Month", available: true },
-      { text: "Priority Support", available: false },
-    ],
-    buttonText: "Try For Free",
-    buttonVariant: "primary",
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise Plan",
-    tagline: "Advanced solution for large organizations",
-    price: "69",
-    billing: "/month",
-    icon: Crown,
-    isPopular: false,
-    features: [
-      { text: "Up to 10 Users", available: true },
-      { text: "Access to All Features", available: true },
-      { text: "Assisted Onboarding Support", available: true },
-      { text: "CPM Coverage: Unlimited", available: true },
-      { text: "Program Reviews 1x a Month", available: true },
-      { text: "Priority Support", available: true },
-    ],
-    buttonText: "Try For Free",
-    buttonVariant: "outline",
-  },
-];
+const pricingIcons = { send: Send, home: Home, crown: Crown };
 
 export default function PricingSection() {
+  const sectionData: PricingPageData = homeData.pricingPage;
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
       <PageBanner data={homeData.pageBanners.pricing} />
@@ -82,22 +26,21 @@ export default function PricingSection() {
         >
           <div className="flex items-center justify-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-wider mb-2">
             <span className="w-8 h-[2px] bg-blue-600"></span>
-            PLANS & PRICING
+            {sectionData.eyebrow}
             <span className="w-8 h-[2px] bg-blue-600"></span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-            Simple Plans, Powerful Solutions
+            {sectionData.heading}
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-md mx-auto">
-            Choose the perfect plan for your real estate needs and grow your
-            business.
+            {sectionData.description}
           </p>
         </motion.div>
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-4">
-          {pricingPlans.map((plan, index) => {
-            const Icon = plan.icon;
+          {sectionData.plans.map((plan, index) => {
+            const Icon = pricingIcons[plan.iconName as keyof typeof pricingIcons];
             return (
               <motion.div
                 key={plan.id}
@@ -115,7 +58,7 @@ export default function PricingSection() {
                 {/* Popular Ribbon Tag */}
                 {plan.isPopular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[11px] font-bold uppercase px-6 py-1 rounded-b-lg tracking-wider z-20 shadow-sm">
-                    Most Popular
+                    {sectionData.popularLabel}
                   </div>
                 )}
 

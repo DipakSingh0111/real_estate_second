@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
 import homeData from "@/data/homeData.json";
+import type { HowItWorkSectionData } from "@/types/home";
 
 // Icon mapping from string names to Lucide icons
 const iconMap: Record<string, React.ComponentType<{ className: string }>> = {
@@ -53,8 +54,8 @@ const itemVariants: Variants = {
 };
 
 export default function HowItWorks() {
-  const { howItWork, pageBanners } = homeData;
-  const pageBannerData = pageBanners["how-it-work"];
+  const sectionData: HowItWorkSectionData = homeData.howItWork;
+  const pageBannerData = homeData.pageBanners["how-it-work"];
 
   // Get the icon component for a given icon name
   const getIcon = (iconName: string, sizeClass: string) => {
@@ -79,15 +80,15 @@ export default function HowItWorks() {
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="h-px w-8 bg-blue-500"></span>
             <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">
-              {howItWork.eyebrow}
+              {sectionData.eyebrow}
             </span>
             <span className="h-px w-8 bg-blue-500"></span>
           </div>
           <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-3">
-            {howItWork.heading}
+            {sectionData.heading}
           </h2>
           <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
-            {howItWork.description}
+            {sectionData.description}
           </p>
         </motion.div>
 
@@ -102,7 +103,7 @@ export default function HowItWorks() {
           {/* Connecting dashed line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-[10%] right-[10%] border-t-2 border-dashed border-blue-200 z-0" />
 
-          {howItWork.steps.map((step, index) => (
+          {sectionData.steps.map((step, index) => (
             <motion.div
               key={index}
               variants={itemVariants}

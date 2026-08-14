@@ -5,53 +5,10 @@ import { Calendar, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
 import homeData from "@/data/homeData.json";
-
-const termsData = [
-  {
-    id: "1",
-    title: "1. Use of Our Website",
-    content:
-      "You agree to use our website only for lawful purposes and in a way that does not infringe on the rights of others or restrict their use and enjoyment of the website.",
-  },
-  {
-    id: "2",
-    title: "2. Property Information",
-    content:
-      "We strive to provide accurate property information, but we do not warrant that all details, prices, or availability are error-free. Information is subject to change without notice.",
-  },
-  {
-    id: "3",
-    title: "3. User Responsibilities",
-    content:
-      "You are responsible for maintaining the confidentiality of your account and for all activities that occur under your account.",
-  },
-  {
-    id: "4",
-    title: "4. Third-Party Links",
-    content:
-      "Our website may contain links to third-party websites. We are not responsible for the content or practices of these websites.",
-  },
-  {
-    id: "5",
-    title: "5. Limitation of Liability",
-    content:
-      "We shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use our website or services.",
-  },
-  {
-    id: "6",
-    title: "6. Changes to Terms",
-    content:
-      "We reserve the right to update or modify these terms at any time. Changes will be effective immediately upon posting.",
-  },
-  {
-    id: "7",
-    title: "7. Governing Law",
-    content:
-      "These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which we operate.",
-  },
-];
+import type { PrivacyPolicyPageData } from "@/types/home";
 
 export default function TermsAndConditions() {
+  const sectionData: PrivacyPolicyPageData = homeData.privacyPolicyPage;
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
       <PageBanner data={homeData.pageBanners.privacyPolicy} />
@@ -67,7 +24,8 @@ export default function TermsAndConditions() {
         >
           <Calendar className="w-4 h-4 text-blue-600" />
           <span>
-            Last Updated: <span className="text-blue-600">May 20, 2024</span>
+            Last Updated:{" "}
+            <span className="text-blue-600">{sectionData.lastUpdated}</span>
           </span>
         </motion.div>
 
@@ -78,13 +36,12 @@ export default function TermsAndConditions() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-slate-600 text-sm leading-relaxed mb-8"
         >
-          Welcome to our website. By accessing or using our website and
-          services, you agree to be bound by the following terms and conditions.
+          {sectionData.intro}
         </motion.p>
 
         {/* Terms Sections List */}
         <div className="space-y-6">
-          {termsData.map((item, index) => (
+          {sectionData.sections.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
@@ -117,10 +74,10 @@ export default function TermsAndConditions() {
             </div>
             <div>
               <h3 className="text-sm md:text-base font-bold text-slate-900">
-                Questions About These Terms?
+                {sectionData.ctaTitle}
               </h3>
               <p className="text-slate-500 text-xs mt-0.5">
-                If you have any questions, feel free to contact us.
+                {sectionData.ctaText}
               </p>
             </div>
           </div>
@@ -130,7 +87,7 @@ export default function TermsAndConditions() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs md:text-sm px-5 py-2.5 rounded-lg shadow-sm transition-colors whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              {sectionData.ctaButton} <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </motion.div>
