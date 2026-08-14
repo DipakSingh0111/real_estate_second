@@ -1,4 +1,4 @@
-import HeroBanner from "@/app/home/HeroBanner";
+import HeroBanner from "@/components/common/HeroBanner";
 import AboutSection from "@/components/sections/AboutSection";
 import BestRealEstateSection from "@/components/sections/BestRealEstateSection";
 import CtaSection from "@/components/sections/CtaSection";
