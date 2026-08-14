@@ -85,13 +85,20 @@ export type CtaSectionData = {
 
 export type PropertyDeal = {
   id: number;
+  slug: string;
   title: string;
   location: string;
   price: string;
+  pricePerMonth: string;
   bedrooms: number;
   bathrooms: number;
   sqft: number;
   image: string;
+  type: string;
+  yearBuilt: number;
+  parking: number;
+  description: string;
+  features: string[];
 };
 
 export type TopDealsSectionData = {
@@ -126,11 +133,17 @@ export type TeamStat = {
 };
 
 export type TeamMember = {
+  id: number;
+  slug: string;
   role: string;
   name: string;
   description: string;
   imageUrl: string;
   imageAlt: string;
+  email: string;
+  phone: string;
+  specialization: string;
+  bio: string;
   stats: TeamStat[];
 };
 
@@ -168,6 +181,28 @@ export type HowItWorkSectionData = {
   steps: HowItWorkStep[];
 };
 
+export type Service = {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  fullDescription: string;
+  icon: string;
+  image: string;
+  benefits: string[];
+  features: string[];
+  isActive?: boolean;
+};
+
+export type ServicesSectionData = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  services: Service[];
+};
+
+export type BlogPostType = "video" | "slider" | "standard";
+
 export type BlogPost = {
   id: number;
   slug: string;
@@ -178,12 +213,294 @@ export type BlogPost = {
   image: string;
   author: string;
   category: string;
-  type?: "video" | "slider" | "standard";
+  type?: BlogPostType | string;
+};
+
+export type BlogCategoryCard = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
 };
 
 export type BlogsPageData = {
   pageBanner: PageBannerData;
   posts: BlogPost[];
+  categoryCards: BlogCategoryCard[];
+  categories: string[];
+};
+
+export type ServicePageItem = {
+  id: number;
+  title: string;
+  description: string;
+  iconName: string;
+  isActive?: boolean;
+};
+
+export type ServicePageProperty = {
+  id: number;
+  title: string;
+  builder: string;
+  price: string;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: number;
+  image: string;
+};
+
+export type ServicesPageData = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  featuredEyebrow: string;
+  featuredHeading: string;
+  featuredDescription: string;
+  saleLabel: string;
+  helpTitle: string;
+  helpText: string;
+  helpButton: string;
+  items: ServicePageItem[];
+  properties: ServicePageProperty[];
+};
+
+export type PartnerLogo = {
+  id: number;
+  name: string;
+  logo: string;
+};
+
+export type PartnersPageData = {
+  heading: string;
+  description: string;
+  items: PartnerLogo[];
+};
+
+export type PricingFeature = {
+  text: string;
+  available: boolean;
+};
+
+export type PricingPlan = {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  billing: string;
+  iconName: string;
+  isPopular: boolean;
+  features: PricingFeature[];
+  buttonText: string;
+  buttonVariant: string;
+};
+
+export type PricingPageData = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  popularLabel: string;
+  plans: PricingPlan[];
+};
+
+export type FaqItem = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+export type FaqStat = {
+  value: string;
+  label: string;
+  iconName: string;
+};
+
+export type FaqPageData = {
+  eyebrow: string;
+  heading: string;
+  headingHighlight: string;
+  description: string;
+  sideImage: string;
+  sideImageAlt: string;
+  stats: FaqStat[];
+  items: FaqItem[];
+};
+
+export type TestimonialItem = {
+  id: number;
+  name: string;
+  role: string;
+  comment: string;
+  image: string;
+  imagePosition: "left" | "right" | string;
+};
+
+export type TestimonialPageData = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  items: TestimonialItem[];
+};
+
+export type LegalSection = {
+  id: string | number;
+  title: string;
+  content: string;
+};
+
+export type PrivacyPolicyPageData = {
+  lastUpdated: string;
+  intro: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: string;
+  sections: LegalSection[];
+};
+
+export type TermsPageData = {
+  lastUpdated: string;
+  intro: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: string;
+  sections: LegalSection[];
+};
+
+export type GalleryImage = {
+  id: number;
+  src: string;
+  alt: string;
+};
+
+export type GalleryPageData = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  images: GalleryImage[];
+};
+
+export type AwardItem = {
+  id: number;
+  year: string;
+  title: string;
+  subtitle: string;
+  icon: string;
+};
+
+export type AwardsPageData = {
+  heading: string;
+  description: string;
+  items: AwardItem[];
+};
+
+export type CareerFeature = {
+  id: number;
+  title: string;
+  description: string;
+  details: string;
+  iconName: string;
+};
+
+export type CareersPageData = {
+  heroImage: string;
+  heroImageAlt: string;
+  titleLine1: string;
+  titleLine2: string;
+  description: string;
+  contactTitle: string;
+  contactText: string;
+  email: string;
+  phone: string;
+  phoneHref: string;
+  whatsappHref: string;
+  addressLines: string[];
+  features: CareerFeature[];
+};
+
+export type BrochureItem = {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  tag: string;
+  year: string;
+  bgImage: string;
+  pdfUrl: string;
+};
+
+export type BrochurePageData = {
+  heading: string;
+  description: string;
+  items: BrochureItem[];
+};
+
+export type IndustryItem = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  iconName: string;
+};
+
+export type IndustriesPageData = {
+  heading: string;
+  description: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: string;
+  items: IndustryItem[];
+};
+
+export type SitemapLink = {
+  name: string;
+  href: string;
+};
+
+export type SitemapSectionItem = {
+  id: number;
+  title: string;
+  iconName: string;
+  links: SitemapLink[];
+};
+
+export type SitemapPageData = {
+  heading: string;
+  description: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: string;
+  sections: SitemapSectionItem[];
+};
+
+export type WhyFeature = {
+  title: string;
+  text: string;
+  iconName: string;
+};
+
+export type AboutPageData = {
+  mainImage: string;
+  mainImageAlt: string;
+  secondaryImage: string;
+  secondaryImageAlt: string;
+  badgeValue: string;
+  badgeLabel: string;
+  eyebrow: string;
+  heading: string;
+  headingHighlight: string;
+  paragraphs: string[];
+  visionTitle: string;
+  visionText: string;
+  missionTitle: string;
+  missionText: string;
+  whyEyebrow: string;
+  whyHeading: string;
+  whyHeadingHighlight: string;
+  whyDescription: string;
+  whyImage: string;
+  whyImageAlt: string;
+  whyStatValue: string;
+  whyStatLabel: string;
+  whyFeatures: WhyFeature[];
 };
 
 export type SocialLink = {
@@ -223,10 +540,25 @@ export type SiteData = {
   ctaSection: CtaSectionData;
   topDealsSection: TopDealsSectionData;
   bestRealEstateSection: BestRealEstateSectionData;
+  servicesSection: ServicesSectionData;
   teamPage: TeamPageData;
   supportBanner: SupportBannerData;
   howItWork: HowItWorkSectionData;
   blogs: BlogsPageData;
   pageBanners: Record<string, PageBannerData>;
   footer: FooterData;
+  servicesPage: ServicesPageData;
+  partnersPage: PartnersPageData;
+  pricingPage: PricingPageData;
+  faqPage: FaqPageData;
+  testimonialPage: TestimonialPageData;
+  privacyPolicyPage: PrivacyPolicyPageData;
+  termsPage: TermsPageData;
+  galleryPage: GalleryPageData;
+  awardsPage: AwardsPageData;
+  careersPage: CareersPageData;
+  brochurePage: BrochurePageData;
+  industriesPage: IndustriesPageData;
+  sitemapPage: SitemapPageData;
+  aboutPage: AboutPageData;
 };
