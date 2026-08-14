@@ -64,12 +64,12 @@ export default function WhyUsChoose() {
               <span className="w-8 h-[2px] bg-[#1A43BF] block mb-3" />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B132A] leading-tight mb-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B132A] leading-tight tracking-tight mb-3">
               {sectionData.whyHeading} <br />
               <span className="text-[#1A43BF]">{sectionData.whyHeadingHighlight}</span>
             </h2>
 
-            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6">
+            <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
               {sectionData.whyDescription}
             </p>
           </div>

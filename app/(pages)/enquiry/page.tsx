@@ -72,11 +72,11 @@ export default function EnquiryPage() {
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-red-500 flex items-center justify-center">
                   <FaEdit className="text-lg" />
                 </div>
-                <h2 className="text-xl font-bold text-slate-900">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                   Send Us Your Enquiry
                 </h2>
               </div>
-              <p className="text-[11px] text-slate-400 pt-1">
+              <p className="text-xs sm:text-sm text-slate-500 pt-1 leading-relaxed">
                 Please provide your details below and we will get in touch with
                 you.
               </p>

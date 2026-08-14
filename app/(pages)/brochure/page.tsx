@@ -15,10 +15,12 @@ export default function BrochurePage() {
 
       <div className="page-container pt-10 space-y-12">
         {/* SECTION TITLE */}
-        <div className="text-center space-y-1.5">
-          <h2 className="text-2xl font-bold text-slate-900">{sectionData.heading}</h2>
+        <div className="text-center space-y-2">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            {sectionData.heading}
+          </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
-          <p className="text-xs text-slate-400 pt-1">
+          <p className="text-sm sm:text-base text-slate-500 pt-1 leading-relaxed max-w-lg mx-auto">
             {sectionData.description}
           </p>
         </div>

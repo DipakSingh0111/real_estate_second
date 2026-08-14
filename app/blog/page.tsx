@@ -1,6 +1,6 @@
 "use client";
+import Link from "next/link";
 
-import React from "react";
 import { motion } from "framer-motion";
 import {
   FaCalendarAlt,
@@ -10,7 +10,6 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaEnvelope,
-  FaFolderOpen,
 } from "react-icons/fa";
 import homeData from "@/data/homeData.json";
 import type { BlogsPageData } from "@/types/home";
@@ -46,10 +45,10 @@ export default function BlogsPage() {
                     />
                   </div>
                   <div className="space-y-3 p-6">
-                    <h3 className="text-xl font-semibold text-slate-900">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                       {card.description}
                     </p>
                     <button className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-blue-700">
@@ -108,27 +107,25 @@ export default function BlogsPage() {
                       <span>{blog.date}</span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 leading-snug">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
                       {blog.title}
                     </h3>
 
                     <div className="w-8 h-0.5 bg-blue-600 rounded-full" />
 
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                       {blog.excerpt}
                     </p>
                   </div>
 
                   <div className="pt-4">
-                    <button
-                      onClick={() =>
-                        window.open(`/blog/${blog.slug}`, "_blank")
-                      }
+                    <Link
+                      href={`/blog/${blog.slug}`}
                       className="inline-flex items-center space-x-2 text-xs font-semibold text-blue-600 border border-blue-200 bg-blue-50/50 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-md transition-all duration-300"
                     >
                       <span>Read More</span>
                       <FaArrowRight className="text-[10px]" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -171,9 +168,9 @@ export default function BlogsPage() {
 
               <div className="space-y-3.5 pt-1">
                 {posts.slice(0, 3).map((post) => (
-                  <div
+                  <Link
                     key={post.id}
-                    onClick={() => window.open(`/blog/${post.slug}`, "_blank")}
+                    href={`/blog/${post.slug}`}
                     className="flex items-center space-x-3 group cursor-pointer"
                   >
                     <img
@@ -189,7 +186,7 @@ export default function BlogsPage() {
                         {post.date}
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </motion.div>

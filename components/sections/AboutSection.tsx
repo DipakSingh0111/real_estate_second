@@ -13,42 +13,42 @@ const iconMap = {
 
 const AboutSection = ({ data }: AboutSectionProps) => {
   return (
-    <section className="mt-10 bg-[#f0f2f5] py-8 font-sans lg:mt-16 lg:py-12">
-      <div className="page-container">
-        <div className="grid grid-cols-1 gap-8 md:gap-6 md:grid-cols-12 items-start animate-fade-in">
+    <section className="mt-10 bg-[#f0f2f5] py-10 font-sans lg:mt-16 lg:py-16">
+      <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 items-stretch gap-8 md:gap-6 lg:grid-cols-12 animate-fade-in">
           {/* SECTION 1: TEXT & CTA */}
           <div
-            className="md:col-span-4 flex flex-col justify-between px-4 md:px-0 animate-slide-in-left"
+            className="flex flex-col justify-between px-2 sm:px-0 lg:col-span-3 xl:col-span-3 animate-slide-in-left"
             style={{ animationDelay: "0.1s" }}
           >
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-0.5 bg-orange-500 block"></span>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="block h-0.5 w-8 bg-orange-500"></span>
                 <span className="text-xs font-bold uppercase tracking-widest text-[#0c2242]">
                   {data.badge}
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0c2242] leading-[1.1] mb-4 sm:mb-6">
+              <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-[#0c2242] sm:mb-6">
                 {data.heading}
               </h2>
 
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-sm mb-8 sm:mb-10">
+              <p className="mb-8 max-w-sm text-sm sm:text-base leading-relaxed text-gray-500 sm:mb-10">
                 {data.description}
               </p>
             </div>
 
             <Link
               href="/about"
-              className="flex items-center cursor-pointer gap-4 bg-[#0a183d] hover:bg-[#122452] text-white font-bold text-xs uppercase tracking-wider px-6 sm:px-8 py-3 sm:py-4 rounded transition-all shadow-md w-fit"
+              className="flex w-fit cursor-pointer items-center gap-4 rounded bg-[#0a183d] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#122452] sm:px-8 sm:py-4"
             >
-              {data.buttonLabel} <ArrowRight className="w-4 h-4" />
+              {data.buttonLabel} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           {/* SECTION 2: LARGE IMAGE CARD */}
           <div
-            className="md:col-span-3 rounded-[3rem] overflow-hidden shadow-xl border-4 border-white h-64 sm:h-80 md:h-full relative animate-scale-in"
+            className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-full overflow-hidden rounded-[2.5rem] border-4 border-white shadow-xl lg:col-span-3 xl:col-span-3 animate-scale-in"
             style={{ animationDelay: "0.2s" }}
           >
             <Image
@@ -57,12 +57,12 @@ const AboutSection = ({ data }: AboutSectionProps) => {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-tr from-slate-900/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/30 to-transparent"></div>
           </div>
 
-          {/* SECTION 3: SERVICES GRID */}
+          {/* SECTION 3: SERVICES GRID WITH GENEROUS CARD WIDTH */}
           <div
-            className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 animate-slide-in-right"
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-6 lg:grid-cols-3 xl:col-span-6 xl:gap-5 animate-slide-in-right"
             style={{ animationDelay: "0.3s" }}
           >
             {data.services.map((service, index) => {
@@ -78,36 +78,40 @@ const AboutSection = ({ data }: AboutSectionProps) => {
               return (
                 <div
                   key={index}
-                  className="bg-white hover:bg-linear-to-br hover:from-blue-50 hover:to-orange-50 p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between items-start w-full sm:max-w-xs animate-scale-in"
+                  className="flex w-full min-h-[360px] flex-col items-center justify-between rounded-2xl bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-6 animate-scale-in"
                   style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                 >
                   <div className="w-full">
-                    <div
-                      className={`${iconBg} p-3 rounded-2xl inline-block mb-4 sm:mb-6`}
-                    >
-                      <Icon
-                        className={`${iconColor} w-7 sm:w-8 h-7 sm:h-8`}
-                        strokeWidth={1.5}
-                      />
+                    <div className="mb-4 flex justify-center sm:mb-6">
+                      <div
+                        className={`${iconBg} flex h-24 w-24 items-center justify-center rounded-2xl`}
+                      >
+                        <Icon
+                          className={`${iconColor} h-8 w-8 sm:h-9 sm:w-9`}
+                          strokeWidth={1.5}
+                        />
+                      </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-[#0c2242] leading-tight mb-2">
-                      {service.title}
-                    </h3>
+                    <div className="text-left">
+                      <h3 className="mb-2 text-base font-bold leading-snug text-[#0c2242] sm:text-lg">
+                        {service.title}
+                      </h3>
 
-                    <div className="w-6 h-0.5 bg-orange-400 mb-3 sm:mb-4"></div>
+                      <div className="mb-3 h-0.5 w-6 bg-orange-400 sm:mb-4"></div>
 
-                    <p className="text-xs text-gray-500 leading-relaxed mb-6 sm:mb-8">
-                      {service.text}
-                    </p>
+                      <p className="mb-6 text-xs leading-relaxed text-gray-500 sm:mb-8 sm:text-sm">
+                        {service.text}
+                      </p>
+                    </div>
                   </div>
 
                   <a
                     href="#"
-                    className="flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900 hover:gap-3 uppercase tracking-wide transition-all duration-300"
+                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 hover:gap-3 hover:text-blue-900"
                   >
                     {service.buttonText}{" "}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 transition-transform" />
                   </a>
                 </div>
               );

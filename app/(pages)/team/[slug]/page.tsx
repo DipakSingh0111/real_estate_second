@@ -18,6 +18,16 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
   const teamMember = homeData.teamPage.members.find(
     (member: TeamMember) => member.slug === slug,
   );
+  const bannerData = teamMember
+    ? {
+        ...homeData.pageBanners.team,
+        breadcrumb: [
+          { label: "Home", href: "/" },
+          { label: "Team", href: "/team" },
+          { label: teamMember.name },
+        ],
+      }
+    : homeData.pageBanners.team;
 
   if (!teamMember) {
     return (
@@ -40,7 +50,7 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
 
   return (
     <main className="bg-white font-sans text-slate-900">
-      <PageBanner data={homeData.pageBanners.team} />
+      <PageBanner data={bannerData} />
 
       <section className="page-container py-12">
         <Link

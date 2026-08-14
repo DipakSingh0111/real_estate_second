@@ -16,15 +16,13 @@ export default function PropertyListingPage() {
       <PageBanner data={siteData.pageBanners.propertyListing} />
 
       <section className="page-container py-12">
-        <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <span className="text-sm uppercase tracking-[0.32em] text-orange-500">
-              Top Deals
-            </span>
-            <h2 className="mt-4 text-4xl font-extrabold text-slate-950 sm:text-5xl">
-              Of the week
-            </h2>
-          </div>
+        <div className="mb-8">
+          <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#2A39CE]">
+            Top Deals
+          </span>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Of the week
+          </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -44,38 +42,13 @@ export default function PropertyListingPage() {
                 type="button"
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   index === currentPage - 1
-                    ? "bg-brand text-white shadow-sm"
+                    ? "bg-[#2A39CE] text-white shadow-sm"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}
               >
                 {index + 1}
               </button>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#0a183d] py-10 text-white">
-        <div className="page-container">
-          <div className="grid gap-8 rounded-[32px] bg-[#172645] px-8 py-12 sm:grid-cols-[1.5fr_1fr] sm:items-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.28em] text-[#7c93ff]">
-                Any Query? We are Happy to Assist You
-              </p>
-              <h3 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                Our support team is available 24/7 to help you.
-              </h3>
-            </div>
-            <div className="rounded-[28px] bg-white p-6 text-slate-950 shadow-lg">
-              <p className="text-sm uppercase tracking-[0.28em] text-slate-500">
-                Call Us Anytime
-              </p>
-              <p className="mt-4 text-3xl font-bold">+1 234 567 8900</p>
-              <p className="mt-2 text-sm text-slate-600">
-                Reach out for instant booking and personalized property
-                guidance.
-              </p>
-            </div>
           </div>
         </div>
       </section>

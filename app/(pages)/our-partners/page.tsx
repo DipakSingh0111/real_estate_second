@@ -39,11 +39,11 @@ export default function PartnersPage() {
           transition={{ duration: 0.5 }}
           className="text-center space-y-2"
         >
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {sectionData.heading}
           </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
-          <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>

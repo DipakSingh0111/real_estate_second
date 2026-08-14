@@ -51,11 +51,11 @@ export default function SitemapPage() {
           <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 mx-auto flex items-center justify-center">
             <FaSitemap className="text-xl" />
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {sectionData.heading}
           </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
-          <p className="text-xs text-slate-400 pt-1">
+          <p className="text-sm sm:text-base text-slate-500 pt-1 leading-relaxed max-w-lg mx-auto">
             {sectionData.description}
           </p>
         </div>

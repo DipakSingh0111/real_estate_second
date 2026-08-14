@@ -50,7 +50,7 @@ export default function PageBanner({ data }: PageBannerProps) {
       />
       <div className="absolute inset-0 bg-[#0B1A33]/50" />
       <div className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-[70px] text-center text-white sm:pt-[78px]">
-        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
           {data.title}
         </h1>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-200/90">
@@ -79,9 +79,9 @@ export default function PageBanner({ data }: PageBannerProps) {
             );
           })}
         </div>
-        <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-100 sm:text-base">
+        {/* <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-100 sm:text-base">
           {data.description}
-        </p>
+        </p> */}
       </div>
     </section>
   );

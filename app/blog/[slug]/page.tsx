@@ -22,6 +22,16 @@ export default function BlogDetailPage() {
 
   // Find the blog post by slug
   const post = posts.find((p) => p.slug === slug);
+  const bannerData = post
+    ? {
+        ...pageBanner,
+        breadcrumb: [
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.title },
+        ],
+      }
+    : pageBanner;
 
   if (!post) {
     return (
@@ -58,7 +68,7 @@ export default function BlogDetailPage() {
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
       {/* Page Banner */}
-      <PageBanner data={pageBanner} />
+      <PageBanner data={bannerData} />
 
       {/* Blog Detail Content */}
       <div className="page-container pt-12">

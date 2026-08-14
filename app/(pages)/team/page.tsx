@@ -22,13 +22,13 @@ export default function TeamPage() {
                       isEven ? "order-2 bg-[#f7f9ff]" : "order-1 bg-white"
                     }`}
                   >
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#1A43BF]">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#1A43BF]">
                       {member.role}
                     </span>
-                    <h2 className="text-2xl font-extrabold text-slate-900 transition-colors group-hover:text-[#1A43BF] sm:text-3xl">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-[#1A43BF]">
                       {member.name}
                     </h2>
-                    <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                    <p className="max-w-xl text-sm sm:text-base leading-relaxed text-slate-600">
                       {member.description}
                     </p>
 

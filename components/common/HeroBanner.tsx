@@ -1,5 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import type { HeroBannerData, HeroPriceTag } from "@/types/home";
+import type { HeroBannerData } from "@/types/home";
 
 type HeroBannerProps = { data: HeroBannerData };
 
@@ -9,91 +12,164 @@ export default function HeroBanner({ data }: HeroBannerProps) {
   );
   const hasHighlight = afterHighlight !== undefined;
 
-  return (
-    <section className="relative isolate overflow-hidden bg-white font-[family-name:var(--font-poppins)]">
-      <svg width="0" height="0" aria-hidden="true" className="absolute">
-        <defs>
-          <clipPath id="hero-media-clip" clipPathUnits="objectBoundingBox">
-            <path d="M0.18 0 H1 V1 H0.22 C0.08 1 0.02 0.86 0.03 0.62 L0.18 0 Z" />
-          </clipPath>
-        </defs>
-      </svg>
+  const slides = [
+    {
+      image: data.backgroundImage,
+      title: data.title,
+      priceLabel: data.priceTag.label,
+      price: data.priceTag.amount,
+    },
+    {
+      image: "/images/modern-architecture.jpg",
+      title: "Modern Architecture",
+      priceLabel: "Starting at",
+      price: "$24,900",
+    },
+    {
+      image: "/images/modern-buildings.jpg",
+      title: "Luxury Living",
+      priceLabel: "Starting at",
+      price: "$31,200",
+    },
+  ];
 
-      <div className="page-container relative z-10 flex flex-col pb-6 pt-16 sm:pb-8 sm:pt-20 lg:min-h-[640px] lg:justify-center lg:pb-24 lg:pt-24">
-        <div
-          className="w-full max-w-xl sm:max-w-2xl lg:max-w-[38%] animate-slide-in-left"
-          style={{ animationDelay: "0.1s" }}
-        >
-          <div
-            className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-[#E6EBF3] bg-white py-2 sm:py-2.5 pl-2 sm:pl-3 pr-3 sm:pr-5 shadow-[0_10px_24px_-16px_rgba(16,42,86,0.35)] animate-scale-in"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <span className="rounded-full bg-[#3F51DE] px-3 sm:px-5 py-1.5 sm:py-2 text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-white whitespace-nowrap">
-              {data.badgeTag}
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const goToPrevious = () =>
+    setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
+  const goToNext = () =>
+    setActiveIndex((current) => (current + 1) % slides.length);
+
+  const activeSlide = slides[activeIndex];
+
+  return (
+    <section className="relative min-h-[640px] w-full overflow-hidden bg-white font-[family-name:var(--font-poppins)] lg:min-h-[720px] xl:min-h-[760px]">
+      <div className="flex min-h-[640px] w-full flex-col lg:min-h-[720px] lg:flex-row lg:items-stretch xl:min-h-[760px]">
+        {/* Left column: Text content */}
+        <div className="relative z-10 flex w-full flex-col justify-center px-6 pt-28 pb-12 sm:px-10 lg:w-[44%] lg:py-20 lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
+          <div>
+            <div className="inline-flex items-center gap-3">
+              <span className="rounded-full bg-[#1e40af] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
+                {data.badgeTag}
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                {data.badgeLocation}
+              </span>
+            </div>
+
+            <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl leading-tight">
+              {hasHighlight ? (
+                <>
+                  {beforeHighlight}
+                  <span className="text-[#1e40af]">
+                    {data.highlightedTitleText}
+                  </span>
+                  {afterHighlight}
+                </>
+              ) : (
+                data.title
+              )}
+            </h1>
+
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-slate-500 sm:text-base">
+              {data.description}
+            </p>
+          </div>
+        </div>
+
+        {/* Right column: Image starts aligned with navbar Home and extends full right edge */}
+        <div className="relative h-[440px] w-full lg:h-auto lg:min-h-[720px] lg:w-[56%] xl:min-h-[760px] xl:w-[58%] 2xl:w-[60%]">
+          <div className="absolute inset-0 overflow-hidden shadow-2xl lg:rounded-l-[40px]">
+            {slides.map((slide, index) => (
+              <div
+                key={`${slide.title}-${index}`}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  index === activeIndex ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  priority={index === 0}
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            ))}
+
+            {/* Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1A33]/75 via-[#0B1A33]/25 to-[#0B1A33]/65" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1A33]/40 via-transparent to-[#0B1A33]/30" />
+          </div>
+
+          {/* Price badge */}
+          <div className="absolute right-6 top-24 z-20 rounded-2xl border border-white/15 bg-[#1e3fb8]/90 px-5 py-3.5 text-right text-white shadow-xl backdrop-blur-md sm:top-28 lg:right-10 lg:top-32">
+            <span className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">
+              {activeSlide.priceLabel}
             </span>
-            <span className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.14em] text-[#9AA3B5] truncate">
-              {data.badgeLocation}
+            <span className="mt-1 block text-2xl font-extrabold tracking-tight sm:text-3xl">
+              {activeSlide.price}
             </span>
           </div>
 
-          <h1 className="mt-4 sm:mt-6 lg:mt-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight sm:leading-[1.15] lg:leading-[1.05] tracking-tight sm:tracking-[-0.01em] lg:tracking-[-0.03em] text-[#0B1A33]">
-            {hasHighlight ? (
-              <>
-                <span className="block">{beforeHighlight.trim()}</span>
-                <span className="block text-[#3F51DE]">
-                  {data.highlightedTitleText}
-                </span>
-                <span className="block">{afterHighlight.trim()}</span>
-              </>
-            ) : (
-              data.title
-            )}
-          </h1>
+          {/* Explore action button */}
+          <div className="absolute bottom-8 left-6 z-20 flex items-center gap-3 lg:left-10">
+            <button
+              type="button"
+              className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1d4ed8] text-2xl font-bold text-white shadow-[0_18px_35px_-10px_rgba(29,78,216,0.7)] transition duration-200 hover:scale-105 hover:bg-[#173eb7]"
+              aria-label="Explore more"
+            >
+              →
+            </button>
+          </div>
 
-          <p className="mt-4 sm:mt-5 lg:mt-7 max-w-sm sm:max-w-2xl lg:max-w-[27rem] text-xs sm:text-sm md:text-base lg:text-base leading-relaxed sm:leading-[1.6] lg:leading-[1.75] text-[#8A93A5]">
-            {data.description}
-          </p>
+          {/* Previous */}
+          <div className="absolute bottom-8 right-6 z-20 flex items-center gap-2.5 lg:right-10">
+            <button
+              type="button"
+              onClick={goToPrevious}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:bg-white/40"
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={goToNext}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:bg-white/40"
+              aria-label="Next image"
+            >
+              ›
+            </button>
+          </div>
+
+          {/* Slide dots indicators */}
+          <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+            {slides.map((slide, index) => (
+              <button
+                key={`dot-${slide.title}-${index}`}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === activeIndex
+                    ? "w-8 bg-white"
+                    : "w-2 bg-white/50 hover:bg-white/80"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-
-      <div
-        className="relative mx-4 mb-6 h-64 overflow-hidden rounded-2xl sm:mx-6 sm:mb-8 sm:h-80 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:mb-0 lg:h-full lg:w-[62%] lg:rounded-none lg:[clip-path:url(#hero-media-clip)] animate-slide-in-right"
-        style={{ animationDelay: "0.3s" }}
-      >
-        <Image
-          src={data.backgroundImage}
-          alt={data.title}
-          fill
-          priority
-          sizes="(min-width: 1024px) 62vw, (min-width: 768px) 100vw, 100vw"
-          className="object-cover object-[62%_center] lg:object-[70%_center]"
-        />
-        <PriceTag
-          data={data.priceTag}
-          className="absolute right-3 top-3 sm:right-4 sm:top-4 md:right-6 md:top-6 lg:right-[18%] lg:top-[92px]"
-        />
-      </div>
     </section>
-  );
-}
-
-function PriceTag({
-  data,
-  className,
-}: {
-  data: HeroPriceTag;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`rounded-lg sm:rounded-xl bg-[#3F51DE] px-4 sm:px-6 py-2.5 sm:py-3.5 text-center text-white shadow-[0_20px_40px_-18px_rgba(31,45,150,0.7)] ${className ?? ""}`}
-    >
-      <p className="text-[0.7rem] sm:text-[0.78rem] leading-none text-white/90">
-        {data.label}
-      </p>
-      <p className="mt-1.5 sm:mt-2 text-lg sm:text-xl lg:text-2xl font-bold leading-none tracking-tight sm:tracking-[-0.02em]">
-        {data.amount}
-      </p>
-    </div>
   );
 }

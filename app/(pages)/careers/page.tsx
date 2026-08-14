@@ -89,17 +89,17 @@ export default function CareerPage() {
 
                 {/* Title */}
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
                     {sectionData.titleLine1}
                   </h2>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3b82f6] tracking-tight leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3b82f6] tracking-tight leading-tight">
                     {sectionData.titleLine2}
                   </h2>
                   <div className="w-10 h-1 bg-[#3b82f6] mt-2 rounded-full" />
                 </div>
 
                 {/* Subtext */}
-                <p className="text-[11px] text-slate-300 leading-relaxed max-w-xs sm:max-w-sm pt-1">
+                <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-xs sm:max-w-sm pt-1">
                   {sectionData.description}
                 </p>
               </div>
@@ -124,10 +124,10 @@ export default function CareerPage() {
                         {careerIcons[item.iconName]}
                       </div>
                       <div>
-                        <h3 className="text-xs sm:text-sm font-bold text-slate-900">
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900">
                           {item.title}
                         </h3>
-                        <p className="text-[11px] text-slate-400 mt-0.5 leading-tight">
+                        <p className="text-xs sm:text-sm text-slate-400 mt-0.5 leading-tight">
                           {item.description}
                         </p>
                       </div>

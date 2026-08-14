@@ -13,11 +13,11 @@ export default function VisionMission() {
             <Eye className="w-7 h-7 text-[#1A43BF] stroke-[1.8]" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-[#0B132A]">{sectionData.visionTitle}</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-[#0B132A]">{sectionData.visionTitle}</h3>
             <span className="w-6 h-[2px] bg-[#1A43BF] block mt-1" />
           </div>
         </div>
-        <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
+        <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
           {sectionData.visionText}
         </p>
       </div>
@@ -28,11 +28,11 @@ export default function VisionMission() {
             <Target className="w-7 h-7 text-[#1A43BF] stroke-[1.8]" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-[#0B132A]">{sectionData.missionTitle}</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-[#0B132A]">{sectionData.missionTitle}</h3>
             <span className="w-6 h-[2px] bg-[#1A43BF] block mt-1" />
           </div>
         </div>
-        <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
+        <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
           {sectionData.missionText}
         </p>
       </div>

@@ -60,31 +60,66 @@ export default function Navbar({ data }: NavBarProps) {
     };
   }, [mobileOpen]);
 
-  const overImage = !scrolled && !mobileOpen;
+  const isHomePage = pathname === "/";
+  const overImage = isHomePage && !scrolled && !mobileOpen;
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[100] w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${
         overImage
           ? "bg-transparent"
-          : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.35)] backdrop-blur-md"
+          : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
       }`}
     >
-      <div className="page-container relative flex h-[78px] items-center lg:h-[88px]">
-        <Link href="/" className="relative z-[110] shrink-0">
-          <Image
-            src={data.logo.src}
-            alt={data.logo.alt}
-            width={220}
-            height={56}
-            priority
-            className="h-10 w-auto object-contain sm:h-11"
-          />
-        </Link>
+      <div className="flex h-[78px] w-full items-center lg:h-[88px]">
+        {/* Left side: Logo (matches hero banner left text column) */}
+        <div className="flex h-full w-full items-center justify-between px-6 sm:px-10 lg:w-[44%] lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
+          <Link href="/" className="relative z-[110] shrink-0">
+            <Image
+              src={data.logo.src}
+              alt={data.logo.alt}
+              width={220}
+              height={56}
+              priority
+              className="h-10 w-auto object-contain sm:h-11"
+            />
+          </Link>
 
-        {/* Desktop menu — kept on the right so HOME also sits over the hero/banner image */}
-        <nav className="absolute left-[46%] right-14 top-1/2 z-[105] hidden -translate-y-1/2 items-center justify-end lg:flex xl:left-[48%] xl:right-16">
-          <ul className="flex flex-wrap items-center justify-end gap-x-5 gap-y-1 xl:gap-x-7">
+          {/* Mobile menu toggle button */}
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+            className={`relative z-[110] inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] transition lg:hidden ${
+              overImage
+                ? "bg-slate-900/5 text-slate-800 hover:bg-slate-900/10"
+                : "bg-white text-slate-800 shadow-[0_12px_28px_-12px_rgba(16,42,86,0.45)] hover:text-[#3F51DE]"
+            }`}
+          >
+            <span className="flex w-[18px] flex-col items-start gap-[5px]">
+              <span
+                className={`block h-[2px] rounded-full bg-current transition ${
+                  mobileOpen ? "w-full translate-y-[7px] rotate-45" : "w-full"
+                }`}
+              />
+              <span
+                className={`block h-[2px] rounded-full bg-current transition ${
+                  mobileOpen ? "w-full scale-0 opacity-0" : "w-[12px]"
+                }`}
+              />
+              <span
+                className={`block h-[2px] rounded-full bg-current transition ${
+                  mobileOpen ? "w-full -translate-y-[7px] -rotate-45" : "w-full"
+                }`}
+              />
+            </span>
+          </button>
+        </div>
+
+        {/* Right side: Desktop navigation (starts aligned with Hero image start, HOME sits right over the image) */}
+        <nav className="hidden h-full lg:flex lg:w-[56%] lg:items-center lg:justify-start lg:pl-8 lg:pr-10 xl:w-[58%] xl:pl-10 xl:pr-14 2xl:w-[60%]">
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 xl:gap-x-7 2xl:gap-x-8">
             {data.navLinks.map((link, index) => {
               const active =
                 Boolean(link.active) ||
@@ -103,11 +138,11 @@ export default function Navbar({ data }: NavBarProps) {
                 >
                   <Link
                     href={link.href}
-                    className={`relative flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-[0.06em] transition-colors ${
+                    className={`relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${
                       overImage
                         ? active
-                          ? "text-white"
-                          : "text-white/95 hover:text-white"
+                          ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                          : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
                         : active
                           ? "text-[#3F51DE]"
                           : "text-slate-800 hover:text-[#3F51DE]"
@@ -135,7 +170,7 @@ export default function Navbar({ data }: NavBarProps) {
                     {active ? (
                       <span
                         className={`absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full ${
-                          overImage ? "bg-white" : "bg-[#3F51DE]"
+                          overImage ? "bg-white shadow-sm" : "bg-[#3F51DE]"
                         }`}
                       />
                     ) : null}
@@ -204,37 +239,6 @@ export default function Navbar({ data }: NavBarProps) {
             })}
           </ul>
         </nav>
-
-        {/* Mobile / always-visible menu button */}
-        <button
-          type="button"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((v) => !v)}
-          className={`relative z-[110] ml-auto inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] transition lg:hidden ${
-            overImage
-              ? "bg-white/15 text-white shadow-none backdrop-blur-sm hover:bg-white/25"
-              : "bg-white text-slate-800 shadow-[0_12px_28px_-12px_rgba(16,42,86,0.45)] hover:text-[#3F51DE]"
-          }`}
-        >
-          <span className="flex w-[18px] flex-col items-start gap-[5px]">
-            <span
-              className={`block h-[2px] rounded-full bg-current transition ${
-                mobileOpen ? "w-full translate-y-[7px] rotate-45" : "w-full"
-              }`}
-            />
-            <span
-              className={`block h-[2px] rounded-full bg-current transition ${
-                mobileOpen ? "w-full scale-0 opacity-0" : "w-[12px]"
-              }`}
-            />
-            <span
-              className={`block h-[2px] rounded-full bg-current transition ${
-                mobileOpen ? "w-full -translate-y-[7px] -rotate-45" : "w-full"
-              }`}
-            />
-          </span>
-        </button>
       </div>
 
       {/* Mobile overlay menu */}
@@ -265,7 +269,10 @@ export default function Navbar({ data }: NavBarProps) {
               (link.href !== "/" && pathname.startsWith(link.href));
 
             return (
-              <li key={link.label} className="border-b border-slate-100 last:border-b-0">
+              <li
+                key={link.label}
+                className="border-b border-slate-100 last:border-b-0"
+              >
                 <div className="flex items-center">
                   <Link
                     href={link.href}

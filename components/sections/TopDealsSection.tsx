@@ -47,7 +47,7 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
                 {data.eyebrow}
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B132A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B132A] tracking-tight leading-tight">
               {data.heading}
             </h2>
           </div>

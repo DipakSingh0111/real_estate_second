@@ -29,10 +29,10 @@ export default function PricingSection() {
             {sectionData.eyebrow}
             <span className="w-8 h-[2px] bg-blue-600"></span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {sectionData.heading}
           </h2>
-          <p className="text-slate-500 text-sm mt-2 max-w-md mx-auto">
+          <p className="text-slate-500 text-sm sm:text-base mt-2 max-w-md mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>

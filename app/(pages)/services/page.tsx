@@ -75,15 +75,15 @@ export default function ServicesPage() {
           >
             <div className="flex items-center justify-center space-x-2">
               <span className="w-5 h-[2px] bg-[#1d4ed8]"></span>
-              <span className="text-[11px] font-bold tracking-widest text-[#1d4ed8] uppercase">
+              <span className="text-xs font-bold tracking-widest text-[#1d4ed8] uppercase">
                 {sectionData.eyebrow}
               </span>
               <span className="w-5 h-[2px] bg-[#1d4ed8]"></span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {sectionData.heading}
             </h2>
-            <p className="text-[11px] text-slate-500 max-w-lg mx-auto">
+            <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
               {sectionData.description}
             </p>
           </motion.div>
@@ -118,12 +118,12 @@ export default function ServicesPage() {
                 </div>
 
                 <h3
-                  className={`text-sm font-bold mb-2 ${service.isActive ? "text-white" : "text-slate-900"}`}
+                  className={`text-base sm:text-lg font-bold mb-2 ${service.isActive ? "text-white" : "text-slate-900"}`}
                 >
                   {service.title}
                 </h3>
                 <p
-                  className={`text-[11px] leading-relaxed mb-6 ${service.isActive ? "text-blue-100" : "text-slate-400"}`}
+                  className={`text-xs sm:text-sm leading-relaxed mb-6 ${service.isActive ? "text-blue-100" : "text-slate-400"}`}
                 >
                   {service.description}
                 </p>
@@ -146,17 +146,17 @@ export default function ServicesPage() {
         <section className="bg-[#f2f6fd] rounded-3xl p-6 sm:p-10 border border-slate-100 space-y-8">
           {/* Header */}
           <div className="relative flex flex-col items-center text-center space-y-1.5">
-            <div className="flex items-center space-x-2 text-[11px] font-bold text-[#1d4ed8] tracking-widest uppercase">
+            <div className="flex items-center space-x-2 text-xs font-bold text-[#1d4ed8] tracking-widest uppercase">
               <span>&rarr;</span>
               <span>{sectionData.featuredEyebrow}</span>
               <span>&larr;</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
               {sectionData.featuredHeading}
             </h2>
 
-            <p className="text-[12px] text-slate-500 max-w-md leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed">
               {sectionData.featuredDescription}
             </p>
 

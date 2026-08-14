@@ -58,11 +58,11 @@ export default function IndustryWeServePage() {
           transition={{ duration: 0.5 }}
           className="text-center space-y-2"
         >
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {sectionData.heading}
           </h2>
           <div className="w-8 h-0.5 bg-blue-600 mx-auto rounded-full" />
-          <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>
@@ -98,10 +98,10 @@ export default function IndustryWeServePage() {
 
               {/* Text Content */}
               <div className="pt-8 pb-6 px-6 text-center space-y-2 flex-1 flex flex-col justify-start">
-                <h3 className="text-sm font-bold text-slate-900">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">
                   {item.title}
                 </h3>
-                <p className="text-[11px] text-slate-500 leading-relaxed max-w-xs mx-auto">
+                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">
                   {item.description}
                 </p>
               </div>

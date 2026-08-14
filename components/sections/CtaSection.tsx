@@ -72,7 +72,7 @@ export default function CtaSection({ data }: CtaSectionProps) {
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-white leading-[1.15] mb-5">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight tracking-tight mb-4">
               {data.headingLines.map((line, index) => (
                 <span key={line} className="block">
                   {line}{" "}
@@ -86,7 +86,7 @@ export default function CtaSection({ data }: CtaSectionProps) {
             </h2>
 
             {/* Description Paragraph */}
-            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-md mb-8 font-light">
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-md mb-8">
               {data.description}
             </p>
 

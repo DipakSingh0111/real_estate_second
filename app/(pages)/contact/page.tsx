@@ -49,13 +49,13 @@ export default function ContactUs() {
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                   Contact Us
                 </span>
-                <h2 className="text-3xl font-extrabold text-slate-900">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                   Let's <span className="text-blue-600">Talk!</span>
                 </h2>
               </div>
             </div>
 
-            <p className="text-sm text-slate-500 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
               We're here to help and answer any question you might have. We look
               forward to hearing from you.
             </p>

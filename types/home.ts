@@ -17,6 +17,14 @@ export type NavLink = {
   dropdown?: NavDropdownItem[];
 };
 
+export type TopBarData = {
+  phone: string;
+  phoneHref: string;
+  email: string;
+  emailHref: string;
+  address: string;
+};
+
 export type NavbarData = {
   logo: BrandLogo;
   navLinks: NavLink[];

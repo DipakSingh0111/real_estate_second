@@ -48,10 +48,10 @@ export default function GalleryPage() {
             {sectionData.eyebrow}
           </span>
           <div className="w-8 h-0.5 bg-blue-600 mx-auto rounded-full" />
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight pt-1">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight pt-1">
             {sectionData.heading}
           </h2>
-          <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>

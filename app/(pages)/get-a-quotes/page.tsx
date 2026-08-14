@@ -67,10 +67,10 @@ export default function GetQuotePage() {
           >
             {/* Form Header */}
             <div className="space-y-1">
-              <h2 className="text-xl font-bold text-slate-900">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                 Tell Us What You Need
               </h2>
-              <p className="text-[11px] text-slate-400 pt-0.5">
+              <p className="text-xs sm:text-sm text-slate-500 pt-0.5 leading-relaxed">
                 Please fill in the details below and our team will contact you
                 with the best quote.
               </p>

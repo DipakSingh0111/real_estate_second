@@ -57,31 +57,33 @@ export default function BestRealEstateSection({
         </div>
 
         <div className="max-w-[490px] lg:pb-1">
-          <p className="text-[18px] font-bold tracking-[-0.02em] text-[#1243c6]">
-            {data.eyebrow}
-          </p>
-          <span className="mt-4 block h-[4px] w-[37px] rounded-full bg-[#1243c6]" />
-          <h2 className="mt-7 text-[42px] font-extrabold leading-[1.04] tracking-[-0.055em] text-[#071b47] sm:text-[50px] lg:text-[51px]">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-5 h-0.5 bg-[#1243c6] inline-block"></span>
+            <p className="text-xs font-bold uppercase tracking-wider text-[#1243c6]">
+              {data.eyebrow}
+            </p>
+          </div>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-[#071b47]">
             {data.headingLines.map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
             ))}
           </h2>
-          <span className="mt-7 block h-[4px] w-[37px] rounded-full bg-[#1243c6]" />
-          <p className="mt-7 text-[16px] leading-[1.78] text-[#626262]">
+          <div className="mt-4 w-10 h-0.5 bg-[#1243c6] rounded-full" />
+          <p className="mt-5 text-sm sm:text-base leading-relaxed text-gray-500">
             {data.description}
           </p>
-          <div className="mt-9 flex items-center gap-6">
+          <div className="mt-8 flex items-center gap-6">
             <button
               aria-label={data.playButtonLabel}
-              className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#1243c6] text-white shadow-[0_7px_14px_rgba(18,67,198,0.2)] transition-colors hover:bg-[#0d36a5]"
+              className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1243c6] text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#0d36a5]"
             >
-              <Play className="ml-1 h-7 w-7 fill-white stroke-white" />
+              <Play className="ml-1 h-6 w-6 fill-white stroke-white" />
             </button>
             <a
               href={data.learnMoreLink}
-              className="text-[17px] font-medium text-[#1243c6] underline decoration-1 underline-offset-4 transition-colors hover:text-[#0d36a5]"
+              className="text-sm font-semibold text-[#1243c6] underline decoration-1 underline-offset-4 transition-colors hover:text-[#0d36a5]"
             >
               {data.learnMoreLabel}
             </a>

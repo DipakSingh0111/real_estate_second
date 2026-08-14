@@ -35,11 +35,11 @@ export default function SupportBanner({ data }: SupportBannerProps) {
               </div>
             </div>
 
-            <div className="min-w-0 max-w-[290px] text-white">
-              <h3 className="text-[22px] font-bold leading-[1.28] tracking-[-0.02em] text-white sm:text-[24px]">
+            <div className="min-w-0 max-w-[320px] text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight tracking-tight text-white">
                 {data.title}
               </h3>
-              <p className="mt-2.5 text-[13px] leading-[1.55] text-white sm:text-[14px]">
+              <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-white/90">
                 {data.description}
               </p>
             </div>

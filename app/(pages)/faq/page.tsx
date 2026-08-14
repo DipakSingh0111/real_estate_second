@@ -42,12 +42,12 @@ export default function FaqSection() {
             <HelpCircle className="w-4 h-4" /> {sectionData.eyebrow}
           </div>
 
-          <h2 className="text-3xl font-extrabold text-slate-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
             {sectionData.heading}{" "}
             <span className="text-blue-600 block">{sectionData.headingHighlight}</span>
           </h2>
 
-          <p className="text-slate-500 text-sm mt-3 mb-8 max-w-md">
+          <p className="text-slate-500 text-sm sm:text-base mt-3 mb-8 max-w-md leading-relaxed">
             {sectionData.description}
           </p>
 

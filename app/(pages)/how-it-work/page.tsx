@@ -84,10 +84,10 @@ export default function HowItWorks() {
             </span>
             <span className="h-px w-8 bg-blue-500"></span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
             {sectionData.heading}
           </h2>
-          <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
+          <p className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>
@@ -131,10 +131,10 @@ export default function HowItWorks() {
               >
                 <div>
                   <div className="w-6 h-0.5 bg-blue-600 mx-auto mb-3"></div>
-                  <h3 className="font-bold text-gray-900 mb-2 text-sm md:text-base">
+                  <h3 className="font-bold text-gray-900 mb-2 text-base sm:text-lg">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-gray-500 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">
                     {step.desc}
                   </p>
                 </div>

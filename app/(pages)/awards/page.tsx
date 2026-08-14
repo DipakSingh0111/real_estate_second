@@ -40,11 +40,11 @@ export default function AwardsPage() {
           transition={{ duration: 0.5 }}
           className="text-center space-y-2"
         >
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {sectionData.heading}
           </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
-          <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>
@@ -76,10 +76,10 @@ export default function AwardsPage() {
 
               {/* Title & Subtitle */}
               <div className="space-y-1">
-                <h3 className="text-xs font-bold text-slate-900 leading-snug">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                   {award.title}
                 </h3>
-                <p className="text-[10px] text-slate-400 leading-tight">
+                <p className="text-xs sm:text-sm text-slate-400 leading-tight">
                   {award.subtitle}
                 </p>
               </div>

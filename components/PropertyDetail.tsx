@@ -36,6 +36,17 @@ export default function PropertyDetail({
   galleryImages = [],
   banner,
 }: PropertyDetailProps) {
+  const bannerData = useMemo(
+    () => ({
+      ...banner,
+      breadcrumb: [
+        ...(banner.breadcrumb ?? []).slice(0, 2),
+        { label: property.title },
+      ],
+    }),
+    [banner, property.title],
+  );
+
   const images = useMemo(() => {
     const unique = Array.from(
       new Set([property.image, ...galleryImages].filter(Boolean)),
@@ -82,7 +93,7 @@ export default function PropertyDetail({
 
   return (
     <main className="bg-white">
-      <PageBanner data={banner} />
+      <PageBanner data={bannerData} />
 
       <section className="page-container py-10 lg:py-14">
         <div className="grid gap-8 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_360px] xl:gap-10">
@@ -152,14 +163,14 @@ export default function PropertyDetail({
 
             {/* Title block */}
             <div className="mt-8">
-              <h1 className="text-[28px] font-extrabold leading-tight tracking-[-0.02em] text-[#0B1A33] sm:text-[34px]">
+              <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-[#0B1A33]">
                 {property.title}
               </h1>
-              <div className="mt-3 flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-slate-400">
-                <MapPin className="h-4 w-4 text-slate-400" />
+              <div className="mt-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">
+                <MapPin className="h-4 w-4 text-[#2A39CE]" />
                 {property.location}
               </div>
-              <p className="mt-5 max-w-3xl text-[14px] leading-[1.8] text-slate-500">
+              <p className="mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

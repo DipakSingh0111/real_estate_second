@@ -28,10 +28,10 @@ export default function TestimonialsPage() {
             {sectionData.eyebrow}
           </span>
           <div className="w-8 h-0.5 bg-blue-600 mx-auto rounded-full" />
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight pt-1">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight pt-1">
             {sectionData.heading}
           </h2>
-          <p className="text-xs text-slate-500 max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export default function TestimonialsPage() {
                 <div className="w-full md:w-[54%] flex flex-col justify-center space-y-3.5">
                   <FaQuoteLeft className="text-blue-600 text-3xl opacity-90" />
 
-                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                     {item.comment}
                   </p>
 
@@ -81,10 +81,10 @@ export default function TestimonialsPage() {
 
                   {/* User Profile */}
                   <div className="border-l-2 border-blue-600 pl-3 pt-0.5">
-                    <h4 className="text-sm font-bold text-slate-800 leading-tight">
+                    <h4 className="text-base sm:text-lg font-bold text-slate-800 leading-tight">
                       {item.name}
                     </h4>
-                    <p className="text-[11px] text-slate-400 font-medium mt-0.5">
+                    <p className="text-xs sm:text-sm text-slate-400 font-medium mt-0.5">
                       {item.role}
                     </p>
                   </div>
