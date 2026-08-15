@@ -65,13 +65,13 @@ export default function Navbar({ data }: NavBarProps) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[100] w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${
+      className={`relative w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${
         overImage
           ? "bg-transparent"
           : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
       }`}
     >
-      <div className="flex h-[78px] w-full items-center lg:h-[88px]">
+      <div className="flex h-[72px] w-full items-center lg:h-[82px]">
         {/* Left side: Logo (matches hero banner left text column) */}
         <div className="flex h-full w-full items-center justify-between px-6 sm:px-10 lg:w-[44%] lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
           <Link href="/" className="relative z-[110] shrink-0">

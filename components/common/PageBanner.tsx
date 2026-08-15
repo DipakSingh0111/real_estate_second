@@ -49,7 +49,7 @@ export default function PageBanner({ data }: PageBannerProps) {
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-[#0B1A33]/50" />
-      <div className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-[70px] text-center text-white sm:pt-[78px]">
+      <div className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-[108px] text-center text-white sm:pt-[122px]">
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
           {data.title}
         </h1>

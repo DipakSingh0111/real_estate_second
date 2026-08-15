@@ -54,7 +54,7 @@ export default function HeroBanner({ data }: HeroBannerProps) {
     <section className="relative min-h-[640px] w-full overflow-hidden bg-white font-[family-name:var(--font-poppins)] lg:min-h-[720px] xl:min-h-[760px]">
       <div className="flex min-h-[640px] w-full flex-col lg:min-h-[720px] lg:flex-row lg:items-stretch xl:min-h-[760px]">
         {/* Left column: Text content */}
-        <div className="relative z-10 flex w-full flex-col justify-center px-6 pt-28 pb-12 sm:px-10 lg:w-[44%] lg:py-20 lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
+        <div className="relative z-10 flex w-full flex-col justify-center px-6 pt-32 pb-12 sm:px-10 lg:w-[44%] lg:pb-20 lg:pt-32 lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
           <div>
             <div className="inline-flex items-center gap-3">
               <span className="rounded-full bg-[#1e40af] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
@@ -112,7 +112,7 @@ export default function HeroBanner({ data }: HeroBannerProps) {
           </div>
 
           {/* Price badge */}
-          <div className="absolute right-6 top-24 z-20 rounded-2xl border border-white/15 bg-[#1e3fb8]/90 px-5 py-3.5 text-right text-white shadow-xl backdrop-blur-md sm:top-28 lg:right-10 lg:top-32">
+          <div className="absolute right-6 top-24 z-20 rounded-2xl border border-white/15 bg-[#1e3fb8]/90 px-5 py-3.5 text-right text-white shadow-xl backdrop-blur-md sm:top-28 lg:right-10 lg:top-36">
             <span className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">
               {activeSlide.priceLabel}
             </span>

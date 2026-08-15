@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import TopBar from "@/components/common/TopBar";
 import NavBar from "@/components/common/NavBar";
 import SupportBanner from "@/components/common/SupportBanner";
 import Footer from "@/components/common/Footer";
@@ -34,7 +35,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white text-slate-900">
-        <NavBar data={homeData.navbar} />
+        <div className="fixed inset-x-0 top-0 z-[100] w-full">
+          <TopBar data={homeData.topBar} />
+          <NavBar data={homeData.navbar} />
+        </div>
         <main className="flex-1">{children}</main>
         <SupportBanner data={homeData.supportBanner} />
         <Footer data={homeData.footer} />

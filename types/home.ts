@@ -542,6 +542,7 @@ export type FooterData = {
 };
 
 export type SiteData = {
+  topBar: TopBarData;
   navbar: NavbarData;
   heroBanner: HeroBannerData;
   aboutSection: AboutSectionData;
