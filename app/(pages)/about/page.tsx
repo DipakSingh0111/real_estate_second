@@ -5,7 +5,7 @@ import VisionMission from "@/components/Vision-mission";
 import WhyUsChoose from "@/components/Why-us-choose";
 export default function AboutPage() {
   return (
-    <div className="bg-white min-h-screen font-sans text-gray-800">
+    <div className="bg-[#F8FAFC] min-h-screen font-sans text-gray-800">
       {/* PageBanner */}
       <PageBanner data={homeData.pageBanners.about} />
       <section className="page-container py-16">

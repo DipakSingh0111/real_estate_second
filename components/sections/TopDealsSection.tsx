@@ -32,13 +32,16 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
   return (
     <section
       id="deals"
-      className="bg-[#F8F9FC] py-14 font-sans lg:py-20 animate-fade-in"
+      className="bg-[#F8F9FC] py-10 lg:py-14 font-sans"
     >
       <div className="page-container">
         {/* Header Section */}
-        <div
-          className="flex items-center justify-between mb-10 animate-slide-in-down"
-          style={{ animationDelay: "0.1s" }}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex items-center justify-between mb-10"
         >
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -69,7 +72,7 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
               <ChevronRight className="w-5 h-5 stroke-[2.5]" />
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Carousel Slider */}
         <Swiper
@@ -91,8 +94,7 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className="pb-12 animate-slide-in-up"
-          style={{ animationDelay: "0.2s" }}
+          className="pb-12"
         >
           {data.deals.map((item, index) => (
             <SwiperSlide key={item.id}>
@@ -101,9 +103,10 @@ export default function TopDealsSection({ data }: TopDealsSectionProps) {
                 className="block h-full"
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                   className="group flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
                 >
                   <div>

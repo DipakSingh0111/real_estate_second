@@ -1,73 +1,137 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import homeData from "@/data/homeData.json";
 import type { TeamPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
+import { FaUser, FaAward, FaBuilding, FaHandshake } from "react-icons/fa";
+
 const sectionData: TeamPageData = homeData.teamPage;
 
 export default function TeamPage() {
   return (
-    <main className="bg-white font-sans text-slate-900">
+    <main className="bg-white font-sans text-slate-900 pb-20">
       <PageBanner data={homeData.pageBanners.team} />
 
-      <section className="page-container space-y-10 py-10">
+      <section className="page-container space-y-32 py-16">
         {sectionData.members.map((member, index) => {
-          const isEven = index % 2 === 1;
+          const isImageRight = index % 2 === 0;
+
           return (
-            <Link href={`/team/${member.slug}`} key={member.name}>
-              <div className="group cursor-pointer transition-all hover:shadow-lg">
-                <div className="grid gap-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm lg:grid-cols-2">
-                  <div
-                    className={`flex flex-col justify-center gap-5 rounded-[28px] p-6 sm:p-8 ${
-                      isEven ? "order-2 bg-[#f7f9ff]" : "order-1 bg-white"
-                    }`}
-                  >
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#1A43BF]">
-                      {member.role}
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-[#1A43BF]">
-                      {member.name}
-                    </h2>
-                    <p className="max-w-xl text-sm sm:text-base leading-relaxed text-slate-600">
-                      {member.description}
-                    </p>
-
-                    <div className="grid gap-3 sm:grid-cols-3">
-                      {member.stats.map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="rounded-[20px] border border-slate-100 bg-white p-4 text-center shadow-sm transition-all group-hover:border-[#1A43BF] group-hover:bg-[#f7f9ff]"
-                        >
-                          <p className="text-2xl font-extrabold text-slate-900">
-                            {stat.value}
-                          </p>
-                          <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-slate-500">
-                            {stat.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div
-                    className={`relative overflow-hidden rounded-[28px] border border-slate-100 bg-slate-100 ${
-                      isEven ? "order-1" : "order-2"
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-[#1A43BF] opacity-5" />
-                    <div className="relative mx-4 my-4 h-[320px] overflow-hidden rounded-[26px] bg-white shadow-xl transition-transform group-hover:scale-105 sm:mx-6 sm:my-6 lg:h-[280px]">
-                      <Image
-                        src={member.imageUrl}
-                        alt={member.imageAlt}
-                        fill
-                        className="object-cover"
-                        priority
-                      />
-                    </div>
-                  </div>
+            <div
+              key={member.name}
+              className={`flex flex-col ${
+                isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-12 lg:gap-24 overflow-hidden`}
+            >
+              {/* Text Side */}
+              <motion.div
+                initial={{ opacity: 0, x: isImageRight ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="flex-1 space-y-5"
+              >
+                <div className="flex items-center space-x-2 text-[#1B36B0] font-bold text-xs tracking-wider uppercase">
+                  <FaUser className="text-sm" />
+                  <span>{member.role}</span>
                 </div>
-              </div>
-            </Link>
+
+                <div>
+                  <h2 className="text-3xl lg:text-[34px] font-extrabold text-[#142345] mb-4">
+                    {member.name}
+                  </h2>
+                  <div className="w-12 h-1 bg-[#1B36B0]" />
+                </div>
+
+                <div className="text-[14px] leading-relaxed text-slate-600 space-y-4">
+                  {member.description.split("\n\n").map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                  {/* If description doesn't have \n\n, it just renders as one paragraph. We can split by single \n just in case, but \n\n is safer. Let's just use whitespace-pre-line if needed, or split by \n and filter empty. */}
+                  {/* Actually, looking at homeData.json for team members, bio has \n\n, description might just be one line. Let's use bio if it exists, otherwise description. But wait, in the design, it's multiple paragraphs. Let's just use member.description with whitespace-pre-line */}
+                </div>
+                
+                <p className="text-[14px] leading-[1.8] text-[#4F5B73] whitespace-pre-line">
+                  {member.bio || member.description}
+                </p>
+
+                {/* Stats Bar */}
+                <div className="bg-[#F0F4FF] rounded-xl mt-8 flex items-center justify-between p-4 px-6 gap-4">
+                  {member.stats.map((stat, statIdx) => {
+                    let Icon = FaAward;
+                    if (statIdx === 1) Icon = FaBuilding;
+                    if (statIdx === 2) Icon = FaHandshake;
+
+                    return (
+                      <div
+                        key={stat.label}
+                        className={`flex items-center space-x-3 flex-1 ${
+                          statIdx !== member.stats.length - 1
+                            ? "border-r border-[#D0DDFB]"
+                            : ""
+                        }`}
+                      >
+                        <div className="text-[#1B36B0] text-xl">
+                          <Icon />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[#1B36B0] font-bold text-sm">
+                            {stat.value}
+                          </span>
+                          <span className="text-[9px] uppercase tracking-wider text-[#4F5B73] font-semibold">
+                            {stat.label}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+
+              {/* Image Side */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, x: isImageRight ? 50 : -50 }}
+                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                className="flex-1 relative w-full max-w-[500px] lg:max-w-none"
+              >
+                {/* Blue Background Block */}
+                <div
+                  className={`absolute ${
+                    isImageRight
+                      ? "top-6 -right-6 -bottom-6 left-16 rounded-[40px] rounded-tl-none"
+                      : "-top-6 -left-6 -bottom-6 right-16 rounded-[40px] rounded-tr-none"
+                  } bg-[#1B36B0] z-0`}
+                />
+
+                {/* Dot Pattern */}
+                <div
+                  className={`absolute ${
+                    isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
+                  } w-24 h-24 z-20 opacity-60`}
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle, #1B36B0 2.5px, transparent 2.5px)",
+                    backgroundSize: "16px 16px",
+                  }}
+                />
+
+                {/* Main Image */}
+                <div className="relative z-10 w-full h-[450px] lg:h-[550px] rounded-[32px] overflow-hidden shadow-2xl bg-white">
+                  <Image
+                    src={member.imageUrl}
+                    alt={member.imageAlt}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
+            </div>
           );
         })}
       </section>

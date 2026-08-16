@@ -152,11 +152,26 @@
     "title": "Find Your Dream Home With Us",
     "highlightedTitleText": "Dream Home",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-    "priceTag": {
-      "label": "Starting at",
-      "amount": "$20,500"
-    },
-    "backgroundImage": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg"
+    "slides": [
+      {
+        "image": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg",
+        "title": "Find Your Dream Home With Us",
+        "priceLabel": "Starting at",
+        "price": "$20,500"
+      },
+      {
+        "image": "/images/modern-architecture.jpg",
+        "title": "Modern Architecture",
+        "priceLabel": "Starting at",
+        "price": "$24,900"
+      },
+      {
+        "image": "/images/modern-buildings.jpg",
+        "title": "Luxury Living",
+        "priceLabel": "Starting at",
+        "price": "$31,200"
+      }
+    ]
   },
   "aboutSection": {
     "badge": "ABOUT US",
@@ -1308,52 +1323,48 @@
     ],
     "linkGroups": [
       {
-        "title": "Quick Links",
+        "title": "Navigation",
         "links": [
           {
-            "label": "About Us",
-            "href": "/about"
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Shop",
+            "href": "/shop"
+          },
+          {
+            "label": "Listings",
+            "href": "/listings"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
           },
           {
             "label": "Contact Us",
             "href": "/contact"
-          },
-          {
-            "label": "Products",
-            "href": "/properties"
-          },
-          {
-            "label": "Login",
-            "href": "/login"
-          },
-          {
-            "label": "Sign Up",
-            "href": "/signup"
           }
         ]
       },
       {
-        "title": "Support",
+        "title": "Explore",
         "links": [
           {
-            "label": "Affiliates",
-            "href": "/affiliates"
+            "label": "About Us",
+            "href": "/#about"
           },
           {
-            "label": "Sitemap",
-            "href": "/sitemap"
+            "label": "Our Services",
+            "href": "/#services"
           },
           {
-            "label": "Cancelation Policy",
-            "href": "/cancellation-policy"
+            "label": "Top Deals",
+            "href": "/#deals"
           },
           {
-            "label": "Privacy Policy",
-            "href": "/privacy-policy"
-          },
-          {
-            "label": "Legal Disclaimer",
-            "href": "/legal-disclaimer"
+            "label": "Best Real Estate",
+            "href": "/#featured-property"
           }
         ]
       }

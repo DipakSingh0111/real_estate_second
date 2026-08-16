@@ -118,20 +118,39 @@ body {
   animation: scaleIn 0.5s ease-out;
 }
 
-/* Match NavBar / logo content width on every page */
+/* Shared page gutters: NavBar logo, hero text and every section start here */
+:root {
+  --site-gutter: 1.5rem;
+}
+
+@media (width >= 40rem) {
+  :root {
+    --site-gutter: 2.5rem;
+  }
+}
+
+@media (width >= 64rem) {
+  :root {
+    --site-gutter: 3.5rem;
+  }
+}
+
+@media (width >= 80rem) {
+  :root {
+    --site-gutter: 5rem;
+  }
+}
+
+@media (width >= 96rem) {
+  :root {
+    --site-gutter: 7rem;
+  }
+}
+
 @utility page-container {
-  margin-inline: auto;
   width: 100%;
-  max-width: 80rem; /* max-w-7xl */
-  padding-inline: 1.25rem; /* px-5 */
-
-  @media (width >= 40rem) {
-    padding-inline: 2rem; /* sm:px-8 */
-  }
-
-  @media (width >= 64rem) {
-    padding-inline: 3rem; /* lg:px-12 */
-  }
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
 }
 
 @media (prefers-color-scheme: dark) {

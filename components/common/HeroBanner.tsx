@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import type { HeroBannerData } from "@/types/home";
 
 type HeroBannerProps = { data: HeroBannerData };
@@ -12,30 +13,12 @@ export default function HeroBanner({ data }: HeroBannerProps) {
   );
   const hasHighlight = afterHighlight !== undefined;
 
-  const slides = [
-    {
-      image: data.backgroundImage,
-      title: data.title,
-      priceLabel: data.priceTag.label,
-      price: data.priceTag.amount,
-    },
-    {
-      image: "/images/modern-architecture.jpg",
-      title: "Modern Architecture",
-      priceLabel: "Starting at",
-      price: "$24,900",
-    },
-    {
-      image: "/images/modern-buildings.jpg",
-      title: "Luxury Living",
-      priceLabel: "Starting at",
-      price: "$31,200",
-    },
-  ];
+  const slides = data.slides || [];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    if (slides.length === 0) return;
     const timer = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, 5000);
@@ -48,14 +31,20 @@ export default function HeroBanner({ data }: HeroBannerProps) {
   const goToNext = () =>
     setActiveIndex((current) => (current + 1) % slides.length);
 
-  const activeSlide = slides[activeIndex];
+  const activeSlide = slides[activeIndex] || slides[0];
+
+  if (!activeSlide) return null;
 
   return (
     <section className="relative min-h-[640px] w-full overflow-hidden bg-white font-[family-name:var(--font-poppins)] lg:min-h-[720px] xl:min-h-[760px]">
       <div className="flex min-h-[640px] w-full flex-col lg:min-h-[720px] lg:flex-row lg:items-stretch xl:min-h-[760px]">
         {/* Left column: Text content */}
-        <div className="relative z-10 flex w-full flex-col justify-center px-6 pt-32 pb-12 sm:px-10 lg:w-[44%] lg:pb-20 lg:pt-32 lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
-          <div>
+        <div className="relative z-10 flex w-full flex-col justify-center pb-12 pl-[var(--site-gutter)] pr-[var(--site-gutter)] pt-32 lg:w-[44%] lg:pb-20 lg:pt-32 lg:pr-8 xl:w-[42%] xl:pr-12 2xl:w-[40%]">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="inline-flex items-center gap-3">
               <span className="rounded-full bg-[#1e40af] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
                 {data.badgeTag}
@@ -82,7 +71,7 @@ export default function HeroBanner({ data }: HeroBannerProps) {
             <p className="mt-5 max-w-lg text-sm leading-relaxed text-slate-500 sm:text-base">
               {data.description}
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right column: Image starts aligned with navbar Home and extends full right edge */}
@@ -91,9 +80,8 @@ export default function HeroBanner({ data }: HeroBannerProps) {
             {slides.map((slide, index) => (
               <div
                 key={`${slide.title}-${index}`}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  index === activeIndex ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === activeIndex ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 <Image
                   src={slide.image}
@@ -159,11 +147,10 @@ export default function HeroBanner({ data }: HeroBannerProps) {
                 key={`dot-${slide.title}-${index}`}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex
+                className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
                     ? "w-8 bg-white"
                     : "w-2 bg-white/50 hover:bg-white/80"
-                }`}
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

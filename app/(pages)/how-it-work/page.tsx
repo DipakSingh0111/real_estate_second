@@ -33,23 +33,22 @@ const iconMap: Record<string, React.ComponentType<{ className: string }>> = {
   headphones: Headphones,
 };
 
-// Animation Variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" },
   },
 };
 
@@ -57,37 +56,36 @@ export default function HowItWorks() {
   const sectionData: HowItWorkSectionData = homeData.howItWork;
   const pageBannerData = homeData.pageBanners["how-it-work"];
 
-  // Get the icon component for a given icon name
   const getIcon = (iconName: string, sizeClass: string) => {
     const IconComponent = iconMap[iconName] || Search;
     return <IconComponent className={sizeClass} />;
   };
 
   return (
-    <div className="w-full bg-white font-sans text-gray-800 overflow-hidden">
+    <div className="w-full bg-[#F8FAFC] font-sans text-gray-800 overflow-hidden">
       {/* Page Banner with Breadcrumb */}
       <PageBanner data={pageBannerData} />
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="page-container py-16">
         {/* 2. Sub-Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="h-px w-8 bg-blue-500"></span>
-            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">
+          <div className="flex items-center justify-center gap-4 mb-3">
+            <span className="h-px w-10 bg-[#1A43BF]/30"></span>
+            <span className="text-[11px] font-bold tracking-widest text-[#1A43BF] uppercase">
               {sectionData.eyebrow}
             </span>
-            <span className="h-px w-8 bg-blue-500"></span>
+            <span className="h-px w-10 bg-[#1A43BF]/30"></span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
+          <h2 className="text-[34px] sm:text-[42px] font-extrabold text-[#0B132A] tracking-tight leading-tight mb-4">
             {sectionData.heading}
           </h2>
-          <p className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#4F5B73] text-[15px] max-w-xl mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>
@@ -98,52 +96,51 @@ export default function HowItWorks() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="relative grid grid-cols-1 md:grid-cols-5 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-20"
         >
-          {/* Connecting dashed line (Desktop) */}
-          <div className="hidden md:block absolute top-12 left-[10%] right-[10%] border-t-2 border-dashed border-blue-200 z-0" />
-
           {sectionData.steps.map((step, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="relative z-10 flex flex-col items-center"
+              className="relative z-10 flex flex-col items-center w-full"
             >
-              {/* Circular Badge */}
-              <div className="relative mb-6">
-                <div className="absolute -top-2 -left-2 bg-blue-700 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-white shadow">
+              {/* Horizontal line to next */}
+              {index < sectionData.steps.length - 1 && (
+                <div className="hidden md:flex absolute top-[40px] left-[50%] w-full items-center z-[-1]">
+                  <div className="w-full border-t-[2px] border-dotted border-[#B4C6FC]" />
+                  <div className="absolute left-1/2 -translate-x-1/2 text-[#1A43BF] bg-[#F8FAFC] px-1">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </div>
+                </div>
+              )}
+
+              {/* Circle Badge */}
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 bg-[#1A43BF] text-white text-[11px] font-bold w-6 h-6 rounded-full flex items-center justify-center z-20">
                   {step.number}
                 </div>
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="w-20 h-20 bg-white rounded-full border-2 border-blue-100 flex items-center justify-center shadow-md cursor-pointer text-blue-600"
-                >
-                  {getIcon(step.iconName, "w-8 h-8")}
-                </motion.div>
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(26,67,191,0.08)] text-[#1A43BF] z-10 relative border-2 border-white">
+                  {getIcon(step.iconName, "w-8 h-8 stroke-[1.5]")}
+                </div>
               </div>
 
-              {/* White Card */}
-              <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-white rounded-xl p-5 border border-slate-100 shadow-sm text-center flex flex-col justify-between items-center w-full min-h-55 hover:shadow-xl transition-shadow"
-              >
-                <div>
-                  <div className="w-6 h-0.5 bg-blue-600 mx-auto mb-3"></div>
-                  <h3 className="font-bold text-gray-900 mb-2 text-base sm:text-lg">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">
-                    {step.desc}
-                  </p>
-                </div>
+              {/* Vertical Dotted Line */}
+              <div className="hidden md:block h-6 border-l-[2px] border-dotted border-[#B4C6FC] my-2" />
 
-                {/* Bottom Icon Tag */}
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
-                  {getIcon(step.iconName, "w-5 h-5")}
+              {/* White Card */}
+              <div className="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.03)] text-left flex flex-col w-full h-full mt-3 md:mt-0">
+                <div className="w-6 h-[2px] bg-[#1A43BF] mb-4" />
+                <h3 className="font-bold text-[#0B132A] mb-2 text-[15px]">
+                  {step.title}
+                </h3>
+                <p className="text-[13px] text-gray-500 leading-[1.6] mb-6 flex-1">
+                  {step.desc}
+                </p>
+
+                <div className="w-9 h-9 rounded-full bg-[#F0F4FF] flex items-center justify-center text-[#1A43BF] mt-auto">
+                  {getIcon(step.iconName, "w-[18px] h-[18px] stroke-[1.5]")}
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -154,43 +151,47 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative bg-linear-to-r from-blue-50 via-indigo-50 to-white rounded-2xl p-6 md:p-8 mb-8 border border-blue-100 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm"
+          className="relative bg-[#F4F7FF] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-center min-h-[220px]"
         >
-          <div className="flex items-center gap-5 z-10 max-w-md">
-            <motion.div
-              whileHover={{ rotate: 15 }}
-              className="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-md"
-            >
-              <Headphones className="w-7 h-7" />
-            </motion.div>
+          {/* Background image on the right */}
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-full md:w-[60%] bg-cover bg-center z-0"
+            style={{ backgroundImage: "url('/images/hero-banner.png')" }}
+          >
+            {/* Gradient mask to blend with left side */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F4F7FF] from-0% to-transparent to-[40%]" />
+          </div>
+
+          {/* Dot pattern */}
+          <div
+            className="absolute bottom-4 left-4 w-24 h-24 z-0 opacity-50"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, #1A43BF 1.5px, transparent 1.5px)",
+              backgroundSize: "12px 12px",
+            }}
+          />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 p-8 md:p-12 w-full">
+            <div className="w-[72px] h-[72px] rounded-full bg-[#1A43BF] flex items-center justify-center text-white shrink-0 shadow-lg">
+              <Headphones className="w-8 h-8 stroke-[1.5]" />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">
+              <h3 className="text-[22px] font-extrabold text-[#0B132A] mb-1.5">
                 Ready to get started?
               </h3>
-              <p className="text-xs text-gray-500">
+              <p className="text-[14px] text-[#4F5B73] leading-relaxed mb-5 max-w-xs">
                 Contact our real estate experts today and find the perfect
                 property for you.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-4 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs rounded-lg flex items-center gap-2 shadow-sm transition"
+              <button
+                className="px-6 py-2.5 bg-[#1A43BF] hover:bg-blue-800 text-white font-semibold text-[13px] rounded-lg flex items-center gap-2 shadow-md transition"
               >
-                Get In Touch <ArrowRight className="w-4 h-4" />
-              </motion.button>
+                Get in Touch <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
-
-          {/* Luxury House Image */}
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative w-full md:w-1/2 h-48 md:h-56 rounded-xl overflow-hidden shadow-inner"
-          >
-            <div
-              className="w-full h-full bg-cover bg-center rounded-xl"
-              style={{ backgroundImage: "url('/images/hero-banner.png')" }}
-            />
-          </motion.div>
         </motion.div>
       </div>
     </div>

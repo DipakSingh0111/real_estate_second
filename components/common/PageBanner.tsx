@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import type { PageBannerData } from "@/types/home";
 
 type PageBannerProps = {
@@ -49,7 +52,12 @@ export default function PageBanner({ data }: PageBannerProps) {
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-[#0B1A33]/50" />
-      <div className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-[108px] text-center text-white sm:pt-[122px]">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-[108px] text-center text-white sm:pt-[122px]"
+      >
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
           {data.title}
         </h1>
@@ -79,10 +87,7 @@ export default function PageBanner({ data }: PageBannerProps) {
             );
           })}
         </div>
-        {/* <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-100 sm:text-base">
-          {data.description}
-        </p> */}
-      </div>
+      </motion.div>
     </section>
   );
 }

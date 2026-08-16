@@ -67,7 +67,7 @@ export default function Footer({ data }: FooterProps) {
           </div>
         </div>
       </div>
-      <div className="flex min-h-[115px] items-center justify-center px-6">
+      <div className="page-container flex min-h-[115px] items-center justify-center">
         <p className="text-center text-[18px] font-normal text-[#888888]">{data.copyright}</p>
       </div>
     </footer>

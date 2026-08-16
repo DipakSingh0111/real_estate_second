@@ -48,14 +48,20 @@ export type HeroPriceTag = {
   amount: string;
 };
 
+export type HeroSlide = {
+  image: string;
+  title: string;
+  priceLabel: string;
+  price: string;
+};
+
 export type HeroBannerData = {
   badgeTag: string;
   badgeLocation: string;
   title: string;
   highlightedTitleText: string;
   description: string;
-  priceTag: HeroPriceTag;
-  backgroundImage: string;
+  slides: HeroSlide[];
 };
 
 export type AboutService = {

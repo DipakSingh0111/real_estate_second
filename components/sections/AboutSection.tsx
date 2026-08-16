@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight, Building2, Home, HandCoins } from "lucide-react";
+import { motion } from "framer-motion";
 import type { AboutSectionData } from "@/types/home";
 import Link from "next/link";
 
@@ -13,13 +16,16 @@ const iconMap = {
 
 const AboutSection = ({ data }: AboutSectionProps) => {
   return (
-    <section className="mt-10 bg-[#f0f2f5] py-10 font-sans lg:mt-16 lg:py-16">
-      <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 items-stretch gap-8 md:gap-6 lg:grid-cols-12 animate-fade-in">
+    <section className="bg-[#f0f2f5] py-10 lg:py-14 font-sans">
+      <div className="page-container">
+        <div className="grid grid-cols-1 items-stretch gap-8 md:gap-6 lg:grid-cols-12">
           {/* SECTION 1: TEXT & CTA */}
-          <div
-            className="flex flex-col justify-between px-2 sm:px-0 lg:col-span-3 xl:col-span-3 animate-slide-in-left"
-            style={{ animationDelay: "0.1s" }}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col justify-between px-2 sm:px-0 lg:col-span-3 xl:col-span-3"
           >
             <div>
               <div className="mb-4 flex items-center gap-3">
@@ -44,12 +50,15 @@ const AboutSection = ({ data }: AboutSectionProps) => {
             >
               {data.buttonLabel} <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
+          </motion.div>
 
           {/* SECTION 2: LARGE IMAGE CARD */}
-          <div
-            className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-full overflow-hidden rounded-[2.5rem] border-4 border-white shadow-xl lg:col-span-3 xl:col-span-3 animate-scale-in"
-            style={{ animationDelay: "0.2s" }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-full overflow-hidden rounded-[2.5rem] border-4 border-white shadow-xl lg:col-span-3 xl:col-span-3"
           >
             <Image
               src={data.imageUrl}
@@ -58,12 +67,15 @@ const AboutSection = ({ data }: AboutSectionProps) => {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/30 to-transparent"></div>
-          </div>
+          </motion.div>
 
           {/* SECTION 3: SERVICES GRID WITH GENEROUS CARD WIDTH */}
-          <div
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-6 lg:grid-cols-3 xl:col-span-6 xl:gap-5 animate-slide-in-right"
-            style={{ animationDelay: "0.3s" }}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-6 lg:grid-cols-3 xl:col-span-6 xl:gap-5"
           >
             {data.services.map((service, index) => {
               const Icon =
@@ -76,10 +88,11 @@ const AboutSection = ({ data }: AboutSectionProps) => {
               const iconBg = service.accent ? "bg-orange-100" : "bg-blue-100";
 
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="flex w-full min-h-[360px] flex-col items-center justify-between rounded-2xl bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-6 animate-scale-in"
-                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+                  whileHover={{ y: -8 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex w-full min-h-[360px] flex-col items-center justify-between rounded-2xl bg-white p-5 text-center shadow-md transition-colors duration-300 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-6"
                 >
                   <div className="w-full">
                     <div className="mb-4 flex justify-center sm:mb-6">
@@ -113,10 +126,10 @@ const AboutSection = ({ data }: AboutSectionProps) => {
                     {service.buttonText}{" "}
                     <ArrowRight className="h-4 w-4 transition-transform" />
                   </a>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

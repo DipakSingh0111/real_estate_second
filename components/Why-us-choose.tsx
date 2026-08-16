@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Home,
@@ -6,6 +8,7 @@ import {
   Award,
   Headphones,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import homeData from "@/data/homeData.json";
 import type { AboutPageData } from "@/types/home";
 
@@ -22,8 +25,14 @@ export default function WhyUsChoose() {
 
   return (
     <div className="mt-24 pt-8">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
-        <div className="lg:col-span-5 relative flex flex-col h-full min-h-[500px] lg:min-h-[580px]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="lg:col-span-5 relative flex flex-col h-full min-h-[500px] lg:min-h-[580px]"
+        >
           <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-md border border-gray-100 bg-gray-50">
             <Image
               src={sectionData.whyImage}
@@ -53,9 +62,15 @@ export default function WhyUsChoose() {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="lg:col-span-7 flex flex-col justify-between py-2">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          className="lg:col-span-7 flex flex-col justify-between py-2"
+        >
           <div>
             <div className="mb-2">
               <span className="text-xs font-bold uppercase tracking-wider text-[#1A43BF] block mb-1">
@@ -74,7 +89,7 @@ export default function WhyUsChoose() {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {sectionData.whyFeatures.map((feature, index) => {
               const Icon =
                 whyIcons[feature.iconName as keyof typeof whyIcons] ?? Home;
@@ -82,16 +97,24 @@ export default function WhyUsChoose() {
               return (
                 <div
                   key={feature.title}
-                  className={`flex items-start gap-4 ${isLast ? "" : "pb-3 border-b border-gray-100"}`}
+                  className={`flex items-start gap-5 ${
+                    isLast ? "" : "pb-5 border-b border-gray-200/60"
+                  }`}
                 >
-                  <div className="w-11 h-11 bg-[#EEF2FF] rounded-2xl flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-[#1A43BF] stroke-[1.8]" />
+                  <div
+                    className="w-[52px] h-[58px] bg-[#EEF2FF] flex items-center justify-center shrink-0"
+                    style={{
+                      clipPath:
+                        "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                    }}
+                  >
+                    <Icon className="w-[22px] h-[22px] text-[#1A43BF] stroke-[1.8]" />
                   </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-[#0B132A] mb-0.5">
+                  <div className="flex-1 mt-0.5">
+                    <h4 className="text-[15px] font-bold text-[#0B132A] mb-1">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-gray-500 text-[13px] leading-[1.6]">
                       {feature.text}
                     </p>
                   </div>
@@ -99,7 +122,7 @@ export default function WhyUsChoose() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

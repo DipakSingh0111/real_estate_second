@@ -73,15 +73,15 @@ export default function Navbar({ data }: NavBarProps) {
     >
       <div className="flex h-[72px] w-full items-center lg:h-[82px]">
         {/* Left side: Logo (matches hero banner left text column) */}
-        <div className="flex h-full w-full items-center justify-between px-6 sm:px-10 lg:w-[44%] lg:pl-10 lg:pr-8 xl:w-[42%] xl:pl-14 xl:pr-12 2xl:w-[40%]">
+        <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[44%] lg:pr-8 xl:w-[42%] xl:pr-12 2xl:w-[40%]">
           <Link href="/" className="relative z-[110] shrink-0">
             <Image
               src={data.logo.src}
               alt={data.logo.alt}
-              width={220}
+              width={210}
               height={56}
               priority
-              className="h-10 w-auto object-contain sm:h-11"
+              className="h-10 w-auto object-contain object-left sm:h-11"
             />
           </Link>
 
@@ -118,7 +118,7 @@ export default function Navbar({ data }: NavBarProps) {
         </div>
 
         {/* Right side: Desktop navigation (starts aligned with Hero image start, HOME sits right over the image) */}
-        <nav className="hidden h-full lg:flex lg:w-[56%] lg:items-center lg:justify-start lg:pl-8 lg:pr-10 xl:w-[58%] xl:pl-10 xl:pr-14 2xl:w-[60%]">
+        <nav className="hidden h-full pr-[var(--site-gutter)] lg:flex lg:w-[56%] lg:items-center lg:justify-start lg:pl-8 xl:w-[58%] xl:pl-10 2xl:w-[60%]">
           <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 xl:gap-x-7 2xl:gap-x-8">
             {data.navLinks.map((link, index) => {
               const active =

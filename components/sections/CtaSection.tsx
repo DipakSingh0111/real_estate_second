@@ -12,7 +12,7 @@ export default function CtaSection({ data }: CtaSectionProps) {
   return (
     <motion.section
       id="services"
-      className="w-full bg-[#EAEAEA] py-14 font-sans lg:py-20"
+      className="w-full bg-[#EAEAEA] py-10 lg:py-14 font-sans"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

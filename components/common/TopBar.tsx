@@ -8,7 +8,7 @@ type TopBarProps = {
 export default function TopBar({ data }: TopBarProps) {
   return (
     <div className="w-full bg-[#0B1A33] font-[family-name:var(--font-poppins)] text-white">
-      <div className="flex h-9 w-full items-center justify-between gap-4 px-6 text-[12px] sm:px-10 lg:h-10 lg:pl-10 lg:pr-10 xl:pl-14 xl:pr-14">
+      <div className="page-container flex h-9 items-center justify-between gap-4 text-[12px] lg:h-10">
         <div className="flex min-w-0 items-center gap-5 sm:gap-7">
           <a
             href={data.phoneHref}
