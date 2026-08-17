@@ -599,4 +599,6 @@ export type SiteData = {
   industriesPage: IndustriesPageData;
   sitemapPage: SitemapPageData;
   aboutPage: AboutPageData;
+
+
 };

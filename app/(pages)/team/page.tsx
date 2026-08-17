@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import homeData from "@/data/homeData.json";
 import type { TeamPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
-import { FaUser, FaAward, FaBuilding, FaHandshake } from "react-icons/fa";
+import { User, Award, Building2, Handshake } from "lucide-react";
 
 const sectionData: TeamPageData = homeData.teamPage;
 
@@ -32,56 +31,50 @@ export default function TeamPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="flex-1 space-y-5"
+                className="flex-1 space-y-6"
               >
                 <div className="flex items-center space-x-2 text-[#1B36B0] font-bold text-xs tracking-wider uppercase">
-                  <FaUser className="text-sm" />
+                  <User size={16} strokeWidth={2.5} />
                   <span>{member.role}</span>
                 </div>
 
                 <div>
-                  <h2 className="text-3xl lg:text-[34px] font-extrabold text-[#142345] mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-[#142345] mb-4">
                     {member.name}
                   </h2>
-                  <div className="w-12 h-1 bg-[#1B36B0]" />
+                  <div className="w-12 h-[3px] bg-[#1B36B0]" />
                 </div>
 
-                <div className="text-[14px] leading-relaxed text-slate-600 space-y-4">
+                <div className="text-[13px] leading-[1.8] text-[#4F5B73] space-y-5">
                   {member.description.split("\n\n").map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
-                  {/* If description doesn't have \n\n, it just renders as one paragraph. We can split by single \n just in case, but \n\n is safer. Let's just use whitespace-pre-line if needed, or split by \n and filter empty. */}
-                  {/* Actually, looking at homeData.json for team members, bio has \n\n, description might just be one line. Let's use bio if it exists, otherwise description. But wait, in the design, it's multiple paragraphs. Let's just use member.description with whitespace-pre-line */}
                 </div>
-                
-                <p className="text-[14px] leading-[1.8] text-[#4F5B73] whitespace-pre-line">
-                  {member.bio || member.description}
-                </p>
 
                 {/* Stats Bar */}
-                <div className="bg-[#F0F4FF] rounded-xl mt-8 flex items-center justify-between p-4 px-6 gap-4">
+                <div className="bg-[#F0F4FF] rounded-xl mt-8 flex items-center p-3 px-5 gap-2">
                   {member.stats.map((stat, statIdx) => {
-                    let Icon = FaAward;
-                    if (statIdx === 1) Icon = FaBuilding;
-                    if (statIdx === 2) Icon = FaHandshake;
+                    let Icon = Award;
+                    if (statIdx === 1) Icon = Building2;
+                    if (statIdx === 2) Icon = Handshake;
 
                     return (
                       <div
                         key={stat.label}
-                        className={`flex items-center space-x-3 flex-1 ${
+                        className={`flex items-center space-x-3 flex-1 px-2 ${
                           statIdx !== member.stats.length - 1
                             ? "border-r border-[#D0DDFB]"
                             : ""
                         }`}
                       >
-                        <div className="text-[#1B36B0] text-xl">
-                          <Icon />
+                        <div className="text-[#1B36B0] shrink-0">
+                          <Icon size={22} strokeWidth={1.5} />
                         </div>
-                        <div className="flex flex-col">
-                          <span className="text-[#1B36B0] font-bold text-sm">
+                        <div className="flex flex-col leading-tight">
+                          <span className="text-[#1B36B0] font-extrabold text-[13px]">
                             {stat.value}
                           </span>
-                          <span className="text-[9px] uppercase tracking-wider text-[#4F5B73] font-semibold">
+                          <span className="text-[8px] uppercase tracking-wider text-[#4F5B73] font-semibold mt-0.5 whitespace-nowrap">
                             {stat.label}
                           </span>
                         </div>
@@ -97,14 +90,14 @@ export default function TeamPage() {
                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="flex-1 relative w-full max-w-[500px] lg:max-w-none"
+                className="flex-1 relative w-full max-w-[420px] mx-auto lg:max-w-none"
               >
                 {/* Blue Background Block */}
                 <div
                   className={`absolute ${
                     isImageRight
-                      ? "top-6 -right-6 -bottom-6 left-16 rounded-[40px] rounded-tl-none"
-                      : "-top-6 -left-6 -bottom-6 right-16 rounded-[40px] rounded-tr-none"
+                      ? "-top-8 -bottom-8 -right-8 w-[80%] rounded-[40px] rounded-tl-none"
+                      : "-top-8 -bottom-8 -left-8 w-[80%] rounded-[40px] rounded-tr-none"
                   } bg-[#1B36B0] z-0`}
                 />
 
@@ -121,12 +114,12 @@ export default function TeamPage() {
                 />
 
                 {/* Main Image */}
-                <div className="relative z-10 w-full h-[450px] lg:h-[550px] rounded-[32px] overflow-hidden shadow-2xl bg-white">
+                <div className="relative z-10 w-[90%] mx-auto h-[480px] lg:h-[580px] rounded-[32px] overflow-hidden shadow-2xl bg-white">
                   <Image
                     src={member.imageUrl}
                     alt={member.imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     priority
                   />
                 </div>

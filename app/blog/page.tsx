@@ -13,7 +13,7 @@ import {
 import homeData from "@/data/homeData.json";
 import type { BlogsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
-import SupportBanner from "@/components/common/SupportBanner";
+
 
 export default function BlogsPage() {
   const sectionData: BlogsPageData = homeData.blogs;
@@ -96,8 +96,7 @@ export default function BlogsPage() {
               </motion.div>
             ))}
           </div>
-
-          {/* RIGHT SIDE: SIDEBAR (4 COLS) */}
+          {/* RIGHT SIDE */}
           <div className="lg:col-span-4 space-y-8">
             {/* 1. SEARCH WIDGET */}
             <motion.div
@@ -153,7 +152,6 @@ export default function BlogsPage() {
                 ))}
               </div>
             </motion.div>
-
             {/* 3. NEWSLETTER WIDGET */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -186,11 +184,6 @@ export default function BlogsPage() {
               </div>
             </motion.div>
           </div>
-        </div>
-
-        {/* 4. SUPPORT BANNER COMPONENT */}
-        <div className="pt-4">
-           <SupportBanner data={homeData.supportBanner} />
         </div>
       </div>
     </div>

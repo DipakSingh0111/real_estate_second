@@ -32,7 +32,7 @@ export default function BrochurePage() {
             const restOfTitle = item.title.split(" ").slice(1).join(" ");
             const firstChar = firstWord.charAt(0);
             const restOfFirstWord = firstWord.slice(1);
-            
+
             const yearPart1 = item.year.split(" ")[0];
             const yearPart2 = item.year.split(" ")[1];
 
@@ -60,10 +60,10 @@ export default function BrochurePage() {
                     <div className="absolute inset-y-0 left-0 z-10 w-[70%]">
                       {/* Dark red shadow / depth (slightly offset right) */}
                       <div className="absolute inset-0 bg-[#7a0000] [clip-path:polygon(0_0,_88%_0,_58%_100%,_0%_100%)] translate-x-[3px]" />
-                      
+
                       {/* Bright red line */}
                       <div className="absolute inset-0 bg-red-600 [clip-path:polygon(0_0,_88%_0,_58%_100%,_0%_100%)]" />
-                      
+
                       {/* White mask */}
                       <div className="absolute inset-0 bg-white [clip-path:polygon(0_0,_84%_0,_54%_100%,_0%_100%)]" />
                     </div>
@@ -119,7 +119,7 @@ export default function BrochurePage() {
                   </div>
                 </div>
 
-                {/* CARD BOTTOM ACTION */}
+                {/* CARD */}
                 <div className="px-6 pb-6 bg-white">
                   <a
                     href={item.pdfUrl}
