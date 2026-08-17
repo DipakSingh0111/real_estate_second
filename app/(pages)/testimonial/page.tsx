@@ -59,7 +59,7 @@ export default function TestimonialsPage() {
                     transition={{ duration: 0.3 }}
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-cover object-[center_20%] rounded-xl"
                   />
                 </div>
 

@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { ArrowRight, Building2, Home, HandCoins, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import type { AboutSectionData, AboutService } from "@/types/home";
-import { useState } from "react";
 import Link from "next/link";
 
 type AboutSectionProps = { data: AboutSectionData };
@@ -16,7 +15,6 @@ const iconMap = {
 } as const;
 
 const AboutSection = ({ data }: AboutSectionProps) => {
-  const [selectedService, setSelectedService] = useState<AboutService | null>(null);
 
   return (
     <section className="bg-[#f0f2f5] py-10 lg:py-14 font-sans">
@@ -89,93 +87,53 @@ const AboutSection = ({ data }: AboutSectionProps) => {
                 ? "text-orange-500"
                 : "text-blue-700";
               const iconBg = service.accent ? "bg-orange-100" : "bg-blue-100";
+              const slug = service.title.toLowerCase().replace(/ /g, "-");
 
               return (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="flex w-full min-h-[360px] flex-col items-center justify-between rounded-2xl bg-white p-5 text-center shadow-md transition-colors duration-300 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-6"
-                >
-                  <div className="w-full">
-                    <div className="mb-4 flex justify-center sm:mb-6">
-                      <div
-                        className={`${iconBg} flex h-24 w-24 items-center justify-center rounded-2xl`}
-                      >
-                        <Icon
-                          className={`${iconColor} h-8 w-8 sm:h-9 sm:w-9`}
-                          strokeWidth={1.5}
-                        />
+                <Link href={`/services/${slug}`} key={index} className="block h-full group/card cursor-pointer">
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex w-full h-full min-h-[360px] flex-col items-center justify-between rounded-2xl bg-white p-5 text-center shadow-md transition-colors duration-300 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-6"
+                  >
+                    <div className="w-full">
+                      <div className="mb-4 flex justify-center sm:mb-6">
+                        <div
+                          className={`${iconBg} flex h-24 w-24 items-center justify-center rounded-2xl`}
+                        >
+                          <Icon
+                            className={`${iconColor} h-8 w-8 sm:h-9 sm:w-9`}
+                            strokeWidth={1.5}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="text-left">
+                        <h3 className="mb-2 text-base font-bold leading-snug text-[#0c2242] sm:text-lg">
+                          {service.title}
+                        </h3>
+
+                        <div className="mb-3 h-0.5 w-6 bg-orange-400 sm:mb-4"></div>
+
+                        <p className="mb-6 text-xs leading-relaxed text-gray-500 sm:mb-8 sm:text-sm">
+                          {service.text}
+                        </p>
                       </div>
                     </div>
 
-                    <div className="text-left">
-                      <h3 className="mb-2 text-base font-bold leading-snug text-[#0c2242] sm:text-lg">
-                        {service.title}
-                      </h3>
-
-                      <div className="mb-3 h-0.5 w-6 bg-orange-400 sm:mb-4"></div>
-
-                      <p className="mb-6 text-xs leading-relaxed text-gray-500 sm:mb-8 sm:text-sm">
-                        {service.text}
-                      </p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={(e) => { e.preventDefault(); setSelectedService(service as AboutService); }}
-                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 hover:gap-3 hover:text-blue-900 cursor-pointer"
-                  >
-                    {service.buttonText}{" "}
-                    <ArrowRight className="h-4 w-4 transition-transform" />
-                  </button>
-                </motion.div>
+                    <span
+                      className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 group-hover/card:gap-3 group-hover/card:text-blue-900"
+                    >
+                      {service.buttonText}{" "}
+                      <ArrowRight className="h-4 w-4 transition-transform" />
+                    </span>
+                  </motion.div>
+                </Link>
               );
             })}
           </motion.div>
         </div>
       </div>
-      {/* MODAL */}
-      <AnimatePresence>
-        {selectedService && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-[#0B1A33]/40 p-4 backdrop-blur-sm"
-            onClick={() => setSelectedService(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white p-6 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] sm:p-8"
-            >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-800"
-              >
-                <X className="h-5 w-5" />
-              </button>
-
-              <h3 className="mb-4 text-2xl font-bold text-[#0c2242]">
-                {selectedService.title}
-              </h3>
-              <p className="mb-6 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {selectedService.fullDescription || selectedService.text}
-              </p>
-
-              <button
-                onClick={() => setSelectedService(null)}
-                className="w-full rounded-xl bg-[#0a183d] py-3 text-sm font-bold text-white transition-colors hover:bg-[#122452]"
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

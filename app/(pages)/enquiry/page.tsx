@@ -286,7 +286,7 @@ export default function EnquiryPage() {
             </form>
           </motion.div>
 
-          {/* RIGHT COLUMN: WHY ENQUIRE WITH US? (5 COLS) */}
+          {/* RIGHT COLUMN */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -298,7 +298,7 @@ export default function EnquiryPage() {
               <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 mx-auto flex items-center justify-center">
                 <FaUsers className="text-lg" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-[28px] font-bold text-slate-900">
                 {homeData.enquiryPage.whyEnquire.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
@@ -312,10 +312,10 @@ export default function EnquiryPage() {
                   <FaHome className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-[15px] font-bold text-slate-900">
                     {homeData.enquiryPage.whyEnquire.features[0].title}
                   </h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
                     {homeData.enquiryPage.whyEnquire.features[0].description}
                   </p>
                 </div>
@@ -327,10 +327,10 @@ export default function EnquiryPage() {
                   <FaTag className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-[15px] font-bold text-slate-900">
                     {homeData.enquiryPage.whyEnquire.features[1].title}
                   </h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
                     {homeData.enquiryPage.whyEnquire.features[1].description}
                   </p>
                 </div>
@@ -342,10 +342,10 @@ export default function EnquiryPage() {
                   <FaUserCheck className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-[15px] font-bold text-slate-900">
                     {homeData.enquiryPage.whyEnquire.features[2].title}
                   </h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
                     {homeData.enquiryPage.whyEnquire.features[2].description}
                   </p>
                 </div>
@@ -357,10 +357,10 @@ export default function EnquiryPage() {
                   <FaFileAlt className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-[15px] font-bold text-slate-900">
                     {homeData.enquiryPage.whyEnquire.features[3].title}
                   </h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
                     {homeData.enquiryPage.whyEnquire.features[3].description}
                   </p>
                 </div>
@@ -372,10 +372,10 @@ export default function EnquiryPage() {
                   <FaClock className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-[15px] font-bold text-slate-900">
                     {homeData.enquiryPage.whyEnquire.features[4].title}
                   </h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
                     {homeData.enquiryPage.whyEnquire.features[4].description}
                   </p>
                 </div>
@@ -384,7 +384,7 @@ export default function EnquiryPage() {
           </motion.div>
         </div>
 
-        {/* MIDDLE QUESTIONS & OFFICE HOURS STRIP */}
+        {/* MIDDLE QUESTIONS*/}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -392,19 +392,19 @@ export default function EnquiryPage() {
           transition={{ duration: 0.5 }}
           className="bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.04)] grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
         >
-          {/* Left: Still Have Questions */}
+          {/* Left: Still*/}
           <div className="flex items-center space-x-4 sm:pr-6 md:border-r border-slate-100">
             <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0">
               <FaHeadset className="text-xl" />
             </div>
             <div className="space-y-1">
-              <h4 className="text-xs font-bold text-slate-900">
+              <h4 className="text-[20px] font-bold text-slate-900">
                 {homeData.enquiryPage.questions.title}
               </h4>
-              <p className="text-[10px] text-slate-400">
+              <p className="text-[15px] text-slate-400">
                 {homeData.enquiryPage.questions.description}
               </p>
-              <div className="flex flex-wrap items-center gap-3 pt-1 text-[11px] font-bold text-slate-800">
+              <div className="flex flex-wrap items-center gap-3 pt-1 text-[15px] font-bold text-slate-800">
                 <a
                   href={homeData.enquiryPage.questions.phoneHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
@@ -429,13 +429,13 @@ export default function EnquiryPage() {
               <FaClock className="text-xl" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-900">
+              <h4 className="text-[18px] font-bold text-slate-900">
                 {homeData.enquiryPage.officeHours.title}
               </h4>
-              <p className="text-[11px] font-semibold text-slate-700 mt-0.5">
+              <p className="text-[15px] font-semibold text-slate-700 mt-0.5">
                 {homeData.enquiryPage.officeHours.weekdays}
               </p>
-              <p className="text-[10px] text-slate-400 mt-0.5">
+              <p className="text-[15px] text-slate-400 mt-0.5">
                 {homeData.enquiryPage.officeHours.sunday}
               </p>
             </div>

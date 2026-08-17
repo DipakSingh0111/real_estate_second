@@ -97,46 +97,54 @@ export default function ServicesPage() {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-            {sectionData.items.map((service) => (
-              <motion.div
-                key={service.id}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative group ${service.isActive
-                    ? "bg-[#1d4ed8] border-[#1d4ed8] text-white shadow-lg shadow-blue-500/20"
-                    : "bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] hover:shadow-md"
-                  }`}
-              >
-                <div
-                  className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${service.isActive
-                      ? "bg-white/20 text-white"
-                      : "bg-blue-50 text-[#1d4ed8]"
-                    }`}
-                >
-                  {serviceIcons[service.iconName]}
-                </div>
+            {sectionData.items.map((service) => {
+              // Determine destination based on service title
+              const isContact = service.title.toLowerCase() === "service";
+              const slug = service.title.toLowerCase().replace(/ /g, "-");
+              const href = isContact ? "/enquiry" : `/services/${slug}`;
 
-                <h3
-                  className={`text-base sm:text-lg font-bold mb-2 ${service.isActive ? "text-white" : "text-slate-900"}`}
-                >
-                  {service.title}
-                </h3>
-                <p
-                  className={`text-xs sm:text-sm leading-relaxed mb-6 ${service.isActive ? "text-blue-100" : "text-slate-400"}`}
-                >
-                  {service.description}
-                </p>
+              return (
+                <Link href={href} key={service.id} className="block h-full group/link cursor-pointer">
+                  <motion.div
+                    variants={itemVariants}
+                    whileHover={{ y: -5 }}
+                    className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative h-full group ${service.isActive
+                        ? "bg-[#1d4ed8] border-[#1d4ed8] text-white shadow-lg shadow-blue-500/20"
+                        : "bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] group-hover/link:shadow-md group-hover/link:border-blue-100"
+                      }`}
+                  >
+                    <div
+                      className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${service.isActive
+                          ? "bg-white/20 text-white"
+                          : "bg-blue-50 text-[#1d4ed8]"
+                        }`}
+                    >
+                      {serviceIcons[service.iconName]}
+                    </div>
 
-                <div
-                  className={`mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 ${service.isActive
-                      ? "border-white bg-white text-[#1d4ed8]"
-                      : "border-blue-200 text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white group-hover:border-[#1d4ed8]"
-                    }`}
-                >
-                  <FaArrowRight className="text-[10px]" />
-                </div>
-              </motion.div>
-            ))}
+                    <h3
+                      className={`text-base sm:text-lg font-bold mb-2 ${service.isActive ? "text-white" : "text-slate-900"}`}
+                    >
+                      {service.title}
+                    </h3>
+                    <p
+                      className={`text-xs sm:text-sm leading-relaxed mb-6 ${service.isActive ? "text-blue-100" : "text-slate-400"}`}
+                    >
+                      {service.description}
+                    </p>
+
+                    <div
+                      className={`mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 ${service.isActive
+                          ? "border-white bg-white text-[#1d4ed8]"
+                          : "border-blue-200 text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white group-hover:border-[#1d4ed8]"
+                        }`}
+                    >
+                      <FaArrowRight className="text-[10px]" />
+                    </div>
+                  </motion.div>
+                </Link>
+              );
+            })}
           </motion.div>
         </div>
 

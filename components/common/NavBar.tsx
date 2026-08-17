@@ -65,11 +65,10 @@ export default function Navbar({ data }: NavBarProps) {
 
   return (
     <header
-      className={`relative w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${
-        overImage
-          ? "bg-transparent"
-          : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
-      }`}
+      className={`relative w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${overImage
+        ? "bg-transparent"
+        : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
+        }`}
     >
       <div className="flex h-[72px] w-full items-center lg:h-[82px]">
         {/* Left side: Logo (matches hero banner left text column) */}
@@ -91,27 +90,23 @@ export default function Navbar({ data }: NavBarProps) {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className={`relative z-[110] inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] transition lg:hidden ${
-              overImage
-                ? "bg-slate-900/5 text-slate-800 hover:bg-slate-900/10"
-                : "bg-white text-slate-800 shadow-[0_12px_28px_-12px_rgba(16,42,86,0.45)] hover:text-[#3F51DE]"
-            }`}
+            className={`relative z-[110] inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] transition lg:hidden ${overImage
+              ? "bg-slate-900/5 text-slate-800 hover:bg-slate-900/10"
+              : "bg-white text-slate-800 shadow-[0_12px_28px_-12px_rgba(16,42,86,0.45)] hover:text-[#3F51DE]"
+              }`}
           >
             <span className="flex w-[18px] flex-col items-start gap-[5px]">
               <span
-                className={`block h-[2px] rounded-full bg-current transition ${
-                  mobileOpen ? "w-full translate-y-[7px] rotate-45" : "w-full"
-                }`}
+                className={`block h-[2px] rounded-full bg-current transition ${mobileOpen ? "w-full translate-y-[7px] rotate-45" : "w-full"
+                  }`}
               />
               <span
-                className={`block h-[2px] rounded-full bg-current transition ${
-                  mobileOpen ? "w-full scale-0 opacity-0" : "w-[12px]"
-                }`}
+                className={`block h-[2px] rounded-full bg-current transition ${mobileOpen ? "w-full scale-0 opacity-0" : "w-[12px]"
+                  }`}
               />
               <span
-                className={`block h-[2px] rounded-full bg-current transition ${
-                  mobileOpen ? "w-full -translate-y-[7px] -rotate-45" : "w-full"
-                }`}
+                className={`block h-[2px] rounded-full bg-current transition ${mobileOpen ? "w-full -translate-y-[7px] -rotate-45" : "w-full"
+                  }`}
               />
             </span>
           </button>
@@ -138,21 +133,20 @@ export default function Navbar({ data }: NavBarProps) {
                 >
                   <Link
                     href={link.href}
-                    className={`relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${
-                      overImage
-                        ? active
-                          ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                          : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
-                        : active
-                          ? "text-[#3F51DE]"
-                          : "text-slate-800 hover:text-[#3F51DE]"
-                    }`}
+                    className={`relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${overImage
+                      ? active
+                        ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                        : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+                      : active
+                        ? "text-[#3F51DE]"
+                        : "text-slate-800 hover:text-[#3F51DE]"
+                      }`}
                   >
                     {link.label}
                     {hasDropdown ? (
                       <svg
-                        width="10"
-                        height="10"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -169,20 +163,18 @@ export default function Navbar({ data }: NavBarProps) {
                     ) : null}
                     {active ? (
                       <span
-                        className={`absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full ${
-                          overImage ? "bg-white shadow-sm" : "bg-[#3F51DE]"
-                        }`}
+                        className={`absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full ${overImage ? "bg-white shadow-sm" : "bg-[#3F51DE]"
+                          }`}
                       />
                     ) : null}
                   </Link>
 
                   {hasDropdown && link.dropdown ? (
                     <div
-                      className={`absolute left-0 top-full z-[120] pt-3 transition duration-150 ${
-                        isOpen
-                          ? "visible translate-y-0 opacity-100"
-                          : "invisible -translate-y-1 opacity-0"
-                      }`}
+                      className={`absolute left-0 top-full z-[120] pt-3 transition duration-150 ${isOpen
+                        ? "visible translate-y-0 opacity-100"
+                        : "invisible -translate-y-1 opacity-0"
+                        }`}
                       onMouseEnter={() => handleOpenMenu(index)}
                     >
                       <div className="min-w-[230px] overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)]">
@@ -211,11 +203,10 @@ export default function Navbar({ data }: NavBarProps) {
 
                               {hasChildren && item.children ? (
                                 <div
-                                  className={`absolute left-full top-0 ml-1 min-w-[210px] rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition ${
-                                    isChildOpen
-                                      ? "visible opacity-100"
-                                      : "invisible opacity-0"
-                                  }`}
+                                  className={`absolute left-full top-0 ml-1 min-w-[210px] rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition ${isChildOpen
+                                    ? "visible opacity-100"
+                                    : "invisible opacity-0"
+                                    }`}
                                 >
                                   {item.children.map((child) => (
                                     <Link
@@ -243,21 +234,19 @@ export default function Navbar({ data }: NavBarProps) {
 
       {/* Mobile overlay menu */}
       <div
-        className={`fixed inset-0 z-[90] bg-[#0B1A33]/45 backdrop-blur-[2px] transition lg:hidden ${
-          mobileOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-[90] bg-[#0B1A33]/45 backdrop-blur-[2px] transition lg:hidden ${mobileOpen
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
+          }`}
         onClick={() => setMobileOpen(false)}
         aria-hidden={!mobileOpen}
       />
 
       <div
-        className={`absolute inset-x-0 top-full z-[95] max-h-[min(78vh,640px)] overflow-y-auto border-t border-slate-100 bg-white shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition duration-300 lg:hidden ${
-          mobileOpen
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-2 opacity-0"
-        }`}
+        className={`absolute inset-x-0 top-full z-[95] max-h-[min(78vh,640px)] overflow-y-auto border-t border-slate-100 bg-white shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition duration-300 lg:hidden ${mobileOpen
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-2 opacity-0"
+          }`}
       >
         <ul className="page-container py-3">
           {data.navLinks.map((link, index) => {
@@ -274,15 +263,6 @@ export default function Navbar({ data }: NavBarProps) {
                 className="border-b border-slate-100 last:border-b-0"
               >
                 <div className="flex items-center">
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`flex-1 px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${
-                      active ? "text-[#3F51DE]" : "text-[#1A2744]"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
                   {hasDropdown ? (
                     <button
                       type="button"
@@ -290,27 +270,39 @@ export default function Navbar({ data }: NavBarProps) {
                       onClick={() =>
                         setMobileDropdown((v) => (v === index ? null : index))
                       }
-                      className="flex h-10 w-10 items-center justify-center text-slate-500"
+                      className={`flex flex-1 items-center justify-between px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${active ? "text-[#3F51DE]" : "text-[#1A2744]"
+                        }`}
                     >
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.6"
-                        className={`transition ${isOpen ? "rotate-180" : ""}`}
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <span>{link.label}</span>
+                      <span className="flex h-10 w-10 items-center justify-center text-slate-500">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.6"
+                          className={`transition ${isOpen ? "rotate-180" : ""}`}
+                        >
+                          <path
+                            d="M6 9l6 6 6-6"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
                     </button>
-                  ) : null}
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`flex-1 px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${active ? "text-[#3F51DE]" : "text-[#1A2744]"
+                        }`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </div>
-
                 {hasDropdown && link.dropdown && isOpen ? (
                   <ul className="mb-2 ml-2 space-y-0.5 border-l border-slate-200 pl-3">
                     {link.dropdown.map((item) => (

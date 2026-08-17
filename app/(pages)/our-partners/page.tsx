@@ -27,46 +27,46 @@ const itemVariants = {
 export default function PartnersPage() {
   const sectionData: PartnersPageData = homeData.partnersPage;
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-white text-slate-800 font-sans pb-16">
       <PageBanner data={homeData.pageBanners["our-partners"]} />
 
-      <div className="page-container pt-12 space-y-10">
-        {/* 2. SECTION TITLE */}
+      <div className="page-container pt-16 space-y-12">
+        {/* SECTION TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center space-y-2"
+          className="text-center space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
             {sectionData.heading}
           </h2>
-          <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
-          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
+          <div className="w-12 h-[3px] bg-[#1B36B0] mx-auto" />
+          <p className="text-sm sm:text-[15px] text-slate-500 max-w-2xl mx-auto leading-relaxed">
             {sectionData.description}
           </p>
         </motion.div>
 
-        {/* 3. PARTNERS LOGO GRID (5 COLUMNS) */}
+        {/* PARTNERS LOGO GRID (5 COLUMNS) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[10px] max-w-6xl mx-auto"
         >
           {sectionData.items.map((partner) => (
             <motion.div
               key={partner.id}
               variants={itemVariants}
-              whileHover={{ y: -3, scale: 1.02 }}
-              className="bg-white rounded-xl p-3 sm:p-4 border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 flex items-center justify-center h-20 sm:h-24"
+              whileHover={{ scale: 1.02 }}
+              className="bg-white rounded-md p-4 border border-[#F0F0F0] hover:border-[#1B36B0]/30 hover:shadow-[0_8px_24px_rgba(27,54,176,0.08)] transition-all duration-300 flex items-center justify-center h-[110px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-12 max-w-[85%] object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
+                className="max-h-[50px] max-w-[85%] object-contain"
                 loading="lazy"
               />
             </motion.div>

@@ -3061,5 +3061,59 @@
       "termsUrl": "#",
       "suffix": "."
     }
+  },
+  "servicesDetails": {
+    "home-selling": {
+      "title": "Home Selling",
+      "subtitle": "Maximize your property value with our expert home selling services.",
+      "description": "Selling your home is a major decision. Our team of experienced real estate professionals provides comprehensive support from listing to closing. We use data-driven pricing strategies, professional staging advice, and aggressive multi-channel marketing to ensure your property reaches the right buyers and sells for top dollar.",
+      "image": "/images/peaceful-residential-area-modern-city.jpg",
+      "features": [
+        "Comprehensive Market Analysis",
+        "Professional Photography & Staging",
+        "Strategic Multi-channel Marketing",
+        "Expert Negotiation Support",
+        "Seamless Closing Process"
+      ]
+    },
+    "rent-collection": {
+      "title": "Rent Collection",
+      "subtitle": "Hassle-free rent collection and property management services.",
+      "description": "Managing rental properties can be time-consuming. Our rent collection service takes the stress out of being a landlord. We provide an automated, secure platform for tenants to pay rent on time, handle all follow-ups for late payments, and provide you with transparent monthly financial reporting.",
+      "image": "/images/modern-architecture.jpg",
+      "features": [
+        "Automated Payment Reminders",
+        "Secure Online Payment Portal",
+        "Strict Late Fee Enforcement",
+        "Transparent Monthly Reporting",
+        "Dedicated Tenant Support"
+      ]
+    },
+    "escrow-services": {
+      "title": "Escrow Services",
+      "subtitle": "Secure and transparent escrow solutions for every transaction.",
+      "description": "Protect your real estate transactions with our trusted escrow services. We act as a neutral third party to hold funds and documents until all conditions of the sale are met. Our experienced escrow officers ensure a smooth, secure, and compliant transfer of property ownership.",
+      "image": "/images/modern-buildings.jpg",
+      "features": [
+        "Neutral Third-Party Protection",
+        "Secure Funds Management",
+        "Thorough Document Verification",
+        "Regulatory Compliance",
+        "Smooth and Timely Disbursements"
+      ]
+    },
+    "consulting-service": {
+      "title": "Consulting Service",
+      "subtitle": "Expert advice for strategic real estate investments and property management.",
+      "description": "Our consulting services provide in-depth market analysis, investment strategies, and portfolio management. We work closely with you to understand your objectives and deliver actionable insights for long-term success. Whether you are a first-time homebuyer or an experienced investor, our team is equipped to guide you.",
+      "image": "/images/cityscape.jpg",
+      "features": [
+        "In-depth Market Analysis",
+        "Custom Investment Strategies",
+        "Portfolio Management",
+        "Risk Assessment & Mitigation",
+        "Long-Term Value Planning"
+      ]
+    }
   }
 }

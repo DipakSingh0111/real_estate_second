@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import homeData from "@/data/homeData.json";
 import type { TeamPageData } from "@/types/home";
@@ -19,11 +20,11 @@ export default function TeamPage() {
           const isImageRight = index % 2 === 0;
 
           return (
-            <div
+            <Link
+              href={`/team/${member.slug}`}
               key={member.name}
-              className={`flex flex-col ${
-                isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-12 lg:gap-24 overflow-hidden`}
+              className={`flex flex-col group cursor-pointer ${isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
+                } items-center gap-12 lg:gap-24 overflow-hidden`}
             >
               {/* Text Side */}
               <motion.div
@@ -31,28 +32,28 @@ export default function TeamPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="flex-1 space-y-6"
+                className="flex-1 space-y-7"
               >
-                <div className="flex items-center space-x-2 text-[#1B36B0] font-bold text-xs tracking-wider uppercase">
-                  <User size={16} strokeWidth={2.5} />
+                <div className="flex items-center space-x-3 text-[#1B36B0] font-bold text-sm sm:text-[15px] tracking-[0.1em] uppercase">
+                  <User size={20} strokeWidth={2.5} />
                   <span>{member.role}</span>
                 </div>
 
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-[#142345] mb-4">
+                  <h2 className="text-4xl lg:text-5xl font-extrabold text-[#142345] mb-5">
                     {member.name}
                   </h2>
-                  <div className="w-12 h-[3px] bg-[#1B36B0]" />
+                  <div className="w-16 h-[4px] bg-[#1B36B0] rounded-full" />
                 </div>
 
-                <div className="text-[13px] leading-[1.8] text-[#4F5B73] space-y-5">
+                <div className="text-[16px] md:text-[17px] leading-[1.85] text-[#4F5B73] space-y-5">
                   {member.description.split("\n\n").map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
                 </div>
 
                 {/* Stats Bar */}
-                <div className="bg-[#F0F4FF] rounded-xl mt-8 flex items-center p-3 px-5 gap-2">
+                <div className="bg-[#F0F4FF] rounded-xl mt-10 flex flex-col sm:flex-row sm:items-center p-4 sm:px-6 gap-4 sm:gap-3">
                   {member.stats.map((stat, statIdx) => {
                     let Icon = Award;
                     if (statIdx === 1) Icon = Building2;
@@ -61,20 +62,19 @@ export default function TeamPage() {
                     return (
                       <div
                         key={stat.label}
-                        className={`flex items-center space-x-3 flex-1 px-2 ${
-                          statIdx !== member.stats.length - 1
-                            ? "border-r border-[#D0DDFB]"
-                            : ""
-                        }`}
+                        className={`flex items-center space-x-4 flex-1 px-3 ${statIdx !== member.stats.length - 1
+                          ? "border-b pb-4 sm:border-b-0 sm:pb-0 sm:border-r border-[#D0DDFB]"
+                          : ""
+                          }`}
                       >
                         <div className="text-[#1B36B0] shrink-0">
-                          <Icon size={22} strokeWidth={1.5} />
+                          <Icon size={28} strokeWidth={1.5} />
                         </div>
-                        <div className="flex flex-col leading-tight">
-                          <span className="text-[#1B36B0] font-extrabold text-[13px]">
+                        <div className="flex flex-col leading-snug">
+                          <span className="text-[#1B36B0] font-black text-lg md:text-xl">
                             {stat.value}
                           </span>
-                          <span className="text-[8px] uppercase tracking-wider text-[#4F5B73] font-semibold mt-0.5 whitespace-nowrap">
+                          <span className="text-[11px] sm:text-[13px] uppercase tracking-wider text-[#4F5B73] font-bold mt-1">
                             {stat.label}
                           </span>
                         </div>
@@ -94,18 +94,16 @@ export default function TeamPage() {
               >
                 {/* Blue Background Block */}
                 <div
-                  className={`absolute ${
-                    isImageRight
-                      ? "-top-8 -bottom-8 -right-8 w-[80%] rounded-[40px] rounded-tl-none"
-                      : "-top-8 -bottom-8 -left-8 w-[80%] rounded-[40px] rounded-tr-none"
-                  } bg-[#1B36B0] z-0`}
+                  className={`absolute ${isImageRight
+                    ? "-top-8 -bottom-8 -right-8 w-[80%] rounded-[40px] rounded-tl-none"
+                    : "-top-8 -bottom-8 -left-8 w-[80%] rounded-[40px] rounded-tr-none"
+                    } bg-[#1B36B0] z-0`}
                 />
 
                 {/* Dot Pattern */}
                 <div
-                  className={`absolute ${
-                    isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
-                  } w-24 h-24 z-20 opacity-60`}
+                  className={`absolute ${isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
+                    } w-24 h-24 z-20 opacity-60`}
                   style={{
                     backgroundImage:
                       "radial-gradient(circle, #1B36B0 2.5px, transparent 2.5px)",
@@ -124,7 +122,7 @@ export default function TeamPage() {
                   />
                 </div>
               </motion.div>
-            </div>
+            </Link>
           );
         })}
       </section>
