@@ -115,8 +115,6 @@ export default function BrochurePage() {
             </motion.div>
           ))}
         </div>
-
-        {/* BOTTOM SUPPORT BANNER */}
       </div>
     </div>
   );

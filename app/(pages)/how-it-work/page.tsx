@@ -179,16 +179,15 @@ export default function HowItWorks() {
             </div>
             <div>
               <h3 className="text-[22px] font-extrabold text-[#0B132A] mb-1.5">
-                Ready to get started?
+                {sectionData.ctaCard.title}
               </h3>
               <p className="text-[14px] text-[#4F5B73] leading-relaxed mb-5 max-w-xs">
-                Contact our real estate experts today and find the perfect
-                property for you.
+                {sectionData.ctaCard.description}
               </p>
               <button
                 className="px-6 py-2.5 bg-[#1A43BF] hover:bg-blue-800 text-white font-semibold text-[13px] rounded-lg flex items-center gap-2 shadow-md transition"
               >
-                Get in Touch <ArrowRight className="w-4 h-4" />
+                {sectionData.ctaCard.buttonText} <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>

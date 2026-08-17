@@ -106,11 +106,11 @@ export default function BlogsPage() {
               viewport={{ once: true }}
               className="bg-white rounded-3xl p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] space-y-4"
             >
-              <h4 className="font-bold text-[#142345] text-[17px]">Search</h4>
+              <h4 className="font-bold text-[#142345] text-[17px]">{sectionData.sidebar.search.title}</h4>
               <div className="flex items-center pt-2">
                 <input
                   type="text"
-                  placeholder="Search here..."
+                  placeholder={sectionData.sidebar.search.placeholder}
                   className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-l-lg focus:outline-none focus:border-[#2042C9] text-slate-600"
                 />
                 <button className="bg-[#1B36B0] text-white px-5 py-3 rounded-r-lg hover:bg-blue-800 transition-colors">
@@ -127,7 +127,7 @@ export default function BlogsPage() {
               transition={{ delay: 0.1 }}
               className="bg-white rounded-3xl p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] space-y-5"
             >
-              <h4 className="font-bold text-[#142345] text-[17px]">Recent Posts</h4>
+              <h4 className="font-bold text-[#142345] text-[17px]">{sectionData.sidebar.recentPosts.title}</h4>
 
               <div className="space-y-4 pt-1">
                 {posts.slice(0, 3).map((post) => (
@@ -167,21 +167,21 @@ export default function BlogsPage() {
                   <FaEnvelope />
                 </div>
                 <h4 className="font-bold text-[#142345] text-[17px]">
-                  Stay Updated
+                  {sectionData.sidebar.newsletter.title}
                 </h4>
               </div>
               <p className="text-[13px] text-slate-500 leading-relaxed pt-1">
-                Subscribe to get the latest real estate tips and updates.
+                {sectionData.sidebar.newsletter.description}
               </p>
 
               <div className="space-y-3 pt-2">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={sectionData.sidebar.newsletter.placeholder}
                   className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-[#2042C9] text-slate-600"
                 />
                 <button className="w-full bg-[#1B36B0] hover:bg-blue-800 text-white text-[14px] font-semibold py-3 rounded-lg transition-colors">
-                  Subscribe
+                  {sectionData.sidebar.newsletter.buttonText}
                 </button>
               </div>
             </motion.div>
@@ -190,18 +190,7 @@ export default function BlogsPage() {
 
         {/* 4. SUPPORT BANNER COMPONENT */}
         <div className="pt-4">
-           {/* Replace this with dynamic data if needed, but homeData.supportBanner might not exist. 
-               Wait, let's look if it does. Or we can just use the home data. 
-               Let's pass sectionData.supportBanner or fallback. */}
-           <SupportBanner data={homeData.supportBanner || {
-             title: "Any Query? We are Happy to Assist You",
-             description: "Our support team is available 24/7 to help you.",
-             callLabel: "Call Us Anytime",
-             phoneNumber: "+1 234 567 8900",
-             phoneHref: "tel:+12345678900",
-             imageUrl: "/images/people.jpg",
-             imageAlt: "Support team"
-           }} />
+           <SupportBanner data={homeData.supportBanner} />
         </div>
       </div>
     </div>

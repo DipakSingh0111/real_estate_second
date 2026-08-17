@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Building2, Home, HandCoins } from "lucide-react";
-import { motion } from "framer-motion";
-import type { AboutSectionData } from "@/types/home";
+import { ArrowRight, Building2, Home, HandCoins, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import type { AboutSectionData, AboutService } from "@/types/home";
+import { useState } from "react";
 import Link from "next/link";
 
 type AboutSectionProps = { data: AboutSectionData };
@@ -15,6 +16,8 @@ const iconMap = {
 } as const;
 
 const AboutSection = ({ data }: AboutSectionProps) => {
+  const [selectedService, setSelectedService] = useState<AboutService | null>(null);
+
   return (
     <section className="bg-[#f0f2f5] py-10 lg:py-14 font-sans">
       <div className="page-container">
@@ -80,7 +83,7 @@ const AboutSection = ({ data }: AboutSectionProps) => {
             {data.services.map((service, index) => {
               const Icon =
                 (iconMap as Record<string, typeof Building2>)[
-                  service.iconName
+                service.iconName
                 ] || Building2;
               const iconColor = service.accent
                 ? "text-orange-500"
@@ -119,19 +122,60 @@ const AboutSection = ({ data }: AboutSectionProps) => {
                     </div>
                   </div>
 
-                  <a
-                    href="#"
-                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 hover:gap-3 hover:text-blue-900"
+                  <button
+                    onClick={(e) => { e.preventDefault(); setSelectedService(service as AboutService); }}
+                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 hover:gap-3 hover:text-blue-900 cursor-pointer"
                   >
                     {service.buttonText}{" "}
                     <ArrowRight className="h-4 w-4 transition-transform" />
-                  </a>
+                  </button>
                 </motion.div>
               );
             })}
           </motion.div>
         </div>
       </div>
+      {/* MODAL */}
+      <AnimatePresence>
+        {selectedService && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-[#0B1A33]/40 p-4 backdrop-blur-sm"
+            onClick={() => setSelectedService(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white p-6 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] sm:p-8"
+            >
+              <button
+                onClick={() => setSelectedService(null)}
+                className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-800"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              <h3 className="mb-4 text-2xl font-bold text-[#0c2242]">
+                {selectedService.title}
+              </h3>
+              <p className="mb-6 text-sm leading-relaxed text-slate-600 sm:text-base">
+                {selectedService.fullDescription || selectedService.text}
+              </p>
+
+              <button
+                onClick={() => setSelectedService(null)}
+                className="w-full rounded-xl bg-[#0a183d] py-3 text-sm font-bold text-white transition-colors hover:bg-[#122452]"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

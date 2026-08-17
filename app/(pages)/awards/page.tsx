@@ -86,8 +86,6 @@ export default function AwardsPage() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* 4. SUPPORT BANNER */}
       </div>
     </div>
   );

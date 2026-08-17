@@ -73,12 +73,11 @@ export default function EnquiryPage() {
                   <FaEdit className="text-lg" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  Send Us Your Enquiry
+                  {homeData.enquiryPage.formHeader.title}
                 </h2>
               </div>
               <p className="text-xs sm:text-sm text-slate-500 pt-1 leading-relaxed">
-                Please provide your details below and we will get in touch with
-                you.
+                {homeData.enquiryPage.formHeader.description}
               </p>
             </div>
 
@@ -146,9 +145,11 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select an option</option>
-                    <option value="phone">Phone Call</option>
-                    <option value="email">Email</option>
-                    <option value="whatsapp">WhatsApp</option>
+                    {homeData.formOptions.contactMethod.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -165,10 +166,11 @@ export default function EnquiryPage() {
                     required
                   >
                     <option value="">Select enquiry type</option>
-                    <option value="buying">Buying Property</option>
-                    <option value="selling">Selling Property</option>
-                    <option value="renting">Renting Property</option>
-                    <option value="consultation">General Consultation</option>
+                    {homeData.formOptions.enquiryFor.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -181,10 +183,11 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select property type</option>
-                    <option value="apartment">Apartment / Flat</option>
-                    <option value="villa">Luxury Villa</option>
-                    <option value="commercial">Commercial Office</option>
-                    <option value="plot">Plot / Land</option>
+                    {homeData.formOptions.propertyType.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -200,10 +203,11 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select your budget</option>
-                    <option value="under-50l">Under ₹50 Lakhs</option>
-                    <option value="50l-1cr">₹50 Lakhs - ₹1 Crore</option>
-                    <option value="1cr-3cr">₹1 Crore - ₹3 Crores</option>
-                    <option value="above-3cr">Above ₹3 Crores</option>
+                    {homeData.formOptions.budget.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -251,21 +255,21 @@ export default function EnquiryPage() {
                   htmlFor="agreed"
                   className="text-[11px] text-slate-500 cursor-pointer"
                 >
-                  I agree to the{" "}
+                  {homeData.formOptions.agreement.prefix}
                   <a
-                    href="#"
+                    href={homeData.formOptions.agreement.privacyPolicyUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    Privacy Policy
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="#"
-                    className="text-red-500 font-semibold hover:underline"
-                  >
-                    Terms & Conditions
+                    {homeData.formOptions.agreement.privacyPolicyText}
                   </a>
-                  .
+                  {homeData.formOptions.agreement.middleText}
+                  <a
+                    href={homeData.formOptions.agreement.termsUrl}
+                    className="text-red-500 font-semibold hover:underline"
+                  >
+                    {homeData.formOptions.agreement.termsText}
+                  </a>
+                  {homeData.formOptions.agreement.suffix}
                 </label>
               </div>
 
@@ -295,7 +299,7 @@ export default function EnquiryPage() {
                 <FaUsers className="text-lg" />
               </div>
               <h3 className="text-lg font-bold text-slate-900">
-                Why Enquire With Us?
+                {homeData.enquiryPage.whyEnquire.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
             </div>
@@ -309,10 +313,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Wide Range of Properties
+                    {homeData.enquiryPage.whyEnquire.features[0].title}
                   </h4>
                   <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                    Access to the best residential and commercial properties.
+                    {homeData.enquiryPage.whyEnquire.features[0].description}
                   </p>
                 </div>
               </div>
@@ -324,10 +328,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Best Deals & Prices
+                    {homeData.enquiryPage.whyEnquire.features[1].title}
                   </h4>
                   <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                    We ensure you get the most competitive prices.
+                    {homeData.enquiryPage.whyEnquire.features[1].description}
                   </p>
                 </div>
               </div>
@@ -339,10 +343,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Expert Consultation
+                    {homeData.enquiryPage.whyEnquire.features[2].title}
                   </h4>
                   <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                    Get personalized advice from our real estate experts.
+                    {homeData.enquiryPage.whyEnquire.features[2].description}
                   </p>
                 </div>
               </div>
@@ -354,10 +358,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Hassle-Free Process
+                    {homeData.enquiryPage.whyEnquire.features[3].title}
                   </h4>
                   <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                    We make your property search smooth and stress-free.
+                    {homeData.enquiryPage.whyEnquire.features[3].description}
                   </p>
                 </div>
               </div>
@@ -369,10 +373,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Timely Assistance
+                    {homeData.enquiryPage.whyEnquire.features[4].title}
                   </h4>
                   <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                    Our team is always ready to assist you at every step.
+                    {homeData.enquiryPage.whyEnquire.features[4].description}
                   </p>
                 </div>
               </div>
@@ -395,25 +399,25 @@ export default function EnquiryPage() {
             </div>
             <div className="space-y-1">
               <h4 className="text-xs font-bold text-slate-900">
-                Still Have Questions?
+                {homeData.enquiryPage.questions.title}
               </h4>
               <p className="text-[10px] text-slate-400">
-                Talk to our property experts today.
+                {homeData.enquiryPage.questions.description}
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-1 text-[11px] font-bold text-slate-800">
                 <a
-                  href="tel:+919876543210"
+                  href={homeData.enquiryPage.questions.phoneHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
                   <FaPhoneAlt className="text-red-500 text-[10px]" />
-                  <span>+91 98765 43210</span>
+                  <span>{homeData.enquiryPage.questions.phone}</span>
                 </a>
                 <a
-                  href="mailto:info@realestate.com"
+                  href={homeData.enquiryPage.questions.emailHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
                   <FaEnvelope className="text-red-500 text-[10px]" />
-                  <span>info@realestate.com</span>
+                  <span>{homeData.enquiryPage.questions.email}</span>
                 </a>
               </div>
             </div>
@@ -426,13 +430,13 @@ export default function EnquiryPage() {
             </div>
             <div>
               <h4 className="text-xs font-bold text-slate-900">
-                Our Office Hours
+                {homeData.enquiryPage.officeHours.title}
               </h4>
               <p className="text-[11px] font-semibold text-slate-700 mt-0.5">
-                Mon – Sat: 9:00 AM – 7:00 PM
+                {homeData.enquiryPage.officeHours.weekdays}
               </p>
               <p className="text-[10px] text-slate-400 mt-0.5">
-                Sunday: By Appointment
+                {homeData.enquiryPage.officeHours.sunday}
               </p>
             </div>
           </div>

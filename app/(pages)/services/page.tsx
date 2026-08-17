@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FaHome,
@@ -101,18 +102,16 @@ export default function ServicesPage() {
                 key={service.id}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative group ${
-                  service.isActive
+                className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative group ${service.isActive
                     ? "bg-[#1d4ed8] border-[#1d4ed8] text-white shadow-lg shadow-blue-500/20"
                     : "bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] hover:shadow-md"
-                }`}
+                  }`}
               >
                 <div
-                  className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${
-                    service.isActive
+                  className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${service.isActive
                       ? "bg-white/20 text-white"
                       : "bg-blue-50 text-[#1d4ed8]"
-                  }`}
+                    }`}
                 >
                   {serviceIcons[service.iconName]}
                 </div>
@@ -129,11 +128,10 @@ export default function ServicesPage() {
                 </p>
 
                 <div
-                  className={`mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 ${
-                    service.isActive
+                  className={`mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 ${service.isActive
                       ? "border-white bg-white text-[#1d4ed8]"
                       : "border-blue-200 text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white group-hover:border-[#1d4ed8]"
-                  }`}
+                    }`}
                 >
                   <FaArrowRight className="text-[10px]" />
                 </div>
@@ -188,81 +186,84 @@ export default function ServicesPage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {properties.map((item) => (
-              <motion.div
-                key={item.id}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.2 }}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col"
-              >
-                <div className="relative h-52 w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <span className="absolute top-3 left-3 bg-[#1d4ed8] text-white text-[10px] font-bold tracking-wider px-3 py-1 rounded-md shadow-sm uppercase">
-                    {sectionData.saleLabel}
-                  </span>
-                  <span className="absolute bottom-3 right-3 bg-[#1d4ed8] text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm">
-                    {item.price}
-                  </span>
-                </div>
-
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                  <div>
-                    <h3 className="text-sm font-bold text-slate-900 leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="text-[11px] font-semibold text-[#1d4ed8] mt-1">
-                      {item.builder}
-                    </p>
+              <Link key={item.id} href={`/property-listing/${item.slug}`} className="block">
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col h-full group"
+                >
+                  <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-3 left-3 bg-[#1d4ed8] text-white text-[10px] font-bold tracking-wider px-3 py-1 rounded-md shadow-sm uppercase z-10">
+                      {sectionData.saleLabel}
+                    </span>
+                    <span className="absolute bottom-3 right-3 bg-[#1d4ed8] text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm z-10">
+                      {item.price}
+                    </span>
                   </div>
 
-                  <div className="border-t border-slate-100 pt-3 grid grid-cols-3 gap-2">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-7 h-7 rounded-md bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
-                        <FaBed className="text-xs" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-slate-800">
-                          {item.bedrooms}
-                        </div>
-                        <div className="text-[10px] text-slate-400 -mt-0.5">
-                          Bedrooms
-                        </div>
-                      </div>
+                  <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
+                        {item.title}
+                      </h3>
+                      {item.builder && (
+                        <p className="text-[11px] font-semibold text-[#1d4ed8] mt-1">
+                          {item.builder}
+                        </p>
+                      )}
                     </div>
 
-                    <div className="flex items-center space-x-2">
-                      <div className="w-7 h-7 rounded-md bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
-                        <FaBath className="text-xs" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-slate-800">
-                          {item.bathrooms}
+                    <div className="border-t border-slate-100 pt-3 grid grid-cols-3 gap-2">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-7 h-7 rounded-md bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
+                          <FaBed className="text-xs" />
                         </div>
-                        <div className="text-[10px] text-slate-400 -mt-0.5">
-                          Bathrooms
+                        <div>
+                          <div className="text-xs font-bold text-slate-800">
+                            {item.bedrooms}
+                          </div>
+                          <div className="text-[10px] text-slate-400 -mt-0.5">
+                            Bedrooms
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="flex items-center space-x-2">
-                      <div className="w-7 h-7 rounded-md bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
-                        <FaRulerCombined className="text-xs" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-slate-800">
-                          {item.sqft}
+                      <div className="flex items-center space-x-2">
+                        <div className="w-7 h-7 rounded-md bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
+                          <FaBath className="text-xs" />
                         </div>
-                        <div className="text-[10px] text-slate-400 -mt-0.5">
-                          Sq Ft
+                        <div>
+                          <div className="text-xs font-bold text-slate-800">
+                            {item.bathrooms}
+                          </div>
+                          <div className="text-[10px] text-slate-400 -mt-0.5">
+                            Bathrooms
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-2">
+                        <div className="w-7 h-7 rounded-md bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
+                          <FaRulerCombined className="text-xs" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-slate-800">
+                            {item.sqft}
+                          </div>
+                          <div className="text-[10px] text-slate-400 -mt-0.5">
+                            Sq Ft
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </motion.div>
 
@@ -295,7 +296,6 @@ export default function ServicesPage() {
               <FaArrowRight className="text-[10px]" />
             </motion.button>
           </motion.div>
-          {/* 4. SUPPORT BANNER COMPONENT */}
         </section>
       </div>
     </div>

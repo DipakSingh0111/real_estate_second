@@ -93,8 +93,6 @@ export default function TermsAndConditionsPage() {
             </Link>
           </motion.div>
         </motion.div>
-
-        {/* BOTTOM SUPPORT BANNER */}
       </div>
     </div>
   );

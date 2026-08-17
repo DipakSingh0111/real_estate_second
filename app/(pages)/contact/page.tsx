@@ -47,17 +47,16 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-                  Contact Us
+                  {homeData.contactPage.heading.eyebrow}
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Let's <span className="text-blue-600">Talk!</span>
+                  {homeData.contactPage.heading.main1} <span className="text-blue-600">{homeData.contactPage.heading.mainHighlight}</span>
                 </h2>
               </div>
             </div>
 
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
-              We're here to help and answer any question you might have. We look
-              forward to hearing from you.
+              {homeData.contactPage.description}
             </p>
 
             {/* Address Card */}
@@ -67,13 +66,13 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs text-slate-400 font-medium">
-                  Our Office
+                  {homeData.contactPage.office.label}
                 </span>
                 <p className="text-sm font-semibold text-slate-700">
-                  77 Highfield Road, London
+                  {homeData.contactPage.office.line1}
                 </p>
                 <p className="text-xs text-slate-400">
-                  N36 7SB, United Kingdom
+                  {homeData.contactPage.office.line2}
                 </p>
               </div>
             </div>
@@ -85,13 +84,13 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs text-slate-400 font-medium">
-                  Call Us
+                  {homeData.contactPage.phone.label}
                 </span>
                 <p className="text-sm font-bold text-slate-800">
-                  +91 987 654 3210
+                  {homeData.contactPage.phone.number}
                 </p>
                 <p className="text-xs text-slate-400">
-                  Mon - Sat: 9:00 AM - 6:00 PM
+                  {homeData.contactPage.phone.workingHours}
                 </p>
               </div>
             </div>
@@ -103,25 +102,25 @@ export default function ContactUs() {
               </p>
               <div className="flex space-x-3">
                 <a
-                  href="#"
+                  href={homeData.contactPage.socials.facebook}
                   className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaFacebookF className="w-4 h-4" />
                 </a>
                 <a
-                  href="#"
+                  href={homeData.contactPage.socials.twitter}
                   className="w-9 h-9 rounded-full bg-sky-400 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaTwitter className="w-4 h-4" />
                 </a>
                 <a
-                  href="#"
+                  href={homeData.contactPage.socials.linkedin}
                   className="w-9 h-9 rounded-full bg-blue-700 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaLinkedinIn className="w-4 h-4" />
                 </a>
                 <a
-                  href="#"
+                  href={homeData.contactPage.socials.instagram}
                   className="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaInstagram className="w-4 h-4" />
@@ -244,7 +243,7 @@ export default function ContactUs() {
           </div>
 
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.4734000084!2d-0.241681!3d51.528558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+            src={homeData.contactPage.mapUrl}
             width="100%"
             height="100%"
             style={{ border: 0 }}

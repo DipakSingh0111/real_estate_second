@@ -22,6 +22,11 @@ import {
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import type { PropertyDeal, PageBannerData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
+import PriceCard from "@/components/common/PriceCard";
+import ContactFormSidebar from "@/components/common/ContactFormSidebar";
+import NeedHelpCard from "@/components/common/NeedHelpCard";
+import PropertyMap from "@/components/common/PropertyMap";
+import homeData from "@/data/homeData.json";
 
 type PropertyDetailProps = {
   property: PropertyDeal;
@@ -80,16 +85,7 @@ export default function PropertyDetail({
     { icon: Car, label: "Garage", value: "1" },
   ];
 
-  const featureList = [
-    "Air Conditioning",
-    "Swimming Pool",
-    "Garden Area",
-    "Security System",
-    "Parking Space",
-    "Modern Kitchen",
-    "Balcony / Terrace",
-    "High-Speed Internet",
-  ];
+  const featureList = homeData.propertyDetail.features;
 
   return (
     <main className="bg-white">
@@ -171,10 +167,7 @@ export default function PropertyDetail({
                 {property.location}
               </div>
               <p className="mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                {homeData.propertyDetail.description}
               </p>
               <div className="mt-5 flex items-center gap-3">
                 <span className="text-sm font-medium text-slate-500">
@@ -288,114 +281,26 @@ export default function PropertyDetail({
             </div>
 
             {/* Map */}
-            <div className="mt-10">
-              <h2 className="text-xl font-bold text-[#0B1A33]">
-                Property Location
-              </h2>
-              <div className="mt-4 overflow-hidden rounded-xl border border-slate-100">
-                <iframe
-                  title={`${property.title} location`}
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                    `${property.title} ${property.location}`,
-                  )}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
-                  className="h-[280px] w-full border-0 sm:h-[320px]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            </div>
+            <PropertyMap title={property.title} location={property.location} />
           </div>
 
           {/* RIGHT SIDEBAR */}
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-            {/* Price card */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_-20px_rgba(15,23,42,0.35)]">
-              <p className="text-sm font-medium text-slate-400">Price</p>
-              <p className="mt-2 text-[32px] font-extrabold leading-none text-[#2A39CE]">
-                {property.price}
-              </p>
-              <p className="mt-3 text-sm font-semibold text-[#0B1A33]">
-                Semi-Detached House
-              </p>
-              <div className="mt-4 flex items-center justify-between rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-slate-600">
-                <span>Ex-showroom Price</span>
-                <span className="font-medium text-[#0B1A33]">Australia ▾</span>
-              </div>
-              <button
-                type="button"
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#2A39CE] px-4 py-3 text-sm font-bold uppercase tracking-[0.06em] text-white transition hover:bg-[#2330b0]"
-              >
-                <Tag className="h-4 w-4" />
-                View Price
-              </button>
-            </div>
+            <PriceCard
+              price={property.price}
+              propertyType={homeData.propertyDetail.priceDetails.propertyType}
+              priceType={homeData.propertyDetail.priceDetails.priceType}
+              region={homeData.propertyDetail.priceDetails.region}
+            />
 
-            {/* Contact form */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_-20px_rgba(15,23,42,0.35)]">
-              <h3 className="text-lg font-bold text-[#0B1A33]">Get in Touch</h3>
-              <div className="mt-1 h-[3px] w-10 rounded-full bg-[#2A39CE]" />
-              <form
-                className="mt-5 space-y-3"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none transition focus:border-[#2A39CE]"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none transition focus:border-[#2A39CE]"
-                  />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none transition focus:border-[#2A39CE]"
-                />
-                <textarea
-                  placeholder="Message"
-                  rows={4}
-                  className="w-full resize-none rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none transition focus:border-[#2A39CE]"
-                />
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#2A39CE] px-4 py-3 text-sm font-bold uppercase tracking-[0.06em] text-white transition hover:bg-[#2330b0]"
-                >
-                  <Send className="h-4 w-4" />
-                  Send Message
-                </button>
-              </form>
-              <p className="mt-3 flex items-start gap-2 text-[11px] leading-5 text-slate-400">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2A39CE]" />
-                We respect your privacy. Your details are safe with us.
-              </p>
-            </div>
+            <ContactFormSidebar />
 
-            {/* Need help */}
-            <div className="rounded-2xl bg-[#EEF2FF] p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#2A39CE] shadow-sm">
-                <Headphones className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-[#0B1A33]">
-                Need Help?
-              </h3>
-              <p className="mt-1 text-sm text-slate-500">
-                Our property experts are ready to assist you.
-              </p>
-              <a
-                href="tel:+919876543210"
-                className="mt-4 inline-flex items-center gap-2 text-lg font-bold text-[#2A39CE]"
-              >
-                <Phone className="h-4 w-4" />
-                +91 987 654 3210
-              </a>
-              <p className="mt-2 text-xs text-slate-500">
-                Mon - Sat: 9:00 AM - 6:00 PM
-              </p>
-            </div>
+            <NeedHelpCard
+              phone={homeData.propertyDetail.contactDetails.phone}
+              phoneHref={homeData.propertyDetail.contactDetails.phoneHref}
+              workingHours={homeData.propertyDetail.contactDetails.workingHours}
+              helpText={homeData.propertyDetail.contactDetails.helpText}
+            />
           </aside>
         </div>
       </section>

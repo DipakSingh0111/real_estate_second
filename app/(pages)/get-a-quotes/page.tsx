@@ -68,11 +68,10 @@ export default function GetQuotePage() {
             {/* Form Header */}
             <div className="space-y-1">
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                Tell Us What You Need
+                {homeData.getQuotePage.formHeader.title}
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 pt-0.5 leading-relaxed">
-                Please fill in the details below and our team will contact you
-                with the best quote.
+                {homeData.getQuotePage.formHeader.description}
               </p>
             </div>
 
@@ -148,9 +147,11 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select an option</option>
-                    <option value="phone">Phone Call</option>
-                    <option value="email">Email</option>
-                    <option value="whatsapp">WhatsApp</option>
+                    {homeData.formOptions.contactMethod.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -169,10 +170,11 @@ export default function GetQuotePage() {
                     required
                   >
                     <option value="">Select property type</option>
-                    <option value="apartment">Apartment / Flat</option>
-                    <option value="villa">Luxury Villa</option>
-                    <option value="commercial">Commercial Office</option>
-                    <option value="plot">Plot / Land</option>
+                    {homeData.formOptions.propertyType.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -188,10 +190,11 @@ export default function GetQuotePage() {
                     required
                   >
                     <option value="">Select location</option>
-                    <option value="mumbai">Mumbai</option>
-                    <option value="delhi">Delhi NCR</option>
-                    <option value="bangalore">Bangalore</option>
-                    <option value="pune">Pune</option>
+                    {homeData.formOptions.location.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -209,10 +212,11 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select budget range</option>
-                    <option value="under-50l">Under ₹50 Lakhs</option>
-                    <option value="50l-1cr">₹50 Lakhs - ₹1 Crore</option>
-                    <option value="1cr-3cr">₹1 Crore - ₹3 Crores</option>
-                    <option value="above-3cr">Above ₹3 Crores</option>
+                    {homeData.formOptions.budget.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -227,9 +231,11 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select purpose</option>
-                    <option value="end-use">Personal Use (Living)</option>
-                    <option value="investment">Investment</option>
-                    <option value="rental">Rental Income</option>
+                    {homeData.formOptions.purpose.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -264,21 +270,21 @@ export default function GetQuotePage() {
                   htmlFor="agreed"
                   className="text-[11px] text-slate-500 cursor-pointer"
                 >
-                  I agree to the{" "}
+                  {homeData.formOptions.agreement.prefix}
                   <a
-                    href="#"
+                    href={homeData.formOptions.agreement.privacyPolicyUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    Privacy Policy
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="#"
-                    className="text-red-500 font-semibold hover:underline"
-                  >
-                    Terms & Conditions
+                    {homeData.formOptions.agreement.privacyPolicyText}
                   </a>
-                  .
+                  {homeData.formOptions.agreement.middleText}
+                  <a
+                    href={homeData.formOptions.agreement.termsUrl}
+                    className="text-red-500 font-semibold hover:underline"
+                  >
+                    {homeData.formOptions.agreement.termsText}
+                  </a>
+                  {homeData.formOptions.agreement.suffix}
                 </label>
               </div>
 
@@ -305,7 +311,7 @@ export default function GetQuotePage() {
             {/* Header */}
             <div className="space-y-1.5">
               <h3 className="text-lg font-bold text-slate-900">
-                Why Get a Quote
+                {homeData.getQuotePage.whyGetQuote.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 rounded-full" />
             </div>
@@ -319,10 +325,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Best Property Options
+                    {homeData.getQuotePage.whyGetQuote.features[0].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    We provide you handpicked properties that match your needs.
+                    {homeData.getQuotePage.whyGetQuote.features[0].description}
                   </p>
                 </div>
               </div>
@@ -334,11 +340,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Competitive Pricing
+                    {homeData.getQuotePage.whyGetQuote.features[1].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    Get the best deals and transparent pricing with no hidden
-                    charges.
+                    {homeData.getQuotePage.whyGetQuote.features[1].description}
                   </p>
                 </div>
               </div>
@@ -350,11 +355,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Expert Consultation
+                    {homeData.getQuotePage.whyGetQuote.features[2].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    Our real estate experts guide you at every step of your
-                    journey.
+                    {homeData.getQuotePage.whyGetQuote.features[2].description}
                   </p>
                 </div>
               </div>
@@ -366,10 +370,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Hassle-Free Process
+                    {homeData.getQuotePage.whyGetQuote.features[3].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    We make the process smooth, simple and time-saving for you.
+                    {homeData.getQuotePage.whyGetQuote.features[3].description}
                   </p>
                 </div>
               </div>
@@ -381,10 +385,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    Save Time & Effort
+                    {homeData.getQuotePage.whyGetQuote.features[4].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    Tell us your requirements and we'll do the search for you.
+                    {homeData.getQuotePage.whyGetQuote.features[4].description}
                   </p>
                 </div>
               </div>
@@ -403,33 +407,33 @@ export default function GetQuotePage() {
           {/* Left: Building Image + Need Help (7 Cols) */}
           <div className="md:col-span-7 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 md:border-r border-slate-100 md:pr-6">
             <img
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=400&auto=format&fit=crop"
+              src={homeData.getQuotePage.needHelp.image}
               alt="Building"
               className="w-full sm:w-32 h-24 rounded-2xl object-cover shrink-0"
             />
             <div className="space-y-1.5 w-full">
-              <h4 className="text-sm font-bold text-slate-900">Need Help?</h4>
+              <h4 className="text-sm font-bold text-slate-900">{homeData.getQuotePage.needHelp.title}</h4>
               <p className="text-[11px] text-slate-400">
-                Our team is here to assist you with any questions you may have.
+                {homeData.getQuotePage.needHelp.description}
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-1 text-[11px] font-bold text-slate-800">
                 <a
-                  href="tel:+919876543210"
+                  href={homeData.getQuotePage.needHelp.phoneHref}
                   className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
                 >
                   <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-[10px]">
                     <FaPhoneAlt />
                   </div>
-                  <span>+91 98765 43210</span>
+                  <span>{homeData.getQuotePage.needHelp.phone}</span>
                 </a>
                 <a
-                  href="mailto:info@reallow.com"
+                  href={homeData.getQuotePage.needHelp.emailHref}
                   className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
                 >
                   <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-[10px]">
                     <FaEnvelope />
                   </div>
-                  <span>info@reallow.com</span>
+                  <span>{homeData.getQuotePage.needHelp.email}</span>
                 </a>
               </div>
             </div>
@@ -443,10 +447,10 @@ export default function GetQuotePage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-slate-900">
-                  Talk to Our Expert
+                  {homeData.getQuotePage.expertContact.title}
                 </h4>
                 <p className="text-[10px] text-slate-400 mt-0.5">
-                  Mon – Sat (10:00 AM – 7:00 PM)
+                  {homeData.getQuotePage.expertContact.workingHours}
                 </p>
               </div>
             </div>
@@ -457,7 +461,7 @@ export default function GetQuotePage() {
                 whileTap={{ scale: 0.97 }}
                 className="px-4 py-2.5 rounded-xl border border-red-200 bg-white text-red-600 font-bold text-[11px] flex items-center space-x-1.5 hover:bg-red-50 transition-all shrink-0"
               >
-                <span>Contact Us Now</span>
+                <span>{homeData.getQuotePage.expertContact.buttonText}</span>
                 <FaArrowRight className="text-[9px]" />
               </motion.button>
             </Link>

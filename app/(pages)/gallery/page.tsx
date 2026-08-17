@@ -127,8 +127,6 @@ export default function GalleryPage() {
             ))}
           </motion.div>
         </div>
-
-        {/* 4. SUPPORT BANNER COMPONENT */}
       </div>
     </div>
   );

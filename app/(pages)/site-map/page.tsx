@@ -133,8 +133,6 @@ export default function SitemapPage() {
             </motion.button>
           </Link>
         </motion.div>
-
-        {/* BOTTOM SUPPORT BANNER */}
       </div>
     </div>
   );

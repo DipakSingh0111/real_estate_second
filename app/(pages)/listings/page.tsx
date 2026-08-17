@@ -10,7 +10,7 @@ import type { PropertyDeal } from "@/types/home";
 const properties: PropertyDeal[] = siteData.topDealsSection.deals;
 const pageSize = 6;
 
-export default function PropertyListingPage() {
+export default function ListingsPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const pageCount = Math.ceil(properties.length / pageSize);
 
@@ -26,10 +26,10 @@ export default function PropertyListingPage() {
       <section className="page-container py-12">
         <div className="mb-8">
           <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#2A39CE]">
-            Top Deals
+            All Properties
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Of the week
+            Our Listings
           </h2>
         </div>
 

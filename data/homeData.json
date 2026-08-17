@@ -15,63 +15,55 @@
       {
         "label": "HOME",
         "href": "/",
-        "hasDropdown": false,
-        "active": true
+        "hasDropdown": false
       },
       {
-        "label": "SHOP",
-        "href": "/shop",
+        "label": "ABOUT US",
+        "href": "/about",
         "hasDropdown": true,
         "dropdown": [
           {
-            "label": "SHOP",
-            "href": "/shop"
+            "label": "About Company",
+            "href": "/about"
           },
           {
-            "label": "SHOP DETAIL",
-            "href": "/shop-detail"
-          }
-        ]
-      },
-      {
-        "label": "LISTINGS",
-        "href": "/listings",
-        "hasDropdown": true,
-        "dropdown": [
-          {
-            "label": "PROPERTY LISTING",
-            "href": "/property-listing"
-          }
-        ]
-      },
-      {
-        "label": "BLOG",
-        "href": "/blog",
-        "hasDropdown": true,
-        "dropdown": [
-          {
-            "label": "BLOG",
-            "href": "/blog"
+            "label": "Our Team",
+            "href": "/team"
           },
           {
             "label": "Awards",
             "href": "/awards"
           },
           {
-            "label": "Industries We Serve",
-            "href": "/industries-we-serve"
-          },
-          {
             "label": "Our Partners",
             "href": "/our-partners"
           },
           {
-            "label": "SITE MAP",
-            "href": "/site-map"
+            "label": "Testimonials",
+            "href": "/testimonial"
           },
           {
-            "label": "GET-A-QUOTES",
-            "href": "/get-a-quotes"
+            "label": "Careers",
+            "href": "/careers"
+          }
+        ]
+      },
+      {
+        "label": "SERVICES",
+        "href": "/services",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "All Services",
+            "href": "/services"
+          },
+          {
+            "label": "Industries We Serve",
+            "href": "/industries-we-serve"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
           },
           {
             "label": "How It Works",
@@ -80,69 +72,57 @@
         ]
       },
       {
-        "label": "PAGES",
-        "href": "/pages",
+        "label": "PROPERTIES",
+        "href": "/property-listing",
         "hasDropdown": true,
         "dropdown": [
           {
-            "label": "ABOUT",
-            "href": "/about"
+            "label": "View Properties",
+            "href": "/property-listing"
           },
           {
-            "label": "TEAM",
-            "href": "/team"
+            "label": "Brochure",
+            "href": "/brochure"
+          }
+        ]
+      },
+      {
+        "label": "MEDIA",
+        "href": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Blog",
+            "href": "/blog"
           },
           {
             "label": "Gallery",
             "href": "/gallery"
-          },
+          }
+        ]
+      },
+      {
+        "label": "SUPPORT",
+        "href": "#",
+        "hasDropdown": true,
+        "dropdown": [
           {
-            "label": "ERROR 404",
-            "href": "/404"
+            "label": "Contact Us",
+            "href": "/contact"
           },
           {
             "label": "FAQ",
             "href": "/faq"
           },
           {
-            "label": "PRICING TABLE",
-            "href": "/pricing"
-          },
-          {
-            "label": "TESTIMONIAL",
-            "href": "/testimonial"
-          },
-          {
-            "label": "PRIVACY-POLICY",
-            "href": "/privacy-policy"
-          },
-          {
-            "label": "SERVICES",
-            "href": "/services"
-          },
-          {
-            "label": "ENQUIRY",
+            "label": "Enquiry",
             "href": "/enquiry"
           },
           {
-            "label": "BROCHURE",
-            "href": "/brochure"
-          },
-          {
-            "label": "TERMS & CONDITIONS",
-            "href": "/terms-and-conditions"
+            "label": "Get A Quote",
+            "href": "/get-a-quotes"
           }
         ]
-      },
-      {
-        "label": "CAREERS",
-        "href": "/careers",
-        "hasDropdown": false
-      },
-      {
-        "label": "CONTACT",
-        "href": "/contact",
-        "hasDropdown": false
       }
     ]
   },
@@ -186,27 +166,34 @@
         "title": "Consulting Service",
         "text": "We offer tailored solutions to address your unique challenges and goals, from strategic planning to process optimization.",
         "buttonText": "Read More",
-        "accent": false
+        "accent": false,
+        "fullDescription": "Our consulting services provide in-depth market analysis, investment strategies, and portfolio management. We work closely with you to understand your objectives and deliver actionable insights for long-term success."
       },
       {
         "iconName": "home",
         "title": "Home Selling",
         "text": "Selling your home requires careful planning, staging and pricing for maximum appeal and marketing effectiveness.",
         "buttonText": "Read More",
-        "accent": true
+        "accent": true,
+        "fullDescription": "From initial appraisal to closing the deal, our home selling service covers every step. We use targeted marketing, professional staging advice, and skilled negotiation to ensure you get the best possible price for your property."
       },
       {
         "iconName": "shield",
         "title": "Rent Collection",
         "text": "We handle the day-to-day operations, including rent collection, maintenance and tenant screening.",
         "buttonText": "Read More",
-        "accent": false
+        "accent": false,
+        "fullDescription": "Take the hassle out of being a landlord. Our rent collection service guarantees timely payments, handles tenant communications, and manages any disputes or arrears professionally, so you can enjoy passive income without the stress."
       }
     ]
   },
   "ctaSection": {
     "eyebrow": "WE BRING YOU TO THE FUTURE",
-    "headingLines": ["Don't Worries,", "We Check All", "Of"],
+    "headingLines": [
+      "Don't Worries,",
+      "We Check All",
+      "Of"
+    ],
     "highlightedWord": "Unit",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "buttonLabel": "Discover More",
@@ -461,7 +448,11 @@
   },
   "bestRealEstateSection": {
     "eyebrow": "Best real estate in The World",
-    "headingLines": ["We serve you with", "best real estate", "by area"],
+    "headingLines": [
+      "We serve you with",
+      "best real estate",
+      "by area"
+    ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "images": [
       {
@@ -723,7 +714,7 @@
     "callLabel": "Call Us Anytime",
     "phoneNumber": "+1 234 567 8900",
     "phoneHref": "tel:+12345678900",
-    "imageUrl": "https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1200&auto=format&fit=crop",
+    "imageUrl": "/images/support-handshake.jpg",
     "imageAlt": "Two professionals shaking hands in a modern office"
   },
   "pageBanners": {
@@ -736,11 +727,10 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "About Us"
         },
         {
-          "label": "About Us"
+          "label": "About Company"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -753,6 +743,9 @@
         {
           "label": "Home",
           "href": "/"
+        },
+        {
+          "label": "Support"
         },
         {
           "label": "Contact Us"
@@ -770,8 +763,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Support"
         },
         {
           "label": "FAQ"
@@ -789,8 +781,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Media"
         },
         {
           "label": "Gallery"
@@ -808,8 +799,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Services"
         },
         {
           "label": "Pricing"
@@ -827,8 +817,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Legal"
         },
         {
           "label": "Privacy Policy"
@@ -846,8 +835,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "About Us"
         },
         {
           "label": "Testimonials"
@@ -865,11 +853,10 @@
           "href": "/"
         },
         {
-          "label": "Listings",
-          "href": "/property-listing"
+          "label": "Properties"
         },
         {
-          "label": "Property Listing"
+          "label": "View Properties"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -884,8 +871,7 @@
           "href": "/"
         },
         {
-          "label": "Blog",
-          "href": "/blog"
+          "label": "About Us"
         },
         {
           "label": "Awards"
@@ -903,6 +889,9 @@
           "href": "/"
         },
         {
+          "label": "Media"
+        },
+        {
           "label": "Blog"
         }
       ],
@@ -918,8 +907,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Properties"
         },
         {
           "label": "Brochure"
@@ -937,6 +925,9 @@
           "href": "/"
         },
         {
+          "label": "About Us"
+        },
+        {
           "label": "Careers"
         }
       ],
@@ -952,8 +943,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Support"
         },
         {
           "label": "Enquiry"
@@ -971,11 +961,10 @@
           "href": "/"
         },
         {
-          "label": "Blog",
-          "href": "/blog"
+          "label": "Support"
         },
         {
-          "label": "Get A Quotes"
+          "label": "Get A Quote"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -990,8 +979,7 @@
           "href": "/"
         },
         {
-          "label": "Blog",
-          "href": "/blog"
+          "label": "Services"
         },
         {
           "label": "Industries We Serve"
@@ -1009,8 +997,7 @@
           "href": "/"
         },
         {
-          "label": "Blog",
-          "href": "/blog"
+          "label": "About Us"
         },
         {
           "label": "Our Partners"
@@ -1028,11 +1015,10 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Services"
         },
         {
-          "label": "Services"
+          "label": "All Services"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -1047,8 +1033,7 @@
           "href": "/"
         },
         {
-          "label": "Blog",
-          "href": "/blog"
+          "label": "Navigation"
         },
         {
           "label": "Site Map"
@@ -1066,8 +1051,7 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "Legal"
         },
         {
           "label": "Terms & Conditions"
@@ -1085,11 +1069,10 @@
           "href": "/"
         },
         {
-          "label": "Pages",
-          "href": "/pages"
+          "label": "About Us"
         },
         {
-          "label": "Team"
+          "label": "Our Team"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -1102,6 +1085,9 @@
         {
           "label": "Home",
           "href": "/"
+        },
+        {
+          "label": "Services"
         },
         {
           "label": "How It Works"
@@ -1161,7 +1147,12 @@
         "desc": "Move into your dream property or close the deal successfully.",
         "iconName": "key"
       }
-    ]
+    ],
+    "ctaCard": {
+      "title": "Ready to get started?",
+      "description": "Contact our real estate experts today and find the perfect property for you.",
+      "buttonText": "Get in Touch"
+    }
   },
   "blogs": {
     "pageBanner": {
@@ -1285,7 +1276,22 @@
       "Selling Tips",
       "Investment Advice",
       "Home Design"
-    ]
+    ],
+    "sidebar": {
+      "search": {
+        "title": "Search",
+        "placeholder": "Search here..."
+      },
+      "recentPosts": {
+        "title": "Recent Posts"
+      },
+      "newsletter": {
+        "title": "Stay Updated",
+        "description": "Subscribe to get the latest real estate tips and updates.",
+        "placeholder": "Enter your email",
+        "buttonText": "Subscribe"
+      }
+    }
   },
   "footer": {
     "logo": {
@@ -1323,22 +1329,22 @@
     ],
     "linkGroups": [
       {
-        "title": "Navigation",
+        "title": "Quick Links",
         "links": [
           {
             "label": "Home",
             "href": "/"
           },
           {
-            "label": "Shop",
-            "href": "/shop"
+            "label": "Properties",
+            "href": "/property-listing"
           },
           {
-            "label": "Listings",
-            "href": "/listings"
+            "label": "Services",
+            "href": "/services"
           },
           {
-            "label": "Blog",
+            "label": "Media & Blog",
             "href": "/blog"
           },
           {
@@ -1348,30 +1354,37 @@
         ]
       },
       {
-        "title": "Explore",
+        "title": "Company",
         "links": [
           {
             "label": "About Us",
-            "href": "/#about"
+            "href": "/about"
           },
           {
-            "label": "Our Services",
-            "href": "/#services"
+            "label": "Our Team",
+            "href": "/team"
           },
           {
-            "label": "Top Deals",
-            "href": "/#deals"
+            "label": "Careers",
+            "href": "/careers"
           },
           {
-            "label": "Best Real Estate",
-            "href": "/#featured-property"
+            "label": "Privacy Policy",
+            "href": "/privacy-policy"
+          },
+          {
+            "label": "Terms & Conditions",
+            "href": "/terms-and-conditions"
           }
         ]
       }
     ],
     "contact": {
       "heading": "Contact",
-      "address": ["77 Highfield Road", "London N36 7SB"],
+      "address": [
+        "77 Highfield Road",
+        "London N36 7SB"
+      ],
       "phoneNumber": "987 654 3210"
     },
     "copyright": "Copyright © 2026. All rights reserved."
@@ -1447,7 +1460,20 @@
         "bedrooms": 4,
         "bathrooms": 2,
         "sqft": 1150,
-        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop",
+        "slug": "splitting-luxury-villa-in-rego-park",
+        "location": "Rego Park",
+        "pricePerMonth": ",875",
+        "type": "Villa",
+        "yearBuilt": 2022,
+        "parking": 2,
+        "description": "A beautiful and modern Splitting Luxury Villa in Rego Park built by KB Home. It offers excellent amenities and a prime location for comfortable living.",
+        "features": [
+          "Modern Design",
+          "Parking",
+          "Pool Access",
+          "Security System"
+        ]
       },
       {
         "id": 2,
@@ -1457,7 +1483,20 @@
         "bedrooms": 4,
         "bathrooms": 2,
         "sqft": 1150,
-        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
+        "slug": "splitting-modern-apartments",
+        "location": "Rego Park",
+        "pricePerMonth": ",875",
+        "type": "Villa",
+        "yearBuilt": 2022,
+        "parking": 2,
+        "description": "A beautiful and modern Splitting Modern Apartments built by D. R. Horton. It offers excellent amenities and a prime location for comfortable living.",
+        "features": [
+          "Modern Design",
+          "Parking",
+          "Pool Access",
+          "Security System"
+        ]
       },
       {
         "id": 3,
@@ -1467,7 +1506,20 @@
         "bedrooms": 4,
         "bathrooms": 2,
         "sqft": 1150,
-        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
+        "slug": "splitting-modern-apartments-view",
+        "location": "Rego Park",
+        "pricePerMonth": ",875",
+        "type": "Villa",
+        "yearBuilt": 2022,
+        "parking": 2,
+        "description": "A beautiful and modern Splitting Modern Apartments View built by Toll Brothers. It offers excellent amenities and a prime location for comfortable living.",
+        "features": [
+          "Modern Design",
+          "Parking",
+          "Pool Access",
+          "Security System"
+        ]
       }
     ]
   },
@@ -2334,42 +2386,54 @@
         "title": "Corporate & Office",
         "description": "Modern workspaces designed for productivity, collaboration, and growth.",
         "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-        "iconName": "briefcase"
+        "iconName": "briefcase",
+        "slug": "corporate-office",
+        "content": "Detailed information and solutions for the Corporate & Office industry. We provide end-to-end real estate services tailored to meet the unique challenges and opportunities in this sector. Our expertise ensures your facilities are optimized for maximum efficiency, compliance, and growth."
       },
       {
         "id": 2,
         "title": "Retail & Commercial",
         "description": "Spaces that attract, engage, and deliver exceptional customer experiences.",
         "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
-        "iconName": "shoppingBag"
+        "iconName": "shoppingBag",
+        "slug": "retail-commercial",
+        "content": "Detailed information and solutions for the Retail & Commercial industry. We provide end-to-end real estate services tailored to meet the unique challenges and opportunities in this sector. Our expertise ensures your facilities are optimized for maximum efficiency, compliance, and growth."
       },
       {
         "id": 3,
         "title": "Industrial & Warehousing",
         "description": "Robust and efficient spaces built for operations and long-term performance.",
         "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
-        "iconName": "industry"
+        "iconName": "industry",
+        "slug": "industrial-warehousing",
+        "content": "Detailed information and solutions for the Industrial & Warehousing industry. We provide end-to-end real estate services tailored to meet the unique challenges and opportunities in this sector. Our expertise ensures your facilities are optimized for maximum efficiency, compliance, and growth."
       },
       {
         "id": 4,
         "title": "Healthcare",
         "description": "Functional and compliant spaces that support better care and healthier communities.",
         "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop",
-        "iconName": "hospital"
+        "iconName": "hospital",
+        "slug": "healthcare",
+        "content": "Detailed information and solutions for the Healthcare industry. We provide end-to-end real estate services tailored to meet the unique challenges and opportunities in this sector. Our expertise ensures your facilities are optimized for maximum efficiency, compliance, and growth."
       },
       {
         "id": 5,
         "title": "Education",
         "description": "Learning environments that inspire curiosity, collaboration, and long-term success.",
         "image": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
-        "iconName": "graduationCap"
+        "iconName": "graduationCap",
+        "slug": "education",
+        "content": "Detailed information and solutions for the Education industry. We provide end-to-end real estate services tailored to meet the unique challenges and opportunities in this sector. Our expertise ensures your facilities are optimized for maximum efficiency, compliance, and growth."
       },
       {
         "id": 6,
         "title": "Hospitality & Leisure",
         "description": "Welcoming spaces that create memorable experiences for guests and communities.",
         "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
-        "iconName": "hotel"
+        "iconName": "hotel",
+        "slug": "hospitality-leisure",
+        "content": "Detailed information and solutions for the Hospitality & Leisure industry. We provide end-to-end real estate services tailored to meet the unique challenges and opportunities in this sector. Our expertise ensures your facilities are optimized for maximum efficiency, compliance, and growth."
       }
     ]
   },
@@ -2748,5 +2812,254 @@
         "iconName": "headphones"
       }
     ]
+  },
+  "propertyDetail": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "features": [
+      "Air Conditioning",
+      "Swimming Pool",
+      "Garden Area",
+      "Security System",
+      "Parking Space",
+      "Modern Kitchen",
+      "Balcony / Terrace",
+      "High-Speed Internet"
+    ],
+    "contactDetails": {
+      "phone": "+91 987 654 3210",
+      "phoneHref": "tel:+919876543210",
+      "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
+      "helpText": "Our property experts are ready to assist you."
+    },
+    "priceDetails": {
+      "propertyType": "Semi-Detached House",
+      "priceType": "Ex-showroom Price",
+      "region": "Australia ▾"
+    }
+  },
+  "contactPage": {
+    "heading": {
+      "eyebrow": "Contact Us",
+      "main1": "Let's ",
+      "mainHighlight": "Talk!"
+    },
+    "description": "We're here to help and answer any question you might have. We look forward to hearing from you.",
+    "office": {
+      "label": "Our Office",
+      "line1": "77 Highfield Road, London",
+      "line2": "N36 7SB, United Kingdom"
+    },
+    "phone": {
+      "label": "Call Us",
+      "number": "+91 987 654 3210",
+      "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM"
+    },
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    },
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.4734000084!2d-0.241681!3d51.528558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+  },
+  "enquiryPage": {
+    "formHeader": {
+      "title": "Send Us Your Enquiry",
+      "description": "Please provide your details below and we will get in touch with you."
+    },
+    "whyEnquire": {
+      "title": "Why Enquire With Us?",
+      "features": [
+        {
+          "title": "Wide Range of Properties",
+          "description": "Access to the best residential and commercial properties."
+        },
+        {
+          "title": "Best Deals & Prices",
+          "description": "We ensure you get the most competitive prices."
+        },
+        {
+          "title": "Expert Consultation",
+          "description": "Get personalized advice from our real estate experts."
+        },
+        {
+          "title": "Hassle-Free Process",
+          "description": "We make your property search smooth and stress-free."
+        },
+        {
+          "title": "Timely Assistance",
+          "description": "Our team is always ready to assist you at every step."
+        }
+      ]
+    },
+    "questions": {
+      "title": "Still Have Questions?",
+      "description": "Talk to our property experts today.",
+      "phone": "+91 98765 43210",
+      "phoneHref": "tel:+919876543210",
+      "email": "info@realestate.com",
+      "emailHref": "mailto:info@realestate.com"
+    },
+    "officeHours": {
+      "title": "Our Office Hours",
+      "weekdays": "Mon – Sat: 9:00 AM – 7:00 PM",
+      "sunday": "Sunday: By Appointment"
+    }
+  },
+  "getQuotePage": {
+    "formHeader": {
+      "title": "Tell Us What You Need",
+      "description": "Please fill in the details below and our team will contact you with the best quote."
+    },
+    "whyGetQuote": {
+      "title": "Why Get a Quote",
+      "features": [
+        {
+          "title": "Best Property Options",
+          "description": "We provide you handpicked properties that match your needs."
+        },
+        {
+          "title": "Competitive Pricing",
+          "description": "Get the best deals and transparent pricing with no hidden charges."
+        },
+        {
+          "title": "Expert Consultation",
+          "description": "Our real estate experts guide you at every step of your journey."
+        },
+        {
+          "title": "Hassle-Free Process",
+          "description": "We make the process smooth, simple and time-saving for you."
+        },
+        {
+          "title": "Save Time & Effort",
+          "description": "Tell us your requirements and we'll do the search for you."
+        }
+      ]
+    },
+    "needHelp": {
+      "title": "Need Help?",
+      "description": "Our team is here to assist you with any questions you may have.",
+      "phone": "+91 98765 43210",
+      "phoneHref": "tel:+919876543210",
+      "email": "info@reallow.com",
+      "emailHref": "mailto:info@reallow.com",
+      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=400&auto=format&fit=crop"
+    },
+    "expertContact": {
+      "title": "Talk to Our Expert",
+      "workingHours": "Mon – Sat (10:00 AM – 7:00 PM)",
+      "buttonText": "Contact Us Now"
+    }
+  },
+  "formOptions": {
+    "contactMethod": [
+      {
+        "value": "phone",
+        "label": "Phone Call"
+      },
+      {
+        "value": "email",
+        "label": "Email"
+      },
+      {
+        "value": "whatsapp",
+        "label": "WhatsApp"
+      }
+    ],
+    "enquiryFor": [
+      {
+        "value": "buying",
+        "label": "Buying Property"
+      },
+      {
+        "value": "selling",
+        "label": "Selling Property"
+      },
+      {
+        "value": "renting",
+        "label": "Renting Property"
+      },
+      {
+        "value": "consultation",
+        "label": "General Consultation"
+      }
+    ],
+    "propertyType": [
+      {
+        "value": "apartment",
+        "label": "Apartment / Flat"
+      },
+      {
+        "value": "villa",
+        "label": "Luxury Villa"
+      },
+      {
+        "value": "commercial",
+        "label": "Commercial Office"
+      },
+      {
+        "value": "plot",
+        "label": "Plot / Land"
+      }
+    ],
+    "budget": [
+      {
+        "value": "under-50l",
+        "label": "Under ₹50 Lakhs"
+      },
+      {
+        "value": "50l-1cr",
+        "label": "₹50 Lakhs - ₹1 Crore"
+      },
+      {
+        "value": "1cr-3cr",
+        "label": "₹1 Crore - ₹3 Crores"
+      },
+      {
+        "value": "above-3cr",
+        "label": "Above ₹3 Crores"
+      }
+    ],
+    "location": [
+      {
+        "value": "mumbai",
+        "label": "Mumbai"
+      },
+      {
+        "value": "delhi",
+        "label": "Delhi NCR"
+      },
+      {
+        "value": "bangalore",
+        "label": "Bangalore"
+      },
+      {
+        "value": "pune",
+        "label": "Pune"
+      }
+    ],
+    "purpose": [
+      {
+        "value": "end-use",
+        "label": "Personal Use (Living)"
+      },
+      {
+        "value": "investment",
+        "label": "Investment"
+      },
+      {
+        "value": "rental",
+        "label": "Rental Income"
+      }
+    ],
+    "agreement": {
+      "prefix": "I agree to the ",
+      "privacyPolicyText": "Privacy Policy",
+      "privacyPolicyUrl": "#",
+      "middleText": " and ",
+      "termsText": "Terms & Conditions",
+      "termsUrl": "#",
+      "suffix": "."
+    }
   }
 }

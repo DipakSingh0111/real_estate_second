@@ -49,9 +49,8 @@ export default function TestimonialsPage() {
               className="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] hover:shadow-md transition-all duration-300 border border-slate-100"
             >
               <div
-                className={`flex flex-col md:flex-row items-center gap-6 sm:gap-8 ${
-                  item.imagePosition === "right" ? "md:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col md:flex-row items-center gap-6 sm:gap-8 ${item.imagePosition === "right" ? "md:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Image Box */}
                 <div className="w-full md:w-[46%] h-56 sm:h-64 rounded-xl overflow-hidden shrink-0">
@@ -93,8 +92,6 @@ export default function TestimonialsPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* 4. SUPPORT BANNER */}
       </div>
     </div>
   );

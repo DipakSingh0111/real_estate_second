@@ -68,6 +68,7 @@ export type AboutService = {
   iconName: string;
   title: string;
   text: string;
+  fullDescription?: string;
   buttonText: string;
   accent: boolean;
 };
@@ -101,6 +102,7 @@ export type PropertyDeal = {
   id: number;
   slug: string;
   title: string;
+  builder?: string;
   location: string;
   price: string;
   pricePerMonth: string;
@@ -187,12 +189,19 @@ export type HowItWorkStep = {
   iconName: string;
 };
 
+export type HowItWorkCtaCard = {
+  title: string;
+  description: string;
+  buttonText: string;
+};
+
 export type HowItWorkSectionData = {
   pageBanner: PageBannerData;
   eyebrow: string;
   heading: string;
   description: string;
   steps: HowItWorkStep[];
+  ctaCard: HowItWorkCtaCard;
 };
 
 export type Service = {
@@ -237,11 +246,34 @@ export type BlogCategoryCard = {
   image: string;
 };
 
+export type BlogsSidebarSearch = {
+  title: string;
+  placeholder: string;
+};
+
+export type BlogsSidebarRecentPosts = {
+  title: string;
+};
+
+export type BlogsSidebarNewsletter = {
+  title: string;
+  description: string;
+  placeholder: string;
+  buttonText: string;
+};
+
+export type BlogsSidebarData = {
+  search: BlogsSidebarSearch;
+  recentPosts: BlogsSidebarRecentPosts;
+  newsletter: BlogsSidebarNewsletter;
+};
+
 export type BlogsPageData = {
   pageBanner: PageBannerData;
   posts: BlogPost[];
   categoryCards: BlogCategoryCard[];
   categories: string[];
+  sidebar: BlogsSidebarData;
 };
 
 export type ServicePageItem = {
@@ -250,17 +282,6 @@ export type ServicePageItem = {
   description: string;
   iconName: string;
   isActive?: boolean;
-};
-
-export type ServicePageProperty = {
-  id: number;
-  title: string;
-  builder: string;
-  price: string;
-  bedrooms: number;
-  bathrooms: number;
-  sqft: number;
-  image: string;
 };
 
 export type ServicesPageData = {
@@ -275,7 +296,7 @@ export type ServicesPageData = {
   helpText: string;
   helpButton: string;
   items: ServicePageItem[];
-  properties: ServicePageProperty[];
+  properties: PropertyDeal[];
 };
 
 export type PartnerLogo = {
@@ -449,8 +470,10 @@ export type BrochurePageData = {
 
 export type IndustryItem = {
   id: number;
+  slug: string;
   title: string;
   description: string;
+  content: string;
   image: string;
   iconName: string;
 };

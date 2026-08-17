@@ -47,9 +47,9 @@ export default function CareerPage() {
       <div className="page-container pt-10 space-y-12">
         {/* TWO COLUMN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* LEFT COLUMN (7 COLS) */}
+          {/* LEFT COLUMN */}
           <div className="lg:col-span-7 space-y-6">
-            {/* HERO CARD WITH SMOOTH FADE BLEND OVERLAY */}
+            {/* HERO CARD */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -75,7 +75,7 @@ export default function CareerPage() {
                   ))}
                 </div>
 
-                {/* Dots Pattern Top-Right (Blue Section) */}
+                {/* Dots Pattern */}
                 <div className="absolute top-4 right-8 grid grid-cols-4 gap-1 opacity-20 pointer-events-none hidden sm:grid">
                   {[...Array(12)].map((_, i) => (
                     <div key={i} className="w-1 h-1 bg-white rounded-full" />
