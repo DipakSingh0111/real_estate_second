@@ -22,21 +22,21 @@ const socialIconMap = {
 
 export default function Footer({ data }: FooterProps) {
   return (
-    <footer className="w-full bg-white">
+    <footer className="w-full bg-white border-t border-slate-100 font-sans">
       <div className="page-container">
-        <div className="grid grid-cols-1 gap-12 py-[38px] md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.35fr] lg:gap-[55px]">
-          <div>
+        <div className="grid grid-cols-1 gap-8 py-[40px] md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.35fr] lg:gap-[50px]">
+          <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <Image src={data.logo.src} alt={data.logo.alt} width={235} height={90} priority className="h-auto w-[235px] object-contain" />
+              <Image src={data.logo.src} alt={data.logo.alt} width={210} height={80} priority className="h-auto w-[210px] object-contain" />
             </Link>
-            <h2 className="mt-[5px] max-w-[230px] text-[27px] font-bold leading-[1.45] text-slate-900">{data.title}</h2>
-            <p className="mt-[26px] max-w-[330px] text-[18px] font-normal leading-[1.78] text-[#555555]">{data.description}</p>
-            <div className="mt-[38px] flex items-center gap-[27px]">
+            <h2 className="text-[20px] font-bold leading-snug text-slate-900">{data.title}</h2>
+            <p className="text-[13px] sm:text-[14px] font-normal leading-relaxed text-[#555555] max-w-[320px]">{data.description}</p>
+            <div className="flex items-center gap-[20px] pt-2">
               {data.socialLinks.map((socialLink) => {
                 const Icon = socialIconMap[socialLink.platform as keyof typeof socialIconMap] ?? FaYoutube;
                 return (
                   <Link key={socialLink.platform} href={socialLink.href} aria-label={socialLink.label} className="text-[#9AADE0] transition-colors duration-200 hover:text-[#294FC1]">
-                    <Icon size={21} />
+                    <Icon size={18} />
                   </Link>
                 );
               })}
@@ -46,7 +46,7 @@ export default function Footer({ data }: FooterProps) {
           {data.linkGroups.map((group) => (
             <div key={group.title}>
               <FooterHeading title={group.title} />
-              <ul className="mt-[29px] space-y-[17px]">
+              <ul className="mt-[20px] space-y-[12px]">
                 {group.links.map((link) => <FooterLink key={link.href} href={link.href}>{link.label}</FooterLink>)}
               </ul>
             </div>
@@ -54,21 +54,21 @@ export default function Footer({ data }: FooterProps) {
 
           <div>
             <FooterHeading title={data.contact.heading} />
-            <div className="mt-[27px] space-y-[25px]">
-              <ContactBox icon={<Building2 size={29} strokeWidth={2.4} />}>
-                <p className="text-[18px] font-medium leading-[1.45] text-[#555555]">
+            <div className="mt-[20px] space-y-[16px]">
+              <ContactBox icon={<Building2 size={20} strokeWidth={2} />}>
+                <p className="text-[13px] sm:text-[14px] font-normal leading-normal text-[#555555]">
                   {data.contact.address.map((line) => <span key={line} className="block">{line}</span>)}
                 </p>
               </ContactBox>
-              <ContactBox icon={<Phone size={29} strokeWidth={2.4} />}>
-                <p className="text-[18px] font-medium text-[#555555]">{data.contact.phoneNumber}</p>
+              <ContactBox icon={<Phone size={20} strokeWidth={2} />}>
+                <p className="text-[13px] sm:text-[14px] font-normal text-[#555555]">{data.contact.phoneNumber}</p>
               </ContactBox>
             </div>
           </div>
         </div>
       </div>
-      <div className="page-container flex min-h-[115px] items-center justify-center">
-        <p className="text-center text-[18px] font-normal text-[#888888]">{data.copyright}</p>
+      <div className="page-container flex min-h-[70px] items-center justify-center border-t border-slate-100/50 py-4">
+        <p className="text-center text-[13px] font-normal text-[#888888]">{data.copyright}</p>
       </div>
     </footer>
   );
@@ -77,24 +77,24 @@ export default function Footer({ data }: FooterProps) {
 function FooterHeading({ title }: { title: string }) {
   return (
     <div className="w-fit">
-      <h3 className="text-[27px] font-bold leading-[32px] text-slate-900">{title}</h3>
-      <div className="mt-[11px] flex h-[7px] items-center">
-        <span className="block h-[7px] w-[7px] shrink-0 rounded-full bg-[#FF9848]" />
-        <span className="ml-[8px] block h-[5px] w-[58px] rounded-full bg-[#294FC1]" />
+      <h3 className="text-[17px] font-bold leading-[22px] text-slate-900">{title}</h3>
+      <div className="mt-[8px] flex h-[5px] items-center">
+        <span className="block h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF9848]" />
+        <span className="ml-[6px] block h-[3px] w-[40px] rounded-full bg-[#294FC1]" />
       </div>
     </div>
   );
 }
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return <li><Link href={href} className="text-[18px] font-normal leading-[1.5] text-[#555555] transition-colors duration-200 hover:text-[#294FC1]">{children}</Link></li>;
+  return <li><Link href={href} className="text-[14px] font-normal leading-normal text-[#555555] transition-colors duration-200 hover:text-[#294FC1]">{children}</Link></li>;
 }
 
 function ContactBox({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="flex min-h-[105px] w-full items-center">
-      <div className="relative z-10 flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full bg-[#2D53C4] text-white">{icon}</div>
-      <div className="-ml-[8px] flex min-h-[105px] flex-1 items-center rounded-[10px] bg-[#E8ECF8] pl-[55px] pr-[18px]">{children}</div>
+    <div className="flex min-h-[70px] w-full items-center">
+      <div className="relative z-10 flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[#2D53C4] text-white shadow-sm">{icon}</div>
+      <div className="-ml-[8px] flex min-h-[70px] flex-1 items-center rounded-[10px] bg-[#E8ECF8] pl-[46px] pr-[16px]">{children}</div>
     </div>
   );
 }

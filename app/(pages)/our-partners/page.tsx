@@ -54,19 +54,19 @@ export default function PartnersPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[10px] max-w-6xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[15px]"
         >
           {sectionData.items.map((partner) => (
             <motion.div
               key={partner.id}
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-md p-4 border border-[#F0F0F0] hover:border-[#1B36B0]/30 hover:shadow-[0_8px_24px_rgba(27,54,176,0.08)] transition-all duration-300 flex items-center justify-center h-[110px]"
+              className="bg-white rounded-2xl overflow-hidden p-2.5 border border-[#F0F0F0] hover:border-[#1B36B0]/30 hover:shadow-[0_8px_24px_rgba(27,54,176,0.08)] transition-all duration-300 flex items-center justify-center h-[110px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-[50px] max-w-[85%] object-contain"
+                className="max-h-[72px] max-w-[90%] object-contain rounded-lg"
                 loading="lazy"
               />
             </motion.div>

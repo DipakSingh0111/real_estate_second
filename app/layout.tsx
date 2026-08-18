@@ -35,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white text-slate-900">
-        <div className="fixed inset-x-0 top-0 z-[100] w-full">
+        <div className="fixed inset-x-0 top-0 z-[9999] w-full">
           <TopBar data={homeData.topBar} />
           <NavBar data={homeData.navbar} />
         </div>

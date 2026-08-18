@@ -644,7 +644,7 @@
           },
           {
             "value": "100+",
-            "label": "Projects Deliver"
+            "label": "Projects Delivered"
           },
           {
             "value": "5000+",
@@ -671,7 +671,7 @@
           },
           {
             "value": "80+",
-            "label": "Projects Deliver"
+            "label": "Projects Delivered"
           },
           {
             "value": "3000+",
@@ -698,7 +698,7 @@
           },
           {
             "value": "50+",
-            "label": "Projects Deliver"
+            "label": "Projects Delivered"
           },
           {
             "value": "2000+",
@@ -1530,252 +1530,77 @@
       {
         "id": 1,
         "name": "DLF",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1d/DLF_logo.svg"
+        "logo": "/images/dlf.png"
       },
       {
         "id": 2,
         "name": "Godrej Properties",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godrej_Properties_Logo.svg"
+        "logo": "/images/godrej.png"
       },
       {
         "id": 3,
-        "name": "Lodha",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lodha_Group_logo.svg"
+        "name": "Lodha Group",
+        "logo": "/images/lodha.png"
       },
       {
         "id": 4,
         "name": "Tata Projects",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg"
+        "logo": "/images/Tata.png"
       },
       {
         "id": 5,
         "name": "Ireo",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=IREO"
+        "logo": "/images/ireo.png"
       },
       {
         "id": 6,
         "name": "Sobha Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=SOBHA"
+        "logo": "/images/sobha.png"
       },
       {
         "id": 7,
         "name": "Brigade Group",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=BRIGADE"
+        "logo": "/images/Brigdha.png"
       },
       {
         "id": 8,
         "name": "Mahindra Lifespaces",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=Mahindra"
+        "logo": "/images/Mahindra.png"
       },
       {
         "id": 9,
         "name": "Shapoorji Pallonji",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=Shapoorji"
+        "logo": "/images/Sarpoorji.png"
       },
       {
         "id": 10,
         "name": "Prestige Group",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=PRESTIGE"
+        "logo": "/images/Prestige.png"
       },
       {
         "id": 11,
         "name": "K Raheja Corp",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=K+RAHEJA"
+        "logo": "/images/lK-Raheja.webp"
       },
       {
         "id": 12,
-        "name": "Puravankara",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=PURAVANKARA"
+        "name": "Colliers",
+        "logo": "/images/colliers.png"
       },
       {
         "id": 13,
-        "name": "Omaxe",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=OMAXE"
+        "name": "Cushman & Wakefield",
+        "logo": "/images/Cushman_&_Wakefield.png"
       },
       {
         "id": 14,
-        "name": "Total Environment",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=TOTAL"
+        "name": "JLL",
+        "logo": "/images/Jll.png"
       },
       {
         "id": 15,
-        "name": "JLL",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/JLL_logo.svg"
-      },
-      {
-        "id": 16,
-        "name": "CBRE",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/17/CBRE_Group_logo.svg"
-      },
-      {
-        "id": 17,
-        "name": "Colliers",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Colliers_International_logo.svg"
-      },
-      {
-        "id": 18,
-        "name": "Cushman & Wakefield",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Cushman_%26_Wakefield_logo.svg"
-      },
-      {
-        "id": 19,
         "name": "Knight Frank",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=Knight+Frank"
-      },
-      {
-        "id": 20,
-        "name": "BPTP",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=BPTP"
-      },
-      {
-        "id": 21,
-        "name": "Emaar",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/Emaar_Properties_logo.svg"
-      },
-      {
-        "id": 22,
-        "name": "NCC",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=NCC"
-      },
-      {
-        "id": 23,
-        "name": "Hiranandani",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=Hiranandani"
-      },
-      {
-        "id": 24,
-        "name": "Piramal Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=Piramal"
-      },
-      {
-        "id": 25,
-        "name": "L&T Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=L%26T+Realty"
-      },
-      {
-        "id": 26,
-        "name": "ASBL",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ASBL"
-      },
-      {
-        "id": 27,
-        "name": "Ajmera",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ajmera"
-      },
-      {
-        "id": 28,
-        "name": "Signature Global",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=SIGNATURE"
-      },
-      {
-        "id": 29,
-        "name": "M3M",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=M3M"
-      },
-      {
-        "id": 30,
-        "name": "Ganga Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=GANGA"
-      },
-      {
-        "id": 31,
-        "name": "Rustomjee",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=Rustomjee"
-      },
-      {
-        "id": 32,
-        "name": "VTP Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=VTP+REALTY"
-      },
-      {
-        "id": 33,
-        "name": "Tata Housing",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=TATA+HOUSING"
-      },
-      {
-        "id": 34,
-        "name": "Joyville",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=JOYVILLE"
-      },
-      {
-        "id": 35,
-        "name": "Sheth Creators",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=SHETH"
-      },
-      {
-        "id": 36,
-        "name": "Kalpataru",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=KALPATARU"
-      },
-      {
-        "id": 37,
-        "name": "Arihant Superstructures",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ARIHANT"
-      },
-      {
-        "id": 38,
-        "name": "Provident Housing",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=PROVIDENT"
-      },
-      {
-        "id": 39,
-        "name": "ATS Infrastructure",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ATS"
-      },
-      {
-        "id": 40,
-        "name": "ACE Group",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ACE"
-      },
-      {
-        "id": 41,
-        "name": "Flora",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=FLORA"
-      },
-      {
-        "id": 42,
-        "name": "Anarock",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ANAROCK"
-      },
-      {
-        "id": 43,
-        "name": "Ramky",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=RAMKY"
-      },
-      {
-        "id": 44,
-        "name": "Dosti Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=DOSTI"
-      },
-      {
-        "id": 45,
-        "name": "Bhutani Infra",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=BHUTANI"
-      },
-      {
-        "id": 46,
-        "name": "The Address Makers",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=ADDRESS"
-      },
-      {
-        "id": 47,
-        "name": "Sattva Group",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=SATTVA"
-      },
-      {
-        "id": 48,
-        "name": "Srijan Realty",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=srijan"
-      },
-      {
-        "id": 49,
-        "name": "Gammon",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=GAMMON"
-      },
-      {
-        "id": 50,
-        "name": "Reliance Infra",
-        "logo": "https://placehold.co/200x80/ffffff/111827?text=RELIANCE"
+        "logo": "/images/knight.png"
       }
     ]
   },

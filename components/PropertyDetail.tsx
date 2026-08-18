@@ -12,11 +12,13 @@ import {
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
+  FileText,
   Headphones,
   MapPin,
   Maximize2,
   Phone,
   Send,
+  Star,
   Tag,
 } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
@@ -201,28 +203,29 @@ export default function PropertyDetail({
             <div className="mt-8 flex flex-wrap gap-3">
               {(
                 [
-                  ["overview", "Overview"],
-                  ["details", "Property Details"],
-                  ["features", "Features"],
+                  ["overview", "Overview", BedDouble],
+                  ["details", "Property Details", FileText],
+                  ["features", "Features", Star],
                 ] as const
-              ).map(([key, label]) => (
+              ).map(([key, label, Icon]) => (
                 <button
                   key={key}
                   type="button"
                   onClick={() => setActiveTab(key)}
-                  className={`rounded-md px-5 py-2.5 text-sm font-semibold transition ${
+                  className={`rounded-lg px-5 py-3 text-sm font-extrabold transition flex items-center gap-2.5 ${
                     activeTab === key
-                      ? "bg-[#2A39CE] text-white shadow-sm"
-                      : "border border-slate-200 bg-white text-slate-700 hover:border-[#2A39CE]/40 hover:text-[#2A39CE]"
+                      ? "bg-[#1B36B0] text-white shadow-sm"
+                      : "bg-[#F3F4F6] text-slate-700 hover:bg-slate-200"
                   }`}
                 >
-                  {label}
+                  <Icon className="h-4 w-4" />
+                  <span>{label}</span>
                 </button>
               ))}
             </div>
 
             {/* Tab panels */}
-            <div className="mt-6 rounded-xl border border-slate-100 bg-white">
+            <div className="mt-6 rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)]">
               {activeTab === "overview" ? (
                 <div className="divide-y divide-slate-100">
                   {overviewRows.map((row) => {
@@ -230,17 +233,19 @@ export default function PropertyDetail({
                     return (
                       <div
                         key={row.label}
-                        className="flex items-center gap-4 px-4 py-3.5 sm:px-5"
+                        className="grid grid-cols-[1.2fr_1fr] divide-x divide-slate-100"
                       >
-                        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#EEF1FF] text-[#2A39CE]">
-                          <Icon className="h-4 w-4" />
-                        </span>
-                        <span className="flex-1 text-sm font-medium text-slate-600">
-                          {row.label}
-                        </span>
-                        <span className="text-sm font-semibold text-[#0B1A33]">
+                        {/* Left Side: Icon + Name */}
+                        <div className="flex items-center gap-3.5 px-5 py-3.5 sm:px-6">
+                          <Icon className="h-5 w-5 text-[#4F5B73] shrink-0" />
+                          <span className="text-[14px] sm:text-[15px] font-extrabold text-[#142345] tracking-wide">
+                            {row.label}
+                          </span>
+                        </div>
+                        {/* Right Side: Value */}
+                        <div className="flex items-center px-5 py-3.5 sm:px-6 text-[14px] sm:text-[15px] font-semibold text-[#4F5B73]">
                           {row.value}
-                        </span>
+                        </div>
                       </div>
                     );
                   })}

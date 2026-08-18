@@ -36,8 +36,8 @@ export default function HeroBanner({ data }: HeroBannerProps) {
   if (!activeSlide) return null;
 
   return (
-    <section className="relative min-h-[640px] w-full overflow-hidden bg-white font-[family-name:var(--font-poppins)] lg:min-h-[720px] xl:min-h-[760px]">
-      <div className="flex min-h-[640px] w-full flex-col lg:min-h-[720px] lg:flex-row lg:items-stretch xl:min-h-[760px]">
+    <section className="relative min-h-screen w-full overflow-hidden bg-white font-[family-name:var(--font-poppins)]">
+      <div className="flex min-h-screen w-full flex-col lg:flex-row lg:items-stretch">
         {/* Left column: Text content */}
         <div className="relative z-10 flex w-full flex-col justify-center pb-12 pl-[var(--site-gutter)] pr-[var(--site-gutter)] pt-32 lg:w-[44%] lg:pb-20 lg:pt-32 lg:pr-8 xl:w-[42%] xl:pr-12 2xl:w-[40%]">
           <motion.div
@@ -75,7 +75,7 @@ export default function HeroBanner({ data }: HeroBannerProps) {
         </div>
 
         {/* Right column: Image starts aligned with navbar Home and extends full right edge */}
-        <div className="relative h-[440px] w-full lg:h-auto lg:min-h-[720px] lg:w-[56%] xl:min-h-[760px] xl:w-[58%] 2xl:w-[60%]">
+        <div className="relative h-[380px] w-full lg:h-auto lg:min-h-screen lg:w-[56%] xl:w-[58%] 2xl:w-[60%]">
           <div className="absolute inset-0 overflow-hidden shadow-2xl lg:rounded-l-[40px]">
             {slides.map((slide, index) => (
               <div
@@ -120,25 +120,6 @@ export default function HeroBanner({ data }: HeroBannerProps) {
             </button>
           </div>
 
-          {/* Previous */}
-          <div className="absolute bottom-8 right-6 z-20 flex items-center gap-2.5 lg:right-10">
-            <button
-              type="button"
-              onClick={goToPrevious}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:bg-white/40"
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              onClick={goToNext}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:bg-white/40"
-              aria-label="Next image"
-            >
-              ›
-            </button>
-          </div>
 
           {/* Slide dots indicators */}
           <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">

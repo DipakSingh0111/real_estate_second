@@ -231,7 +231,6 @@ export default function Navbar({ data }: NavBarProps) {
           </ul>
         </nav>
       </div>
-
       {/* Mobile overlay menu */}
       <div
         className={`fixed inset-0 z-[90] bg-[#0B1A33]/45 backdrop-blur-[2px] transition lg:hidden ${mobileOpen

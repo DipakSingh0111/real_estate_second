@@ -49,87 +49,102 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
   }
 
   return (
-    <main className="bg-white font-sans text-slate-900">
+    <main className="bg-slate-50/50 font-sans text-slate-900 pb-4">
       <PageBanner data={bannerData} />
 
-      <section className="page-container py-12">
+      <section className="page-container pt-10 pb-6">
         <Link
           href="/team"
-          className="mb-8 inline-flex items-center gap-2 text-[#1A43BF] hover:underline"
+          className="mb-10 inline-flex items-center gap-2 text-[#1B36B0] font-bold text-sm sm:text-[15px] hover:underline"
         >
           <span>←</span> Back to Team
         </Link>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:min-h-[600px]">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Team Member Image */}
-          <div className="flex items-center justify-center">
-            <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-lg">
+          <div className="w-[320px] sm:w-[380px] lg:w-[400px] shrink-0 relative h-[400px] sm:h-[480px] lg:h-[520px] mx-auto lg:mx-0">
+            {/* Blue Background Block */}
+            <div className="absolute -top-4 -bottom-4 -left-4 right-10 rounded-tl-[80px] rounded-br-[80px] rounded-tr-[24px] rounded-bl-[24px] bg-[#1B36B0] z-0" />
+
+            {/* Dot Pattern */}
+            <div
+              className="absolute -top-6 -right-6 w-20 h-20 z-20 opacity-60"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, #1B36B0 2.5px, transparent 2.5px)",
+                backgroundSize: "16px 16px",
+              }}
+            />
+
+            {/* Main Image Wrapper */}
+            <div className="relative z-10 w-[90%] ml-auto h-full rounded-tl-[80px] rounded-br-[80px] rounded-tr-[24px] rounded-bl-[24px] overflow-hidden shadow-xl bg-white">
               <Image
                 src={teamMember.imageUrl}
                 alt={teamMember.imageAlt}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>
           </div>
 
           {/* Team Member Details */}
-          <div className="flex flex-col justify-center gap-6">
+          <div className="flex-1 flex flex-col gap-8 w-full">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#1A43BF]">
+              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-[0.08em] text-[#1B36B0]">
                 {teamMember.role}
               </span>
-              <h1 className="mt-2 text-4xl font-extrabold text-slate-900 sm:text-5xl">
+              <h1 className="mt-2 text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#142345] leading-tight">
                 {teamMember.name}
               </h1>
+              <div className="w-12 h-[3.5px] bg-[#1B36B0] rounded-full mt-4" />
             </div>
 
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-400">
                 Specialization
               </p>
-              <p className="text-xl font-semibold text-slate-900">
+              <p className="text-lg font-bold text-slate-800">
                 {teamMember.specialization}
               </p>
             </div>
 
             <div>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-slate-400">
                 About
               </p>
-              <p className="leading-7 text-slate-600">{teamMember.bio}</p>
+              <p className="leading-[1.75] text-[#4F5B73] text-[15px]">{teamMember.bio}</p>
             </div>
 
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-slate-400">
                 Description
               </p>
-              <p className="leading-7 text-slate-600">
+              <p className="leading-[1.75] text-[#4F5B73] text-[15px]">
                 {teamMember.description}
               </p>
             </div>
 
             {/* Contact Information */}
-            <div className="rounded-[20px] border border-slate-200 bg-gradient-to-br from-[#f7f9ff] to-white p-6 shadow-sm">
-              <h3 className="mb-4 text-lg font-bold text-slate-900">
+            <div className="rounded-[24px] border border-[#D0DDFB]/50 bg-[#F0F4FF] p-6 shadow-sm">
+              <h3 className="mb-4 text-base font-extrabold text-[#142345] uppercase tracking-wider">
                 Contact Information
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div>
-                  <p className="text-sm font-semibold text-slate-500">Email</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wide">Email</p>
                   <a
                     href={`mailto:${teamMember.email}`}
-                    className="text-[#1A43BF] hover:underline"
+                    className="text-[#1B36B0] font-semibold text-[15px] hover:underline"
                   >
                     {teamMember.email}
                   </a>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-500">Phone</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wide">Phone</p>
                   <a
                     href={`tel:${teamMember.phone}`}
-                    className="text-[#1A43BF] hover:underline"
+                    className="text-[#1B36B0] font-semibold text-[15px] hover:underline"
                   >
                     {teamMember.phone}
                   </a>
@@ -139,19 +154,19 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
 
             {/* Statistics */}
             <div>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.08em] text-slate-400">
                 Achievements
               </p>
               <div className="grid gap-4 sm:grid-cols-3">
                 {teamMember.stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-[20px] border border-slate-100 bg-white p-4 text-center shadow-sm"
+                    className="rounded-[24px] border border-slate-100 bg-white p-5 text-center shadow-sm"
                   >
-                    <p className="text-3xl font-extrabold text-[#1A43BF]">
+                    <p className="text-3xl font-black text-[#1B36B0]">
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-slate-500">
+                    <p className="mt-2 text-[10px] uppercase tracking-wider text-slate-500 font-bold">
                       {stat.label}
                     </p>
                   </div>
@@ -162,8 +177,8 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
         </div>
 
         {/* Related Team Members */}
-        <div className="mt-16 border-t border-slate-200 pt-12">
-          <h2 className="mb-8 text-3xl font-bold text-slate-900">
+        <div className="mt-20 border-t border-slate-200/60 pt-16">
+          <h2 className="mb-10 text-3xl font-extrabold text-[#142345]">
             Our Other Team Members
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -173,26 +188,28 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
                 <Link
                   key={member.id}
                   href={`/team/${member.slug}`}
-                  className="group overflow-hidden rounded-[20px] border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
+                  className="group overflow-hidden rounded-[24px] border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
                 >
-                  <div className="relative h-[250px] overflow-hidden bg-slate-100">
+                  <div className="relative h-[280px] overflow-hidden bg-slate-100">
                     <Image
                       src={member.imageUrl}
                       alt={member.imageAlt}
                       fill
-                      className="object-cover transition-transform group-hover:scale-105"
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#1A43BF]">
-                      {member.role}
-                    </p>
-                    <h3 className="mt-2 font-bold text-slate-900">
-                      {member.name}
-                    </h3>
-                    <p className="mt-2 line-clamp-2 text-sm text-slate-600">
-                      {member.description}
-                    </p>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#1B36B0]">
+                        {member.role}
+                      </p>
+                      <h3 className="mt-2 font-bold text-lg text-[#142345] group-hover:text-[#1B36B0] transition-colors duration-200">
+                        {member.name}
+                      </h3>
+                      <p className="mt-3 line-clamp-2 text-sm text-[#4F5B73] leading-relaxed">
+                        {member.description}
+                      </p>
+                    </div>
                   </div>
                 </Link>
               ))}

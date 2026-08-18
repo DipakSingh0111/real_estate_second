@@ -9,6 +9,30 @@ type PageBannerProps = {
   data: PageBannerData;
 };
 
+const VALID_PAGES = new Set([
+  "/",
+  "/about",
+  "/services",
+  "/pricing",
+  "/property-listing",
+  "/team",
+  "/testimonial",
+  "/blog",
+  "/awards",
+  "/faq",
+  "/contact",
+  "/brochure",
+  "/careers",
+  "/enquiry",
+  "/gallery",
+  "/get-a-quotes",
+  "/industries-we-serve",
+  "/our-partners",
+  "/privacy-policy",
+  "/site-map",
+  "/terms-and-conditions",
+]);
+
 function getBreadcrumbHref(label: string) {
   const normalized = label
     .toLowerCase()
@@ -19,11 +43,11 @@ function getBreadcrumbHref(label: string) {
   if (normalized === "home") return "/";
   if (normalized === "privacy-policy") return "/privacy-policy";
   if (normalized === "terms-and-conditions") return "/terms-and-conditions";
-  if (normalized === "site-map") return "/site-map";
+  if (normalized === "site-map" || normalized === "sitemap") return "/site-map";
   if (normalized === "get-a-quotes") return "/get-a-quotes";
   if (normalized === "industries-we-serve") return "/industries-we-serve";
   if (normalized === "our-partners") return "/our-partners";
-  if (normalized === "property-listing") return "/property-listing";
+  if (normalized === "property-listing" || normalized === "properties" || normalized === "listings") return "/property-listing";
   if (normalized === "team") return "/team";
   if (normalized === "testimonial") return "/testimonial";
   if (normalized === "blog") return "/blog";
@@ -37,7 +61,10 @@ function getBreadcrumbHref(label: string) {
   if (normalized === "brochure") return "/brochure";
   if (normalized === "careers") return "/careers";
   if (normalized === "enquiry") return "/enquiry";
-  return `/${normalized}`;
+  if (normalized === "gallery") return "/gallery";
+
+  const path = `/${normalized}`;
+  return VALID_PAGES.has(path) ? path : "";
 }
 
 export default function PageBanner({ data }: PageBannerProps) {
@@ -65,6 +92,7 @@ export default function PageBanner({ data }: PageBannerProps) {
           {data.breadcrumb.map((item, index) => {
             const isLast = index === data.breadcrumb.length - 1;
             const href = item.href ?? getBreadcrumbHref(item.label);
+            const isClickable = !isLast && href !== "";
             return (
               <span
                 key={`${item.label}-${index}`}
@@ -73,7 +101,7 @@ export default function PageBanner({ data }: PageBannerProps) {
                 {index > 0 ? (
                   <span className="text-slate-200/50">/</span>
                 ) : null}
-                {!isLast ? (
+                {isClickable ? (
                   <Link
                     href={href}
                     className="text-slate-200 transition hover:text-white"
@@ -81,7 +109,9 @@ export default function PageBanner({ data }: PageBannerProps) {
                     {item.label}
                   </Link>
                 ) : (
-                  <span className="font-semibold text-white">{item.label}</span>
+                  <span className={isLast ? "font-semibold text-white" : "text-slate-200/60"}>
+                    {item.label}
+                  </span>
                 )}
               </span>
             );
