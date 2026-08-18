@@ -5,14 +5,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
-import homeData from "@/data/property.json";
+import { site } from "@/data";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function ServiceDetailsPage() {
   const params = useParams();
   const slug = params?.slug as string;
 
-  const serviceData = (homeData.servicesDetails as any)?.[slug];
+  const serviceData = (site.servicesDetails as any)?.[slug];
 
   if (!serviceData) {
     return notFound();
@@ -25,12 +25,9 @@ export default function ServiceDetailsPage() {
     <main className="bg-white font-sans text-slate-900">
       <PageBanner
         data={{
+          ...site.pageBanners['services'],
           title: serviceData.title,
-          description: serviceData.description || "",
-          backgroundImage: "/images/modern-buildings.jpg",
-          backgroundImageAlt: serviceData.title,
           breadcrumb: [
-            { label: "Home", href: "/" },
             { label: "Services", href: "/services" },
             { label: serviceData.title, href: "#" },
           ],

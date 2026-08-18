@@ -1,13 +1,11 @@
 "use client";
+import { site } from "@/data";
 
 import { useState } from "react";
 import PropertyCard from "@/components/PropertyCard";
 import PageBanner from "@/components/common/PageBanner";
 import Pagination from "@/components/common/Pagination";
-import siteData from "@/data/property.json";
-import type { PropertyDeal } from "@/types/home";
-
-const properties: PropertyDeal[] = siteData.topDealsSection.deals;
+const properties: any[] = site.topDealsSection.deals;
 const pageSize = 6;
 
 export default function PropertyListingPage() {
@@ -21,7 +19,7 @@ export default function PropertyListingPage() {
 
   return (
     <main className="bg-slate-50">
-      <PageBanner data={siteData.pageBanners.propertyListing} />
+      <PageBanner />
 
       <section className="page-container py-12">
         <div className="mb-8">
@@ -35,7 +33,7 @@ export default function PropertyListingPage() {
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {visibleProperties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
+            <PropertyCard key={property.id} data={property} />
           ))}
         </div>
 

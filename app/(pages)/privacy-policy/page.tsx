@@ -1,17 +1,15 @@
 "use client";
 
+import { site } from "@/data";
 import { motion } from "framer-motion";
 import { Calendar, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { PrivacyPolicyPageData } from "@/types/home";
-
 export default function TermsAndConditions() {
-  const sectionData: PrivacyPolicyPageData = homeData.privacyPolicyPage;
+  const sectionData = site.privacyPolicyPage;
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
-      <PageBanner data={homeData.pageBanners.privacyPolicy} />
+      <PageBanner />
 
       {/* Main Content Area */}
       <div className="page-container py-12">

@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { HeroBannerData } from "@/types/home";
+import { site, SectionProps, HeroBannerData } from "@/data";
 
-type HeroBannerProps = { data: HeroBannerData };
 
-export default function HeroBanner({ data }: HeroBannerProps) {
+
+export default function HeroBanner({ data: propData, className }: SectionProps<HeroBannerData> = {}) {
+  const data = propData || site.heroBanner;
   const [beforeHighlight, afterHighlight] = data.title.split(
     data.highlightedTitleText,
   );
@@ -42,9 +43,8 @@ export default function HeroBanner({ data }: HeroBannerProps) {
         {slides.map((slide, index) => (
           <div
             key={`${slide.title}-${index}`}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              index === activeIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === activeIndex ? "opacity-100" : "opacity-0"
+              }`}
           >
             <Image
               src={slide.image}
@@ -96,11 +96,6 @@ export default function HeroBanner({ data }: HeroBannerProps) {
             </p>
           </motion.div>
         </div>
-
-
-
-
-
         {/* Slide dots indicators */}
         <div className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3">
           {slides.map((slide, index) => (
@@ -108,11 +103,10 @@ export default function HeroBanner({ data }: HeroBannerProps) {
               key={`dot-${slide.title}-${index}`}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === activeIndex
+              className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
                   ? "w-10 bg-white"
                   : "w-2.5 bg-white/50 hover:bg-white/80"
-              }`}
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

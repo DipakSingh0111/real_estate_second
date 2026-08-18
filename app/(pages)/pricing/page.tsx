@@ -1,18 +1,16 @@
 "use client";
 
+import { site } from "@/data";
 import { motion } from "framer-motion";
 import { Check, X, Send, Home, Crown, ArrowRight } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { PricingPageData } from "@/types/home";
-
 const pricingIcons = { send: Send, home: Home, crown: Crown };
 
 export default function PricingSection() {
-  const sectionData: PricingPageData = homeData.pricingPage;
+  const sectionData = site.pricingPage;
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
-      <PageBanner data={homeData.pageBanners.pricing} />
+      <PageBanner />
 
       {/* Main Content Area */}
       <div className="page-container py-16">

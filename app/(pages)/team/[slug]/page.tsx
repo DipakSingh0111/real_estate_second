@@ -1,9 +1,8 @@
 "use client";
 
+import { site } from "@/data";
 import Image from "next/image";
 import { use } from "react";
-import homeData from "@/data/property.json";
-import type { TeamMember } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 import Link from "next/link";
 
@@ -15,19 +14,19 @@ interface TeamDetailPageProps {
 
 export default function TeamDetailPage({ params }: TeamDetailPageProps) {
   const { slug } = use(params);
-  const teamMember = homeData.teamPage.members.find(
-    (member: TeamMember) => member.slug === slug,
+  const teamMember = site.teamPage.members.find(
+    (member: any) => member.slug === slug,
   );
   const bannerData = teamMember
     ? {
-      ...homeData.pageBanners.team,
+      ...site.pageBanners.team,
       breadcrumb: [
         { label: "Home", href: "/" },
         { label: "Team", href: "/team" },
         { label: teamMember.name },
       ],
     }
-    : homeData.pageBanners.team;
+    : site.pageBanners.team;
 
   if (!teamMember) {
     return (
@@ -50,7 +49,7 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
 
   return (
     <main className="bg-slate-50/50 font-sans text-slate-900 pb-4">
-      <PageBanner data={bannerData} />
+      <PageBanner />
 
       <section className="page-container pt-10 pb-6">
         <Link
@@ -182,9 +181,9 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
             Our Other Team Members
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {homeData.teamPage.members
-              .filter((member: TeamMember) => member.slug !== slug)
-              .map((member: TeamMember) => (
+            {site.teamPage.members
+              .filter((member: any) => member.slug !== slug)
+              .map((member: any) => (
                 <Link
                   key={member.id}
                   href={`/team/${member.slug}`}

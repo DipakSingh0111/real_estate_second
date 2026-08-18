@@ -4,13 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import type { NavbarData } from "@/types/home";
+import { site, SectionProps, NavbarData } from "@/data";
 
-type NavBarProps = {
-  data: NavbarData;
-};
-
-export default function Navbar({ data }: NavBarProps) {
+export default function Navbar({ data: propData, className }: SectionProps<NavbarData> = {}) {
+  const data = propData || site.navbar;
   const pathname = usePathname();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [openChildIndex, setOpenChildIndex] = useState<number | null>(null);
@@ -72,7 +69,7 @@ export default function Navbar({ data }: NavBarProps) {
     >
       <div className="page-container !px-0 flex h-[72px] w-full items-center lg:h-[82px]">
         {/* Left side: Logo (matches hero banner left text column) */}
-        <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[44%] lg:pr-8 xl:w-[42%] xl:pr-12 2xl:w-[40%]">
+        <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[36%] lg:pr-4 xl:w-[36%] xl:pr-8 2xl:w-[36%]">
           <Link href="/" className="relative z-[110] shrink-0">
             <Image
               src={data.logo.src}
@@ -113,16 +110,17 @@ export default function Navbar({ data }: NavBarProps) {
         </div>
 
         {/* Right side: Desktop navigation (starts aligned with Hero image start, HOME sits right over the image) */}
-        <nav className="hidden h-full pr-[var(--site-gutter)] lg:flex lg:w-[56%] lg:items-center lg:justify-start lg:pl-8 xl:w-[58%] xl:pl-10 2xl:w-[60%]">
-          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 xl:gap-x-7 2xl:gap-x-8">
+        <nav className="hidden h-full pr-[var(--site-gutter)] lg:flex lg:w-[64%] lg:items-center lg:justify-start lg:pl-4 xl:w-[64%] xl:pl-8 2xl:w-[64%]">
+          <ul className="flex flex-nowrap items-center gap-x-2 xl:gap-x-4 2xl:gap-x-5">
             {data.navLinks.map((link, index) => {
               const active =
-                Boolean(link.active) ||
+                Boolean((link as any).active) ||
                 pathname === link.href ||
                 (link.href !== "/" && pathname.startsWith(link.href));
               const hasDropdown =
                 link.hasDropdown && link.dropdown && link.dropdown.length > 0;
               const isOpen = openIndex === index;
+              const isContactUs = link.label.toUpperCase() === "CONTACT US";
 
               return (
                 <li
@@ -133,14 +131,23 @@ export default function Navbar({ data }: NavBarProps) {
                 >
                   <Link
                     href={link.href}
-                    className={`relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${overImage
-                      ? active
-                        ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                        : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
-                      : active
-                        ? "text-[#3F51DE]"
-                        : "text-slate-800 hover:text-[#3F51DE]"
-                      }`}
+                    className={
+                      isContactUs
+                        ? `relative flex items-center gap-1.5 rounded-md px-5 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.06em] transition-all xl:text-[13px] ${
+                            overImage
+                              ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
+                              : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
+                          }`
+                        : `relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${
+                            overImage
+                              ? active
+                                ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                                : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+                              : active
+                                ? "text-[#3F51DE]"
+                                : "text-slate-800 hover:text-[#3F51DE]"
+                          }`
+                    }
                   >
                     {link.label}
                     {hasDropdown ? (
@@ -161,7 +168,7 @@ export default function Navbar({ data }: NavBarProps) {
                         />
                       </svg>
                     ) : null}
-                    {active ? (
+                    {active && !isContactUs ? (
                       <span
                         className={`absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full ${overImage ? "bg-white shadow-sm" : "bg-[#3F51DE]"
                           }`}
@@ -180,7 +187,7 @@ export default function Navbar({ data }: NavBarProps) {
                       <div className="min-w-[230px] overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)]">
                         {link.dropdown.map((item, itemIndex) => {
                           const hasChildren =
-                            item.children && item.children.length > 0;
+                            (item as any).children && (item as any).children.length > 0;
                           const isChildOpen =
                             isOpen && openChildIndex === itemIndex;
 
@@ -201,14 +208,14 @@ export default function Navbar({ data }: NavBarProps) {
                                 {hasChildren ? <span>›</span> : null}
                               </Link>
 
-                              {hasChildren && item.children ? (
+                              {hasChildren && (item as any).children ? (
                                 <div
                                   className={`absolute left-full top-0 ml-1 min-w-[210px] rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition ${isChildOpen
                                     ? "visible opacity-100"
                                     : "invisible opacity-0"
                                     }`}
                                 >
-                                  {item.children.map((child) => (
+                                  {(item as any).children.map((child) => (
                                     <Link
                                       key={child.href}
                                       href={child.href}
@@ -313,9 +320,9 @@ export default function Navbar({ data }: NavBarProps) {
                         >
                           {item.label}
                         </Link>
-                        {item.children ? (
+                        {(item as any).children ? (
                           <ul className="mb-1 ml-2 border-l border-slate-100 pl-2">
-                            {item.children.map((child) => (
+                            {(item as any).children.map((child) => (
                               <li key={child.href}>
                                 <Link
                                   href={child.href}

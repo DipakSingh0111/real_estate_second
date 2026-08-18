@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { ArrowRight, Building2, Home, HandCoins, X } from "lucide-react";
 import { motion } from "framer-motion";
-import type { AboutSectionData, AboutService } from "@/types/home";
+import { site, SectionProps } from "@/data";
 import Link from "next/link";
 
-type AboutSectionProps = { data: AboutSectionData };
+
 
 const iconMap = {
   building: Building2,
@@ -14,7 +14,8 @@ const iconMap = {
   shield: HandCoins,
 } as const;
 
-const AboutSection = ({ data }: AboutSectionProps) => {
+const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
+  const data = propData || site.aboutSection;
 
   return (
     <section className="bg-[#f0f2f5] py-10 lg:py-14 font-sans">

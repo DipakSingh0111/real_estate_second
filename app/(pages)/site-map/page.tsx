@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -19,8 +20,6 @@ import {
   FaSitemap,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
-import type { SitemapPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 const sitemapIcons: Record<string, React.ReactNode> = {
@@ -39,10 +38,10 @@ const sitemapIcons: Record<string, React.ReactNode> = {
 };
 
 export default function SitemapPage() {
-  const sectionData: SitemapPageData = homeData.sitemapPage;
+  const sectionData = site.sitemapPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners["site-map"]} />
+      <PageBanner />
 
       {/* MAIN CONTAINER */}
       <div className="page-container pt-10 space-y-12">

@@ -1,18 +1,16 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import { motion } from "framer-motion";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
 
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { TestimonialPageData } from "@/types/home";
-
 export default function TestimonialsPage() {
-  const sectionData: TestimonialPageData = homeData.testimonialPage;
+  const sectionData = site.testimonialPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.testimonial} />
+      <PageBanner />
 
       {/* MAIN CONTAINER */}
       <div className="page-container pt-12 space-y-10">

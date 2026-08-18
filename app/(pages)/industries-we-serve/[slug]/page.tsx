@@ -1,9 +1,8 @@
 "use client";
 
+import { site } from "@/data";
 import Image from "next/image";
 import { use } from "react";
-import homeData from "@/data/property.json";
-import type { IndustryItem } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
@@ -16,13 +15,13 @@ interface IndustryDetailPageProps {
 
 export default function IndustryDetailPage({ params }: IndustryDetailPageProps) {
   const { slug } = use(params);
-  const industryItem = homeData.industriesPage.items.find(
-    (item: IndustryItem) => item.slug === slug,
+  const industryItem = site.industriesPage.items.find(
+    (item: any) => item.slug === slug,
   );
 
   const bannerData = industryItem
     ? {
-      ...homeData.pageBanners["industries-we-serve"],
+      ...site.pageBanners["industries-we-serve"],
       title: industryItem.title,
       breadcrumb: [
         { label: "Home", href: "/" },
@@ -30,7 +29,7 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
         { label: industryItem.title },
       ],
     }
-    : homeData.pageBanners["industries-we-serve"];
+    : site.pageBanners["industries-we-serve"];
 
   if (!industryItem) {
     return (
@@ -53,7 +52,7 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
 
   return (
     <main className="bg-[#f8fafc] font-sans text-slate-900 min-h-screen pb-16">
-      <PageBanner data={bannerData} />
+      <PageBanner />
 
       <section className="page-container py-12">
         <Link

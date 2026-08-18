@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React, { useState } from "react";
 import {
   Headphones,
@@ -16,8 +17,6 @@ import {
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -33,7 +32,7 @@ export default function ContactUs() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
-      <PageBanner data={homeData.pageBanners.contact} />
+      <PageBanner />
 
       {/* MAIN CONTAINER */}
       <div className="page-container py-12 space-y-12">
@@ -47,16 +46,16 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-                  {homeData.contactPage.heading.eyebrow}
+                  {site.contactPage.heading.eyebrow}
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  {homeData.contactPage.heading.main1} <span className="text-blue-600">{homeData.contactPage.heading.mainHighlight}</span>
+                  {site.contactPage.heading.main1} <span className="text-blue-600">{site.contactPage.heading.mainHighlight}</span>
                 </h2>
               </div>
             </div>
 
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
-              {homeData.contactPage.description}
+              {site.contactPage.description}
             </p>
 
             {/* Address Card */}
@@ -66,13 +65,13 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs text-slate-400 font-medium">
-                  {homeData.contactPage.office.label}
+                  {site.contactPage.office.label}
                 </span>
                 <p className="text-sm font-semibold text-slate-700">
-                  {homeData.contactPage.office.line1}
+                  {site.contactPage.office.line1}
                 </p>
                 <p className="text-xs text-slate-400">
-                  {homeData.contactPage.office.line2}
+                  {site.contactPage.office.line2}
                 </p>
               </div>
             </div>
@@ -84,13 +83,13 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs text-slate-400 font-medium">
-                  {homeData.contactPage.phone.label}
+                  {site.contactPage.phone.label}
                 </span>
                 <p className="text-sm font-bold text-slate-800">
-                  {homeData.contactPage.phone.number}
+                  {site.contactPage.phone.number}
                 </p>
                 <p className="text-xs text-slate-400">
-                  {homeData.contactPage.phone.workingHours}
+                  {site.contactPage.phone.workingHours}
                 </p>
               </div>
             </div>
@@ -102,25 +101,25 @@ export default function ContactUs() {
               </p>
               <div className="flex space-x-3">
                 <a
-                  href={homeData.contactPage.socials.facebook}
+                  href={site.contactPage.socials.facebook}
                   className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaFacebookF className="w-4 h-4" />
                 </a>
                 <a
-                  href={homeData.contactPage.socials.twitter}
+                  href={site.contactPage.socials.twitter}
                   className="w-9 h-9 rounded-full bg-sky-400 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaTwitter className="w-4 h-4" />
                 </a>
                 <a
-                  href={homeData.contactPage.socials.linkedin}
+                  href={site.contactPage.socials.linkedin}
                   className="w-9 h-9 rounded-full bg-blue-700 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaLinkedinIn className="w-4 h-4" />
                 </a>
                 <a
-                  href={homeData.contactPage.socials.instagram}
+                  href={site.contactPage.socials.instagram}
                   className="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center hover:opacity-90 transition"
                 >
                   <FaInstagram className="w-4 h-4" />
@@ -243,7 +242,7 @@ export default function ContactUs() {
           </div>
 
           <iframe
-            src={homeData.contactPage.mapUrl}
+            src={site.contactPage.mapUrl}
             width="100%"
             height="100%"
             style={{ border: 0 }}

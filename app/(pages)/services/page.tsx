@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -16,8 +17,6 @@ import {
   FaRulerCombined,
   FaPhoneAlt,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
-import type { ServicesPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -46,7 +45,7 @@ const itemVariants = {
 };
 
 export default function ServicesPage() {
-  const sectionData: ServicesPageData = homeData.servicesPage;
+  const sectionData = site.servicesPage;
   const [properties, setProperties] = useState(sectionData.properties);
 
   const handleNext = () => {
@@ -62,7 +61,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.services} />
+      <PageBanner />
 
       <div className="page-container pt-10 space-y-16">
         {/* 2. SERVICES SECTION */}

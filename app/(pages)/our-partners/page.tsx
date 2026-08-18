@@ -1,8 +1,7 @@
 "use client";
 
+import { site } from "@/data";
 import { motion } from "framer-motion";
-import homeData from "@/data/property.json";
-import type { PartnersPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 const containerVariants = {
@@ -25,10 +24,10 @@ const itemVariants = {
 };
 
 export default function PartnersPage() {
-  const sectionData: PartnersPageData = homeData.partnersPage;
+  const sectionData = site.partnersPage;
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners["our-partners"]} />
+      <PageBanner />
 
       <div className="page-container pt-16 space-y-12">
         {/* SECTION TITLE */}

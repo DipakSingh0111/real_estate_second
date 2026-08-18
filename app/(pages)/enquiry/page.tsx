@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -17,7 +18,6 @@ import {
   FaClock,
   FaHeadset,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 export default function EnquiryPage() {
   const [formData, setFormData] = useState({
@@ -54,7 +54,7 @@ export default function EnquiryPage() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.enquiry} />
+      <PageBanner />
 
       <div className="page-container pt-10 space-y-10">
         {/* TWO COLUMN SECTION */}
@@ -73,11 +73,11 @@ export default function EnquiryPage() {
                   <FaEdit className="text-lg" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  {homeData.enquiryPage.formHeader.title}
+                  {site.enquiryPage.formHeader.title}
                 </h2>
               </div>
               <p className="text-xs sm:text-sm text-slate-500 pt-1 leading-relaxed">
-                {homeData.enquiryPage.formHeader.description}
+                {site.enquiryPage.formHeader.description}
               </p>
             </div>
 
@@ -145,7 +145,7 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select an option</option>
-                    {homeData.formOptions.contactMethod.map((opt) => (
+                    {site.formOptions.contactMethod.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -166,7 +166,7 @@ export default function EnquiryPage() {
                     required
                   >
                     <option value="">Select enquiry type</option>
-                    {homeData.formOptions.enquiryFor.map((opt) => (
+                    {site.formOptions.enquiryFor.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -183,7 +183,7 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select property type</option>
-                    {homeData.formOptions.propertyType.map((opt) => (
+                    {site.formOptions.propertyType.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -203,7 +203,7 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select your budget</option>
-                    {homeData.formOptions.budget.map((opt) => (
+                    {site.formOptions.budget.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -255,21 +255,21 @@ export default function EnquiryPage() {
                   htmlFor="agreed"
                   className="text-[11px] text-slate-500 cursor-pointer"
                 >
-                  {homeData.formOptions.agreement.prefix}
+                  {site.formOptions.agreement.prefix}
                   <a
-                    href={homeData.formOptions.agreement.privacyPolicyUrl}
+                    href={site.formOptions.agreement.privacyPolicyUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {homeData.formOptions.agreement.privacyPolicyText}
+                    {site.formOptions.agreement.privacyPolicyText}
                   </a>
-                  {homeData.formOptions.agreement.middleText}
+                  {site.formOptions.agreement.middleText}
                   <a
-                    href={homeData.formOptions.agreement.termsUrl}
+                    href={site.formOptions.agreement.termsUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {homeData.formOptions.agreement.termsText}
+                    {site.formOptions.agreement.termsText}
                   </a>
-                  {homeData.formOptions.agreement.suffix}
+                  {site.formOptions.agreement.suffix}
                 </label>
               </div>
 
@@ -299,7 +299,7 @@ export default function EnquiryPage() {
                 <FaUsers className="text-lg" />
               </div>
               <h3 className="text-[28px] font-bold text-slate-900">
-                {homeData.enquiryPage.whyEnquire.title}
+                {site.enquiryPage.whyEnquire.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
             </div>
@@ -313,10 +313,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {homeData.enquiryPage.whyEnquire.features[0].title}
+                    {site.enquiryPage.whyEnquire.features[0].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {homeData.enquiryPage.whyEnquire.features[0].description}
+                    {site.enquiryPage.whyEnquire.features[0].description}
                   </p>
                 </div>
               </div>
@@ -328,10 +328,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {homeData.enquiryPage.whyEnquire.features[1].title}
+                    {site.enquiryPage.whyEnquire.features[1].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {homeData.enquiryPage.whyEnquire.features[1].description}
+                    {site.enquiryPage.whyEnquire.features[1].description}
                   </p>
                 </div>
               </div>
@@ -343,10 +343,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {homeData.enquiryPage.whyEnquire.features[2].title}
+                    {site.enquiryPage.whyEnquire.features[2].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {homeData.enquiryPage.whyEnquire.features[2].description}
+                    {site.enquiryPage.whyEnquire.features[2].description}
                   </p>
                 </div>
               </div>
@@ -358,10 +358,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {homeData.enquiryPage.whyEnquire.features[3].title}
+                    {site.enquiryPage.whyEnquire.features[3].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {homeData.enquiryPage.whyEnquire.features[3].description}
+                    {site.enquiryPage.whyEnquire.features[3].description}
                   </p>
                 </div>
               </div>
@@ -373,10 +373,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {homeData.enquiryPage.whyEnquire.features[4].title}
+                    {site.enquiryPage.whyEnquire.features[4].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {homeData.enquiryPage.whyEnquire.features[4].description}
+                    {site.enquiryPage.whyEnquire.features[4].description}
                   </p>
                 </div>
               </div>
@@ -399,25 +399,25 @@ export default function EnquiryPage() {
             </div>
             <div className="space-y-1">
               <h4 className="text-[20px] font-bold text-slate-900">
-                {homeData.enquiryPage.questions.title}
+                {site.enquiryPage.questions.title}
               </h4>
               <p className="text-[15px] text-slate-400">
-                {homeData.enquiryPage.questions.description}
+                {site.enquiryPage.questions.description}
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-1 text-[15px] font-bold text-slate-800">
                 <a
-                  href={homeData.enquiryPage.questions.phoneHref}
+                  href={site.enquiryPage.questions.phoneHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
                   <FaPhoneAlt className="text-red-500 text-[10px]" />
-                  <span>{homeData.enquiryPage.questions.phone}</span>
+                  <span>{site.enquiryPage.questions.phone}</span>
                 </a>
                 <a
-                  href={homeData.enquiryPage.questions.emailHref}
+                  href={site.enquiryPage.questions.emailHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
                   <FaEnvelope className="text-red-500 text-[10px]" />
-                  <span>{homeData.enquiryPage.questions.email}</span>
+                  <span>{site.enquiryPage.questions.email}</span>
                 </a>
               </div>
             </div>
@@ -430,13 +430,13 @@ export default function EnquiryPage() {
             </div>
             <div>
               <h4 className="text-[18px] font-bold text-slate-900">
-                {homeData.enquiryPage.officeHours.title}
+                {site.enquiryPage.officeHours.title}
               </h4>
               <p className="text-[15px] font-semibold text-slate-700 mt-0.5">
-                {homeData.enquiryPage.officeHours.weekdays}
+                {site.enquiryPage.officeHours.weekdays}
               </p>
               <p className="text-[15px] text-slate-400 mt-0.5">
-                {homeData.enquiryPage.officeHours.sunday}
+                {site.enquiryPage.officeHours.sunday}
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 "use client";
+import { site } from "@/data";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -11,13 +12,12 @@ import {
   FaArrowLeft,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function BlogDetailPage() {
   const params = useParams();
   const slug = params?.slug as string;
-  const { blogs } = homeData;
+  const { blogs } = site;
   const { pageBanner, posts } = blogs;
 
   // Find the blog post by slug
@@ -68,7 +68,7 @@ export default function BlogDetailPage() {
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
       {/* Page Banner */}
-      <PageBanner data={bannerData} />
+      <PageBanner />
 
       {/* Blog Detail Content */}
       <div className="page-container pt-12">

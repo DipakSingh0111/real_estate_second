@@ -4,13 +4,12 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { BestRealEstateSectionData } from "@/types/home";
+import { site, SectionProps, BestRealEstateSectionData } from "@/data";
 
-type BestRealEstateSectionProps = { data: BestRealEstateSectionData };
 
-export default function BestRealEstateSection({
-  data,
-}: BestRealEstateSectionProps) {
+
+export default function BestRealEstateSection({ data: propData, className }: SectionProps<any>) {
+  const data = propData || site.bestRealEstateSection;
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const activeImage = data.images[activeImageIndex];
 

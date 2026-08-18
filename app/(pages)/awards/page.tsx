@@ -1,9 +1,8 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import { motion } from "framer-motion";
-import homeData from "@/data/property.json";
-import type { AwardsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 const containerVariants = {
@@ -26,10 +25,10 @@ const itemVariants = {
 };
 
 export default function AwardsPage() {
-  const sectionData: AwardsPageData = homeData.awardsPage;
+  const sectionData = site.awardsPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.awards} />
+      <PageBanner />
 
       <div className="page-container pt-12 space-y-10">
         {/* 2. SECTION TITLE */}

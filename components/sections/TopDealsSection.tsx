@@ -14,7 +14,7 @@ import {
   Bath,
   Maximize2,
 } from "lucide-react";
-import type { TopDealsSectionData } from "@/types/home";
+import { site, SectionProps, TopDealsSectionData } from "@/data";
 import { propertySlug } from "@/lib/property";
 
 // Import Swiper styles
@@ -22,9 +22,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-type TopDealsSectionProps = { data: TopDealsSectionData };
 
-export default function TopDealsSection({ data }: TopDealsSectionProps) {
+
+export default function TopDealsSection({ data: propData, className }: SectionProps<TopDealsSectionData> = {}) {
+  const data = propData || site.topDealsSection;
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);

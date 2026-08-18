@@ -1,17 +1,16 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFilePdf, FaDownload } from "react-icons/fa";
-import homeData from "@/data/property.json";
-import type { BrochurePageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function BrochurePage() {
-  const sectionData: BrochurePageData = homeData.brochurePage;
+  const sectionData = site.brochurePage;
   return (
     <div className="min-h-screen bg-[#fafafa] font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.brochure} />
+      <PageBanner />
 
       <div className="page-container pt-12 space-y-10">
         {/* SECTION TITLE */}

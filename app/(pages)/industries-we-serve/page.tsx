@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -12,8 +13,6 @@ import {
   FaHotel,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
-import type { IndustriesPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 const industryIcons: Record<string, React.ReactNode> = {
@@ -45,10 +44,10 @@ const itemVariants = {
 };
 
 export default function IndustryWeServePage() {
-  const sectionData: IndustriesPageData = homeData.industriesPage;
+  const sectionData = site.industriesPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners["industries-we-serve"]} />
+      <PageBanner />
 
       <div className="page-container pt-12 space-y-10">
         {/* 2. SECTION TITLE */}

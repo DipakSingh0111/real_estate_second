@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -18,9 +19,6 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { CareersPageData } from "@/types/home";
-
 const careerIcons: Record<string, React.ReactNode> = {
   building: <FaBuilding className="text-blue-600 text-lg" />,
   chartLine: <FaChartLine className="text-blue-600 text-lg" />,
@@ -29,7 +27,7 @@ const careerIcons: Record<string, React.ReactNode> = {
 };
 
 export default function CareerPage() {
-  const sectionData: CareersPageData = homeData.careersPage;
+  const sectionData = site.careersPage;
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
   const toggleAccordion = (id: number) => {
@@ -42,7 +40,7 @@ export default function CareerPage() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.careers} />
+      <PageBanner />
 
       <div className="page-container pt-10 space-y-12">
         {/* TWO COLUMN LAYOUT */}

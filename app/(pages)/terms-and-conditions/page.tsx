@@ -1,18 +1,17 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaCalendarAlt, FaEnvelope, FaArrowRight } from "react-icons/fa";
-import homeData from "@/data/property.json";
-import type { TermsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function TermsAndConditionsPage() {
-  const sectionData: TermsPageData = homeData.termsPage;
+  const sectionData = site.termsPage;
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners["terms-and-conditions"]} />
+      <PageBanner />
 
       <div className="page-container pt-10 space-y-10">
         {/* WHITE DOCUMENT CONTAINER */}

@@ -9,8 +9,7 @@ import {
   Headphones,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import homeData from "@/data/property.json";
-import type { AboutPageData } from "@/types/home";
+import { site, SectionProps, AboutPageData } from "@/data";
 
 const whyIcons = {
   home: Home,
@@ -21,7 +20,7 @@ const whyIcons = {
 };
 
 export default function WhyUsChoose() {
-  const sectionData: AboutPageData = homeData.aboutPage;
+  const sectionData = site.aboutPage;
 
   return (
     <div className="mt-24 pt-8">

@@ -8,9 +8,9 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import type { FooterData } from "@/types/home";
+import { site, SectionProps, FooterData } from "@/data";
 
-type FooterProps = { data: FooterData };
+
 
 const socialIconMap = {
   youtube: FaYoutube,
@@ -20,7 +20,8 @@ const socialIconMap = {
   instagram: FaInstagram,
 };
 
-export default function Footer({ data }: FooterProps) {
+export default function Footer({ data: propData, className }: SectionProps<FooterData> = {}) {
+  const data = propData || site.footer;
   return (
     <footer className="w-full bg-white border-t border-slate-100 font-sans">
       <div className="page-container">

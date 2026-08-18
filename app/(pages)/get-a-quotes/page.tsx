@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -16,7 +17,6 @@ import {
   FaHeadset,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 export default function GetQuotePage() {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ export default function GetQuotePage() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners["get-a-quotes"]} />
+      <PageBanner />
 
       <div className="page-container pt-10 space-y-10">
         {/* TWO COLUMN SECTION */}
@@ -68,10 +68,10 @@ export default function GetQuotePage() {
             {/* Form Header */}
             <div className="space-y-1">
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                {homeData.getQuotePage.formHeader.title}
+                {site.getQuotePage.formHeader.title}
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 pt-0.5 leading-relaxed">
-                {homeData.getQuotePage.formHeader.description}
+                {site.getQuotePage.formHeader.description}
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select an option</option>
-                    {homeData.formOptions.contactMethod.map((opt) => (
+                    {site.formOptions.contactMethod.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -170,7 +170,7 @@ export default function GetQuotePage() {
                     required
                   >
                     <option value="">Select property type</option>
-                    {homeData.formOptions.propertyType.map((opt) => (
+                    {site.formOptions.propertyType.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -190,7 +190,7 @@ export default function GetQuotePage() {
                     required
                   >
                     <option value="">Select location</option>
-                    {homeData.formOptions.location.map((opt) => (
+                    {site.formOptions.location.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -212,7 +212,7 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select budget range</option>
-                    {homeData.formOptions.budget.map((opt) => (
+                    {site.formOptions.budget.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -231,7 +231,7 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select purpose</option>
-                    {homeData.formOptions.purpose.map((opt) => (
+                    {site.formOptions.purpose.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -270,21 +270,21 @@ export default function GetQuotePage() {
                   htmlFor="agreed"
                   className="text-[11px] text-slate-500 cursor-pointer"
                 >
-                  {homeData.formOptions.agreement.prefix}
+                  {site.formOptions.agreement.prefix}
                   <a
-                    href={homeData.formOptions.agreement.privacyPolicyUrl}
+                    href={site.formOptions.agreement.privacyPolicyUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {homeData.formOptions.agreement.privacyPolicyText}
+                    {site.formOptions.agreement.privacyPolicyText}
                   </a>
-                  {homeData.formOptions.agreement.middleText}
+                  {site.formOptions.agreement.middleText}
                   <a
-                    href={homeData.formOptions.agreement.termsUrl}
+                    href={site.formOptions.agreement.termsUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {homeData.formOptions.agreement.termsText}
+                    {site.formOptions.agreement.termsText}
                   </a>
-                  {homeData.formOptions.agreement.suffix}
+                  {site.formOptions.agreement.suffix}
                 </label>
               </div>
 
@@ -311,7 +311,7 @@ export default function GetQuotePage() {
             {/* Header */}
             <div className="space-y-1.5">
               <h3 className="text-lg font-bold text-slate-900">
-                {homeData.getQuotePage.whyGetQuote.title}
+                {site.getQuotePage.whyGetQuote.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 rounded-full" />
             </div>
@@ -325,10 +325,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    {homeData.getQuotePage.whyGetQuote.features[0].title}
+                    {site.getQuotePage.whyGetQuote.features[0].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    {homeData.getQuotePage.whyGetQuote.features[0].description}
+                    {site.getQuotePage.whyGetQuote.features[0].description}
                   </p>
                 </div>
               </div>
@@ -340,10 +340,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    {homeData.getQuotePage.whyGetQuote.features[1].title}
+                    {site.getQuotePage.whyGetQuote.features[1].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    {homeData.getQuotePage.whyGetQuote.features[1].description}
+                    {site.getQuotePage.whyGetQuote.features[1].description}
                   </p>
                 </div>
               </div>
@@ -355,10 +355,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    {homeData.getQuotePage.whyGetQuote.features[2].title}
+                    {site.getQuotePage.whyGetQuote.features[2].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    {homeData.getQuotePage.whyGetQuote.features[2].description}
+                    {site.getQuotePage.whyGetQuote.features[2].description}
                   </p>
                 </div>
               </div>
@@ -370,10 +370,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    {homeData.getQuotePage.whyGetQuote.features[3].title}
+                    {site.getQuotePage.whyGetQuote.features[3].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    {homeData.getQuotePage.whyGetQuote.features[3].description}
+                    {site.getQuotePage.whyGetQuote.features[3].description}
                   </p>
                 </div>
               </div>
@@ -385,10 +385,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
-                    {homeData.getQuotePage.whyGetQuote.features[4].title}
+                    {site.getQuotePage.whyGetQuote.features[4].title}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                    {homeData.getQuotePage.whyGetQuote.features[4].description}
+                    {site.getQuotePage.whyGetQuote.features[4].description}
                   </p>
                 </div>
               </div>
@@ -407,33 +407,33 @@ export default function GetQuotePage() {
           {/* Left: Building Image + Need Help (7 Cols) */}
           <div className="md:col-span-7 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 md:border-r border-slate-100 md:pr-6">
             <img
-              src={homeData.getQuotePage.needHelp.image}
+              src={site.getQuotePage.needHelp.image}
               alt="Building"
               className="w-full sm:w-32 h-24 rounded-2xl object-cover shrink-0"
             />
             <div className="space-y-1.5 w-full">
-              <h4 className="text-sm font-bold text-slate-900">{homeData.getQuotePage.needHelp.title}</h4>
+              <h4 className="text-sm font-bold text-slate-900">{site.getQuotePage.needHelp.title}</h4>
               <p className="text-[11px] text-slate-400">
-                {homeData.getQuotePage.needHelp.description}
+                {site.getQuotePage.needHelp.description}
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-1 text-[11px] font-bold text-slate-800">
                 <a
-                  href={homeData.getQuotePage.needHelp.phoneHref}
+                  href={site.getQuotePage.needHelp.phoneHref}
                   className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
                 >
                   <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-[10px]">
                     <FaPhoneAlt />
                   </div>
-                  <span>{homeData.getQuotePage.needHelp.phone}</span>
+                  <span>{site.getQuotePage.needHelp.phone}</span>
                 </a>
                 <a
-                  href={homeData.getQuotePage.needHelp.emailHref}
+                  href={site.getQuotePage.needHelp.emailHref}
                   className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
                 >
                   <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-[10px]">
                     <FaEnvelope />
                   </div>
-                  <span>{homeData.getQuotePage.needHelp.email}</span>
+                  <span>{site.getQuotePage.needHelp.email}</span>
                 </a>
               </div>
             </div>
@@ -447,10 +447,10 @@ export default function GetQuotePage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-slate-900">
-                  {homeData.getQuotePage.expertContact.title}
+                  {site.getQuotePage.expertContact.title}
                 </h4>
                 <p className="text-[10px] text-slate-400 mt-0.5">
-                  {homeData.getQuotePage.expertContact.workingHours}
+                  {site.getQuotePage.expertContact.workingHours}
                 </p>
               </div>
             </div>
@@ -461,7 +461,7 @@ export default function GetQuotePage() {
                 whileTap={{ scale: 0.97 }}
                 className="px-4 py-2.5 rounded-xl border border-red-200 bg-white text-red-600 font-bold text-[11px] flex items-center space-x-1.5 hover:bg-red-50 transition-all shrink-0"
               >
-                <span>{homeData.getQuotePage.expertContact.buttonText}</span>
+                <span>{site.getQuotePage.expertContact.buttonText}</span>
                 <FaArrowRight className="text-[9px]" />
               </motion.button>
             </Link>

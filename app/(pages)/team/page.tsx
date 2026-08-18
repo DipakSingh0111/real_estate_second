@@ -1,19 +1,18 @@
 "use client";
 
+import { site } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import homeData from "@/data/property.json";
-import type { TeamPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 import { User, Award, Building2, Handshake } from "lucide-react";
 
-const sectionData: TeamPageData = homeData.teamPage;
+const sectionData = site.teamPage;
 
 export default function TeamPage() {
   return (
     <main className="bg-slate-50/50 font-sans text-slate-900 pb-4">
-      <PageBanner data={homeData.pageBanners.team} />
+      <PageBanner />
 
       <section className="page-container space-y-8 lg:space-y-10 pt-10 pb-6">
         {sectionData.members.map((member, index) => {

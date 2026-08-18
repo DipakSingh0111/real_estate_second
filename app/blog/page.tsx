@@ -1,4 +1,5 @@
 "use client";
+import { site } from "@/data";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -10,18 +11,15 @@ import {
   FaChevronRight,
   FaEnvelope,
 } from "react-icons/fa";
-import homeData from "@/data/property.json";
-import type { BlogsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
-
 export default function BlogsPage() {
-  const sectionData: BlogsPageData = homeData.blogs;
+  const sectionData = site.blogs;
   const { pageBanner, posts } = sectionData;
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans pb-16">
-      <PageBanner data={pageBanner} />
+      <PageBanner />
 
       <div className="page-container pt-12 space-y-12">
         {/* BLOG CONTENT & SIDEBAR GRID */}

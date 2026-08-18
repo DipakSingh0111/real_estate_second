@@ -1,4 +1,4 @@
-import type { PropertyDeal } from "@/types/home";
+import type { PropertyDeal } from "@/data";
 
 export function propertySlug(title: string) {
   return title

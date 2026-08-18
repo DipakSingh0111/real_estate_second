@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Bath, BedDouble, Building2, MapPin, Square } from "lucide-react";
-import type { PropertyDeal } from "@/types/home";
+import { SectionProps, PropertyDeal } from "@/data";
 import { propertySlug } from "@/lib/property";
 
-type PropertyCardProps = {
-  property: PropertyDeal;
-};
-
-export default function PropertyCard({ property }: PropertyCardProps) {
+export default function PropertyCard({ data: property, className }: SectionProps<PropertyDeal> = {}) {
+  if (!property) return null;
   const stats = [
     { label: "Bedrooms", value: property.bedrooms, icon: BedDouble },
     { label: "Bathrooms", value: property.bathrooms, icon: Bath },

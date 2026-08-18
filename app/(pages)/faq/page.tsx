@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -12,13 +13,10 @@ import {
   HelpCircle,
 } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { FaqPageData } from "@/types/home";
-
 const faqStatIcons = { users: Users, star: Star, home: Home };
 
 export default function FaqSection() {
-  const sectionData: FaqPageData = homeData.faqPage;
+  const sectionData = site.faqPage;
   const [openId, setOpenId] = useState<number | null>(1);
 
   const toggleFaq = (id: number) => {
@@ -27,7 +25,7 @@ export default function FaqSection() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
-      <PageBanner data={homeData.pageBanners.faq} />
+      <PageBanner />
 
       {/* Main Content - Space reduced with pt-12 pb-4 */}
       <div className="page-container pt-12 pb-4 flex flex-col lg:flex-row gap-10">

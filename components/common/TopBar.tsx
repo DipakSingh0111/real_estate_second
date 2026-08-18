@@ -1,11 +1,10 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import type { TopBarData } from "@/types/home";
+import { site, SectionProps, TopBarData } from "@/data";
 
-type TopBarProps = {
-  data: TopBarData;
-};
+;
 
-export default function TopBar({ data }: TopBarProps) {
+export default function TopBar({ data: propData, className }: SectionProps<TopBarData> = {}) {
+  const data = propData || site.topBar;
   return (
     <div className="w-full bg-[#0B1A33] font-[family-name:var(--font-poppins)] text-white">
       <div className="page-container flex h-9 items-center justify-between gap-4 text-[12px] lg:h-10">

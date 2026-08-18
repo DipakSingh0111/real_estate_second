@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { Phone, PhoneCall } from "lucide-react";
-import type { SupportBannerData } from "@/types/home";
+import { site, SectionProps, SupportBannerData } from "@/data";
 
-type SupportBannerProps = { data: SupportBannerData };
 
-export default function SupportBanner({ data }: SupportBannerProps) {
+
+export default function SupportBanner({ data: propData, className }: SectionProps<SupportBannerData> = {}) {
+  const data = propData || site.supportBanner;
   return (
     <section className="bg-white py-8 lg:py-10">
       <div className="page-container">

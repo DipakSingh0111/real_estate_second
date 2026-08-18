@@ -22,13 +22,12 @@ import {
   Tag,
 } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import type { PropertyDeal, PageBannerData } from "@/types/home";
+import { site, PropertyDeal, PageBannerData, SectionProps } from "@/data";
 import PageBanner from "@/components/common/PageBanner";
 import PriceCard from "@/components/common/PriceCard";
 import ContactFormSidebar from "@/components/common/ContactFormSidebar";
 import NeedHelpCard from "@/components/common/NeedHelpCard";
 import PropertyMap from "@/components/common/PropertyMap";
-import homeData from "@/data/property.json";
 
 type PropertyDetailProps = {
   property: PropertyDeal;
@@ -39,10 +38,14 @@ type PropertyDetailProps = {
 type TabKey = "overview" | "details" | "features";
 
 export default function PropertyDetail({
-  property,
-  galleryImages = [],
-  banner,
-}: PropertyDetailProps) {
+  data: propData,
+  className,
+}: SectionProps<PropertyDetailProps> = {}) {
+  // If wrapped in a generic container, it receives data, else use fallbacks
+  const property = propData?.property || site.topDealsSection.deals[0];
+  const galleryImages = propData?.galleryImages || [];
+  const banner = propData?.banner || site.pageBanners['property-listing'];
+
   const bannerData = useMemo(
     () => ({
       ...banner,
@@ -87,7 +90,7 @@ export default function PropertyDetail({
     { icon: Car, label: "Garage", value: "1" },
   ];
 
-  const featureList = homeData.propertyDetail.features;
+  const featureList = site.propertyDetail.features;
 
   return (
     <main className="bg-white">
@@ -168,7 +171,7 @@ export default function PropertyDetail({
                 {property.location}
               </div>
               <p className="mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500">
-                {homeData.propertyDetail.description}
+                {site.propertyDetail.description}
               </p>
               <div className="mt-5 flex items-center gap-3">
                 <span className="text-sm font-medium text-slate-500">
@@ -291,18 +294,18 @@ export default function PropertyDetail({
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
             <PriceCard
               price={property.price}
-              propertyType={homeData.propertyDetail.priceDetails.propertyType}
-              priceType={homeData.propertyDetail.priceDetails.priceType}
-              region={homeData.propertyDetail.priceDetails.region}
+              propertyType={site.propertyDetail.priceDetails.propertyType}
+              priceType={site.propertyDetail.priceDetails.priceType}
+              region={site.propertyDetail.priceDetails.region}
             />
 
             <ContactFormSidebar />
 
             <NeedHelpCard
-              phone={homeData.propertyDetail.contactDetails.phone}
-              phoneHref={homeData.propertyDetail.contactDetails.phoneHref}
-              workingHours={homeData.propertyDetail.contactDetails.workingHours}
-              helpText={homeData.propertyDetail.contactDetails.helpText}
+              phone={site.propertyDetail.contactDetails.phone}
+              phoneHref={site.propertyDetail.contactDetails.phoneHref}
+              workingHours={site.propertyDetail.contactDetails.workingHours}
+              helpText={site.propertyDetail.contactDetails.helpText}
             />
           </aside>
         </div>

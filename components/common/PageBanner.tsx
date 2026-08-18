@@ -3,11 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { PageBannerData } from "@/types/home";
-
-type PageBannerProps = {
-  data: PageBannerData;
-};
+import { usePathname } from "next/navigation";
+import { site, SectionProps, PageBannerData } from "@/data";
 
 const VALID_PAGES = new Set([
   "/",
@@ -67,7 +64,11 @@ function getBreadcrumbHref(label: string) {
   return VALID_PAGES.has(path) ? path : "";
 }
 
-export default function PageBanner({ data }: PageBannerProps) {
+export default function PageBanner({ data: propData, className }: SectionProps<PageBannerData> = {}) {
+  const pathname = usePathname();
+  const pathKey = (pathname || "").split("/")[1] || "about";
+  const data = propData || (site.pageBanners as any)[pathKey] || site.pageBanners['about'];
+  if (!data) return null;
   return (
     <section className="relative h-[340px] w-full overflow-hidden sm:h-[400px]">
       <Image

@@ -2,11 +2,10 @@
 
 import { Binoculars, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import homeData from "@/data/property.json";
-import type { AboutPageData } from "@/types/home";
+import { site, SectionProps, AboutPageData } from "@/data";
 
 export default function VisionMission() {
-  const sectionData: AboutPageData = homeData.aboutPage;
+  const sectionData = site.aboutPage;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">

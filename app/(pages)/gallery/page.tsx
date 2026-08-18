@@ -1,13 +1,11 @@
 "use client";
 
+import { site } from "@/data";
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { GalleryPageData } from "@/types/home";
-
 // Motion Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,7 +27,7 @@ const itemVariants = {
 };
 
 export default function GalleryPage() {
-  const sectionData: GalleryPageData = homeData.galleryPage;
+  const sectionData = site.galleryPage;
   const galleryImages = sectionData.images;
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -69,7 +67,7 @@ export default function GalleryPage() {
   }, [selectedIndex]);
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
-      <PageBanner data={homeData.pageBanners.gallery} />
+      <PageBanner />
 
       {/* MAIN CONTAINER */}
       <div className="page-container pt-12 space-y-12">

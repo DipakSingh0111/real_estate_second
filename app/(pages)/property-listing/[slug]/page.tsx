@@ -1,16 +1,16 @@
+"use client";
+import { site } from "@/data";
 import { notFound } from "next/navigation";
-import siteData from "@/data/property.json";
 import { findPropertyBySlug } from "@/lib/property";
 import PropertyDetail from "@/components/PropertyDetail";
 
 export default async function PropertyDetailPage(
-  props: PageProps<"/property-listing/[slug]">,
+  props: any
 ) {
   const { slug } = await props.params;
 
-  // Combine all properties so we can find any property by slug
-  const deals = siteData.topDealsSection.deals;
-  const serviceProperties = siteData.servicesPage.properties;
+  const deals = site.topDealsSection.deals;
+  const serviceProperties = site.servicesPage.properties;
 
   const property =
     findPropertyBySlug(deals, slug) ||
@@ -27,9 +27,11 @@ export default async function PropertyDetailPage(
 
   return (
     <PropertyDetail
-      property={property}
-      galleryImages={galleryImages}
-      banner={siteData.pageBanners.propertyListing}
+      data={{
+        property,
+        galleryImages,
+        banner: site.pageBanners['property-listing'],
+      }}
     />
   );
 }

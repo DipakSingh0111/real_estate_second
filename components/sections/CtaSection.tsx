@@ -4,11 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import type { CtaSectionData } from "@/types/home";
+import { site, SectionProps, CtaSectionData } from "@/data";
 
-type CtaSectionProps = { data: CtaSectionData };
-
-export default function CtaSection({ data }: CtaSectionProps) {
+export default function CtaSection({ data: propData, className }: SectionProps<CtaSectionData> = {}) {
+  const data = propData || site.ctaSection;
   return (
     <motion.section
       id="services"
@@ -94,7 +93,7 @@ export default function CtaSection({ data }: CtaSectionProps) {
             <div>
               <Link
                 href={data.buttonLink}
-                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-bold px-7 py-3.5 rounded-xl text-xs tracking-wider uppercase flex items-center gap-3 transition-colors duration-200 shadow-lg shadow-orange-500/20"
+                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-bold px-7 py-3.5 rounded-xl text-xs tracking-wider uppercase inline-flex w-fit items-center gap-3 transition-colors duration-200 shadow-lg shadow-orange-500/20"
               >
                 {data.buttonLabel}
                 <ArrowRight className="w-4 h-4" />

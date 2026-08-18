@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/data";
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import {
@@ -16,9 +17,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/property.json";
-import type { HowItWorkSectionData } from "@/types/home";
-
 // Icon mapping from string names to Lucide icons
 const iconMap: Record<string, React.ComponentType<{ className: string }>> = {
   search: Search,
@@ -53,8 +51,8 @@ const itemVariants: Variants = {
 };
 
 export default function HowItWorks() {
-  const sectionData: HowItWorkSectionData = homeData.howItWork;
-  const pageBannerData = homeData.pageBanners["how-it-work"];
+  const sectionData = site.howItWork;
+  const pageBannerData = site.pageBanners["how-it-work"];
 
   const getIcon = (iconName: string, sizeClass: string) => {
     const IconComponent = iconMap[iconName] || Search;
@@ -64,7 +62,7 @@ export default function HowItWorks() {
   return (
     <div className="w-full bg-[#F8FAFC] font-sans text-gray-800 overflow-hidden">
       {/* Page Banner with Breadcrumb */}
-      <PageBanner data={pageBannerData} />
+      <PageBanner />
 
       <div className="page-container py-16">
         {/* 2. Sub-Header Section */}
