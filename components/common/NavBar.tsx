@@ -77,10 +77,10 @@ export default function Navbar({ data }: NavBarProps) {
             <Image
               src={data.logo.src}
               alt={data.logo.alt}
-              width={210}
-              height={56}
+              width={240}
+              height={64}
               priority
-              className="h-10 w-auto object-contain object-left sm:h-11"
+              className="h-12 w-auto object-contain object-left sm:h-14 md:h-16"
             />
           </Link>
 

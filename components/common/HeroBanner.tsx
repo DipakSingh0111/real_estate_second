@@ -97,26 +97,9 @@ export default function HeroBanner({ data }: HeroBannerProps) {
           </motion.div>
         </div>
 
-        {/* Price badge */}
-        <div className="absolute bottom-32 right-6 z-20 rounded-2xl border border-white/15 bg-blue-700/90 px-6 py-4 text-right text-white shadow-xl backdrop-blur-md lg:bottom-1/2 lg:right-10 lg:translate-y-1/2">
-          <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-            {activeSlide.priceLabel}
-          </span>
-          <span className="mt-1 block text-3xl font-extrabold tracking-tight sm:text-4xl">
-            {activeSlide.price}
-          </span>
-        </div>
 
-        {/* Explore action button */}
-        <div className="absolute bottom-12 left-[var(--site-gutter)] z-20 flex items-center gap-3">
-          <button
-            type="button"
-            className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl font-bold text-white shadow-[0_18px_35px_-10px_rgba(37,99,235,0.7)] transition duration-200 hover:scale-105 hover:bg-blue-700"
-            aria-label="Explore more"
-          >
-            →
-          </button>
-        </div>
+
+
 
         {/* Slide dots indicators */}
         <div className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3">
