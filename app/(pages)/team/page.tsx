@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { TeamPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 import { User, Award, Building2, Handshake } from "lucide-react";
@@ -23,9 +23,8 @@ export default function TeamPage() {
             <Link
               href={`/team/${member.slug}`}
               key={member.name}
-              className={`flex flex-col-reverse ${
-                isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-8 lg:gap-16 bg-white rounded-[32px] p-6 sm:p-8 lg:p-12 border border-slate-100/80 shadow-[0_15px_45px_rgba(27,54,176,0.03)] hover:shadow-[0_25px_60px_rgba(27,54,176,0.08)] transition-all duration-300`}
+              className={`flex flex-col-reverse ${isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
+                } items-center gap-8 lg:gap-16 bg-white rounded-[32px] p-6 sm:p-8 lg:p-12 border border-slate-100/80 shadow-[0_15px_45px_rgba(27,54,176,0.03)] hover:shadow-[0_25px_60px_rgba(27,54,176,0.08)] transition-all duration-300`}
             >
               {/* Text Side */}
               <motion.div
@@ -63,11 +62,10 @@ export default function TeamPage() {
                     return (
                       <div
                         key={stat.label}
-                        className={`flex items-center space-x-4 flex-1 px-2 ${
-                          statIdx !== member.stats.length - 1
+                        className={`flex items-center space-x-4 flex-1 px-2 ${statIdx !== member.stats.length - 1
                             ? "border-b pb-4 sm:border-b-0 sm:pb-0 sm:border-r border-[#D0DDFB]"
                             : ""
-                        }`}
+                          }`}
                       >
                         <div className="text-[#1B36B0] shrink-0">
                           <Icon size={26} strokeWidth={1.8} />
@@ -96,18 +94,16 @@ export default function TeamPage() {
               >
                 {/* Blue Background Block */}
                 <div
-                  className={`absolute ${
-                    isImageRight
+                  className={`absolute ${isImageRight
                       ? "-top-4 -bottom-4 -right-4 left-10 rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[24px] rounded-br-[24px]"
                       : "-top-4 -bottom-4 -left-4 right-10 rounded-tl-[100px] rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px]"
-                  } bg-[#1B36B0] z-0`}
+                    } bg-[#1B36B0] z-0`}
                 />
 
                 {/* Dot Pattern */}
                 <div
-                  className={`absolute ${
-                    isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
-                  } w-20 h-20 z-20 opacity-60`}
+                  className={`absolute ${isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
+                    } w-20 h-20 z-20 opacity-60`}
                   style={{
                     backgroundImage:
                       "radial-gradient(circle, #1B36B0 2.5px, transparent 2.5px)",
@@ -117,13 +113,11 @@ export default function TeamPage() {
 
                 {/* Main Image Wrapper */}
                 <div
-                  className={`relative z-10 w-[90%] ${
-                    isImageRight ? "mr-auto" : "ml-auto"
-                  } h-full ${
-                    isImageRight
+                  className={`relative z-10 w-[90%] ${isImageRight ? "mr-auto" : "ml-auto"
+                    } h-full ${isImageRight
                       ? "rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[24px] rounded-br-[24px]"
                       : "rounded-tl-[100px] rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px]"
-                  } overflow-hidden shadow-lg bg-white`}
+                    } overflow-hidden shadow-lg bg-white`}
                 >
                   <Image
                     src={member.imageUrl}

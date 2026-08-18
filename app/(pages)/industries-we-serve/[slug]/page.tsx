@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { use } from "react";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { IndustryItem } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 import Link from "next/link";
@@ -19,17 +19,17 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
   const industryItem = homeData.industriesPage.items.find(
     (item: IndustryItem) => item.slug === slug,
   );
-  
+
   const bannerData = industryItem
     ? {
-        ...homeData.pageBanners["industries-we-serve"],
-        title: industryItem.title,
-        breadcrumb: [
-          { label: "Home", href: "/" },
-          { label: "Industries We Serve", href: "/industries-we-serve" },
-          { label: industryItem.title },
-        ],
-      }
+      ...homeData.pageBanners["industries-we-serve"],
+      title: industryItem.title,
+      breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Industries We Serve", href: "/industries-we-serve" },
+        { label: industryItem.title },
+      ],
+    }
     : homeData.pageBanners["industries-we-serve"];
 
   if (!industryItem) {
@@ -95,9 +95,9 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
               </div>
 
               <div className="pt-4">
-                 <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md transition-all">
-                    Contact Us
-                 </Link>
+                <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md transition-all">
+                  Contact Us
+                </Link>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ import {
   FaSitemap,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { SitemapPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 

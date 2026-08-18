@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function ServiceDetailsPage() {

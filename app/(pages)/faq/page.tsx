@@ -12,7 +12,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { FaqPageData } from "@/types/home";
 
 const faqStatIcons = { users: Users, star: Star, home: Home };
@@ -61,11 +61,10 @@ export default function FaqSection() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className={`bg-white rounded-lg border overflow-hidden transition-colors duration-200 ${
-                    isOpen
+                  className={`bg-white rounded-lg border overflow-hidden transition-colors duration-200 ${isOpen
                       ? "border-l-4 border-l-blue-600 border-y-slate-100 border-r-slate-100 shadow-md"
                       : "border-slate-100 shadow-sm"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => toggleFaq(item.id)}
@@ -75,11 +74,10 @@ export default function FaqSection() {
                       <motion.span
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                          isOpen
+                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isOpen
                             ? "bg-blue-600 text-white"
                             : "bg-blue-50 text-blue-600"
-                        }`}
+                          }`}
                       >
                         {isOpen ? (
                           <Minus className="w-3.5 h-3.5" />

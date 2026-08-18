@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { AwardsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 

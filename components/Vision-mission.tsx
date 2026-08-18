@@ -2,7 +2,7 @@
 
 import { Binoculars, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { AboutPageData } from "@/types/home";
 
 export default function VisionMission() {

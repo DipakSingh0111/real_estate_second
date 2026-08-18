@@ -11,7 +11,7 @@ import {
   FaArrowLeft,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function BlogDetailPage() {
@@ -24,13 +24,13 @@ export default function BlogDetailPage() {
   const post = posts.find((p) => p.slug === slug);
   const bannerData = post
     ? {
-        ...pageBanner,
-        breadcrumb: [
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: post.title },
-        ],
-      }
+      ...pageBanner,
+      breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog" },
+        { label: post.title },
+      ],
+    }
     : pageBanner;
 
   if (!post) {
@@ -253,11 +253,10 @@ export default function BlogDetailPage() {
                 ].map((category) => (
                   <button
                     key={category}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-all ${
-                      post.category === category
+                    className={`w-full text-left px-4 py-2 rounded-lg transition-all ${post.category === category
                         ? "bg-blue-600 text-white"
                         : "bg-slate-50 text-slate-700 hover:bg-blue-50"
-                    }`}
+                      }`}
                   >
                     {category}
                   </button>

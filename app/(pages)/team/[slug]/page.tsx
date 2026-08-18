@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { use } from "react";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { TeamMember } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 import Link from "next/link";
@@ -20,13 +20,13 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
   );
   const bannerData = teamMember
     ? {
-        ...homeData.pageBanners.team,
-        breadcrumb: [
-          { label: "Home", href: "/" },
-          { label: "Team", href: "/team" },
-          { label: teamMember.name },
-        ],
-      }
+      ...homeData.pageBanners.team,
+      breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Team", href: "/team" },
+        { label: teamMember.name },
+      ],
+    }
     : homeData.pageBanners.team;
 
   if (!teamMember) {

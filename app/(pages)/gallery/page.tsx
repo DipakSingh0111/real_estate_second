@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { GalleryPageData } from "@/types/home";
 
 // Motion Animation Variants

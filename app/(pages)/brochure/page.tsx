@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFilePdf, FaDownload } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { BrochurePageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
@@ -58,20 +58,13 @@ export default function BrochurePage() {
 
                     {/* Mask layers */}
                     <div className="absolute inset-y-0 left-0 z-10 w-[70%]">
-                      {/* Dark red shadow / depth (slightly offset right) */}
+
                       <div className="absolute inset-0 bg-[#7a0000] [clip-path:polygon(0_0,_88%_0,_58%_100%,_0%_100%)] translate-x-[3px]" />
-
-                      {/* Bright red line */}
                       <div className="absolute inset-0 bg-red-600 [clip-path:polygon(0_0,_88%_0,_58%_100%,_0%_100%)]" />
-
-                      {/* White mask */}
                       <div className="absolute inset-0 bg-white [clip-path:polygon(0_0,_84%_0,_54%_100%,_0%_100%)]" />
                     </div>
-
-                    {/* Left Text Content inside Mask */}
                     <div className="relative z-20 p-5 pt-6 h-full flex flex-col justify-between w-[55%]">
                       <div>
-                        {/* Red Dash Accent */}
                         <div className="w-3 h-[2px] bg-red-600 mb-2" />
                         <h3 className="text-[14px] font-black tracking-wider leading-none text-[#111827]">
                           <span className="text-red-600">{firstChar}</span>{restOfFirstWord}
@@ -82,13 +75,11 @@ export default function BrochurePage() {
                           </h3>
                         )}
                       </div>
-
                       <div className="my-auto pt-2">
                         <p className="text-[12px] font-medium text-slate-500 leading-snug pr-2">
                           {item.subtitle}
                         </p>
                       </div>
-
                       <div>
                         <p className="text-[10px] font-bold text-[#111827] uppercase leading-tight">
                           {yearPart1} <br />
@@ -97,7 +88,6 @@ export default function BrochurePage() {
                       </div>
                     </div>
                   </div>
-
                   {/* CARD LOWER DETAILS */}
                   <div className="p-6 space-y-4 bg-white">
                     <div className="flex items-start space-x-3">

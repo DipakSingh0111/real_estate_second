@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Check, X, Send, Home, Crown, ArrowRight } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { PricingPageData } from "@/types/home";
 
 const pricingIcons = { send: Send, home: Home, crown: Crown };
@@ -49,11 +49,10 @@ export default function PricingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 whileHover={{ y: -6 }}
-                className={`relative bg-white rounded-2xl flex flex-col justify-between overflow-hidden transition-all duration-300 ${
-                  plan.isPopular
+                className={`relative bg-white rounded-2xl flex flex-col justify-between overflow-hidden transition-all duration-300 ${plan.isPopular
                     ? "border-2 border-blue-600 shadow-xl shadow-blue-500/10"
                     : "border border-slate-200 shadow-md hover:shadow-lg"
-                }`}
+                  }`}
               >
                 {/* Popular Ribbon Tag */}
                 {plan.isPopular && (
@@ -123,11 +122,10 @@ export default function PricingSection() {
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`w-full max-w-[200px] py-2.5 px-4 rounded-lg font-semibold text-xs transition-all duration-200 flex items-center justify-center gap-2 ${
-                        plan.buttonVariant === "primary"
+                      className={`w-full max-w-[200px] py-2.5 px-4 rounded-lg font-semibold text-xs transition-all duration-200 flex items-center justify-center gap-2 ${plan.buttonVariant === "primary"
                           ? "bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/25"
                           : "border border-blue-600 text-blue-600 hover:bg-blue-50"
-                      }`}
+                        }`}
                     >
                       {plan.buttonText} <ArrowRight className="w-3.5 h-3.5" />
                     </motion.button>

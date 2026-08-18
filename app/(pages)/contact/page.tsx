@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({

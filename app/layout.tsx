@@ -5,7 +5,7 @@ import TopBar from "@/components/common/TopBar";
 import NavBar from "@/components/common/NavBar";
 import SupportBanner from "@/components/common/SupportBanner";
 import Footer from "@/components/common/Footer";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

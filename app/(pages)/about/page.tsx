@@ -1,4 +1,4 @@
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 import About from "@/components/About";
 import VisionMission from "@/components/Vision-mission";

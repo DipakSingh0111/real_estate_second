@@ -4,7 +4,7 @@ import { useState } from "react";
 import PropertyCard from "@/components/PropertyCard";
 import PageBanner from "@/components/common/PageBanner";
 import Pagination from "@/components/common/Pagination";
-import siteData from "@/data/homeData.json";
+import siteData from "@/data/property.json";
 import type { PropertyDeal } from "@/types/home";
 
 const properties: PropertyDeal[] = siteData.topDealsSection.deals;

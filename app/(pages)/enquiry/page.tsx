@@ -17,7 +17,7 @@ import {
   FaClock,
   FaHeadset,
 } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import PageBanner from "@/components/common/PageBanner";
 export default function EnquiryPage() {
   const [formData, setFormData] = useState({

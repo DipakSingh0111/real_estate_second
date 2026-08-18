@@ -9,7 +9,7 @@ import {
   Headphones,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { AboutPageData } from "@/types/home";
 
 const whyIcons = {
@@ -97,9 +97,8 @@ export default function WhyUsChoose() {
               return (
                 <div
                   key={feature.title}
-                  className={`flex items-start gap-5 ${
-                    isLast ? "" : "pb-5 border-b border-gray-200/60"
-                  }`}
+                  className={`flex items-start gap-5 ${isLast ? "" : "pb-5 border-b border-gray-200/60"
+                    }`}
                 >
                   <div
                     className="w-[52px] h-[58px] bg-[#EEF2FF] flex items-center justify-center shrink-0"

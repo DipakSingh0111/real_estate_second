@@ -18,7 +18,7 @@
         "hasDropdown": false
       },
       {
-        "label": "ABOUT US",
+        "label": "ABOsUT US",
         "href": "/about",
         "hasDropdown": true,
         "dropdown": [

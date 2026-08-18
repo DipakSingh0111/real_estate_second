@@ -70,7 +70,7 @@ export default function Navbar({ data }: NavBarProps) {
         : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
         }`}
     >
-      <div className="flex h-[72px] w-full items-center lg:h-[82px]">
+      <div className="page-container !px-0 flex h-[72px] w-full items-center lg:h-[82px]">
         {/* Left side: Logo (matches hero banner left text column) */}
         <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[44%] lg:pr-8 xl:w-[42%] xl:pr-12 2xl:w-[40%]">
           <Link href="/" className="relative z-[110] shrink-0">

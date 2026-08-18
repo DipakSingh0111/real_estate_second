@@ -16,7 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { HowItWorkSectionData } from "@/types/home";
 
 // Icon mapping from string names to Lucide icons
@@ -109,7 +109,7 @@ export default function HowItWorks() {
                 <div className="hidden md:flex absolute top-[40px] left-[50%] w-full items-center z-[-1]">
                   <div className="w-full border-t-[2px] border-dotted border-[#B4C6FC]" />
                   <div className="absolute left-1/2 -translate-x-1/2 text-[#1A43BF] bg-[#F8FAFC] px-1">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                   </div>
                 </div>
               )}
@@ -154,7 +154,7 @@ export default function HowItWorks() {
           className="relative bg-[#F4F7FF] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-center min-h-[220px]"
         >
           {/* Background image on the right */}
-          <div 
+          <div
             className="absolute right-0 top-0 bottom-0 w-full md:w-[60%] bg-cover bg-center z-0"
             style={{ backgroundImage: "url('/images/hero-banner.png')" }}
           >

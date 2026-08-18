@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Home } from "lucide-react";
 import { motion } from "framer-motion";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { AboutPageData } from "@/types/home";
 
 const roundedHexagonMask = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 230' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M108.6,15 L178.6,55.4 Q186.6,60 186.6,70 L186.6,160 Q186.6,170 178.6,174.6 L108.6,215 Q100,220 91.4,215 L21.4,174.6 Q13.4,170 13.4,160 L13.4,70 Q13.4,60 21.4,55.4 L91.4,15 Q100,10 108.6,15 Z' fill='black'/%3E%3C/svg%3E")`;

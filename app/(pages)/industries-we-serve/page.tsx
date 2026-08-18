@@ -12,7 +12,7 @@ import {
   FaHotel,
   FaArrowRight,
 } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { IndustriesPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
@@ -133,15 +133,15 @@ export default function IndustryWeServePage() {
               >
                 {/* Base line */}
                 <line x1="5" y1="80" x2="95" y2="80" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                
+
                 {/* Left Tree */}
                 <path d="M15 80 V68" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 <path d="M11 65 C11 60, 19 60, 19 65 C19 70, 11 70, 11 65 Z" stroke="currentColor" strokeWidth="1.5" />
-                
+
                 {/* Right Tree */}
                 <path d="M85 80 V66" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 <path d="M81 63 C81 57, 89 57, 89 63 C89 69, 81 69, 81 63 Z" stroke="currentColor" strokeWidth="1.5" />
-                
+
                 {/* Left Building */}
                 <path d="M22 80 V55 C22 52, 28 50, 32 50 C36 50, 42 52, 42 55 V80" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
                 <rect x="27" y="55" width="2" height="2" fill="currentColor" />
@@ -150,7 +150,7 @@ export default function IndustryWeServePage() {
                 <rect x="33" y="62" width="2" height="2" fill="currentColor" />
                 <rect x="27" y="69" width="2" height="2" fill="currentColor" />
                 <rect x="33" y="69" width="2" height="2" fill="currentColor" />
-                
+
                 {/* Right Building */}
                 <path d="M58 80 V52 C58 49, 63 47, 68 47 C73 47, 78 49, 78 52 V80" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
                 <rect x="63" y="54" width="3" height="2" fill="currentColor" />
@@ -177,7 +177,7 @@ export default function IndustryWeServePage() {
                 <rect x="55" y="62" width="3" height="3" fill="currentColor" />
               </svg>
             </div>
-            
+
             <div>
               <h4 className="text-xl font-bold text-[#0c2242] mb-1">
                 {sectionData.ctaTitle}

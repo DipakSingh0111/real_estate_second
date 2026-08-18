@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Calendar, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { PrivacyPolicyPageData } from "@/types/home";
 
 export default function TermsAndConditions() {

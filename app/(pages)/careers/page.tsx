@@ -18,7 +18,7 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { CareersPageData } from "@/types/home";
 
 const careerIcons: Record<string, React.ReactNode> = {

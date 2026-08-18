@@ -19,7 +19,7 @@ export default function BestRealEstateSection({
       id="featured-property"
       className="bg-white py-10 lg:py-14 overflow-hidden"
     >
-      <div className="page-container grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.16fr_0.84fr] lg:gap-[78px]">
+      <div className="page-container grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ export default function BestRealEstateSection({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="max-w-[490px]"
+          className="w-full"
         >
           <div className="mb-4">
             <p className="text-[13px] font-bold text-[#1243c6] mb-1.5">
@@ -99,11 +99,7 @@ export default function BestRealEstateSection({
           </div>
 
           <h2 className="mb-6 text-3xl sm:text-[42px] font-extrabold leading-[1.2] tracking-tight text-[#071b47]">
-            {data.headingLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+            {data.headingLines.join(" ")}
           </h2>
 
           <div className="mb-6 w-8 h-[2px] bg-[#1243c6]" />

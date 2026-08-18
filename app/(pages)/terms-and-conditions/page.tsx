@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaCalendarAlt, FaEnvelope, FaArrowRight } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { TermsPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 

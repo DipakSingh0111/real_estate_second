@@ -3,7 +3,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import BestRealEstateSection from "@/components/sections/BestRealEstateSection";
 import CtaSection from "@/components/sections/CtaSection";
 import TopDealsSection from "@/components/sections/TopDealsSection";
-import siteData from "@/data/homeData.json";
+import siteData from "@/data/property.json";
 import type { SiteData } from "@/types/home";
 
 const homeData = siteData as SiteData;

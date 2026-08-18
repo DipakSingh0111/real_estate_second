@@ -16,7 +16,7 @@ import {
   FaRulerCombined,
   FaPhoneAlt,
 } from "react-icons/fa";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { ServicesPageData } from "@/types/home";
 import PageBanner from "@/components/common/PageBanner";
 
@@ -109,14 +109,14 @@ export default function ServicesPage() {
                     variants={itemVariants}
                     whileHover={{ y: -5 }}
                     className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative h-full group ${service.isActive
-                        ? "bg-[#1d4ed8] border-[#1d4ed8] text-white shadow-lg shadow-blue-500/20"
-                        : "bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] group-hover/link:shadow-md group-hover/link:border-blue-100"
+                      ? "bg-[#1d4ed8] border-[#1d4ed8] text-white shadow-lg shadow-blue-500/20"
+                      : "bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] group-hover/link:shadow-md group-hover/link:border-blue-100"
                       }`}
                   >
                     <div
                       className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${service.isActive
-                          ? "bg-white/20 text-white"
-                          : "bg-blue-50 text-[#1d4ed8]"
+                        ? "bg-white/20 text-white"
+                        : "bg-blue-50 text-[#1d4ed8]"
                         }`}
                     >
                       {serviceIcons[service.iconName]}
@@ -135,8 +135,8 @@ export default function ServicesPage() {
 
                     <div
                       className={`mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 ${service.isActive
-                          ? "border-white bg-white text-[#1d4ed8]"
-                          : "border-blue-200 text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white group-hover:border-[#1d4ed8]"
+                        ? "border-white bg-white text-[#1d4ed8]"
+                        : "border-blue-200 text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white group-hover:border-[#1d4ed8]"
                         }`}
                     >
                       <FaArrowRight className="text-[10px]" />

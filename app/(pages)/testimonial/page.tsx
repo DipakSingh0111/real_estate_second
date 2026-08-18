@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
 
 import PageBanner from "@/components/common/PageBanner";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 import type { TestimonialPageData } from "@/types/home";
 
 export default function TestimonialsPage() {

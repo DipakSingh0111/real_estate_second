@@ -28,7 +28,7 @@ import PriceCard from "@/components/common/PriceCard";
 import ContactFormSidebar from "@/components/common/ContactFormSidebar";
 import NeedHelpCard from "@/components/common/NeedHelpCard";
 import PropertyMap from "@/components/common/PropertyMap";
-import homeData from "@/data/homeData.json";
+import homeData from "@/data/property.json";
 
 type PropertyDetailProps = {
   property: PropertyDeal;
@@ -141,11 +141,10 @@ export default function PropertyDetail({
                     key={`${src}-${index}`}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`relative h-16 overflow-hidden rounded-lg sm:h-20 ${
-                      activeIndex === index
+                    className={`relative h-16 overflow-hidden rounded-lg sm:h-20 ${activeIndex === index
                         ? "ring-2 ring-[#2A39CE] ring-offset-1"
                         : "opacity-80 hover:opacity-100"
-                    }`}
+                      }`}
                   >
                     <Image
                       src={src}
@@ -212,11 +211,10 @@ export default function PropertyDetail({
                   key={key}
                   type="button"
                   onClick={() => setActiveTab(key)}
-                  className={`rounded-lg px-5 py-3 text-sm font-extrabold transition flex items-center gap-2.5 ${
-                    activeTab === key
+                  className={`rounded-lg px-5 py-3 text-sm font-extrabold transition flex items-center gap-2.5 ${activeTab === key
                       ? "bg-[#1B36B0] text-white shadow-sm"
                       : "bg-[#F3F4F6] text-slate-700 hover:bg-slate-200"
-                  }`}
+                    }`}
                 >
                   <Icon className="h-4 w-4" />
                   <span>{label}</span>
