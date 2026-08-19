@@ -65,7 +65,7 @@ export default function PartnersPage() {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-[72px] max-w-[90%] object-contain rounded-lg"
+                className="h-[72px] w-full object-contain rounded-lg"
                 loading="lazy"
               />
             </motion.div>

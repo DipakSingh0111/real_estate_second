@@ -4,20 +4,20 @@ import { site } from "@/data";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  FaEdit,
-  FaUser,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-  FaPaperPlane,
-  FaUsers,
-  FaHome,
-  FaTag,
-  FaUserCheck,
-  FaFileAlt,
-  FaClock,
-  FaHeadset,
-} from "react-icons/fa";
+  SquarePen,
+  User,
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Users,
+  Home,
+  Tag,
+  UserCog,
+  FileCheck,
+  Clock,
+  Headset,
+} from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
 export default function EnquiryPage() {
   const [formData, setFormData] = useState({
@@ -70,7 +70,7 @@ export default function EnquiryPage() {
             <div className="space-y-1">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-red-500 flex items-center justify-center">
-                  <FaEdit className="text-lg" />
+                  <SquarePen className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                   {site.enquiryPage.formHeader.title}
@@ -90,7 +90,7 @@ export default function EnquiryPage() {
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <FaUser className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-300 text-xs" />
+                    <User className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[18px] h-[18px] stroke-[1.5]" />
                     <input
                       type="text"
                       name="fullName"
@@ -106,7 +106,7 @@ export default function EnquiryPage() {
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <FaEnvelope className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-300 text-xs" />
+                    <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[18px] h-[18px] stroke-[1.5]" />
                     <input
                       type="email"
                       name="email"
@@ -125,7 +125,7 @@ export default function EnquiryPage() {
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <FaPhoneAlt className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-300 text-xs" />
+                    <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[18px] h-[18px] stroke-[1.5]" />
                     <input
                       type="tel"
                       name="phone"
@@ -216,7 +216,7 @@ export default function EnquiryPage() {
                     Preferred Location
                   </label>
                   <div className="relative">
-                    <FaMapMarkerAlt className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-300 text-xs" />
+                    <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[18px] h-[18px] stroke-[1.5]" />
                     <input
                       type="text"
                       name="location"
@@ -280,7 +280,7 @@ export default function EnquiryPage() {
                 type="submit"
                 className="w-full bg-[#e11d48] hover:bg-red-700 text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition-all duration-300 mt-2"
               >
-                <FaPaperPlane className="text-xs" />
+                <Send className="w-[18px] h-[18px] stroke-[1.5]" />
                 <span>Submit Enquiry</span>
               </motion.button>
             </form>
@@ -296,7 +296,7 @@ export default function EnquiryPage() {
             {/* Header */}
             <div className="text-center space-y-2">
               <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 mx-auto flex items-center justify-center">
-                <FaUsers className="text-lg" />
+                <Users className="w-[28px] h-[28px] stroke-[1.5]" />
               </div>
               <h3 className="text-[28px] font-bold text-slate-900">
                 {site.enquiryPage.whyEnquire.title}
@@ -309,7 +309,7 @@ export default function EnquiryPage() {
               {/* Feature 1 */}
               <div className="flex items-start space-x-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaHome className="text-base" />
+                  <Home className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
@@ -324,7 +324,7 @@ export default function EnquiryPage() {
               {/* Feature 2 */}
               <div className="flex items-start space-x-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaTag className="text-base" />
+                  <Tag className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
@@ -339,7 +339,7 @@ export default function EnquiryPage() {
               {/* Feature 3 */}
               <div className="flex items-start space-x-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaUserCheck className="text-base" />
+                  <UserCog className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
@@ -354,7 +354,7 @@ export default function EnquiryPage() {
               {/* Feature 4 */}
               <div className="flex items-start space-x-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaFileAlt className="text-base" />
+                  <FileCheck className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
@@ -369,7 +369,7 @@ export default function EnquiryPage() {
               {/* Feature 5 */}
               <div className="flex items-start space-x-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaClock className="text-base" />
+                  <Clock className="w-[28px] h-[28px] stroke-[1.5]" />
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
@@ -395,7 +395,7 @@ export default function EnquiryPage() {
           {/* Left: Still*/}
           <div className="flex items-center space-x-4 sm:pr-6 md:border-r border-slate-100">
             <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0">
-              <FaHeadset className="text-xl" />
+              <Headset className="w-[28px] h-[28px] stroke-[1.5]" />
             </div>
             <div className="space-y-1">
               <h4 className="text-[20px] font-bold text-slate-900">
@@ -409,14 +409,14 @@ export default function EnquiryPage() {
                   href={site.enquiryPage.questions.phoneHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
-                  <FaPhoneAlt className="text-red-500 text-[10px]" />
+                  <Phone className="text-red-500 w-4 h-4 stroke-[1.5]" />
                   <span>{site.enquiryPage.questions.phone}</span>
                 </a>
                 <a
                   href={site.enquiryPage.questions.emailHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
-                  <FaEnvelope className="text-red-500 text-[10px]" />
+                  <Mail className="text-red-500 w-4 h-4 stroke-[1.5]" />
                   <span>{site.enquiryPage.questions.email}</span>
                 </a>
               </div>
@@ -426,7 +426,7 @@ export default function EnquiryPage() {
           {/* Right: Office Hours */}
           <div className="flex items-center space-x-4 sm:pl-4">
             <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0">
-              <FaClock className="text-xl" />
+              <Clock className="w-[28px] h-[28px] stroke-[1.5]" />
             </div>
             <div>
               <h4 className="text-[18px] font-bold text-slate-900">

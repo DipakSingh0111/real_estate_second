@@ -2,6 +2,7 @@
 
 import { site } from "@/data";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PageBanner from "@/components/common/PageBanner";
 
@@ -64,8 +65,19 @@ export default function AwardsPage() {
               className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300 flex flex-col items-center text-center space-y-3"
             >
               {/* Trophy/Icon Container */}
-              <div className="w-20 h-20 flex items-center justify-center text-4xl select-none pt-2">
-                {award.icon}
+              <div className="relative w-full h-24 sm:h-28 flex items-center justify-center p-2 mb-2">
+                {award.logo ? (
+                  <Image
+                    src={award.logo}
+                    alt={award.title}
+                    fill
+                    className="object-contain"
+                  />
+                ) : (
+                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-400">
+                    No Logo
+                  </div>
+                )}
               </div>
 
               {/* Year */}

@@ -60,7 +60,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-0">
       <PageBanner />
 
       <div className="page-container pt-10 space-y-16">
@@ -107,37 +107,20 @@ export default function ServicesPage() {
                   <motion.div
                     variants={itemVariants}
                     whileHover={{ y: -5 }}
-                    className={`rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative h-full group ${service.isActive
-                      ? "bg-[#1d4ed8] border-[#1d4ed8] text-white shadow-lg shadow-blue-500/20"
-                      : "bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] group-hover/link:shadow-md group-hover/link:border-blue-100"
-                      }`}
+                    className="rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative h-full group bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] group-hover/link:bg-[#1d4ed8] group-hover/link:border-[#1d4ed8] group-hover/link:text-white group-hover/link:shadow-lg group-hover/link:shadow-blue-500/20"
                   >
-                    <div
-                      className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${service.isActive
-                        ? "bg-white/20 text-white"
-                        : "bg-blue-50 text-[#1d4ed8]"
-                        }`}
-                    >
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover/link:scale-110 bg-blue-50 text-[#1d4ed8] group-hover/link:bg-white/20 group-hover/link:text-white">
                       {serviceIcons[service.iconName]}
                     </div>
 
-                    <h3
-                      className={`text-base sm:text-lg font-bold mb-2 ${service.isActive ? "text-white" : "text-slate-900"}`}
-                    >
+                    <h3 className="text-base sm:text-lg font-bold mb-2 text-slate-900 group-hover/link:text-white">
                       {service.title}
                     </h3>
-                    <p
-                      className={`text-xs sm:text-sm leading-relaxed mb-6 ${service.isActive ? "text-blue-100" : "text-slate-400"}`}
-                    >
+                    <p className="text-xs sm:text-sm leading-relaxed mb-6 text-slate-400 group-hover/link:text-blue-100">
                       {service.description}
                     </p>
 
-                    <div
-                      className={`mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 ${service.isActive
-                        ? "border-white bg-white text-[#1d4ed8]"
-                        : "border-blue-200 text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white group-hover:border-[#1d4ed8]"
-                        }`}
-                    >
+                    <div className="mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 border-blue-200 text-[#1d4ed8] group-hover/link:bg-white group-hover/link:text-[#1d4ed8] group-hover/link:border-white">
                       <FaArrowRight className="text-[10px]" />
                     </div>
                   </motion.div>
@@ -157,27 +140,26 @@ export default function ServicesPage() {
               <span>&larr;</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+            {/* <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
               {sectionData.featuredHeading}
-            </h2>
+            </h2> */}
 
             <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed">
               {sectionData.featuredDescription}
             </p>
 
-            {/* Carousel Navigation */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden sm:flex items-center space-x-2">
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={handlePrev}
-                className="w-10 h-10 rounded-full bg-white text-slate-500 shadow-sm border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"
+                className="w-10 h-10 rounded-full bg-white text-slate-500 shadow-sm border border-slate-200 flex items-center justify-center hover:bg-slate-50 active:bg-blue-600 active:text-white active:border-blue-600 transition-colors"
               >
                 <FaChevronLeft className="text-xs" />
               </motion.button>
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full bg-[#1d4ed8] text-white shadow-md flex items-center justify-center hover:bg-blue-700 transition-colors"
+                className="w-10 h-10 rounded-full bg-[#1d4ed8] text-white shadow-md flex items-center justify-center hover:bg-blue-700 active:bg-blue-800 transition-colors"
               >
                 <FaChevronRight className="text-xs" />
               </motion.button>
@@ -215,11 +197,11 @@ export default function ServicesPage() {
 
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                     <div>
-                      <h3 className="text-sm font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
+                      <h3 className="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
                         {item.title}
                       </h3>
                       {item.builder && (
-                        <p className="text-[11px] font-semibold text-[#1d4ed8] mt-1">
+                        <p className="text-sm font-semibold text-[#1d4ed8] mt-1">
                           {item.builder}
                         </p>
                       )}
@@ -274,35 +256,7 @@ export default function ServicesPage() {
             ))}
           </motion.div>
 
-          {/* Need Help Box */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-2xl p-4 sm:px-6 border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4"
-          >
-            <div className="flex items-center space-x-4 text-center sm:text-left">
-              <div className="w-12 h-12 rounded-full bg-blue-50 text-[#1d4ed8] flex items-center justify-center shrink-0">
-                <FaPhoneAlt className="text-lg" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-900">{sectionData.helpTitle}</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">
-                  {sectionData.helpText}
-                </p>
-              </div>
-            </div>
 
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-[#1d4ed8] hover:bg-blue-700 text-white text-xs font-bold px-6 py-3 rounded-xl flex items-center space-x-2 shadow-sm transition-all shrink-0"
-            >
-              <span>{sectionData.helpButton}</span>
-              <FaArrowRight className="text-[10px]" />
-            </motion.button>
-          </motion.div>
         </section>
       </div>
     </div>

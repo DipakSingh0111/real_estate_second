@@ -135,11 +135,12 @@ function Headset247() {
       <circle cx="30" cy="52" r="3.2" fill="currentColor" />
       <text
         x="32"
-        y="38"
+        y="37"
         textAnchor="middle"
         fill="currentColor"
-        fontSize="11"
+        fontSize="9"
         fontWeight="800"
+        letterSpacing="-0.5"
         fontFamily="Arial, Helvetica, sans-serif"
       >
         24/7

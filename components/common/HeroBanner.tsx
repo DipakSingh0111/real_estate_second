@@ -37,7 +37,7 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
   if (!activeSlide) return null;
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 font-[family-name:var(--font-poppins)]">
+    <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 font-['Times_New_Roman',_Times,_serif]">
       {/* Background Slides */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -56,9 +56,6 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
             />
           </div>
         ))}
-        {/* Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="page-container relative z-10 flex min-h-screen w-full flex-col justify-center pb-12 pt-32 lg:pb-20 lg:pt-32">
@@ -72,12 +69,12 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               <span className="rounded-full bg-blue-600 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
                 {data.badgeTag}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                 {data.badgeLocation}
               </span>
             </div>
 
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-[#0B132A] sm:text-5xl lg:text-[64px] leading-tight">
               {hasHighlight ? (
                 <>
                   {beforeHighlight}
@@ -91,7 +88,7 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               )}
             </h1>
 
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg text-justify">
               {data.description}
             </p>
           </motion.div>
@@ -104,8 +101,8 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               type="button"
               onClick={() => setActiveIndex(index)}
               className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
-                ? "w-10 bg-white"
-                : "w-2.5 bg-white/50 hover:bg-white/80"
+                ? "w-10 bg-[#3b55ce]"
+                : "w-2.5 bg-slate-300 hover:bg-slate-400"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />

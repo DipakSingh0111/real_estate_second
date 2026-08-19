@@ -20,11 +20,19 @@ import {
   Send,
   Star,
   Tag,
+  Wifi,
+  Wind,
+  Flame,
+  Dumbbell,
+  Trees,
+  Droplets,
+  CarFront,
+  ShieldCheck,
+  Utensils,
 } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { site, PropertyDeal, PageBannerData, SectionProps } from "@/data";
 import PageBanner from "@/components/common/PageBanner";
-import PriceCard from "@/components/common/PriceCard";
 import ContactFormSidebar from "@/components/common/ContactFormSidebar";
 import NeedHelpCard from "@/components/common/NeedHelpCard";
 import PropertyMap from "@/components/common/PropertyMap";
@@ -44,13 +52,13 @@ export default function PropertyDetail({
   // If wrapped in a generic container, it receives data, else use fallbacks
   const property = propData?.property || site.topDealsSection.deals[0];
   const galleryImages = propData?.galleryImages || [];
-  const banner = propData?.banner || (site.pageBanners as any)['property-listing'] || site.pageBanners['about'];
+  const banner = propData?.banner || site.pageBanners.propertyListing;
 
   const bannerData = useMemo(
     () => ({
       ...banner,
       breadcrumb: [
-        ...(banner?.breadcrumb ?? []).slice(0, 2),
+        ...(banner.breadcrumb ?? []).slice(0, 2),
         { label: property.title },
       ],
     }),
@@ -114,6 +122,10 @@ export default function PropertyDetail({
                 <span className="absolute left-4 top-4 rounded-md bg-[#2A39CE] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
                   Featured
                 </span>
+                <div className="absolute right-4 top-4 rounded-lg bg-white/95 px-4 py-2 shadow-lg backdrop-blur-sm flex flex-col items-end">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500">Price</span>
+                  <span className="text-xl font-extrabold text-[#2A39CE]">{property.price}</span>
+                </div>
                 <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
                   <Camera className="h-3.5 w-3.5" />
                   {activeIndex + 1}/{images.length}
@@ -145,8 +157,8 @@ export default function PropertyDetail({
                     type="button"
                     onClick={() => setActiveIndex(index)}
                     className={`relative h-16 overflow-hidden rounded-lg sm:h-20 ${activeIndex === index
-                        ? "ring-2 ring-[#2A39CE] ring-offset-1"
-                        : "opacity-80 hover:opacity-100"
+                      ? "ring-2 ring-[#2A39CE] ring-offset-1"
+                      : "opacity-80 hover:opacity-100"
                       }`}
                   >
                     <Image
@@ -201,60 +213,45 @@ export default function PropertyDetail({
               </div>
             </div>
 
-            {/* Tabs */}
-            <div className="mt-8 flex flex-wrap gap-3">
-              {(
-                [
-                  ["overview", "Overview", BedDouble],
-                  ["details", "Property Details", FileText],
-                  ["features", "Features", Star],
-                ] as const
-              ).map(([key, label, Icon]) => (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => setActiveTab(key)}
-                  className={`rounded-lg px-5 py-3 text-sm font-extrabold transition flex items-center gap-2.5 ${activeTab === key
-                      ? "bg-[#1B36B0] text-white shadow-sm"
-                      : "bg-[#F3F4F6] text-slate-700 hover:bg-slate-200"
-                    }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span>{label}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Tab panels */}
-            <div className="mt-6 rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)]">
-              {activeTab === "overview" ? (
-                <div className="divide-y divide-slate-100">
-                  {overviewRows.map((row) => {
-                    const Icon = row.icon;
-                    return (
-                      <div
-                        key={row.label}
-                        className="grid grid-cols-[1.2fr_1fr] divide-x divide-slate-100"
-                      >
-                        {/* Left Side: Icon + Name */}
-                        <div className="flex items-center gap-3.5 px-5 py-3.5 sm:px-6">
-                          <Icon className="h-5 w-5 text-[#4F5B73] shrink-0" />
-                          <span className="text-[14px] sm:text-[15px] font-extrabold text-[#142345] tracking-wide">
-                            {row.label}
-                          </span>
+            <div className="mt-12 space-y-12">
+              {/* Overview Section */}
+              <section>
+                <h2 className="text-2xl font-bold text-[#0B1A33] mb-6 flex items-center gap-2">
+                  <BedDouble className="h-6 w-6 text-[#2A39CE]" />
+                  Overview
+                </h2>
+                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)]">
+                  <div className="divide-y divide-slate-100">
+                    {overviewRows.map((row) => {
+                      const Icon = row.icon;
+                      return (
+                        <div
+                          key={row.label}
+                          className="grid grid-cols-[1.2fr_1fr] divide-x divide-slate-100"
+                        >
+                          <div className="flex items-center gap-3.5 px-5 py-3.5 sm:px-6">
+                            <Icon className="h-5 w-5 text-[#4F5B73] shrink-0" />
+                            <span className="text-[14px] sm:text-[15px] font-extrabold text-[#142345] tracking-wide">
+                              {row.label}
+                            </span>
+                          </div>
+                          <div className="flex items-center px-5 py-3.5 sm:px-6 text-[14px] sm:text-[15px] font-semibold text-[#4F5B73]">
+                            {row.value}
+                          </div>
                         </div>
-                        {/* Right Side: Value */}
-                        <div className="flex items-center px-5 py-3.5 sm:px-6 text-[14px] sm:text-[15px] font-semibold text-[#4F5B73]">
-                          {row.value}
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              ) : null}
+              </section>
 
-              {activeTab === "details" ? (
-                <div className="space-y-3 px-5 py-5 text-sm leading-7 text-slate-600">
+              {/* Property Details Section */}
+              <section>
+                <h2 className="text-2xl font-bold text-[#0B1A33] mb-6 flex items-center gap-2">
+                  <FileText className="h-6 w-6 text-[#2A39CE]" />
+                  Property Details
+                </h2>
+                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600">
                   <p>
                     This premium listing in{" "}
                     <strong className="text-[#0B1A33]">
@@ -264,26 +261,50 @@ export default function PropertyDetail({
                     bathrooms, and {property.sqft} sqft of thoughtfully designed
                     living space.
                   </p>
-                  <p>
+                  <p className="mt-2">
                     Listed price:{" "}
                     <strong className="text-[#2A39CE]">{property.price}</strong>
                   </p>
                 </div>
-              ) : null}
+              </section>
 
-              {activeTab === "features" ? (
-                <ul className="grid gap-3 px-5 py-5 sm:grid-cols-2">
-                  {featureList.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center gap-2 text-sm text-slate-600"
-                    >
-                      <CheckCircle2 className="h-4 w-4 text-[#2A39CE]" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+              {/* Features Section */}
+              <section>
+                <h2 className="text-2xl font-bold text-[#0B1A33] mb-6 flex items-center gap-2">
+                  <Star className="h-6 w-6 text-[#2A39CE]" />
+                  Features
+                </h2>
+                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 sm:p-8">
+                  <ul className="grid gap-4 sm:grid-cols-2">
+                    {featureList.map((feature) => {
+                      const f = feature.toLowerCase();
+                      let FeatureIcon = CheckCircle2;
+                      if (f.includes("air condition") || f.includes("ac") || f.includes("cooling")) FeatureIcon = Wind;
+                      else if (f.includes("heat") || f.includes("fire")) FeatureIcon = Flame;
+                      else if (f.includes("pool") || f.includes("water")) FeatureIcon = Droplets;
+                      else if (f.includes("gym") || f.includes("fitness")) FeatureIcon = Dumbbell;
+                      else if (f.includes("garden") || f.includes("park") || f.includes("yard")) FeatureIcon = Trees;
+                      else if (f.includes("garage") || f.includes("parking")) FeatureIcon = CarFront;
+                      else if (f.includes("wifi") || f.includes("internet") || f.includes("broadband")) FeatureIcon = Wifi;
+                      else if (f.includes("security")) FeatureIcon = ShieldCheck;
+                      else if (f.includes("kitchen")) FeatureIcon = Utensils;
+                      else if (f.includes("balcony") || f.includes("terrace")) FeatureIcon = Building2;
+                      
+                      return (
+                        <li
+                          key={feature}
+                          className="flex items-center gap-3 text-sm sm:text-base text-slate-700 font-medium bg-slate-50 hover:bg-blue-50/50 transition-colors p-3.5 rounded-xl border border-slate-100 shadow-sm"
+                        >
+                          <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#2A39CE] shrink-0 border border-slate-100">
+                            <FeatureIcon className="h-5 w-5" />
+                          </div>
+                          {feature}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </section>
             </div>
 
             {/* Map */}
@@ -292,12 +313,7 @@ export default function PropertyDetail({
 
           {/* RIGHT SIDEBAR */}
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-            <PriceCard
-              price={property.price}
-              propertyType={site.propertyDetail.priceDetails.propertyType}
-              priceType={site.propertyDetail.priceDetails.priceType}
-              region={site.propertyDetail.priceDetails.region}
-            />
+
 
             <ContactFormSidebar />
 

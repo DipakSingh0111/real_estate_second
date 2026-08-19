@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Play } from "lucide-react";
+import { Play, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { site, SectionProps, BestRealEstateSectionData } from "@/data";
 
 
@@ -12,6 +12,7 @@ import { site, SectionProps, BestRealEstateSectionData } from "@/data";
 export default function BestRealEstateSection({ data: propData, className }: SectionProps<any>) {
   const data = propData || site.bestRealEstateSection;
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   useEffect(() => {
     if (!data?.images?.length) return;
@@ -34,16 +35,6 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative pt-8 pl-8 sm:pt-10 sm:pl-10"
         >
-          {/* Blue Dots Grid */}
-          <div className="absolute left-0 top-0 z-0 grid grid-cols-4 gap-[10px]">
-            {Array.from({ length: 16 }, (_, index) => (
-              <span
-                key={index}
-                className="h-[6px] w-[6px] rounded-full bg-[#1243c6]"
-              />
-            ))}
-          </div>
-
           <div className="relative z-10 w-full aspect-[4/3] max-w-[550px] mx-auto lg:mx-0">
             {/* Gray box underneath */}
             <div className="absolute left-[8%] right-[8%] -bottom-6 h-1/2 rounded-b-[40px] bg-[#e8e8e8]" />
@@ -86,6 +77,17 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
               </div>
             </div>
           </div>
+          
+          {/* Blue Dots Grid - Rendered after image to ensure it stays on top */}
+          <div className="absolute left-2 top-2 sm:left-4 sm:top-4 z-30 grid grid-cols-4 gap-[10px] pointer-events-none">
+            {Array.from({ length: 16 }, (_, index) => (
+              <span
+                key={index}
+                className="h-[6px] w-[6px] rounded-full bg-[#1243c6] shadow-sm"
+              />
+            ))}
+          </div>
+
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 40 }}
@@ -114,6 +116,7 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
           <div className="flex items-center gap-6">
             <button
               aria-label={data.playButtonLabel}
+              onClick={() => setIsVideoModalOpen(true)}
               className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#1243c6] text-white shadow-[0_8px_20px_rgba(18,67,198,0.3)] transition-transform hover:scale-105"
             >
               <Play className="ml-1 h-5 w-5 fill-white stroke-white" />
@@ -127,6 +130,46 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
           </div>
         </motion.div>
       </div>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-8"
+            onClick={() => setIsVideoModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setIsVideoModalOpen(false)}
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/80 transition-colors"
+                aria-label="Close video"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              
+              <video
+                className="w-full h-full object-cover"
+                controls
+                autoPlay
+                playsInline
+              >
+                <source src="/images/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

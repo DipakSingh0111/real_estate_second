@@ -4,31 +4,30 @@ import { site } from "@/data";
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import {
-  Search,
-  FileEdit,
-  Handshake,
-  FileCheck,
-  Home,
-  MessageSquare,
-  Calendar,
-  ShieldCheck,
-  Key,
-  Headphones,
-  ArrowRight,
-} from "lucide-react";
+  TbHomeSearch,
+  TbFilePencil,
+  TbFileCheck,
+  TbHomeHeart,
+  TbSearch,
+  TbMessageCircle,
+  TbCalendarEvent,
+  TbShieldCheck,
+  TbKey,
+} from "react-icons/tb";
+import { Headphones, ArrowRight, Handshake } from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
-// Icon mapping from string names to Lucide icons
-const iconMap: Record<string, React.ComponentType<{ className: string }>> = {
-  search: Search,
-  "file-edit": FileEdit,
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  "home-search": TbHomeSearch,
+  "file-pencil": TbFilePencil,
   handshake: Handshake,
-  "file-check": FileCheck,
-  home: Home,
-  "message-square": MessageSquare,
-  calendar: Calendar,
-  "shield-check": ShieldCheck,
-  key: Key,
-  headphones: Headphones,
+  "file-check": TbFileCheck,
+  "home-heart": TbHomeHeart,
+  search: TbSearch,
+  "message-circle": TbMessageCircle,
+  "calendar-event": TbCalendarEvent,
+  "shield-check": TbShieldCheck,
+  key: TbKey,
 };
 
 const containerVariants: Variants = {
@@ -52,10 +51,9 @@ const itemVariants: Variants = {
 
 export default function HowItWorks() {
   const sectionData = site.howItWork;
-  const pageBannerData = site.pageBanners["how-it-work"];
 
   const getIcon = (iconName: string, sizeClass: string) => {
-    const IconComponent = iconMap[iconName] || Search;
+    const IconComponent = iconMap[iconName] || TbSearch;
     return <IconComponent className={sizeClass} />;
   };
 
@@ -118,7 +116,7 @@ export default function HowItWorks() {
                   {step.number}
                 </div>
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(26,67,191,0.08)] text-[#1A43BF] z-10 relative border-2 border-white">
-                  {getIcon(step.iconName, "w-8 h-8 stroke-[1.5]")}
+                  {getIcon(step.iconName, "w-10 h-10 stroke-[1.5]")}
                 </div>
               </div>
 
@@ -136,7 +134,7 @@ export default function HowItWorks() {
                 </p>
 
                 <div className="w-9 h-9 rounded-full bg-[#F0F4FF] flex items-center justify-center text-[#1A43BF] mt-auto">
-                  {getIcon(step.iconName, "w-[18px] h-[18px] stroke-[1.5]")}
+                  {getIcon((step as any).bottomIconName || step.iconName, "w-[20px] h-[20px] stroke-[1.5]")}
                 </div>
               </div>
             </motion.div>

@@ -495,7 +495,7 @@
               "pretitle": "TRENDING · 2024 FORT CLAYTON",
               "title": "Find Your Dream Home With Us",
               "highlightedTitleText": "Dream Home",
-              "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+              "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
               "priceTag": {
                 "label": "Starting at",
                 "amount": "$20,500"
@@ -511,7 +511,7 @@
                   "image": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg",
                   "alt": "Find Your Dream Home With Us",
                   "title": "Find Your Dream Home With Us",
-                  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+                  "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
                   "priceLabel": "Starting at",
                   "price": "$20,500",
                   "button": {
@@ -523,7 +523,7 @@
                   "image": "/images/modern-architecture.jpg",
                   "alt": "Modern Architecture",
                   "title": "Modern Architecture",
-                  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+                  "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
                   "priceLabel": "Starting at",
                   "price": "$24,900",
                   "button": {
@@ -535,7 +535,7 @@
                   "image": "/images/modern-buildings.jpg",
                   "alt": "Luxury Living",
                   "title": "Luxury Living",
-                  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+                  "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
                   "priceLabel": "Starting at",
                   "price": "$31,200",
                   "button": {
@@ -552,7 +552,7 @@
             "RealEstateAbout1": {
               "pretitle": "ABOUT US",
               "title": "The Leading Real Estate Company.",
-              "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "desc": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
               "sideImage": "/images/modern-buildings.jpg",
               "sideImageTitle": "Elegant living room interior",
               "buttons": [
@@ -569,7 +569,7 @@
             "RealEstateWhyChooseUs1": {
               "pretitle": "Our services",
               "title": "The Leading Real Estate Company.",
-              "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "desc": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
               "whyChooseUsItems": [
                 {
                   "title": "Consulting Service",
@@ -603,7 +603,7 @@
                 "Of"
               ],
               "highlightedWord": "Unit",
-              "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "desc": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
               "buttons": [
                 {
                   "label": "Discover More",
@@ -1042,7 +1042,7 @@
             "RealEstateCitiesWeServe1": {
               "pretitle": "Best real estate in The World",
               "title": "We serve you with best real estate by area",
-              "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+              "desc": "Experience the pinnacle of real estate excellence. We specialize in connecting discerning buyers with extraordinary properties in the most sought-after locations. Our commitment to integrity, transparency, and client satisfaction ensures that every transaction is handled with the utmost care, making your dream home a reality.",
               "images": [
                 {
                   "src": "/images/aerial-view-modern-buildings-city.jpg",
@@ -1744,7 +1744,7 @@
           "variants": {
             "RealEstateFooter1": {
               "logo": "Real Estate Company",
-              "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "desc": "Find your perfect space with our comprehensive real estate services. We make buying and selling simple and stress-free.",
               "footerColumns": [
                 {
                   "title": "Quick Links",
@@ -1834,7 +1834,7 @@
                   "href": "#"
                 }
               ],
-              "copyrightText": "Copyright © 2026. All rights reserved."
+              "copyrightText": "Copyright © 2026. All rights reserved. Powered by Lestow"
             }
           }
         },
@@ -1847,7 +1847,7 @@
                 {
                   "id": 1,
                   "name": "DLF",
-                  "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1d/DLF_logo.svg"
+                  "logo": "/images/dlf.jpg"
                 },
                 {
                   "id": 2,
@@ -2047,7 +2047,7 @@
               "faqItems": [
                 {
                   "question": "How did my property get listed?",
-                  "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, nisl nec suscipit maximus, quam purus hendrerit nisl, in luctus urna nisi in arcu. Integer sit amet sem eu nibh rutrum congue in nec velit."
+                  "answer": "We guide you through every step of the real estate process, from initial consultation to closing. Our comprehensive services include market analysis, property valuation, negotiation, and handling all necessary documentation to ensure a smooth and hassle-free experience."
                 },
                 {
                   "question": "How long will it take to buy a home?",
@@ -2925,7 +2925,7 @@
         "PropertyDetail": {
           "variants": {
             "RealEstatePropertyDetail1": {
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "description": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
               "features": [
                 "Air Conditioning",
                 "Swimming Pool",
@@ -3617,10 +3617,6 @@
           {
             "label": "Testimonials",
             "href": "/testimonial"
-          },
-          {
-            "label": "Careers",
-            "href": "/careers"
           }
         ]
       },
@@ -3650,17 +3646,7 @@
       {
         "label": "PROPERTIES",
         "href": "/property-listing",
-        "hasDropdown": true,
-        "dropdown": [
-          {
-            "label": "View Properties",
-            "href": "/property-listing"
-          },
-          {
-            "label": "Brochure",
-            "href": "/brochure"
-          }
-        ]
+        "hasDropdown": false
       },
       {
         "label": "MEDIA",
@@ -3693,8 +3679,17 @@
           {
             "label": "Get A Quote",
             "href": "/get-a-quotes"
+          },
+          {
+            "label": "Brochure",
+            "href": "/brochure"
           }
         ]
+      },
+      {
+        "label": "CAREERS",
+        "href": "/careers",
+        "hasDropdown": false
       },
       {
         "label": "CONTACT US",
@@ -3708,32 +3703,20 @@
     "badgeLocation": "2024 FORT CLAYTON",
     "title": "Find Your Dream Home With Us",
     "highlightedTitleText": "Dream Home",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    "description": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
     "slides": [
       {
-        "image": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg",
+        "image": "/images/Hero_banner.png",
         "title": "Find Your Dream Home With Us",
         "priceLabel": "Starting at",
         "price": "$20,500"
-      },
-      {
-        "image": "/images/modern-architecture.jpg",
-        "title": "Modern Architecture",
-        "priceLabel": "Starting at",
-        "price": "$24,900"
-      },
-      {
-        "image": "/images/modern-buildings.jpg",
-        "title": "Luxury Living",
-        "priceLabel": "Starting at",
-        "price": "$31,200"
       }
     ]
   },
   "aboutSection": {
     "badge": "ABOUT US",
     "heading": "The Leading Real Estate Company.",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
     "buttonLabel": "Explore More",
     "imageUrl": "/images/modern-buildings.jpg",
     "imageAlt": "Elegant living room interior",
@@ -3772,7 +3755,7 @@
       "Of"
     ],
     "highlightedWord": "Unit",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
     "buttonLabel": "Discover More",
     "buttonLink": "#",
     "imageUrl": "/images/hero-banner.png",
@@ -4030,7 +4013,7 @@
       "best real estate",
       "by area"
     ],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "description": "Experience the pinnacle of real estate excellence. We specialize in connecting discerning buyers with extraordinary properties in the most sought-after locations. Our commitment to integrity, transparency, and client satisfaction ensures that every transaction is handled with the utmost care, making your dream home a reality.",
     "images": [
       {
         "src": "/images/aerial-view-modern-buildings-city.jpg",
@@ -4431,9 +4414,6 @@
         },
         {
           "label": "Properties"
-        },
-        {
-          "label": "View Properties"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -4484,7 +4464,7 @@
           "href": "/"
         },
         {
-          "label": "Properties"
+          "label": "Support"
         },
         {
           "label": "Brochure"
@@ -4500,9 +4480,6 @@
         {
           "label": "Home",
           "href": "/"
-        },
-        {
-          "label": "About Us"
         },
         {
           "label": "Careers"
@@ -4698,31 +4675,36 @@
         "number": "01",
         "title": "Discover",
         "desc": "Explore a wide range of verified properties that match your needs.",
-        "iconName": "search"
+        "iconName": "home-search",
+        "bottomIconName": "search"
       },
       {
         "number": "02",
         "title": "Shortlist & Inquire",
         "desc": "Shortlist your favorite properties and get in touch with our experts.",
-        "iconName": "message-square"
+        "iconName": "file-pencil",
+        "bottomIconName": "message-circle"
       },
       {
         "number": "03",
         "title": "Visit & Decide",
         "desc": "Schedule a visit, get expert advice, and choose the right one.",
-        "iconName": "calendar"
+        "iconName": "handshake",
+        "bottomIconName": "calendar-event"
       },
       {
         "number": "04",
         "title": "Finalize",
         "desc": "We help you with documentation and make the process hassle-free.",
-        "iconName": "shield-check"
+        "iconName": "file-check",
+        "bottomIconName": "shield-check"
       },
       {
         "number": "05",
         "title": "Move In / Sell Out",
         "desc": "Move into your dream property or close the deal successfully.",
-        "iconName": "key"
+        "iconName": "home-heart",
+        "bottomIconName": "key"
       }
     ],
     "ctaCard": {
@@ -4876,7 +4858,7 @@
       "alt": "Real Estate Company"
     },
     "title": "Best real estate house",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Find your perfect space with our comprehensive real estate services. We make buying and selling simple and stress-free.",
     "socialLinks": [
       {
         "platform": "youtube",
@@ -4964,14 +4946,13 @@
       ],
       "phoneNumber": "987 654 3210"
     },
-    "copyright": "Copyright © 2026. All rights reserved."
+    "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow"
   },
   "servicesPage": {
     "eyebrow": "WHAT WE DO",
     "heading": "Our Real Estate Services",
     "description": "Professional solutions to help you buy, sell, rent, and manage properties with ease.",
     "featuredEyebrow": "FEATURED PROPERTIES",
-    "featuredHeading": "Top Deals Of The Week",
     "featuredDescription": "Handpicked properties with great locations and unbeatable value. Find your perfect place to call home.",
     "saleLabel": "FOR SALE",
     "helpTitle": "Need Help?",
@@ -5107,12 +5088,12 @@
       {
         "id": 1,
         "name": "DLF",
-        "logo": "/images/dlf.png"
+        "logo": "/images/dlf.jpg"
       },
       {
         "id": 2,
         "name": "Godrej Properties",
-        "logo": "/images/godrej.png"
+        "logo": "/images/godrej.avif"
       },
       {
         "id": 3,
@@ -5147,7 +5128,7 @@
       {
         "id": 9,
         "name": "Shapoorji Pallonji",
-        "logo": "/images/Sarpoorji.png"
+        "logo": "/images/sarpoorji.png"
       },
       {
         "id": 10,
@@ -5162,12 +5143,12 @@
       {
         "id": 12,
         "name": "Colliers",
-        "logo": "/images/colliers.png"
+        "logo": "/images/colliers.jpg"
       },
       {
         "id": 13,
         "name": "Cushman & Wakefield",
-        "logo": "/images/Cushman_&_Wakefield.png"
+        "logo": "/images/Cushman.png"
       },
       {
         "id": 14,
@@ -5177,7 +5158,7 @@
       {
         "id": 15,
         "name": "Knight Frank",
-        "logo": "/images/knight.png"
+        "logo": "/images/knight.webp"
       }
     ]
   },
@@ -5328,7 +5309,7 @@
       {
         "id": 1,
         "question": "How did my property get listed?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, nisl nec suscipit maximus, quam purus hendrerit nisl, in luctus urna nisi in arcu. Integer sit amet sem eu nibh rutrum congue in nec velit."
+        "answer": "We guide you through every step of the real estate process, from initial consultation to closing. Our comprehensive services include market analysis, property valuation, negotiation, and handling all necessary documentation to ensure a smooth and hassle-free experience."
       },
       {
         "id": 2,
@@ -5560,105 +5541,70 @@
         "year": "2024",
         "title": "Real Estate Excellence Awards",
         "subtitle": "Excellence in Residential Development",
-        "icon": "🏆"
+        "logo": "/awards/01.jpg"
       },
       {
         "id": 2,
         "year": "2024",
         "title": "Asia Property Awards",
         "subtitle": "Best Commercial Development",
-        "icon": "🗿"
+        "logo": "/awards/02.jpg"
       },
       {
         "id": 3,
         "year": "2023",
         "title": "Business Leadership Award",
         "subtitle": "Outstanding Leadership in Real Estate",
-        "icon": "⭐"
+        "logo": "/awards/03.jpg"
       },
       {
         "id": 4,
         "year": "2023",
         "title": "National Quality Excellence Award",
         "subtitle": "For Quality Construction and Innovation",
-        "icon": "🥇"
+        "logo": "/awards/04.jpg"
       },
       {
         "id": 5,
         "year": "2023",
         "title": "Customer Satisfaction Award",
         "subtitle": "Highest Customer Satisfaction in Real Estate",
-        "icon": "🏅"
+        "logo": "/awards/05.jpg"
       },
       {
         "id": 6,
         "year": "2022",
         "title": "Top Developers Award",
         "subtitle": "Recognized Among Top Real Estate Developers",
-        "icon": "🌟"
+        "logo": "/awards/06.jpg"
       },
       {
         "id": 7,
         "year": "2022",
         "title": "Industry Innovation Award",
         "subtitle": "For Innovative Design and Technology",
-        "icon": "🛡️"
+        "logo": "/awards/07.jpg"
       },
       {
         "id": 8,
         "year": "2022",
         "title": "Sustainable Building Award",
         "subtitle": "For Commitment to Sustainability",
-        "icon": "💎"
+        "logo": "/awards/08.jpg"
       },
       {
         "id": 9,
         "year": "2021",
         "title": "Best Luxury Project Award",
         "subtitle": "For Excellence in Luxury Residential Projects",
-        "icon": "👑"
+        "logo": "/awards/09.jpg"
       },
       {
         "id": 10,
         "year": "2021",
         "title": "Trusted Brand Award",
         "subtitle": "Most Trusted Real Estate Brand",
-        "icon": "📜"
-      },
-      {
-        "id": 11,
-        "year": "2020",
-        "title": "Emerging Developer Award",
-        "subtitle": "For Fastest Growth and Market Impact",
-        "icon": "✨"
-      },
-      {
-        "id": 12,
-        "year": "2020",
-        "title": "Design Excellence Award",
-        "subtitle": "For Architectural Design Excellence",
-        "icon": "🔹"
-      },
-      {
-        "id": 13,
-        "year": "2019",
-        "title": "Excellence in Delivery Award",
-        "subtitle": "Timely Delivery with Highest Standards",
-        "icon": "🗽"
-      },
-      {
-        "id": 14,
-        "year": "2019",
-        "title": "Community Impact Award",
-        "subtitle": "For Contribution to Communities",
-        "icon": "🏛️"
-      },
-      {
-        "id": 15,
-        "year": "2018",
-        "title": "Rising Star Award",
-        "subtitle": "For Outstanding Performance and Potential",
-        "icon": "🌠"
+        "logo": "/awards/10.jpg"
       }
     ]
   },
@@ -6216,7 +6162,7 @@
     ]
   },
   "propertyDetail": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
     "features": [
       "Air Conditioning",
       "Swimming Pool",

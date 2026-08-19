@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 import {
   ChevronLeft,
@@ -77,9 +77,10 @@ export default function TopDealsSection({ data: propData, className }: SectionPr
 
         {/* Carousel Slider */}
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Autoplay]}
           spaceBetween={24}
           slidesPerView={1}
+          loop={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           onInit={(swiper) => {
             // Bind navigation buttons after init
@@ -95,10 +96,10 @@ export default function TopDealsSection({ data: propData, className }: SectionPr
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className="pb-12"
+          className="pb-4"
         >
-          {data.deals.map((item, index) => (
-            <SwiperSlide key={item.id}>
+          {[...data.deals, ...data.deals, ...data.deals].map((item, index) => (
+            <SwiperSlide key={`${item.id}-${index}`}>
               <Link
                 href={`/property-listing/${propertySlug(item.title)}`}
                 className="block h-full"
@@ -170,19 +171,7 @@ export default function TopDealsSection({ data: propData, className }: SectionPr
           ))}
         </Swiper>
 
-        {/* Custom Pagination Indicator Dots */}
-        <div className="flex justify-center items-center gap-2 mt-4">
-          {[0, 1, 2].map((dotIndex) => (
-            <span
-              key={dotIndex}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                activeIndex % 3 === dotIndex
-                  ? "w-8 bg-[#2A39CE]"
-                  : "w-2.5 bg-gray-200"
-              }`}
-            />
-          ))}
-        </div>
+
       </div>
     </section>
   );

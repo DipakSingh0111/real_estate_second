@@ -28,7 +28,7 @@ export default function Footer({ data: propData, className }: SectionProps<Foote
         <div className="grid grid-cols-1 gap-8 py-[40px] md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.35fr] lg:gap-[50px]">
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <Image src={data.logo.src} alt={data.logo.alt} width={210} height={80} priority className="h-auto w-[210px] object-contain" />
+              <Image src={data.logo.src} alt={data.logo.alt} width={210} height={80} priority className="h-auto w-[210px] object-contain" style={{ width: "210px", height: "auto" }} />
             </Link>
             <h2 className="text-[20px] font-bold leading-snug text-slate-900">{data.title}</h2>
             <p className="text-[13px] sm:text-[14px] font-normal leading-relaxed text-[#555555] max-w-[320px]">{data.description}</p>

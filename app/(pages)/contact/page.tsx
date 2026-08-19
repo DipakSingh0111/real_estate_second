@@ -204,20 +204,21 @@ export default function ContactUs() {
                 ></textarea>
               </div>
 
-              {/* ReCAPTCHA UI Block */}
-              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between w-60">
-                <label className="flex items-center space-x-2 text-xs text-slate-600 cursor-pointer">
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between w-64 shadow-sm">
+                <label className="flex items-center space-x-3 text-sm text-slate-700 cursor-pointer font-medium">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                    className="w-6 h-6 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                   />
                   <span>I'm not a robot</span>
                 </label>
-                <div className="text-[10px] text-slate-400 text-right">
-                  <div className="w-5 h-5 bg-blue-500 text-white text-[8px] flex items-center justify-center rounded-full ml-auto">
-                    🔄
-                  </div>
-                  reCAPTCHA
+                <div className="flex flex-col items-center justify-center">
+                  <img 
+                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png" 
+                    alt="reCAPTCHA" 
+                    className="w-8 h-8 object-contain mb-0.5" 
+                  />
+                  <span className="text-[9px] text-slate-500 font-medium">reCAPTCHA</span>
                 </div>
               </div>
 

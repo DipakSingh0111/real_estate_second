@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { site, SectionProps, NavbarData } from "@/data";
 
-export default function Navbar({ data: propData, className }: SectionProps<NavbarData> = {}) {
+export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}) {
   const data = propData || site.navbar;
   const pathname = usePathname();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -68,8 +68,8 @@ export default function Navbar({ data: propData, className }: SectionProps<Navba
         }`}
     >
       <div className="page-container !px-0 flex h-[72px] w-full items-center lg:h-[82px]">
-        {/* Left side: Logo (matches hero banner left text column) */}
-        <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[36%] lg:pr-4 xl:w-[36%] xl:pr-8 2xl:w-[36%]">
+        {/* Left side: Logo */}
+        <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[55%] lg:pr-4 xl:w-[55%] xl:pr-8 2xl:w-[55%]">
           <Link href="/" className="relative z-[110] shrink-0">
             <Image
               src={data.logo.src}
@@ -78,6 +78,7 @@ export default function Navbar({ data: propData, className }: SectionProps<Navba
               height={64}
               priority
               className="h-12 w-auto object-contain object-left sm:h-14 md:h-16"
+              style={{ width: "auto", height: "auto" }}
             />
           </Link>
 
@@ -109,9 +110,9 @@ export default function Navbar({ data: propData, className }: SectionProps<Navba
           </button>
         </div>
 
-        {/* Right side: Desktop navigation (starts aligned with Hero image start, HOME sits right over the image) */}
-        <nav className="hidden h-full pr-[var(--site-gutter)] lg:flex lg:w-[64%] lg:items-center lg:justify-start lg:pl-4 xl:w-[64%] xl:pl-8 2xl:w-[64%]">
-          <ul className="flex flex-nowrap items-center gap-x-2 xl:gap-x-4 2xl:gap-x-5">
+        {/* Right side: Desktop navigation */}
+        <nav className="hidden h-full lg:flex lg:w-[55%] lg:items-center lg:justify-end lg:pl-0 xl:w-[55%] xl:pl-0 2xl:w-[55%]">
+          <ul className="flex flex-nowrap items-center gap-x-1 xl:gap-x-2 2xl:gap-x-3">
             {data.navLinks.map((link, index) => {
               const active =
                 Boolean((link as any).active) ||
@@ -133,17 +134,13 @@ export default function Navbar({ data: propData, className }: SectionProps<Navba
                     href={link.href}
                     className={
                       isContactUs
-                        ? `relative flex items-center gap-1.5 rounded-md px-5 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.06em] transition-all xl:text-[13px] ${overImage
+                        ? `relative flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] whitespace-nowrap transition-all xl:text-[14px] ${overImage
                           ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
                           : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
                         }`
-                        : `relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${overImage
-                          ? active
-                            ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                            : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
-                          : active
-                            ? "text-[#3F51DE]"
-                            : "text-slate-800 hover:text-[#3F51DE]"
+                        : `relative flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap transition-colors xl:text-[14px] ${active
+                          ? "text-[#3b55ce]"
+                          : "text-slate-800 hover:text-[#3b55ce]"
                         }`
                     }
                   >
@@ -168,8 +165,7 @@ export default function Navbar({ data: propData, className }: SectionProps<Navba
                     ) : null}
                     {active && !isContactUs ? (
                       <span
-                        className={`absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full ${overImage ? "bg-white shadow-sm" : "bg-[#3F51DE]"
-                          }`}
+                        className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full bg-[#3b55ce]"
                       />
                     ) : null}
                   </Link>

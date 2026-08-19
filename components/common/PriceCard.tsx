@@ -22,17 +22,7 @@ export default function PriceCard({
       <p className="mt-3 text-sm font-semibold text-[#0B1A33]">
         {propertyType}
       </p>
-      <div className="mt-4 flex items-center justify-between rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-slate-600">
-        <span>{priceType}</span>
-        <span className="font-medium text-[#0B1A33]">{region}</span>
-      </div>
-      <button
-        type="button"
-        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#2A39CE] px-4 py-3 text-sm font-bold uppercase tracking-[0.06em] text-white transition hover:bg-[#2330b0]"
-      >
-        <Tag className="h-4 w-4" />
-        View Price
-      </button>
+
     </div>
   );
 }
