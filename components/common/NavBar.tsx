@@ -133,20 +133,18 @@ export default function Navbar({ data: propData, className }: SectionProps<Navba
                     href={link.href}
                     className={
                       isContactUs
-                        ? `relative flex items-center gap-1.5 rounded-md px-5 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.06em] transition-all xl:text-[13px] ${
-                            overImage
-                              ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
-                              : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
-                          }`
-                        : `relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${
-                            overImage
-                              ? active
-                                ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                                : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
-                              : active
-                                ? "text-[#3F51DE]"
-                                : "text-slate-800 hover:text-[#3F51DE]"
-                          }`
+                        ? `relative flex items-center gap-1.5 rounded-md px-5 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.06em] transition-all xl:text-[13px] ${overImage
+                          ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
+                          : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
+                        }`
+                        : `relative flex items-center gap-1.5 py-2 text-[12.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:text-[13px] ${overImage
+                          ? active
+                            ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                            : "text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+                          : active
+                            ? "text-[#3F51DE]"
+                            : "text-slate-800 hover:text-[#3F51DE]"
+                        }`
                     }
                   >
                     {link.label}

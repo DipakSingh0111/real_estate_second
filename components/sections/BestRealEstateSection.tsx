@@ -2,16 +2,24 @@
 
 import Image from "next/image";
 import { Play } from "lucide-react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { site, SectionProps, BestRealEstateSectionData } from "@/data";
+
 
 
 
 export default function BestRealEstateSection({ data: propData, className }: SectionProps<any>) {
   const data = propData || site.bestRealEstateSection;
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const activeImage = data.images[activeImageIndex];
+
+  useEffect(() => {
+    if (!data?.images?.length) return;
+    const timer = setInterval(() => {
+      setActiveImageIndex((current) => (current + 1) % data.images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [data.images.length]);
 
   return (
     <section
@@ -43,25 +51,22 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
 
             {/* Main Image */}
             <div className="relative z-10 w-full h-full overflow-hidden rounded-[40px] bg-slate-100 shadow-sm">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeImage.src}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0"
+              {data.images.map((image, index) => (
+                <div
+                  key={image.src}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === activeImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                    }`}
                 >
                   <Image
-                    src={activeImage.src}
-                    alt={activeImage.alt}
+                    src={image.src}
+                    alt={image.alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 56vw"
                     className="object-cover"
-                    priority
+                    priority={index === 0}
                   />
-                </motion.div>
-              </AnimatePresence>
+                </div>
+              ))}
 
               {/* Carousel Indicators inside image */}
               <div className="absolute right-5 top-1/2 flex -translate-y-1/2 flex-col items-center gap-3 z-20">
@@ -72,11 +77,10 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
                     aria-label={`Show image ${index + 1}`}
                     aria-current={index === activeImageIndex}
                     onClick={() => setActiveImageIndex(index)}
-                    className={`h-3 w-3 rounded-full border border-white transition-all ${
-                      index === activeImageIndex
-                        ? "bg-white shadow-md"
-                        : "bg-transparent hover:bg-white/50"
-                    }`}
+                    className={`h-3 w-3 rounded-full border border-white transition-all ${index === activeImageIndex
+                      ? "bg-white shadow-md"
+                      : "bg-transparent hover:bg-white/50"
+                      }`}
                   />
                 ))}
               </div>
