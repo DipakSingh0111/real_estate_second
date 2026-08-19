@@ -120,8 +120,8 @@ export default function ServicesPage() {
                       {service.description}
                     </p>
 
-                    <div className="mt-auto w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-all duration-300 border-blue-200 text-[#1d4ed8] group-hover/link:bg-white group-hover/link:text-[#1d4ed8] group-hover/link:border-white">
-                      <FaArrowRight className="text-[10px]" />
+                    <div className="mt-auto w-12 h-12 rounded-full border flex items-center justify-center text-xs transition-all duration-300 border-blue-200 text-[#1d4ed8] group-hover/link:bg-white group-hover/link:text-[#1d4ed8] group-hover/link:border-white">
+                      <FaArrowRight className="text-sm" />
                     </div>
                   </motion.div>
                 </Link>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
           </motion.div>
         </div>
 
-        {/* 3. FEATURED PROPERTIES SECTION */}
+        {/* 3. FEATURED*/}
         <section className="bg-[#f2f6fd] rounded-3xl p-6 sm:p-10 border border-slate-100 space-y-8">
           {/* Header */}
           <div className="relative flex flex-col items-center text-center space-y-1.5">

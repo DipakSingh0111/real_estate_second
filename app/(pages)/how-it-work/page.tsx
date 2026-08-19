@@ -133,8 +133,8 @@ export default function HowItWorks() {
                   {step.desc}
                 </p>
 
-                <div className="w-9 h-9 rounded-full bg-[#F0F4FF] flex items-center justify-center text-[#1A43BF] mt-auto">
-                  {getIcon((step as any).bottomIconName || step.iconName, "w-[20px] h-[20px] stroke-[1.5]")}
+                <div className="w-12 h-12 rounded-full bg-[#F0F4FF] flex items-center justify-center text-[#1A43BF] mt-auto">
+                  {getIcon((step as any).bottomIconName || step.iconName, "w-[24px] h-[24px] stroke-[1.5]")}
                 </div>
               </div>
             </motion.div>

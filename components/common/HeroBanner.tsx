@@ -56,6 +56,9 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
             />
           </div>
         ))}
+        {/* Mobile white overlay for readability since the image's baked-in curve shrinks */}
+        <div className="absolute inset-0 bg-white/80 lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:hidden" />
       </div>
 
       <div className="page-container relative z-10 flex min-h-screen w-full flex-col justify-center pb-12 pt-32 lg:pb-20 lg:pt-32">
@@ -74,7 +77,7 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               </span>
             </div>
 
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-[#0B132A] sm:text-5xl lg:text-[64px] leading-tight">
+            <h1 className="mt-4 text-[36px] font-extrabold tracking-tight text-[#0B132A] sm:text-5xl lg:text-[64px] leading-[1.1]">
               {hasHighlight ? (
                 <>
                   {beforeHighlight}
@@ -88,7 +91,7 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               )}
             </h1>
 
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg text-justify">
+            <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-slate-600 sm:text-lg">
               {data.description}
             </p>
           </motion.div>

@@ -8,8 +8,8 @@ import { site, SectionProps, AboutPageData } from "@/data";
 
 const roundedHexagonMask = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 230' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M108.6,15 L178.6,55.4 Q186.6,60 186.6,70 L186.6,160 Q186.6,170 178.6,174.6 L108.6,215 Q100,220 91.4,215 L21.4,174.6 Q13.4,170 13.4,160 L13.4,70 Q13.4,60 21.4,55.4 L91.4,15 Q100,10 108.6,15 Z' fill='black'/%3E%3C/svg%3E")`;
 
-export default function About() {
-  const sectionData = site.aboutPage;
+export default function About({ data: propData, className }: SectionProps<AboutPageData> = {}) {
+  const sectionData = propData || site.aboutPage;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center overflow-hidden">

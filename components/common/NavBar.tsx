@@ -138,7 +138,7 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
                           ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
                           : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
                         }`
-                        : `relative flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap transition-colors xl:text-[14px] ${active
+                        : `group relative flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap transition-colors xl:text-[14px] ${active
                           ? "text-[#3b55ce]"
                           : "text-slate-800 hover:text-[#3b55ce]"
                         }`
@@ -163,11 +163,13 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
                         />
                       </svg>
                     ) : null}
-                    {active && !isContactUs ? (
+                    {!isContactUs && (
                       <span
-                        className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] w-full rounded-full bg-[#3b55ce]"
+                        className={`absolute inset-x-0 -bottom-0.5 mx-auto h-[2.5px] rounded-full bg-[#3b55ce] transition-all duration-300 ease-out ${
+                          active ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
                       />
-                    ) : null}
+                    )}
                   </Link>
 
                   {hasDropdown && link.dropdown ? (

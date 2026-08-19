@@ -19,11 +19,11 @@ const whyIcons = {
   headphones: Headphones,
 };
 
-export default function WhyUsChoose() {
-  const sectionData = site.aboutPage;
+export default function WhyUsChoose({ data: propData, className }: SectionProps<AboutPageData> = {}) {
+  const sectionData = propData || site.aboutPage;
 
   return (
-    <div className="mt-24 pt-8">
+    <div className="mt-12 pt-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -40 }}

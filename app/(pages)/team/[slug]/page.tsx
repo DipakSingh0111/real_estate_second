@@ -174,46 +174,6 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
             </div>
           </div>
         </div>
-
-        {/* Related Team Members */}
-        <div className="mt-20 border-t border-slate-200/60 pt-16">
-          <h2 className="mb-10 text-3xl font-extrabold text-[#142345]">
-            Our Other Team Members
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {site.teamPage.members
-              .filter((member: any) => member.slug !== slug)
-              .map((member: any) => (
-                <Link
-                  key={member.id}
-                  href={`/team/${member.slug}`}
-                  className="group overflow-hidden rounded-[24px] border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
-                >
-                  <div className="relative h-[280px] overflow-hidden bg-slate-100">
-                    <Image
-                      src={member.imageUrl}
-                      alt={member.imageAlt}
-                      fill
-                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#1B36B0]">
-                        {member.role}
-                      </p>
-                      <h3 className="mt-2 font-bold text-lg text-[#142345] group-hover:text-[#1B36B0] transition-colors duration-200">
-                        {member.name}
-                      </h3>
-                      <p className="mt-3 line-clamp-2 text-sm text-[#4F5B73] leading-relaxed">
-                        {member.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-          </div>
-        </div>
       </section>
     </main>
   );

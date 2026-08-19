@@ -216,10 +216,12 @@ export default function PropertyDetail({
             <div className="mt-12 space-y-12">
               {/* Overview Section */}
               <section>
-                <h2 className="text-2xl font-bold text-[#0B1A33] mb-6 flex items-center gap-2">
-                  <BedDouble className="h-6 w-6 text-[#2A39CE]" />
-                  Overview
-                </h2>
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
+                    Overview
+                  </h2>
+                  <div className="w-12 h-[3px] bg-gradient-to-r from-[#2A39CE] to-[#F97316] rounded-full"></div>
+                </div>
                 <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)]">
                   <div className="divide-y divide-slate-100">
                     {overviewRows.map((row) => {
@@ -247,10 +249,12 @@ export default function PropertyDetail({
 
               {/* Property Details Section */}
               <section>
-                <h2 className="text-2xl font-bold text-[#0B1A33] mb-6 flex items-center gap-2">
-                  <FileText className="h-6 w-6 text-[#2A39CE]" />
-                  Property Details
-                </h2>
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
+                    Property Details
+                  </h2>
+                  <div className="w-12 h-[3px] bg-gradient-to-r from-[#2A39CE] to-[#F97316] rounded-full"></div>
+                </div>
                 <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600">
                   <p>
                     This premium listing in{" "}
@@ -270,10 +274,12 @@ export default function PropertyDetail({
 
               {/* Features Section */}
               <section>
-                <h2 className="text-2xl font-bold text-[#0B1A33] mb-6 flex items-center gap-2">
-                  <Star className="h-6 w-6 text-[#2A39CE]" />
-                  Features
-                </h2>
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
+                    Features
+                  </h2>
+                  <div className="w-12 h-[3px] bg-gradient-to-r from-[#2A39CE] to-[#F97316] rounded-full"></div>
+                </div>
                 <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 sm:p-8">
                   <ul className="grid gap-4 sm:grid-cols-2">
                     {featureList.map((feature) => {

@@ -174,21 +174,21 @@ export default function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/95 backdrop-blur-sm"
           >
             {/* Close Button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition z-[210]"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 bg-white/10 hover:bg-white/20 hover:bg-red-600 text-white rounded-full shadow-xl transition z-[999999] cursor-pointer"
               aria-label="Close"
             >
-              <X size={24} />
+              <X size={28} />
             </button>
 
             {/* Previous Button */}
             <button
               onClick={handlePrevious}
-              className="absolute left-4 sm:left-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition z-[210] hidden sm:block"
+              className="absolute left-4 sm:left-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition z-[210] hidden sm:block cursor-pointer"
               aria-label="Previous image"
             >
               <ChevronLeft size={32} />
@@ -197,7 +197,7 @@ export default function GalleryPage() {
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="absolute right-4 sm:right-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition z-[210] hidden sm:block"
+              className="absolute right-4 sm:right-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition z-[210] hidden sm:block cursor-pointer"
               aria-label="Next image"
             >
               <ChevronRight size={32} />

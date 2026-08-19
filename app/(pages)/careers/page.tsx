@@ -19,6 +19,17 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
+import {
+  User,
+  Mail,
+  Phone,
+  Briefcase,
+  Link as LinkIcon,
+  MessageSquare,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
+
 const careerIcons: Record<string, React.ReactNode> = {
   building: <FaBuilding className="text-blue-600 text-lg" />,
   chartLine: <FaChartLine className="text-blue-600 text-lg" />,
@@ -29,6 +40,17 @@ const careerIcons: Record<string, React.ReactNode> = {
 export default function CareerPage() {
   const sectionData = site.careersPage;
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
 
   const toggleAccordion = (id: number) => {
     setOpenAccordion(openAccordion === id ? null : id);
@@ -157,122 +179,226 @@ export default function CareerPage() {
               ))}
             </div>
           </div>
-
-          {/* RIGHT COLUMN - CONTACT CARD (5 COLS) */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden flex flex-col justify-between space-y-6"
-          >
-            {/* Header */}
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                <FaEnvelope className="text-lg" />
+          {/* RIGHT COLUMN  */}
+          <div className="lg:col-span-5 space-y-8">
+            {/* Contact Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden flex flex-col justify-between space-y-6"
+            >
+              {/* Header */}
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <FaEnvelope className="text-lg" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {sectionData.contactTitle}
+                  </h3>
+                  <div className="w-8 h-0.5 bg-blue-600 my-2 rounded-full" />
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    {sectionData.contactText}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">
-                  {sectionData.contactTitle}
-                </h3>
-                <div className="w-8 h-0.5 bg-blue-600 my-2 rounded-full" />
-                <p className="text-[11px] text-slate-400 leading-relaxed">
-                  {sectionData.contactText}
-                </p>
-              </div>
-            </div>
-
-            <div className="border-t border-slate-100" />
-
+              <div className="border-t border-slate-100" />
+              {/* Contact Details */}
             {/* Contact Details */}
-            <div className="space-y-5">
-              <div className="flex items-start space-x-3.5">
-                <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaEnvelope className="text-xs" />
+            <div className="space-y-4 pt-2 pb-2 pl-4">
+              {/* Address */}
+              <div className="relative ml-4">
+                <div className="bg-[#eef1f6] rounded-xl py-4 pr-4 pl-10 w-full min-h-[64px] flex items-center">
+                  <p className="text-[13px] font-medium text-slate-700 leading-relaxed">
+                    {sectionData.addressLines.map((line: string, i: number) => (
+                      <React.Fragment key={i}>
+                        {line}
+                        {i < sectionData.addressLines.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
+                  </p>
                 </div>
-                <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                    Email
-                  </span>
-                  <a
-                    href={`mailto:${sectionData.email}`}
-                    className="text-xs font-bold text-slate-800 hover:text-blue-600 transition-colors"
-                  >
-                    {sectionData.email}
-                  </a>
+                <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#274abc] text-white flex items-center justify-center shadow-sm">
+                  <FaBuilding className="text-[18px]" />
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3.5">
-                <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaPhoneAlt className="text-xs" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                    Phone
-                  </span>
+              {/* Phone */}
+              <div className="relative ml-4">
+                <div className="bg-[#eef1f6] rounded-xl py-4 pr-4 pl-10 w-full min-h-[64px] flex items-center">
                   <a
                     href={sectionData.phoneHref}
-                    className="text-xs font-bold text-slate-800 hover:text-blue-600 transition-colors"
+                    className="text-[13px] font-medium text-slate-700 hover:text-blue-600 transition-colors"
                   >
                     {sectionData.phone}
                   </a>
                 </div>
-              </div>
-
-              <div className="flex items-start space-x-3.5">
-                <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaMapMarkerAlt className="text-xs" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                    Office Address
-                  </span>
-                  <p className="text-xs font-semibold text-slate-700 leading-relaxed">
-                    {sectionData.addressLines[0]}
-                    <br />
-                    {sectionData.addressLines[1]}
-                    <br />
-                    {sectionData.addressLines[2]}
-                  </p>
+                <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#274abc] text-white flex items-center justify-center shadow-sm">
+                  <FaPhoneAlt className="text-[16px]" />
                 </div>
               </div>
-            </div>
 
-            {/* WhatsApp Button */}
-            <a
-              href={sectionData.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#1d4ed8] hover:bg-blue-700 text-white rounded-xl p-3.5 flex items-center justify-between text-xs font-bold shadow-md transition-all duration-300 group mt-4"
+              {/* Email */}
+              <div className="relative ml-4">
+                <div className="bg-[#eef1f6] rounded-xl py-4 pr-4 pl-10 w-full min-h-[64px] flex items-center">
+                  <a
+                    href={`mailto:${sectionData.email}`}
+                    className="text-[13px] font-medium text-slate-700 hover:text-blue-600 transition-colors"
+                  >
+                    {sectionData.email}
+                  </a>
+                </div>
+                <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#274abc] text-white flex items-center justify-center shadow-sm">
+                  <FaEnvelope className="text-[16px]" />
+                </div>
+              </div>
+            </div>  {/* WhatsApp Button */}
+              <a
+                href={sectionData.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#1d4ed8] hover:bg-blue-700 text-white rounded-xl p-3.5 flex items-center justify-between text-xs font-bold shadow-md transition-all duration-300 group mt-4"
+              >
+                <div className="flex items-center space-x-2">
+                  <FaWhatsapp className="text-base" />
+                  <span>Chat on WhatsApp</span>
+                </div>
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+              </a>
+              {/* Bottom City Watermark Effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none opacity-10 bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:8px_8px]" />
+            </motion.div>
+
+            {/* JOB APPLICATION FORM */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden"
             >
-              <div className="flex items-center space-x-2">
-                <FaWhatsapp className="text-base" />
-                <span>Chat on WhatsApp</span>
+              {/* Header */}
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-slate-900">
+                  Apply Now
+                </h3>
+                <div className="w-8 h-0.5 bg-blue-600 my-2 rounded-full" />
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Fill out the form below and attach your resume.
+                </p>
               </div>
-              <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
-            </a>
 
-            {/* Bottom City Watermark Effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none opacity-10 bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:8px_8px]" />
-          </motion.div>
-        </div>
+              {/* Form */}
+              {isSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center py-8 text-center space-y-3 bg-blue-50/50 rounded-2xl border border-blue-100"
+                >
+                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-1">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-sm font-bold text-slate-900">Application Submitted!</h3>
+                  <p className="text-slate-500 text-[11px]">
+                    We will review your application soon.
+                  </p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="mt-2 text-blue-600 font-semibold text-[11px] hover:underline"
+                  >
+                    Submit another
+                  </button>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] font-bold text-slate-700">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[15px] h-[15px] stroke-[2]" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        placeholder="e.g. John Doe"
+                        className="w-full pl-9 pr-3 py-2.5 text-[12px] rounded-xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all bg-slate-50/50"
+                        required
+                      />
+                    </div>
+                  </div>
 
-        {/* BOTTOM SCROLL BUTTON & DOTS */}
-        <div className="relative flex justify-between items-center pt-2">
-          <div className="grid grid-cols-5 gap-1.5 opacity-30">
-            {[...Array(15)].map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
-            ))}
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] font-bold text-slate-700">
+                      Email Address <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[15px] h-[15px] stroke-[2]" />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="e.g. john@example.com"
+                        className="w-full pl-9 pr-3 py-2.5 text-[12px] rounded-xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all bg-slate-50/50"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] font-bold text-slate-700">
+                      Mobile Number <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[15px] h-[15px] stroke-[2]" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="e.g. +1 234 567 890"
+                        className="w-full pl-9 pr-3 py-2.5 text-[12px] rounded-xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all bg-slate-50/50"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] font-bold text-slate-700">
+                      Resume File <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <LinkIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-[15px] h-[15px] stroke-[2]" />
+                      <input
+                        type="file"
+                        name="resumeFile"
+                        accept=".pdf,.doc,.docx"
+                        className="w-full pl-9 pr-3 py-2 text-[12px] rounded-xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all bg-slate-50/50 file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-[10px] file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Submit */}
+                  <div className="flex justify-end pt-2">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#1d4ed8] hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed text-white rounded-xl px-4 py-3 text-[13px] font-bold shadow-md transition-all duration-300 flex items-center justify-center space-x-2 group"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Submitting...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Submit Application</span>
+                          <FaArrowRight className="text-[10px] group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </motion.div>
           </div>
-
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={scrollToTop}
-            className="w-10 h-10 rounded-full bg-[#1d4ed8] text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors ml-auto"
-          >
-            <FaArrowUp className="text-xs" />
-          </motion.button>
         </div>
       </div>
     </div>

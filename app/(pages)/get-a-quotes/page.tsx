@@ -52,10 +52,10 @@ export default function GetQuotePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-8">
       <PageBanner />
 
-      <div className="page-container pt-10 space-y-10">
+      <div className="page-container pt-10 pb-8">
         {/* TWO COLUMN SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* LEFT COLUMN: QUOTE FORM (7 COLS) */}
@@ -310,7 +310,7 @@ export default function GetQuotePage() {
           >
             {/* Header */}
             <div className="space-y-1.5">
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                 {site.getQuotePage.whyGetQuote.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 rounded-full" />
@@ -324,10 +324,10 @@ export default function GetQuotePage() {
                   <FaHome className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">
                     {site.getQuotePage.whyGetQuote.features[0].title}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
                     {site.getQuotePage.whyGetQuote.features[0].description}
                   </p>
                 </div>
@@ -339,10 +339,10 @@ export default function GetQuotePage() {
                   <FaTag className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">
                     {site.getQuotePage.whyGetQuote.features[1].title}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
                     {site.getQuotePage.whyGetQuote.features[1].description}
                   </p>
                 </div>
@@ -354,10 +354,10 @@ export default function GetQuotePage() {
                   <FaUserCheck className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">
                     {site.getQuotePage.whyGetQuote.features[2].title}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
                     {site.getQuotePage.whyGetQuote.features[2].description}
                   </p>
                 </div>
@@ -369,10 +369,10 @@ export default function GetQuotePage() {
                   <FaShieldAlt className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">
                     {site.getQuotePage.whyGetQuote.features[3].title}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
                     {site.getQuotePage.whyGetQuote.features[3].description}
                   </p>
                 </div>
@@ -384,10 +384,10 @@ export default function GetQuotePage() {
                   <FaClock className="text-base" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">
                     {site.getQuotePage.whyGetQuote.features[4].title}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
                     {site.getQuotePage.whyGetQuote.features[4].description}
                   </p>
                 </div>
@@ -395,80 +395,6 @@ export default function GetQuotePage() {
             </div>
           </motion.div>
         </div>
-
-        {/* MIDDLE NEED HELP & EXPERT CONTACT STRIP */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.04)] grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
-        >
-          {/* Left: Building Image + Need Help (7 Cols) */}
-          <div className="md:col-span-7 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 md:border-r border-slate-100 md:pr-6">
-            <img
-              src={site.getQuotePage.needHelp.image}
-              alt="Building"
-              className="w-full sm:w-32 h-24 rounded-2xl object-cover shrink-0"
-            />
-            <div className="space-y-1.5 w-full">
-              <h4 className="text-sm font-bold text-slate-900">{site.getQuotePage.needHelp.title}</h4>
-              <p className="text-[11px] text-slate-400">
-                {site.getQuotePage.needHelp.description}
-              </p>
-              <div className="flex flex-wrap items-center gap-4 pt-1 text-[11px] font-bold text-slate-800">
-                <a
-                  href={site.getQuotePage.needHelp.phoneHref}
-                  className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
-                >
-                  <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-[10px]">
-                    <FaPhoneAlt />
-                  </div>
-                  <span>{site.getQuotePage.needHelp.phone}</span>
-                </a>
-                <a
-                  href={site.getQuotePage.needHelp.emailHref}
-                  className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
-                >
-                  <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-[10px]">
-                    <FaEnvelope />
-                  </div>
-                  <span>{site.getQuotePage.needHelp.email}</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Talk to Our Expert Button (5 Cols) */}
-          <div className="md:col-span-5 flex flex-col sm:flex-row items-center justify-between sm:pl-4 gap-4">
-            <div className="flex items-center space-x-3.5">
-              <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 border border-red-100">
-                <FaHeadset className="text-xl" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">
-                  {site.getQuotePage.expertContact.title}
-                </h4>
-                <p className="text-[10px] text-slate-400 mt-0.5">
-                  {site.getQuotePage.expertContact.workingHours}
-                </p>
-              </div>
-            </div>
-
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-4 py-2.5 rounded-xl border border-red-200 bg-white text-red-600 font-bold text-[11px] flex items-center space-x-1.5 hover:bg-red-50 transition-all shrink-0"
-              >
-                <span>{site.getQuotePage.expertContact.buttonText}</span>
-                <FaArrowRight className="text-[9px]" />
-              </motion.button>
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* BOTTOM SUPPORT BANNER */}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
   if (!industryItem) {
     return (
       <main className="bg-[#f8fafc] font-sans text-slate-900 min-h-screen">
-        <section className="page-container flex flex-col items-center justify-center py-20">
+        <section className="page-container flex flex-col items-center justify-center">
           <h1 className="mb-4 text-3xl font-bold">Industry Not Found</h1>
           <p className="mb-8 text-slate-600">
             Sorry, we couldn't find the industry you're looking for.
@@ -51,7 +51,7 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
   }
 
   return (
-    <main className="bg-[#f8fafc] font-sans text-slate-900 min-h-screen pb-16">
+    <main className="bg-[#f8fafc] font-sans text-slate-900 min-h-screen">
       <PageBanner />
 
       <section className="page-container py-12">

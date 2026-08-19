@@ -40,7 +40,7 @@ const sitemapIcons: Record<string, React.ReactNode> = {
 export default function SitemapPage() {
   const sectionData = site.sitemapPage;
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="bg-[#f8fafc] text-slate-800 font-sans pb-8">
       <PageBanner />
 
       {/* MAIN CONTAINER */}
@@ -98,40 +98,6 @@ export default function SitemapPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* CAN'T FIND WHAT YOU'RE LOOKING FOR STRIP */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-red-50/50 rounded-3xl p-6 sm:p-8 border border-red-100 flex flex-col sm:flex-row items-center justify-between gap-6"
-        >
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-full bg-white text-red-500 shadow-sm flex items-center justify-center shrink-0 border border-red-100">
-              <FaHeadset className="text-xl" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-slate-900">
-                {sectionData.ctaTitle}
-              </h4>
-              <p className="text-[11px] text-slate-500 mt-0.5">
-                {sectionData.ctaText}
-              </p>
-            </div>
-          </div>
-
-          <Link href="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#e11d48] hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-xs font-bold shadow-md transition-all flex items-center space-x-2 shrink-0"
-            >
-              <span>{sectionData.ctaButton}</span>
-              <FaArrowRight className="text-[10px]" />
-            </motion.button>
-          </Link>
-        </motion.div>
       </div>
     </div>
   );
