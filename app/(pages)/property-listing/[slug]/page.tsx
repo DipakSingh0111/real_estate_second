@@ -1,4 +1,3 @@
-"use client";
 import { site } from "@/data";
 import { notFound } from "next/navigation";
 import { findPropertyBySlug } from "@/lib/property";

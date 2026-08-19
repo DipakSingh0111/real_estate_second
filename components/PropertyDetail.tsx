@@ -44,13 +44,13 @@ export default function PropertyDetail({
   // If wrapped in a generic container, it receives data, else use fallbacks
   const property = propData?.property || site.topDealsSection.deals[0];
   const galleryImages = propData?.galleryImages || [];
-  const banner = propData?.banner || site.pageBanners['property-listing'];
+  const banner = propData?.banner || (site.pageBanners as any)['property-listing'] || site.pageBanners['about'];
 
   const bannerData = useMemo(
     () => ({
       ...banner,
       breadcrumb: [
-        ...(banner.breadcrumb ?? []).slice(0, 2),
+        ...(banner?.breadcrumb ?? []).slice(0, 2),
         { label: property.title },
       ],
     }),

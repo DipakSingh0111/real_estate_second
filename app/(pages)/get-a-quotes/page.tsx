@@ -412,11 +412,11 @@ export default function GetQuotePage() {
               className="w-full sm:w-32 h-24 rounded-2xl object-cover shrink-0"
             />
             <div className="space-y-1.5 w-full">
-              <h4 className="text-sm font-bold text-slate-900">{site.getQuotePage.needHelp.title}</h4>
-              <p className="text-[11px] text-slate-400">
+              <h4 className="text-base font-bold text-slate-900">{site.getQuotePage.needHelp.title}</h4>
+              <p className="text-xs text-slate-500">
                 {site.getQuotePage.needHelp.description}
               </p>
-              <div className="flex flex-wrap items-center gap-4 pt-1 text-[11px] font-bold text-slate-800">
+              <div className="flex flex-wrap items-center gap-4 pt-1 text-[13px] font-bold text-slate-800">
                 <a
                   href={site.getQuotePage.needHelp.phoneHref}
                   className="flex items-center space-x-1.5 hover:text-red-500 transition-colors"
@@ -446,10 +446,10 @@ export default function GetQuotePage() {
                 <FaHeadset className="text-xl" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-slate-900">
+                <h4 className="text-[15px] font-bold text-slate-900">
                   {site.getQuotePage.expertContact.title}
                 </h4>
-                <p className="text-[10px] text-slate-400 mt-0.5">
+                <p className="text-[11px] text-slate-500 mt-0.5">
                   {site.getQuotePage.expertContact.workingHours}
                 </p>
               </div>
@@ -459,10 +459,10 @@ export default function GetQuotePage() {
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="px-4 py-2.5 rounded-xl border border-red-200 bg-white text-red-600 font-bold text-[11px] flex items-center space-x-1.5 hover:bg-red-50 transition-all shrink-0"
+                className="px-4 py-2.5 rounded-xl border border-red-200 bg-white text-red-600 font-bold text-[13px] flex items-center space-x-1.5 hover:bg-red-50 transition-all shrink-0"
               >
                 <span>{site.getQuotePage.expertContact.buttonText}</span>
-                <FaArrowRight className="text-[9px]" />
+                <FaArrowRight className="text-[10px]" />
               </motion.button>
             </Link>
           </div>

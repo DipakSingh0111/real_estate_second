@@ -104,8 +104,8 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               type="button"
               onClick={() => setActiveIndex(index)}
               className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
-                  ? "w-10 bg-white"
-                  : "w-2.5 bg-white/50 hover:bg-white/80"
+                ? "w-10 bg-white"
+                : "w-2.5 bg-white/50 hover:bg-white/80"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
