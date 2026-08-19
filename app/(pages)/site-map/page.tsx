@@ -73,19 +73,19 @@ export default function SitemapPage() {
             >
               {/* Card Header */}
               <div className="flex items-center space-x-3 pb-3 border-b border-slate-100">
-                <div className="w-9 h-9 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
                   {sitemapIcons[section.iconName]}
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">
+                <h3 className="text-lg font-bold text-slate-900">
                   {section.title}
                 </h3>
               </div>
 
               {/* Card Bullet Links */}
-              <ul className="space-y-2 text-[11px] text-slate-500 font-medium">
+              <ul className="space-y-3 text-sm text-slate-600 font-medium pt-2">
                 {section.links.map((link, idx) => (
-                  <li key={idx} className="flex items-center space-x-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 group-hover:scale-125 transition-transform" />
+                  <li key={idx} className="flex items-center space-x-3 group">
+                    <span className="w-2 h-2 rounded-full bg-red-400 group-hover:scale-125 transition-transform shrink-0" />
                     <Link
                       href={link.href}
                       className="hover:text-red-500 transition-colors"
