@@ -2509,36 +2509,24 @@
                   "iconName": "home",
                   "links": [
                     {
-                      "label": "Banner",
+                      "label": "Home Page",
                       "href": "/"
                     },
                     {
                       "label": "Featured Properties",
-                      "href": "/#featured"
-                    },
-                    {
-                      "label": "About Us",
-                      "href": "/about"
+                      "href": "/"
                     },
                     {
                       "label": "Why Choose Us",
-                      "href": "/#why-us"
+                      "href": "/"
                     },
                     {
-                      "label": "Our Projects",
-                      "href": "/projects"
+                      "label": "Top Deals",
+                      "href": "/"
                     },
                     {
-                      "label": "Testimonials",
-                      "href": "/#testimonials"
-                    },
-                    {
-                      "label": "Latest News",
-                      "href": "/news"
-                    },
-                    {
-                      "label": "Contact Us",
-                      "href": "/contact"
+                      "label": "How It Works",
+                      "href": "/how-it-work"
                     }
                   ]
                 },
@@ -2547,58 +2535,24 @@
                   "iconName": "userFriends",
                   "links": [
                     {
-                      "label": "Company Overview",
+                      "label": "About Company",
                       "href": "/about"
                     },
                     {
-                      "label": "Our Mission",
-                      "href": "/about#mission"
-                    },
-                    {
-                      "label": "Our Vision",
-                      "href": "/about#vision"
-                    },
-                    {
-                      "label": "Our Values",
-                      "href": "/about#values"
-                    },
-                    {
                       "label": "Our Team",
-                      "href": "/about#team"
+                      "href": "/team"
                     },
                     {
-                      "label": "Awards & Achievements",
-                      "href": "/about#awards"
-                    }
-                  ]
-                },
-                {
-                  "title": "Properties",
-                  "iconName": "building",
-                  "links": [
-                    {
-                      "label": "All Properties",
-                      "href": "/properties"
+                      "label": "Awards",
+                      "href": "/awards"
                     },
                     {
-                      "label": "Residential Properties",
-                      "href": "/properties?type=residential"
+                      "label": "Our Partners",
+                      "href": "/our-partners"
                     },
                     {
-                      "label": "Commercial Properties",
-                      "href": "/properties?type=commercial"
-                    },
-                    {
-                      "label": "Luxury Properties",
-                      "href": "/properties?type=luxury"
-                    },
-                    {
-                      "label": "Property Listing",
-                      "href": "/properties"
-                    },
-                    {
-                      "label": "Property Details",
-                      "href": "/properties/1"
+                      "label": "Testimonials",
+                      "href": "/testimonial"
                     }
                   ]
                 },
@@ -2607,178 +2561,48 @@
                   "iconName": "briefcase",
                   "links": [
                     {
-                      "label": "Property Buying",
-                      "href": "/services#buying"
+                      "label": "All Services",
+                      "href": "/services"
                     },
                     {
-                      "label": "Property Selling",
-                      "href": "/services#selling"
+                      "label": "Industries We Serve",
+                      "href": "/industries-we-serve"
                     },
                     {
-                      "label": "Property Leasing",
-                      "href": "/services#leasing"
+                      "label": "Pricing",
+                      "href": "/pricing"
                     },
                     {
-                      "label": "Property Management",
-                      "href": "/services#management"
-                    },
-                    {
-                      "label": "Investment Consultation",
-                      "href": "/services#consultation"
-                    },
-                    {
-                      "label": "Legal Assistance",
-                      "href": "/services#legal"
+                      "label": "How It Works",
+                      "href": "/how-it-work"
                     }
                   ]
                 },
                 {
-                  "title": "Industry We Serve",
-                  "iconName": "industry",
+                  "title": "Properties",
+                  "iconName": "building",
                   "links": [
                     {
-                      "label": "Residential",
-                      "href": "/services"
+                      "label": "Property Listing",
+                      "href": "/property-listing"
                     },
                     {
-                      "label": "Commercial",
-                      "href": "/services"
-                    },
-                    {
-                      "label": "Retail",
-                      "href": "/services"
-                    },
-                    {
-                      "label": "Hospitality",
-                      "href": "/services"
-                    },
-                    {
-                      "label": "Industrial",
-                      "href": "/services"
-                    },
-                    {
-                      "label": "Land Development",
-                      "href": "/services"
+                      "label": "All Listings",
+                      "href": "/listings"
                     }
                   ]
                 },
                 {
-                  "title": "Projects",
-                  "iconName": "projectDiagram",
-                  "links": [
-                    {
-                      "label": "Ongoing Projects",
-                      "href": "/projects?status=ongoing"
-                    },
-                    {
-                      "label": "Completed Projects",
-                      "href": "/projects?status=completed"
-                    },
-                    {
-                      "label": "Upcoming Projects",
-                      "href": "/projects?status=upcoming"
-                    },
-                    {
-                      "label": "Project Gallery",
-                      "href": "/projects"
-                    },
-                    {
-                      "label": "Project Details",
-                      "href": "/projects/1"
-                    }
-                  ]
-                },
-                {
-                  "title": "Testimonials",
-                  "iconName": "quoteRight",
-                  "links": [
-                    {
-                      "label": "Client Reviews",
-                      "href": "/#testimonials"
-                    },
-                    {
-                      "label": "Success Stories",
-                      "href": "/#testimonials"
-                    },
-                    {
-                      "label": "Video Testimonials",
-                      "href": "/#testimonials"
-                    }
-                  ]
-                },
-                {
-                  "title": "Awards",
-                  "iconName": "award",
-                  "links": [
-                    {
-                      "label": "Our Achievements",
-                      "href": "/about#awards"
-                    },
-                    {
-                      "label": "Recognitions",
-                      "href": "/about#awards"
-                    },
-                    {
-                      "label": "Certificates",
-                      "href": "/about#awards"
-                    }
-                  ]
-                },
-                {
-                  "title": "News & Blogs",
+                  "title": "Media",
                   "iconName": "newspaper",
                   "links": [
                     {
-                      "label": "Latest News",
-                      "href": "/news"
+                      "label": "Blog",
+                      "href": "/blog"
                     },
                     {
-                      "label": "Blog Articles",
-                      "href": "/news"
-                    },
-                    {
-                      "label": "Market Insights",
-                      "href": "/news"
-                    },
-                    {
-                      "label": "Press Releases",
-                      "href": "/news"
-                    }
-                  ]
-                },
-                {
-                  "title": "Career",
-                  "iconName": "userTie",
-                  "links": [
-                    {
-                      "label": "Why Join Us",
-                      "href": "/career"
-                    },
-                    {
-                      "label": "Current Openings",
-                      "href": "/career"
-                    },
-                    {
-                      "label": "Apply Now",
-                      "href": "/career"
-                    }
-                  ]
-                },
-                {
-                  "title": "Contact Us",
-                  "iconName": "phone",
-                  "links": [
-                    {
-                      "label": "Get in Touch",
-                      "href": "/contact"
-                    },
-                    {
-                      "label": "Office Locations",
-                      "href": "/contact"
-                    },
-                    {
-                      "label": "Enquiry Form",
-                      "href": "/enquiry"
+                      "label": "Gallery",
+                      "href": "/gallery"
                     }
                   ]
                 },
@@ -2787,20 +2611,52 @@
                   "iconName": "headset",
                   "links": [
                     {
-                      "label": "FAQs",
+                      "label": "FAQ",
                       "href": "/faq"
                     },
                     {
-                      "label": "Terms & Conditions",
-                      "href": "/terms"
+                      "label": "Enquiry",
+                      "href": "/enquiry"
+                    },
+                    {
+                      "label": "Get A Quote",
+                      "href": "/get-a-quotes"
+                    },
+                    {
+                      "label": "Brochure",
+                      "href": "/brochure"
+                    }
+                  ]
+                },
+                {
+                  "title": "Careers",
+                  "iconName": "userTie",
+                  "links": [
+                    {
+                      "label": "Career Opportunities",
+                      "href": "/careers"
+                    }
+                  ]
+                },
+                {
+                  "title": "Contact Us",
+                  "iconName": "phone",
+                  "links": [
+                    {
+                      "label": "Contact Us",
+                      "href": "/contact"
                     },
                     {
                       "label": "Privacy Policy",
-                      "href": "/privacy"
+                      "href": "/privacy-policy"
                     },
                     {
-                      "label": "Sitemap",
-                      "href": "/sitemap"
+                      "label": "Terms & Conditions",
+                      "href": "/terms-and-conditions"
+                    },
+                    {
+                      "label": "Site Map",
+                      "href": "/site-map"
                     }
                   ]
                 }
@@ -3278,9 +3134,6 @@
                   },
                   {
                     "label": "Properties"
-                  },
-                  {
-                    "label": "View Properties"
                   }
                 ],
                 "backgroundImage": "/images/modern-buildings.jpg",
