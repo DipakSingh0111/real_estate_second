@@ -5,14 +5,15 @@ import { motion } from "framer-motion";
 import { Calendar, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
-export default function TermsAndConditions() {
-  const sectionData = site.privacyPolicyPage;
+
+export default function PrivacyPolicyPage() {
+  const sectionData = site.PrivacyPage.variants.RealEstatePrivacyContent1;
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
       <PageBanner />
 
       {/* Main Content Area */}
-      <div className="page-container py-12">
+      <div className="page-container py-8 sm:py-10 md:py-12">
         {/* Last Updated Date */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -23,7 +24,7 @@ export default function TermsAndConditions() {
           <Calendar className="w-4 h-4 text-blue-600" />
           <span>
             Last Updated:{" "}
-            <span className="text-blue-600">{sectionData.lastUpdated}</span>
+            <span className="text-blue-600">{sectionData.updatedAt}</span>
           </span>
         </motion.div>
 
@@ -34,14 +35,14 @@ export default function TermsAndConditions() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-slate-600 text-sm leading-relaxed mb-8"
         >
-          {sectionData.intro}
+          {sectionData.desc}
         </motion.p>
 
-        {/* Terms Sections List */}
+        {/* Privacy Sections List */}
         <div className="space-y-6">
           {sectionData.sections.map((item, index) => (
             <motion.div
-              key={item.id}
+              key={`${item.title}-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -52,7 +53,7 @@ export default function TermsAndConditions() {
                 {item.title}
               </h2>
               <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                {item.content}
+                {item.desc}
               </p>
             </motion.div>
           ))}

@@ -12,14 +12,7 @@ import {
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
-  FileText,
-  Headphones,
-  MapPin,
   Maximize2,
-  Phone,
-  Send,
-  Star,
-  Tag,
   Wifi,
   Wind,
   Flame,
@@ -30,11 +23,11 @@ import {
   ShieldCheck,
   Utensils,
 } from "lucide-react";
-import { 
-  FaFacebookF, 
-  FaLinkedinIn, 
-  FaYoutube, 
-  FaInstagram 
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { site, PropertyDeal, PageBannerData, SectionProps } from "@/data";
@@ -64,15 +57,19 @@ export default function PropertyDetail({
   className,
 }: SectionProps<PropertyDetailProps> = {}) {
   // If wrapped in a generic container, it receives data, else use fallbacks
-  const property = propData?.property || site.topDealsSection.deals[0];
+  const property =
+    propData?.property ||
+    site.Properties.variants.RealEstateProperties1.listings[0];
   const galleryImages = propData?.galleryImages || [];
-  const banner = propData?.banner || site.pageBanners.propertyListing;
+  const banner =
+    propData?.banner ||
+    site.PageBanner.variants.RealEstateInnerBanner1.propertyListing;
 
   const bannerData = useMemo(
     () => ({
       ...banner,
       breadcrumb: [
-        ...(banner.breadcrumb ?? []).slice(0, 2),
+        ...((banner as any).breadcrumb ?? []).slice(0, 2),
         { label: property.title },
       ],
     }),
@@ -94,37 +91,53 @@ export default function PropertyDetail({
   const goNext = () =>
     setActiveIndex((i) => (i === images.length - 1 ? 0 : i + 1));
 
+  const featureValue = (label: string, fallback = "-") =>
+    property.features.find((f) => f.label === label)?.value ?? fallback;
+
   const overviewRows = [
     {
       icon: Building2,
       label: "Rooms",
-      value: String(property.bedrooms + property.bathrooms + 3),
+      value: String(
+        Number(featureValue("Bedrooms", "0")) +
+          Number(featureValue("Bathrooms", "0")) +
+          3,
+      ),
     },
-    { icon: Bath, label: "Baths", value: String(property.bathrooms) },
-    { icon: BedDouble, label: "Bed", value: String(property.bedrooms) },
+    { icon: Bath, label: "Baths", value: featureValue("Bathrooms") },
+    { icon: BedDouble, label: "Bed", value: featureValue("Bedrooms") },
     {
       icon: Maximize2,
       label: "Size",
-      value: `${property.sqft} Square Ft`,
+      value: featureValue("Area"),
     },
-    { icon: CalendarDays, label: "Year Built", value: "2024" },
-    { icon: Building2, label: "Property Type", value: "Villa" },
-    { icon: Car, label: "Garage", value: "1" },
+    {
+      icon: CalendarDays,
+      label: "Year Built",
+      value: property.statusText?.replace(/^Built\s+/i, "") || "2024",
+    },
+    {
+      icon: Building2,
+      label: "Property Type",
+      value: property.propertyType || "Villa",
+    },
+    { icon: Car, label: "Garage", value: featureValue("Parking", "1") },
   ];
 
-  const featureList = site.propertyDetail.features;
+  const featureList =
+    site.PropertyDetail.variants.RealEstatePropertyDetail1.features;
 
   return (
     <main className="bg-white">
-      <PageBanner data={bannerData} />
+      <PageBanner data={bannerData as any} />
 
-      <section className="page-container py-10 lg:py-14">
-        <div className="grid gap-8 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_360px] xl:gap-10">
+      <section className="page-container py-8 sm:py-10 lg:py-14">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] xl:gap-10">
           {/* LEFT */}
           <div className="min-w-0">
             {/* Gallery */}
-            <div className="overflow-hidden rounded-[18px] border border-slate-100 bg-white shadow-[0_10px_30px_-18px_rgba(15,23,42,0.25)]">
-              <div className="relative h-[280px] sm:h-[380px] lg:h-[420px]">
+            <div className="overflow-hidden rounded-xl sm:rounded-[18px] border border-slate-100 bg-white shadow-[0_10px_30px_-18px_rgba(15,23,42,0.25)]">
+              <div className="relative h-[220px] sm:h-[320px] md:h-[380px] lg:h-[420px]">
                 <Image
                   src={images[activeIndex]}
                   alt={property.title}
@@ -133,12 +146,16 @@ export default function PropertyDetail({
                   sizes="(max-width: 1024px) 100vw, 65vw"
                   className="object-cover"
                 />
-                <span className="absolute left-4 top-4 rounded-md bg-[#2A39CE] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
+                <span className="absolute left-3 top-3 sm:left-4 sm:top-4 rounded-md bg-[#2A39CE] px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.14em] text-white">
                   Featured
                 </span>
-                <div className="absolute right-4 top-4 rounded-lg bg-white/95 px-4 py-2 shadow-lg backdrop-blur-sm flex flex-col items-end">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500">Price</span>
-                  <span className="text-xl font-extrabold text-[#2A39CE]">{property.price}</span>
+                <div className="absolute right-3 top-3 sm:right-4 sm:top-4 rounded-lg bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg backdrop-blur-sm flex flex-col items-end">
+                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500">
+                    Price
+                  </span>
+                  <span className="text-base sm:text-xl font-extrabold text-[#2A39CE]">
+                    {property.price}
+                  </span>
                 </div>
                 <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
                   <Camera className="h-3.5 w-3.5" />
@@ -170,10 +187,11 @@ export default function PropertyDetail({
                     key={`${src}-${index}`}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`relative h-16 overflow-hidden rounded-lg sm:h-20 ${activeIndex === index
-                      ? "ring-2 ring-[#2A39CE] ring-offset-1"
-                      : "opacity-80 hover:opacity-100"
-                      }`}
+                    className={`relative h-16 overflow-hidden rounded-lg sm:h-20 ${
+                      activeIndex === index
+                        ? "ring-2 ring-[#2A39CE] ring-offset-1"
+                        : "opacity-80 hover:opacity-100"
+                    }`}
                   >
                     <Image
                       src={src}
@@ -188,44 +206,24 @@ export default function PropertyDetail({
             </div>
 
             {/* Title block */}
-            <div className="mt-8">
-              <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-[#0B1A33]">
+            <div className="mt-6 sm:mt-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight tracking-tight text-[#0B1A33]">
                 {property.title}
               </h1>
-              <div className="mt-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">
-                <MapPin className="h-4 w-4 text-[#2A39CE]" />
-                {property.location}
-              </div>
-              <p className="mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500">
-                {site.propertyDetail.description}
+
+              <p className="mt-4 sm:mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500">
+                {
+                  site.PropertyDetail.variants.RealEstatePropertyDetail1
+                    .description
+                }
               </p>
-              <div className="mt-5 flex items-center gap-3">
-                <span className="text-sm font-medium text-slate-500">
-                  Share:
-                </span>
-                {site.footer.socialLinks.map((socialLink) => {
-                  const Icon = socialIconMap[socialLink.platform as keyof typeof socialIconMap] ?? FaYoutube;
-                  return (
-                    <a
-                      key={socialLink.platform}
-                      href={socialLink.href}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label={`Share on ${socialLink.label}`}
-                      className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8EEFF] text-[#2A39CE] transition hover:bg-[#2A39CE] hover:text-white"
-                    >
-                      <Icon className="h-3.5 w-3.5" />
-                    </a>
-                  );
-                })}
-              </div>
             </div>
 
-            <div className="mt-12 space-y-12">
+            <div className="mt-8 sm:mt-10 lg:mt-12 space-y-8 sm:space-y-10 lg:space-y-12">
               {/* Overview Section */}
               <section>
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
+                <div className="mb-4 sm:mb-6">
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#0B1A33] mb-2 sm:mb-3">
                     Overview
                   </h2>
                   <div className="w-12 h-[3px] bg-[#1A43BF] rounded-full"></div>
@@ -263,17 +261,24 @@ export default function PropertyDetail({
                   </h2>
                   <div className="w-12 h-[3px] bg-[#1A43BF] rounded-full"></div>
                 </div>
-                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600">
+                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600 space-y-3">
+                  <p>
+                    {
+                      site.PropertyDetail.variants.RealEstatePropertyDetail1
+                        .overviewText
+                    }
+                  </p>
                   <p>
                     This premium listing in{" "}
                     <strong className="text-[#0B1A33]">
                       {property.location}
                     </strong>{" "}
-                    offers {property.bedrooms} bedrooms, {property.bathrooms}{" "}
-                    bathrooms, and {property.sqft} sqft of thoughtfully designed
-                    living space.
+                    offers {featureValue("Bedrooms")} bedrooms,{" "}
+                    {featureValue("Bathrooms")} bathrooms, and{" "}
+                    {featureValue("Area")} of thoughtfully designed living
+                    space.
                   </p>
-                  <p className="mt-2">
+                  <p>
                     Listed price:{" "}
                     <strong className="text-[#2A39CE]">{property.price}</strong>
                   </p>
@@ -293,17 +298,38 @@ export default function PropertyDetail({
                     {featureList.map((feature) => {
                       const f = feature.toLowerCase();
                       let FeatureIcon = CheckCircle2;
-                      if (f.includes("air condition") || f.includes("ac") || f.includes("cooling")) FeatureIcon = Wind;
-                      else if (f.includes("heat") || f.includes("fire")) FeatureIcon = Flame;
-                      else if (f.includes("pool") || f.includes("water")) FeatureIcon = Droplets;
-                      else if (f.includes("gym") || f.includes("fitness")) FeatureIcon = Dumbbell;
-                      else if (f.includes("garden") || f.includes("park") || f.includes("yard")) FeatureIcon = Trees;
-                      else if (f.includes("garage") || f.includes("parking")) FeatureIcon = CarFront;
-                      else if (f.includes("wifi") || f.includes("internet") || f.includes("broadband")) FeatureIcon = Wifi;
-                      else if (f.includes("security")) FeatureIcon = ShieldCheck;
+                      if (
+                        f.includes("air condition") ||
+                        f.includes("ac") ||
+                        f.includes("cooling")
+                      )
+                        FeatureIcon = Wind;
+                      else if (f.includes("heat") || f.includes("fire"))
+                        FeatureIcon = Flame;
+                      else if (f.includes("pool") || f.includes("water"))
+                        FeatureIcon = Droplets;
+                      else if (f.includes("gym") || f.includes("fitness"))
+                        FeatureIcon = Dumbbell;
+                      else if (
+                        f.includes("garden") ||
+                        f.includes("park") ||
+                        f.includes("yard")
+                      )
+                        FeatureIcon = Trees;
+                      else if (f.includes("garage") || f.includes("parking"))
+                        FeatureIcon = CarFront;
+                      else if (
+                        f.includes("wifi") ||
+                        f.includes("internet") ||
+                        f.includes("broadband")
+                      )
+                        FeatureIcon = Wifi;
+                      else if (f.includes("security"))
+                        FeatureIcon = ShieldCheck;
                       else if (f.includes("kitchen")) FeatureIcon = Utensils;
-                      else if (f.includes("balcony") || f.includes("terrace")) FeatureIcon = Building2;
-                      
+                      else if (f.includes("balcony") || f.includes("terrace"))
+                        FeatureIcon = Building2;
+
                       return (
                         <li
                           key={feature}
@@ -320,22 +346,29 @@ export default function PropertyDetail({
                 </div>
               </section>
             </div>
-
             {/* Map */}
             <PropertyMap title={property.title} location={property.location} />
           </div>
-
           {/* RIGHT SIDEBAR */}
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-
-
             <ContactFormSidebar />
-
             <NeedHelpCard
-              phone={site.propertyDetail.contactDetails.phone}
-              phoneHref={site.propertyDetail.contactDetails.phoneHref}
-              workingHours={site.propertyDetail.contactDetails.workingHours}
-              helpText={site.propertyDetail.contactDetails.helpText}
+              phone={
+                site.PropertyDetail.variants.RealEstatePropertyDetail1
+                  .contactDetails.phone
+              }
+              phoneHref={
+                site.PropertyDetail.variants.RealEstatePropertyDetail1
+                  .contactDetails.phoneHref
+              }
+              workingHours={
+                site.PropertyDetail.variants.RealEstatePropertyDetail1
+                  .contactDetails.workingHours
+              }
+              helpText={
+                site.PropertyDetail.variants.RealEstatePropertyDetail1
+                  .contactDetails.helpText
+              }
             />
           </aside>
         </div>

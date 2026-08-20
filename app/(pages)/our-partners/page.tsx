@@ -24,48 +24,48 @@ const itemVariants = {
 };
 
 export default function PartnersPage() {
-  const sectionData = site.partnersPage;
+  const sectionData = site.Partners.variants.RealEstatePartners1;
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-white text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-16 space-y-12">
+      <div className="page-container pt-8 sm:pt-10 md:pt-12 space-y-8 sm:space-y-10">
         {/* SECTION TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center space-y-4"
+          className="text-center space-y-3 sm:space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
             {sectionData.heading}
           </h2>
           <div className="w-12 h-[3px] bg-[#1B36B0] mx-auto" />
-          <p className="text-sm sm:text-[15px] text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            {sectionData.description}
+          <p className="text-sm sm:text-[15px] text-slate-500 max-w-2xl mx-auto leading-relaxed px-1">
+            {sectionData.desc}
           </p>
         </motion.div>
 
-        {/* PARTNERS LOGO GRID (5 COLUMNS) */}
+        {/* PARTNERS LOGO GRID */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[15px]"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"
         >
           {sectionData.items.map((partner) => (
             <motion.div
               key={partner.id}
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-2xl overflow-hidden p-2.5 border border-[#F0F0F0] hover:border-[#1B36B0]/30 hover:shadow-[0_8px_24px_rgba(27,54,176,0.08)] transition-all duration-300 flex items-center justify-center h-[110px]"
+              className="bg-white rounded-xl sm:rounded-2xl overflow-hidden p-2 sm:p-2.5 border border-[#F0F0F0] hover:border-[#1B36B0]/30 hover:shadow-[0_8px_24px_rgba(27,54,176,0.08)] transition-all duration-300 flex items-center justify-center h-[84px] sm:h-[100px] md:h-[110px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-[72px] w-full object-contain rounded-lg"
+                className="h-[52px] sm:h-[64px] md:h-[72px] w-full object-contain rounded-lg"
                 loading="lazy"
               />
             </motion.div>

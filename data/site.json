@@ -397,10 +397,6 @@
                     {
                       "label": "Testimonials",
                       "href": "/testimonial"
-                    },
-                    {
-                      "label": "Site Map",
-                      "href": "/site-map"
                     }
                   ]
                 },
@@ -449,10 +445,6 @@
                   "href": "#",
                   "children": [
                     {
-                      "label": "Contact Us",
-                      "href": "/contact"
-                    },
-                    {
                       "label": "FAQ",
                       "href": "/faq"
                     },
@@ -485,17 +477,13 @@
         "Banner": {
           "variants": {
             "RealEstateBanner1": {
-              "backgroundImage": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg",
+              "backgroundImage": "/images/hero_banner.png",
               "backgroundImageTitle": "Find Your Dream Home With Us",
               "bannerHeight": 100,
               "pretitle": "TRENDING · 2024 FORT CLAYTON",
               "title": "Find Your Dream Home With Us",
               "highlightedTitleText": "Dream Home",
               "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
-              "priceTag": {
-                "label": "Starting at",
-                "amount": "$20,500"
-              },
               "buttons": [
                 {
                   "label": "Browse properties",
@@ -504,36 +492,12 @@
               ],
               "bannerSlides": [
                 {
-                  "image": "/images/bangkok-city-night-buildings-skyline-skyscrapers-city-night-landscape.jpg",
+                  "image": "/images/Hero_banner.png",
                   "alt": "Find Your Dream Home With Us",
                   "title": "Find Your Dream Home With Us",
                   "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
                   "priceLabel": "Starting at",
                   "price": "$20,500",
-                  "button": {
-                    "label": "View homes",
-                    "href": "/property-listing"
-                  }
-                },
-                {
-                  "image": "/images/modern-architecture.jpg",
-                  "alt": "Modern Architecture",
-                  "title": "Modern Architecture",
-                  "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
-                  "priceLabel": "Starting at",
-                  "price": "$24,900",
-                  "button": {
-                    "label": "View homes",
-                    "href": "/property-listing"
-                  }
-                },
-                {
-                  "image": "/images/modern-buildings.jpg",
-                  "alt": "Luxury Living",
-                  "title": "Luxury Living",
-                  "desc": "Discover exceptional properties tailored to your lifestyle. We provide expert guidance and unparalleled service to ensure your real estate journey is seamless and successful.",
-                  "priceLabel": "Starting at",
-                  "price": "$31,200",
                   "button": {
                     "label": "View homes",
                     "href": "/property-listing"
@@ -606,7 +570,7 @@
                   "href": "#"
                 }
               ],
-              "imageUrl": "/images/hero-banner.png",
+              "imageUrl": "/images/hero_banner.png",
               "imageAlt": "Modern house architecture",
               "stat": {
                 "value": "25+",
@@ -1055,7 +1019,7 @@
               ],
               "button": {
                 "label": "Learn more",
-                "href": "#"
+                "href": "/industries-we-serve"
               }
             }
           }
@@ -1380,8 +1344,8 @@
               "helpText": "Our real estate experts are here to help you find the right solution.",
               "helpButton": "Contact Us Now",
               "featured": {
-                "eyebrow": "FEATURED PROPERTIES",
-                "heading": "Top Deals Of The Week",
+                "eyebrow": "TOP DEALS",
+                "heading": "OF THE WEEK",
                 "desc": "Handpicked properties with great locations and unbeatable value. Find your perfect place to call home.",
                 "saleLabel": "FOR SALE",
                 "properties": [
@@ -1473,7 +1437,7 @@
                   "image": "/images/team_05.avif",
                   "bio": "With over 20 years of experience in the real estate industry, Mr. Rahul Mehra has been the driving force behind the success and growth of DreamHome Realty.",
                   "email": "rahul.mehra@dreamhome.com",
-                  "phone": "+1 (555) 123-4567",
+                  "phone": "+91 56548-40567",
                   "specialization": "Strategic Planning & Development",
                   "fullBio": "Mr. Rahul Mehra is a visionary leader with an exceptional track record in the real estate industry. His strategic insights and innovative approaches have transformed DreamHome Realty into one of the most respected names in the business. He is passionate about creating sustainable communities and delivering value to every stakeholder.",
                   "stats": [
@@ -1498,7 +1462,7 @@
                   "image": "/images/team_01.avif",
                   "bio": "A dynamic and results-driven leader, Ms. Priya Sharma oversees business development and client relations at DreamHome Realty.",
                   "email": "priya.sharma@dreamhome.com",
-                  "phone": "+1 (555) 234-5678",
+                  "phone": "+91 49845-85678",
                   "specialization": "Business Development & Client Relations",
                   "fullBio": "With a proven ability to build strong client relationships and drive business growth, Ms. Priya Sharma is instrumental in expanding DreamHome Realty's market presence. Her customer-centric approach and attention to detail have made her a trusted advisor to numerous clients.",
                   "stats": [
@@ -1523,7 +1487,7 @@
                   "image": "/images/team_02.avif",
                   "bio": "As a visionary and energetic leader, Mr. Arjun Verma specializes in project planning and operations to deliver exceptional property experiences.",
                   "email": "arjun.verma@dreamhome.com",
-                  "phone": "+1 (555) 345-6789",
+                  "phone": "+91 48965-86456",
                   "specialization": "Project Planning & Operations",
                   "fullBio": "Mr. Arjun Verma is an operations expert who ensures that every project meets the highest standards of quality and timely delivery. His meticulous planning and execution skills have been key to the success of numerous complex real estate developments.",
                   "stats": [
@@ -1570,31 +1534,36 @@
                   "step": "01",
                   "title": "Discover",
                   "desc": "Explore a wide range of verified properties that match your needs.",
-                  "iconName": "search"
+                  "iconName": "home-search",
+                  "bottomIconName": "search"
                 },
                 {
                   "step": "02",
                   "title": "Shortlist & Inquire",
                   "desc": "Shortlist your favorite properties and get in touch with our experts.",
-                  "iconName": "message-square"
+                  "iconName": "file-pencil",
+                  "bottomIconName": "message-circle"
                 },
                 {
                   "step": "03",
                   "title": "Visit & Decide",
                   "desc": "Schedule a visit, get expert advice, and choose the right one.",
-                  "iconName": "calendar"
+                  "iconName": "handshake",
+                  "bottomIconName": "calendar"
                 },
                 {
                   "step": "04",
                   "title": "Finalize",
                   "desc": "We help you with documentation and make the process hassle-free.",
-                  "iconName": "shield-check"
+                  "iconName": "file-check",
+                  "bottomIconName": "shield-check"
                 },
                 {
                   "step": "05",
                   "title": "Move In / Sell Out",
                   "desc": "Move into your dream property or close the deal successfully.",
-                  "iconName": "key"
+                  "iconName": "home-heart",
+                  "bottomIconName": "key"
                 }
               ],
               "ctaCard": {
@@ -1624,7 +1593,7 @@
                   "title": "Top 10 Tips for First-Time Homebuyers",
                   "date": "June 05, 2024",
                   "href": "/blog/top-10-tips-for-first-time-homebuyers",
-                  "excerpt": "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
+                  "excerpt": "Buying your first home is an exciting milestone, but it is also a major financial decision that requires careful planning and research. From deciding your budget to selecting the right location, every step can have a long-term impact on your financial future and lifestyle. Before beginning your property search, it is important to understand your current financial position, including your savings, monthly income, existing loans, credit profile, and the amount you can comfortably spend on a home loan EMI. Buyers should also keep additional expenses such as stamp duty, registration charges, legal fees, brokerage, maintenance, interiors, and moving costs in mind. Choosing the right location is equally important. Consider connectivity, public transportation, schools, hospitals, shopping areas, employment hubs, recreational facilities, and future infrastructure development. When comparing properties, do not focus only on the advertised price. Evaluate carpet area, construction quality, floor plan, amenities, parking, maintenance charges, natural light, ventilation, security, and the overall neighborhood. It is also essential to verify property documents and ownership details before making a major financial commitment. If you are taking a home loan, compare lenders carefully by looking at interest rates, processing fees, tenure, prepayment options, and other charges. First-time buyers should also think about the property's future resale value, especially if the area is still developing. Most importantly, avoid making a rushed decision because of limited-time offers or sales pressure. Visit multiple properties, compare them objectively, consult professionals when necessary, and make sure the property fits both your current needs and long-term financial goals. A well-researched purchase can turn your first property into a comfortable home and a valuable long-term asset. ",
                   "author": "Sarah Johnson",
                   "category": "Buying Guides",
                   "type": "standard"
@@ -1635,7 +1604,7 @@
                   "title": "How to Boost Your Home's Curb Appeal",
                   "date": "June 05, 2024",
                   "href": "/blog/how-to-boost-your-homes-curb-appeal",
-                  "excerpt": "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
+                  "excerpt": "Boosting your home's curb appeal is one of the most effective ways to attract buyers and increase your property's market value. Simple improvements like fresh exterior paint, a well-maintained lawn, updated lighting, clean pathways, and new house numbers can make a dramatic difference. Landscaping plays a major role — neatly trimmed hedges, potted plants, and seasonal flowers create an inviting entrance. Replacing an old front door or repainting it in a bold, complementary colour adds instant character. Power washing driveways and cleaning windows gives the property a well-cared-for appearance. Outdoor lighting not only improves safety but also enhances the visual appeal during evening viewings. Replacing or repairing fences, gates, and gutters signals to buyers that the property has been maintained. Small details like a new mailbox, door hardware, or house sign can also leave a positive impression. These improvements do not require a large budget, but they can significantly influence a buyer's first impression and willingness to pay the asking price.",
                   "author": "Mike Thompson",
                   "category": "Selling Tips",
                   "type": "video"
@@ -1646,7 +1615,7 @@
                   "title": "The Ultimate Guide to Home Staging",
                   "date": "June 05, 2024",
                   "href": "/blog/the-ultimate-guide-to-home-staging",
-                  "excerpt": "Massa tempor nec feugiat nisl pretium. Neque volutpat ac tincidunt vitae semper quis lectus.",
+                  "excerpt": "Understanding the real estate market can feel overwhelming, especially for first-time investors. However, with the right knowledge and strategy, property investment can be one of the most reliable ways to build long-term wealth. The key is to research locations carefully, understand rental yield versus capital growth, and assess infrastructure development plans in the area. Investors should evaluate whether to buy residential or commercial properties based on their financial goals, risk appetite, and investment horizon. Due diligence on the developer's track record, legal clearances, and RERA registration is essential before committing funds. Diversifying across different property types and locations can help reduce risk. Understanding tax implications, loan eligibility, and cash flow projections is equally important. Working with an experienced financial advisor or real estate consultant can help you build a profitable and balanced property portfolio over time.",
                   "author": "Emily Davis",
                   "category": "Selling Tips",
                   "type": "slider"
@@ -1668,7 +1637,7 @@
                   "title": "How to Choose the Right Real Estate Agent",
                   "date": "6 MARCH, 2024",
                   "href": "/blog/how-to-choose-the-right-real-estate-agent",
-                  "excerpt": "Selecting the right real estate agent is crucial for a smooth buying or selling experience.",
+                  "excerpt": "Selecting the right real estate agent is one of the most important decisions you will make during the buying or selling process. A knowledgeable and experienced agent can save you time, money, and stress by guiding you through every step of the transaction. When evaluating agents, look for someone with a strong track record in your target area, excellent communication skills, and a transparent approach to pricing and negotiations. Ask for references from past clients and check online reviews. A good agent will provide a realistic market appraisal, not just tell you what you want to hear. They should have a clear marketing strategy for selling your property or a systematic approach for finding your ideal home. Understand their commission structure, contract terms, and availability. Avoid agents who pressure you into quick decisions or rush the process. The right agent will act as your trusted advisor throughout the journey.",
                   "author": "Jessica Martinez",
                   "category": "Buying Guides",
                   "type": "standard"
@@ -1679,7 +1648,7 @@
                   "title": "Navigating the Home Inspection Process",
                   "date": "5 MARCH, 2024",
                   "href": "/blog/navigating-the-home-inspection-process",
-                  "excerpt": "Everything you need to know about home inspections and what to expect during the process.",
+                  "excerpt": "A professional home inspection is a critical step in the property buying process that many first-time buyers underestimate. An inspection provides an independent, objective assessment of the property's structural integrity and condition, covering the roof, foundation, plumbing, electrical systems, insulation, windows, and more. It helps buyers identify hidden defects that may not be visible during a casual walkthrough. Common issues found during inspections include dampness, cracked walls, faulty wiring, plumbing leaks, pest infestations, and roof damage. Understanding these issues before finalising the purchase gives you the opportunity to renegotiate the price, request repairs, or walk away from a bad deal. Always hire a qualified and licensed inspector and attend the inspection in person so you can ask questions directly. Request a detailed written report with photographs. Never skip an inspection to save money — the cost of an inspection is minimal compared to the cost of undiscovered structural problems.",
                   "author": "David Brown",
                   "category": "Buying Guides",
                   "type": "standard"
@@ -1789,13 +1758,17 @@
                     {
                       "label": "Terms & Conditions",
                       "href": "/terms-and-conditions"
+                    },
+                    {
+                      "label": "Site Map",
+                      "href": "/site-map"
                     }
                   ]
                 }
               ],
               "footerContact": {
                 "location": "77 Highfield Road, London N36 7SB",
-                "email": "",
+                "email": "info@realestate.com",
                 "phone": "987 654 3210"
               },
               "footerLegalLinks": [
@@ -1811,23 +1784,23 @@
               "socialLinks": [
                 {
                   "label": "youtube",
-                  "href": "#"
+                  "href": "https://www.youtube.com/"
                 },
                 {
                   "label": "linkedin",
-                  "href": "#"
+                  "href": "https://www.linkedin.com/"
                 },
                 {
                   "label": "twitter",
-                  "href": "#"
+                  "href": "https://twitter.com/"
                 },
                 {
                   "label": "facebook",
-                  "href": "#"
+                  "href": "https://www.facebook.com/"
                 },
                 {
                   "label": "instagram",
-                  "href": "#"
+                  "href": "https://www.instagram.com/"
                 }
               ],
               "copyrightText": "Copyright © 2026. All rights reserved. Powered by Lestow"
@@ -1848,47 +1821,47 @@
                 {
                   "id": 2,
                   "name": "Godrej Properties",
-                  "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godrej_Properties_Logo.svg"
+                  "logo": "/images/godrej.png"
                 },
                 {
                   "id": 3,
                   "name": "Lodha",
-                  "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lodha_Group_logo.svg"
+                  "logo": "/images/lodha.png"
                 },
                 {
                   "id": 4,
                   "name": "Tata Projects",
-                  "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg"
+                  "logo": "/images/tata.png"
                 },
                 {
                   "id": 5,
                   "name": "Ireo",
-                  "logo": "https://placehold.co/200x80/ffffff/111827?text=IREO"
+                  "logo": "/images/ireo.png"
                 },
                 {
                   "id": 6,
                   "name": "Sobha Realty",
-                  "logo": "https://placehold.co/200x80/ffffff/111827?text=SOBHA"
+                  "logo": "/images/sobha.png"
                 },
                 {
                   "id": 7,
                   "name": "Brigade Group",
-                  "logo": "https://placehold.co/200x80/ffffff/111827?text=BRIGADE"
+                  "logo": "/images/brigdha.png"
                 },
                 {
                   "id": 8,
                   "name": "Mahindra Lifespaces",
-                  "logo": "https://placehold.co/200x80/ffffff/111827?text=Mahindra"
+                  "logo": "/images/mahindra.png"
                 },
                 {
                   "id": 9,
                   "name": "Shapoorji Pallonji",
-                  "logo": "https://placehold.co/200x80/ffffff/111827?text=Shapoorji"
+                  "logo": "/images/shapoorji.png"
                 },
                 {
                   "id": 10,
                   "name": "Prestige Group",
-                  "logo": "https://placehold.co/200x80/ffffff/111827?text=PRESTIGE"
+                  "logo": "/images/prestige.png"
                 }
               ]
             }
@@ -2021,7 +1994,10 @@
           "variants": {
             "RealEstateFAQ1": {
               "pretitle": "FAQ",
-              "title": "Frequently Asked Questions",
+              "title": "Frequently Asked",
+              "titleHighlight": "Questions",
+              "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
+              "imageAlt": "Real estate FAQ",
               "desc": "Find answers to the most common questions about our properties, services, and buying process.",
               "stats": [
                 {
@@ -2261,94 +2237,74 @@
               "desc": "These awards are a testament to our dedication, innovation, and the trust our clients place in us.",
               "awardItems": [
                 {
+                  "id": 1,
                   "year": "2024",
                   "title": "Real Estate Excellence Awards",
-                  "org": "Excellence in Residential Development",
-                  "icon": "🏆"
+                  "subtitle": "Excellence in Residential Development",
+                  "logo": "/awards/01.jpg"
                 },
                 {
+                  "id": 2,
                   "year": "2024",
                   "title": "Asia Property Awards",
-                  "org": "Best Commercial Development",
-                  "icon": "🗿"
+                  "subtitle": "Best Commercial Development",
+                  "logo": "/awards/02.jpg"
                 },
                 {
+                  "id": 3,
                   "year": "2023",
                   "title": "Business Leadership Award",
-                  "org": "Outstanding Leadership in Real Estate",
-                  "icon": "⭐"
+                  "subtitle": "Outstanding Leadership in Real Estate",
+                  "logo": "/awards/03.jpg"
                 },
                 {
+                  "id": 4,
                   "year": "2023",
                   "title": "National Quality Excellence Award",
-                  "org": "For Quality Construction and Innovation",
-                  "icon": "🥇"
+                  "subtitle": "For Quality Construction and Innovation",
+                  "logo": "/awards/04.jpg"
                 },
                 {
+                  "id": 5,
                   "year": "2023",
                   "title": "Customer Satisfaction Award",
-                  "org": "Highest Customer Satisfaction in Real Estate",
-                  "icon": "🏅"
+                  "subtitle": "Highest Customer Satisfaction in Real Estate",
+                  "logo": "/awards/05.jpg"
                 },
                 {
+                  "id": 6,
                   "year": "2022",
                   "title": "Top Developers Award",
-                  "org": "Recognized Among Top Real Estate Developers",
-                  "icon": "🌟"
+                  "subtitle": "Recognized Among Top Real Estate Developers",
+                  "logo": "/awards/06.jpg"
                 },
                 {
+                  "id": 7,
                   "year": "2022",
                   "title": "Industry Innovation Award",
-                  "org": "For Innovative Design and Technology",
-                  "icon": "🛡️"
+                  "subtitle": "For Innovative Design and Technology",
+                  "logo": "/awards/07.jpg"
                 },
                 {
+                  "id": 8,
                   "year": "2022",
                   "title": "Sustainable Building Award",
-                  "org": "For Commitment to Sustainability",
-                  "icon": "💎"
+                  "subtitle": "For Commitment to Sustainability",
+                  "logo": "/awards/08.jpg"
                 },
                 {
+                  "id": 9,
                   "year": "2021",
                   "title": "Best Luxury Project Award",
-                  "org": "For Excellence in Luxury Residential Projects",
-                  "icon": "👑"
+                  "subtitle": "For Excellence in Luxury Residential Projects",
+                  "logo": "/awards/09.jpg"
                 },
                 {
+                  "id": 10,
                   "year": "2021",
                   "title": "Trusted Brand Award",
-                  "org": "Most Trusted Real Estate Brand",
-                  "icon": "📜"
-                },
-                {
-                  "year": "2020",
-                  "title": "Emerging Developer Award",
-                  "org": "For Fastest Growth and Market Impact",
-                  "icon": "✨"
-                },
-                {
-                  "year": "2020",
-                  "title": "Design Excellence Award",
-                  "org": "For Architectural Design Excellence",
-                  "icon": "🔹"
-                },
-                {
-                  "year": "2019",
-                  "title": "Excellence in Delivery Award",
-                  "org": "Timely Delivery with Highest Standards",
-                  "icon": "🗽"
-                },
-                {
-                  "year": "2019",
-                  "title": "Community Impact Award",
-                  "org": "For Contribution to Communities",
-                  "icon": "🏛️"
-                },
-                {
-                  "year": "2018",
-                  "title": "Rising Star Award",
-                  "org": "For Outstanding Performance and Potential",
-                  "icon": "🌠"
+                  "subtitle": "Most Trusted Real Estate Brand",
+                  "logo": "/awards/10.jpg"
                 }
               ],
               "button": {
@@ -2921,6 +2877,7 @@
         "PropertyDetail": {
           "variants": {
             "RealEstatePropertyDetail1": {
+              "overviewText": "This exceptional property has been thoughtfully designed to offer the perfect balance of style, comfort, and functionality. Set in a prime location with excellent connectivity to major business districts, top-rated schools, hospitals, and shopping centres, this home is ideal for families and professionals alike. The property features a modern open-plan layout that maximizes natural light throughout the day. High-quality finishes, premium fixtures, and attention to detail are evident in every corner. The spacious living and dining areas flow seamlessly to a private outdoor space, perfect for entertaining or relaxing. The kitchen is equipped with contemporary appliances and ample storage. Each bedroom is designed for comfort with generous proportions and built-in wardrobes. The development offers a range of premium amenities including a landscaped garden, covered parking, 24-hour security, and a dedicated maintenance team.",
               "description": "Explore our curated selection of premium real estate offerings. Whether you're looking for a cozy family home or a luxury estate, our dedicated team is here to help you find the perfect property that matches your vision and lifestyle.",
               "features": [
                 "Air Conditioning",
@@ -2963,10 +2920,10 @@
                 "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM"
               },
               "socials": {
-                "facebook": "#",
-                "twitter": "#",
-                "linkedin": "#",
-                "instagram": "#"
+                "facebook": "https://www.facebook.com/",
+                "twitter": "https://www.twitter.com/",
+                "linkedin": "https://www.linkedin.com/company/",
+                "instagram": "https://www.instagram.com/"
               },
               "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.4734000084!2d-0.241681!3d51.528558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
             }

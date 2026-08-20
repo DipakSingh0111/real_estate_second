@@ -7,18 +7,18 @@ import { ArrowRight } from "lucide-react";
 import { site, SectionProps, CtaSectionData } from "@/data";
 
 export default function CtaSection({ data: propData, className }: SectionProps<CtaSectionData> = {}) {
-  const data = propData || site.ctaSection;
+  const data = propData || site.Highlight.variants.RealEstateHighlight1;
   return (
     <motion.section
       id="services"
-      className="relative w-full pt-10 pb-0 lg:pt-16 lg:pb-4 font-sans overflow-hidden"
+      className="relative w-full section-y pb-4 lg:pb-6 font-sans overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8 }}
     >
       <div className="page-container relative z-10">
-        <div className="relative text-white bg-[#050b1a] rounded-[40px] sm:rounded-[60px] p-8 sm:p-12 lg:p-16 shadow-2xl overflow-hidden">
+        <div className="relative text-white bg-[#050b1a] rounded-[28px] sm:rounded-[40px] lg:rounded-[60px] p-6 sm:p-10 md:p-12 lg:p-16 shadow-2xl overflow-hidden">
           {/* Background Waves Line Accent */}
         <div className="absolute inset-0 pointer-events-none opacity-20 flex items-end justify-start">
           <svg className="w-full h-[60%] sm:h-full max-w-4xl" viewBox="0 0 1000 400" fill="none" preserveAspectRatio="none">
@@ -54,7 +54,7 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-bold text-white leading-[1.15] tracking-tight mb-6">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-[1.2] tracking-tight mb-4 sm:mb-6">
               {data.headingLines.map((line, index) => (
                 <span key={line} className="block">
                   {line}{" "}
@@ -68,17 +68,17 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
             </h2>
 
             {/* Description Paragraph */}
-            <p className="text-slate-300 text-sm sm:text-base leading-loose max-w-lg mb-10 font-normal">
-              {data.description}
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed sm:leading-loose max-w-lg mb-6 sm:mb-10 font-normal">
+              {data.desc}
             </p>
 
             {/* Primary Orange Button */}
             <div>
               <Link
-                href={data.buttonLink}
-                className="bg-[#F97316] hover:bg-[#ea580c] text-white font-semibold px-8 py-3.5 rounded-lg text-sm tracking-wide uppercase inline-flex w-fit items-center gap-3 transition-colors duration-200"
+                href={data.buttons?.[0]?.href}
+                className="bg-[#F97316] hover:bg-[#ea580c] text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 rounded-lg text-xs sm:text-sm tracking-wide uppercase inline-flex w-fit items-center gap-3 transition-colors duration-200"
               >
-                {data.buttonLabel}
+                {data.buttons?.[0]?.label}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -86,18 +86,18 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
 
           {/* Right Side Image Block */}
           <motion.div
-            className="lg:col-span-6 relative flex justify-center lg:justify-end mt-10 lg:mt-0 pr-4 pb-4"
+            className="lg:col-span-6 relative flex justify-center lg:justify-end mt-8 lg:mt-0 pr-2 sm:pr-4 pb-2 sm:pb-4"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[550px] aspect-[4/3] sm:aspect-[4/3]">
+            <div className="relative w-full max-w-[550px] aspect-[4/3]">
               {/* Custom Asymmetric Orange Outer Border Frame */}
-              <div className="absolute inset-0 border-2 border-[#F97316] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[30px] rounded-bl-[30px] pointer-events-none transform translate-x-4 translate-y-4" />
+              <div className="absolute inset-0 border-2 border-[#F97316] rounded-tl-[60px] rounded-br-[60px] sm:rounded-tl-[100px] sm:rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px] sm:rounded-tr-[30px] sm:rounded-bl-[30px] pointer-events-none transform translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4" />
 
               {/* Image Box */}
-              <div className="relative w-full h-full rounded-tl-[100px] rounded-br-[100px] rounded-tr-[30px] rounded-bl-[30px] overflow-hidden z-10 border-4 border-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+              <div className="relative w-full h-full rounded-tl-[60px] rounded-br-[60px] sm:rounded-tl-[100px] sm:rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px] sm:rounded-tr-[30px] sm:rounded-bl-[30px] overflow-hidden z-10 border-4 border-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 <Image
                   src={data.imageUrl}
                   alt={data.imageAlt}
@@ -110,17 +110,17 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
 
               {/* Floating 25+ Experience Badge */}
               <motion.div
-                className="absolute top-1/2 -translate-y-1/2 -left-8 sm:-left-12 bg-white text-gray-900 rounded-[24px] shadow-2xl flex flex-col items-center justify-center z-20 w-[140px] h-[140px] sm:w-[160px] sm:h-[160px]"
+                className="absolute top-1/2 -translate-y-1/2 -left-3 sm:-left-8 md:-left-12 bg-white text-gray-900 rounded-2xl sm:rounded-[24px] shadow-2xl flex flex-col items-center justify-center z-20 w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               >
-                <span className="text-4xl sm:text-[42px] font-bold text-[#F97316] leading-none mb-2">
+                <span className="text-2xl sm:text-4xl md:text-[42px] font-bold text-[#F97316] leading-none mb-1 sm:mb-2">
                   {data.stat.value}
                 </span>
-                <span className="w-8 h-[2px] bg-[#F97316] my-2 inline-block rounded-full" />
-                <span className="text-sm font-semibold text-slate-800 text-center leading-tight">
+                <span className="w-6 sm:w-8 h-[2px] bg-[#F97316] my-1 sm:my-2 inline-block rounded-full" />
+                <span className="text-[11px] sm:text-sm font-semibold text-slate-800 text-center leading-tight">
                   Years of<br />Experience
                 </span>
               </motion.div>

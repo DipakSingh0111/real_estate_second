@@ -26,12 +26,12 @@ const itemVariants = {
 };
 
 export default function AwardsPage() {
-  const sectionData = site.awardsPage;
+  const sectionData = site.Awards.variants.RealEstateAwards1;
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-12 space-y-10">
+      <div className="page-container pt-8 sm:pt-10 md:pt-12 space-y-10">
         {/* 2. SECTION TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,11 +41,11 @@ export default function AwardsPage() {
           className="text-center space-y-2"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            {sectionData.heading}
+            {sectionData.title}
           </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
           <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
-            {sectionData.description}
+            {sectionData.desc}
           </p>
         </motion.div>
 
@@ -57,7 +57,7 @@ export default function AwardsPage() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
         >
-          {sectionData.items.map((award) => (
+          {sectionData.awardItems.map((award) => (
             <motion.div
               key={award.id}
               variants={itemVariants}

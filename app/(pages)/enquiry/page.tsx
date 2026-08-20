@@ -53,10 +53,10 @@ export default function EnquiryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-10 space-y-10">
+      <div className="page-container pt-8 sm:pt-10 space-y-10">
         {/* TWO COLUMN SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* LEFT COLUMN: ENQUIRY FORM (7 COLS) */}
@@ -73,11 +73,11 @@ export default function EnquiryPage() {
                   <SquarePen className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  {site.enquiryPage.formHeader.title}
+                  {site.EnquiryPage.variants.RealEstateEnquiryPage1.formHeader.title}
                 </h2>
               </div>
               <p className="text-xs sm:text-sm text-slate-500 pt-1 leading-relaxed">
-                {site.enquiryPage.formHeader.description}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.formHeader.description}
               </p>
             </div>
 
@@ -145,7 +145,7 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select an option</option>
-                    {site.formOptions.contactMethod.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.contactMethod.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -166,7 +166,7 @@ export default function EnquiryPage() {
                     required
                   >
                     <option value="">Select enquiry type</option>
-                    {site.formOptions.enquiryFor.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.enquiryFor.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -183,7 +183,7 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select property type</option>
-                    {site.formOptions.propertyType.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.propertyType.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -203,7 +203,7 @@ export default function EnquiryPage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select your budget</option>
-                    {site.formOptions.budget.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.budget.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -255,21 +255,21 @@ export default function EnquiryPage() {
                   htmlFor="agreed"
                   className="text-[11px] text-slate-500 cursor-pointer"
                 >
-                  {site.formOptions.agreement.prefix}
+                  {site.FormOptions.variants.RealEstateFormOptions1.agreement.prefix}
                   <a
-                    href={site.formOptions.agreement.privacyPolicyUrl}
+                    href={site.FormOptions.variants.RealEstateFormOptions1.agreement.privacyPolicyUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {site.formOptions.agreement.privacyPolicyText}
+                    {site.FormOptions.variants.RealEstateFormOptions1.agreement.privacyPolicyText}
                   </a>
-                  {site.formOptions.agreement.middleText}
+                  {site.FormOptions.variants.RealEstateFormOptions1.agreement.middleText}
                   <a
-                    href={site.formOptions.agreement.termsUrl}
+                    href={site.FormOptions.variants.RealEstateFormOptions1.agreement.termsUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {site.formOptions.agreement.termsText}
+                    {site.FormOptions.variants.RealEstateFormOptions1.agreement.termsText}
                   </a>
-                  {site.formOptions.agreement.suffix}
+                  {site.FormOptions.variants.RealEstateFormOptions1.agreement.suffix}
                 </label>
               </div>
 
@@ -299,7 +299,7 @@ export default function EnquiryPage() {
                 <Users className="w-[28px] h-[28px] stroke-[1.5]" />
               </div>
               <h3 className="text-[28px] font-bold text-slate-900">
-                {site.enquiryPage.whyEnquire.title}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
             </div>
@@ -313,10 +313,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {site.enquiryPage.whyEnquire.features[0].title}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[0].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {site.enquiryPage.whyEnquire.features[0].description}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[0].description}
                   </p>
                 </div>
               </div>
@@ -328,10 +328,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {site.enquiryPage.whyEnquire.features[1].title}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[1].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {site.enquiryPage.whyEnquire.features[1].description}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[1].description}
                   </p>
                 </div>
               </div>
@@ -343,10 +343,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {site.enquiryPage.whyEnquire.features[2].title}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[2].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {site.enquiryPage.whyEnquire.features[2].description}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[2].description}
                   </p>
                 </div>
               </div>
@@ -358,10 +358,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {site.enquiryPage.whyEnquire.features[3].title}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[3].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {site.enquiryPage.whyEnquire.features[3].description}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[3].description}
                   </p>
                 </div>
               </div>
@@ -373,10 +373,10 @@ export default function EnquiryPage() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-slate-900">
-                    {site.enquiryPage.whyEnquire.features[4].title}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[4].title}
                   </h4>
                   <p className="text-[13px] text-slate-400 mt-0.5 leading-relaxed">
-                    {site.enquiryPage.whyEnquire.features[4].description}
+                    {site.EnquiryPage.variants.RealEstateEnquiryPage1.whyEnquire.features[4].description}
                   </p>
                 </div>
               </div>
@@ -399,25 +399,25 @@ export default function EnquiryPage() {
             </div>
             <div className="space-y-1">
               <h4 className="text-[20px] font-bold text-slate-900">
-                {site.enquiryPage.questions.title}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.questions.title}
               </h4>
               <p className="text-[15px] text-slate-400">
-                {site.enquiryPage.questions.description}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.questions.description}
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-1 text-[15px] font-bold text-slate-800">
                 <a
-                  href={site.enquiryPage.questions.phoneHref}
+                  href={site.EnquiryPage.variants.RealEstateEnquiryPage1.questions.phoneHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
                   <Phone className="text-red-500 w-4 h-4 stroke-[1.5]" />
-                  <span>{site.enquiryPage.questions.phone}</span>
+                  <span>{site.EnquiryPage.variants.RealEstateEnquiryPage1.questions.phone}</span>
                 </a>
                 <a
-                  href={site.enquiryPage.questions.emailHref}
+                  href={site.EnquiryPage.variants.RealEstateEnquiryPage1.questions.emailHref}
                   className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                 >
                   <Mail className="text-red-500 w-4 h-4 stroke-[1.5]" />
-                  <span>{site.enquiryPage.questions.email}</span>
+                  <span>{site.EnquiryPage.variants.RealEstateEnquiryPage1.questions.email}</span>
                 </a>
               </div>
             </div>
@@ -430,13 +430,13 @@ export default function EnquiryPage() {
             </div>
             <div>
               <h4 className="text-[18px] font-bold text-slate-900">
-                {site.enquiryPage.officeHours.title}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.officeHours.title}
               </h4>
               <p className="text-[15px] font-semibold text-slate-700 mt-0.5">
-                {site.enquiryPage.officeHours.weekdays}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.officeHours.weekdays}
               </p>
               <p className="text-[15px] text-slate-400 mt-0.5">
-                {site.enquiryPage.officeHours.sunday}
+                {site.EnquiryPage.variants.RealEstateEnquiryPage1.officeHours.sunday}
               </p>
             </div>
           </div>

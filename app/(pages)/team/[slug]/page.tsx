@@ -14,19 +14,19 @@ interface TeamDetailPageProps {
 
 export default function TeamDetailPage({ params }: TeamDetailPageProps) {
   const { slug } = use(params);
-  const teamMember = site.teamPage.members.find(
+  const teamMember = site.Team.variants.RealEstateTeam1.teamItems.find(
     (member: any) => member.slug === slug,
   );
   const bannerData = teamMember
     ? {
-      ...site.pageBanners.team,
+      ...site.PageBanner.variants.RealEstateInnerBanner1.team,
       breadcrumb: [
         { label: "Home", href: "/" },
         { label: "Team", href: "/team" },
         { label: teamMember.name },
       ],
     }
-    : site.pageBanners.team;
+    : site.PageBanner.variants.RealEstateInnerBanner1.team;
 
   if (!teamMember) {
     return (
@@ -51,7 +51,7 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
     <main className="bg-slate-50/50 font-sans text-slate-900 pb-4">
       <PageBanner />
 
-      <section className="page-container pt-10 pb-6">
+      <section className="page-container pt-8 sm:pt-10 pb-6">
         <Link
           href="/team"
           className="mb-10 inline-flex items-center gap-2 text-[#1B36B0] font-bold text-sm sm:text-[15px] hover:underline"
@@ -78,8 +78,8 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
             {/* Main Image Wrapper */}
             <div className="relative z-10 w-[90%] ml-auto h-full rounded-tl-[80px] rounded-br-[80px] rounded-tr-[24px] rounded-bl-[24px] overflow-hidden shadow-xl bg-white">
               <Image
-                src={teamMember.imageUrl}
-                alt={teamMember.imageAlt}
+                src={teamMember.image}
+                alt={teamMember.name}
                 fill
                 className="object-cover object-top"
                 priority
@@ -119,9 +119,11 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-slate-400">
                 Description
               </p>
-              <p className="leading-[1.75] text-[#4F5B73] text-[15px]">
-                {teamMember.description}
-              </p>
+              <div className="leading-[1.75] text-[#4F5B73] text-[15px] space-y-4">
+                {teamMember.fullBio.split("\n\n").map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
             {/* Contact Information */}

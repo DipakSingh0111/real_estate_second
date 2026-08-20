@@ -7,12 +7,12 @@ import { FaFilePdf, FaDownload } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function BrochurePage() {
-  const sectionData = site.brochurePage;
+  const sectionData = site.Brochure.variants.RealEstateBrochure1;
   return (
-    <div className="min-h-screen bg-[#fafafa] font-sans pb-16">
+    <div className="min-h-screen bg-[#fafafa] font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-12 space-y-10">
+      <div className="page-container pt-8 sm:pt-10 md:pt-12 space-y-10">
         {/* SECTION TITLE */}
         <div className="text-center space-y-3">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] tracking-tight">
@@ -20,7 +20,7 @@ export default function BrochurePage() {
           </h2>
           <div className="w-10 h-[2px] bg-red-600 mx-auto" />
           <p className="text-sm sm:text-base text-slate-500 pt-2 max-w-xl mx-auto">
-            {sectionData.description}
+            {sectionData.desc}
           </p>
         </div>
 

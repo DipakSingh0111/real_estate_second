@@ -6,47 +6,49 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { site, SectionProps, BestRealEstateSectionData } from "@/data";
 
-
-
-
-export default function BestRealEstateSection({ data: propData, className }: SectionProps<any>) {
-  const data = propData || site.bestRealEstateSection;
+export default function BestRealEstateSection({
+  data: propData,
+  className,
+}: SectionProps<BestRealEstateSectionData>) {
+  const data = propData || site.CitiesWeServe.variants.RealEstateCitiesWeServe1;
+  const images = data.images ?? [];
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   useEffect(() => {
-    if (!data?.images?.length) return;
+    if (!images.length) return;
     const timer = setInterval(() => {
-      setActiveImageIndex((current) => (current + 1) % data.images.length);
+      setActiveImageIndex((current) => (current + 1) % images.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [data.images.length]);
+  }, [images.length]);
 
   return (
     <section
       id="featured-property"
-      className="bg-white py-10 lg:py-14 overflow-hidden"
+      className={`bg-white section-y overflow-hidden ${className ?? ""}`}
     >
-      <div className="page-container grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-16">
+      <div className="page-container grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative pt-8 pl-8 sm:pt-10 sm:pl-10"
+          className="relative pt-6 sm:pt-8"
         >
           <div className="relative z-10 w-full aspect-[4/3] max-w-[550px] mx-auto lg:mx-0">
-            {/* Gray box underneath */}
             <div className="absolute left-[8%] right-[8%] -bottom-6 h-1/2 rounded-b-[40px] bg-[#e8e8e8]" />
             <div className="absolute left-[14%] right-[14%] -bottom-9 h-1/2 rounded-b-[40px] bg-[#f2f2f2] -z-10" />
 
-            {/* Main Image */}
-            <div className="relative z-10 w-full h-full overflow-hidden rounded-[40px] bg-slate-100 shadow-sm">
-              {data.images.map((image, index) => (
+            <div className="relative z-10 w-full h-full overflow-hidden rounded-[28px] sm:rounded-[40px] bg-slate-100 shadow-sm">
+              {images.map((image, index) => (
                 <div
                   key={image.src}
-                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === activeImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                    }`}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    index === activeImageIndex
+                      ? "opacity-100 z-10"
+                      : "opacity-0 z-0"
+                  }`}
                 >
                   <Image
                     src={image.src}
@@ -59,26 +61,25 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
                 </div>
               ))}
 
-              {/* Carousel Indicators inside image */}
               <div className="absolute right-5 top-1/2 flex -translate-y-1/2 flex-col items-center gap-3 z-20">
-                {data.images.map((image, index) => (
+                {images.map((image, index) => (
                   <button
                     key={image.src}
                     type="button"
                     aria-label={`Show image ${index + 1}`}
                     aria-current={index === activeImageIndex}
                     onClick={() => setActiveImageIndex(index)}
-                    className={`h-3 w-3 rounded-full border border-white transition-all ${index === activeImageIndex
-                      ? "bg-white shadow-md"
-                      : "bg-transparent hover:bg-white/50"
-                      }`}
+                    className={`h-3 w-3 rounded-full border border-white transition-all ${
+                      index === activeImageIndex
+                        ? "bg-white shadow-md"
+                        : "bg-transparent hover:bg-white/50"
+                    }`}
                   />
                 ))}
               </div>
             </div>
           </div>
-          
-          {/* Blue Dots Grid - Rendered after image to ensure it stays on top */}
+
           <div className="absolute left-2 top-2 sm:left-4 sm:top-4 z-30 grid grid-cols-4 gap-[10px] pointer-events-none">
             {Array.from({ length: 16 }, (_, index) => (
               <span
@@ -87,8 +88,8 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
               />
             ))}
           </div>
-
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -98,40 +99,39 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
         >
           <div className="mb-4">
             <p className="text-[13px] font-bold text-[#1243c6] mb-1.5">
-              {data.eyebrow}
+              {data.pretitle}
             </p>
             <div className="w-8 h-[2px] bg-[#1243c6]" />
           </div>
 
-          <h2 className="mb-6 text-3xl sm:text-[42px] font-extrabold leading-[1.2] tracking-tight text-[#071b47]">
-            {data.headingLines.join(" ")}
+          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-[42px] font-extrabold leading-[1.2] tracking-tight text-[#071b47]">
+            {data.title}
           </h2>
 
-          <div className="mb-6 w-8 h-[2px] bg-[#1243c6]" />
+          <div className="mb-4 sm:mb-6 w-8 h-[2px] bg-[#1243c6]" />
 
-          <p className="mb-8 text-sm sm:text-[15px] leading-relaxed text-gray-500">
-            {data.description}
+          <p className="mb-6 sm:mb-8 text-sm sm:text-[15px] leading-relaxed text-gray-500">
+            {data.desc}
           </p>
 
           <div className="flex items-center gap-6">
             <button
-              aria-label={data.playButtonLabel}
+              aria-label="Play video"
               onClick={() => setIsVideoModalOpen(true)}
               className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#1243c6] text-white shadow-[0_8px_20px_rgba(18,67,198,0.3)] transition-transform hover:scale-105"
             >
               <Play className="ml-1 h-5 w-5 fill-white stroke-white" />
             </button>
             <a
-              href={data.learnMoreLink}
+              href={data.button.href}
               className="text-[15px] font-medium text-[#1243c6] underline decoration-1 underline-offset-4 hover:text-[#0d36a5]"
             >
-              {data.learnMoreLabel}
+              {data.button.label}
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Video Modal */}
       <AnimatePresence>
         {isVideoModalOpen && (
           <motion.div
@@ -156,7 +156,7 @@ export default function BestRealEstateSection({ data: propData, className }: Sec
               >
                 <X className="h-6 w-6" />
               </button>
-              
+
               <video
                 className="w-full h-full object-cover"
                 controls

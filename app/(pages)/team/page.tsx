@@ -7,23 +7,24 @@ import { motion } from "framer-motion";
 import PageBanner from "@/components/common/PageBanner";
 import { User, Award, Building2, Handshake } from "lucide-react";
 
-const sectionData = site.teamPage;
+const sectionData = site.Team.variants.RealEstateTeam1;
 
 export default function TeamPage() {
   return (
     <main className="bg-slate-50/50 font-sans text-slate-900 pb-4">
       <PageBanner />
 
-      <section className="page-container space-y-8 lg:space-y-10 pt-10 pb-6">
-        {sectionData.members.map((member, index) => {
+      <section className="page-container space-y-6 sm:space-y-8 lg:space-y-10 pt-8 sm:pt-10 pb-6">
+        {sectionData.teamItems.map((member, index) => {
           const isImageRight = index % 2 === 0;
 
           return (
             <Link
               href={`/team/${member.slug}`}
               key={member.name}
-              className={`flex flex-col-reverse ${isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-8 lg:gap-16 bg-white rounded-[32px] p-6 sm:p-8 lg:p-12 border border-slate-100/80 shadow-[0_15px_45px_rgba(27,54,176,0.03)] hover:shadow-[0_25px_60px_rgba(27,54,176,0.08)] transition-all duration-300`}
+              className={`flex flex-col-reverse ${
+                isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-5 sm:gap-8 lg:gap-16 bg-white rounded-2xl sm:rounded-[32px] p-4 sm:p-6 md:p-8 lg:p-12 border border-slate-100/80 shadow-[0_15px_45px_rgba(27,54,176,0.03)] hover:shadow-[0_25px_60px_rgba(27,54,176,0.08)] transition-all duration-300`}
             >
               {/* Text Side */}
               <motion.div
@@ -46,7 +47,7 @@ export default function TeamPage() {
                 </div>
 
                 <div className="text-[14px] sm:text-[15px] leading-relaxed text-[#4F5B73] space-y-4 font-normal">
-                  {member.description.split("\n\n").map((paragraph, i) => (
+                  {member.fullBio.split("\n\n").map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
                 </div>
@@ -61,10 +62,11 @@ export default function TeamPage() {
                     return (
                       <div
                         key={stat.label}
-                        className={`flex items-center space-x-4 flex-1 px-2 ${statIdx !== member.stats.length - 1
+                        className={`flex items-center space-x-4 flex-1 px-2 ${
+                          statIdx !== member.stats.length - 1
                             ? "border-b pb-4 sm:border-b-0 sm:pb-0 sm:border-r border-[#D0DDFB]"
                             : ""
-                          }`}
+                        }`}
                       >
                         <div className="text-[#1B36B0] shrink-0">
                           <Icon size={26} strokeWidth={1.8} />
@@ -81,11 +83,33 @@ export default function TeamPage() {
                     );
                   })}
                 </div>
+                <div className="flex w-full justify-end mt-12">
+                  <button
+                    type="button"
+                    className="group flex items-center justify-center gap-3 w-40 rounded-full 
+     px-2 py-1 text-sm font-semibold text-black
+    transition-all duration-300 ease-in-out cursor-pointer "
+                  >
+                    <span>View More</span>
+
+                    <span
+                      className="flex h-8 w-8 items-center justify-center rounded-full 
+      bg-white text-black transition-all duration-300
+      group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </button>
+                </div>
               </motion.div>
 
               {/* Image Side */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.96, x: isImageRight ? 30 : -30 }}
+                initial={{
+                  opacity: 0,
+                  scale: 0.96,
+                  x: isImageRight ? 30 : -30,
+                }}
                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -93,16 +117,18 @@ export default function TeamPage() {
               >
                 {/* Blue Background Block */}
                 <div
-                  className={`absolute ${isImageRight
+                  className={`absolute ${
+                    isImageRight
                       ? "-top-4 -bottom-4 -right-4 left-10 rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[24px] rounded-br-[24px]"
                       : "-top-4 -bottom-4 -left-4 right-10 rounded-tl-[100px] rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px]"
-                    } bg-[#1B36B0] z-0`}
+                  } bg-[#1B36B0] z-0`}
                 />
 
                 {/* Dot Pattern */}
                 <div
-                  className={`absolute ${isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
-                    } w-20 h-20 z-20 opacity-60`}
+                  className={`absolute ${
+                    isImageRight ? "-top-6 -left-6" : "-top-6 -right-6"
+                  } w-20 h-20 z-20 opacity-60`}
                   style={{
                     backgroundImage:
                       "radial-gradient(circle, #1B36B0 2.5px, transparent 2.5px)",
@@ -112,15 +138,17 @@ export default function TeamPage() {
 
                 {/* Main Image Wrapper */}
                 <div
-                  className={`relative z-10 w-[90%] ${isImageRight ? "mr-auto" : "ml-auto"
-                    } h-full ${isImageRight
+                  className={`relative z-10 w-[90%] ${
+                    isImageRight ? "mr-auto" : "ml-auto"
+                  } h-full ${
+                    isImageRight
                       ? "rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[24px] rounded-br-[24px]"
                       : "rounded-tl-[100px] rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px]"
-                    } overflow-hidden shadow-lg bg-white`}
+                  } overflow-hidden shadow-lg bg-white`}
                 >
                   <Image
-                    src={member.imageUrl}
-                    alt={member.imageAlt}
+                    src={member.image}
+                    alt={member.name}
                     fill
                     className="object-cover object-top"
                     priority

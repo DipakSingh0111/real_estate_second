@@ -14,35 +14,36 @@ const iconMap = {
   shield: HandCoins,
 } as const;
 
-const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
-  const data = propData || site.aboutSection;
+const AboutSection = ({ data: propData, services: propServices, className }: any) => {
+  const data = propData || site.About.variants.RealEstateAbout1;
+  const services = propServices || site.ServicesOverview.variants.RealEstateServicesOverview1.items.slice(0, 3);
 
   return (
-    <section className="bg-[#f0f2f5] py-10 lg:py-14 font-sans">
+    <section className="bg-[#f0f2f5] section-y font-sans">
       <div className="page-container">
-        <div className="grid grid-cols-1 items-stretch gap-8 md:gap-6 lg:grid-cols-12">
+        <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 md:gap-6 lg:grid-cols-12">
           {/* SECTION 1: TEXT & CTA */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col justify-between px-2 sm:px-0 lg:col-span-3 xl:col-span-3"
+            className="flex flex-col justify-between px-0 lg:col-span-3 xl:col-span-3"
           >
             <div>
-              <div className="mb-4 flex items-center gap-3">
+              <div className="mb-3 sm:mb-4 flex items-center gap-3">
                 <span className="block h-0.5 w-8 bg-orange-500"></span>
                 <span className="text-xs font-bold uppercase tracking-widest text-[#0c2242]">
-                  {data.badge}
+                  {data.pretitle}
                 </span>
               </div>
 
-              <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-[#0c2242] sm:mb-6">
-                {data.heading}
+              <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight tracking-tight text-[#0c2242] sm:mb-6">
+                {data.title}
               </h2>
 
-              <p className="mb-8 max-w-sm text-sm sm:text-base leading-relaxed text-gray-500 sm:mb-10">
-                {data.description}
+              <p className="mb-6 sm:mb-8 max-w-sm text-sm sm:text-base leading-relaxed text-gray-500 sm:mb-10">
+                {data.desc}
               </p>
             </div>
 
@@ -50,7 +51,7 @@ const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
               href="/about"
               className="flex w-fit cursor-pointer items-center gap-4 rounded bg-[#0a183d] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#122452] sm:px-8 sm:py-4"
             >
-              {data.buttonLabel} <ArrowRight className="h-4 w-4" />
+              {(data.buttons && data.buttons[0]?.label) || "Explore More"} <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
 
@@ -63,8 +64,8 @@ const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
             className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-full overflow-hidden rounded-[2.5rem] border-4 border-white shadow-xl lg:col-span-3 xl:col-span-3"
           >
             <Image
-              src={data.imageUrl}
-              alt={data.imageAlt}
+              src={data.sideImage}
+              alt={data.sideImageTitle}
               fill
               className="object-cover"
             />
@@ -79,15 +80,15 @@ const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-6 lg:grid-cols-3 xl:col-span-6 xl:gap-5"
           >
-            {data.services.map((service, index) => {
+            {services.map((service: any, index: number) => {
               const Icon =
                 (iconMap as Record<string, typeof Building2>)[
                 service.iconName
                 ] || Building2;
-              const iconColor = service.accent
+              const iconColor = (index === 1)
                 ? "text-orange-500"
                 : "text-blue-700";
-              const iconBg = service.accent ? "bg-orange-100" : "bg-blue-100";
+              const iconBg = (index === 1) ? "bg-orange-100" : "bg-blue-100";
               const slug = service.title.toLowerCase().replace(/ /g, "-");
 
               return (
@@ -117,7 +118,7 @@ const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
                         <div className="mb-3 h-0.5 w-6 bg-orange-400 sm:mb-4"></div>
 
                         <p className="mb-6 text-xs leading-relaxed text-gray-500 sm:mb-8 sm:text-sm">
-                          {service.text}
+                          {service.description}
                         </p>
                       </div>
                     </div>
@@ -125,8 +126,7 @@ const AboutSection = ({ data: propData, className }: SectionProps<any>) => {
                     <span
                       className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 group-hover/card:gap-3 group-hover/card:text-blue-900"
                     >
-                      {service.buttonText}{" "}
-                      <ArrowRight className="h-4 w-4 transition-transform" />
+                      READ MORE <ArrowRight className="h-4 w-4 transition-transform" />
                     </span>
                   </motion.div>
                 </Link>

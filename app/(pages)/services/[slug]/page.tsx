@@ -12,29 +12,32 @@ export default function ServiceDetailsPage() {
   const params = useParams();
   const slug = params?.slug as string;
 
-  const serviceData = (site.servicesDetails as any)?.[slug];
+  const serviceData = site.Service.variants.RealEstateServicePage1.productSlides.find(
+    (slide) => slide.slug === slug,
+  );
 
   if (!serviceData) {
     return notFound();
   }
 
-  // Fallback image if the specific image is missing
   const imageUrl = serviceData.image || "/images/property_01.avif";
+  const featureLabels = serviceData.productFeatures.map((f) => f.label);
+  const featureList = featureLabels.length > 0 ? featureLabels : serviceData.benefits;
 
   return (
     <main className="bg-white font-sans text-slate-900">
       <PageBanner
         data={{
-          ...site.pageBanners['services'],
-          title: serviceData.title,
+          ...site.PageBanner.variants.RealEstateInnerBanner1.services,
+          title: serviceData.productTitle,
           breadcrumb: [
             { label: "Services", href: "/services" },
-            { label: serviceData.title, href: "#" },
+            { label: serviceData.productTitle, href: "#" },
           ],
-        }}
+        } as any}
       />
 
-      <section className="page-container pt-16 pb-8 lg:pt-20 lg:pb-10">
+      <section className="page-container pt-8 sm:pt-10 md:pt-12 pb-8 lg:pt-20 lg:pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Side */}
           <motion.div
@@ -45,7 +48,7 @@ export default function ServiceDetailsPage() {
           >
             <Image
               src={imageUrl}
-              alt={serviceData.title}
+              alt={serviceData.alt || serviceData.productTitle}
               fill
               className="object-cover"
               priority
@@ -60,18 +63,18 @@ export default function ServiceDetailsPage() {
             className="space-y-6"
           >
             <h2 className="text-3xl lg:text-4xl font-extrabold text-[#142345]">
-              {serviceData.title}
+              {serviceData.productTitle}
             </h2>
             <div className="w-16 h-[3px] bg-[#1B36B0]" />
             <h3 className="text-xl font-bold text-slate-700">
-              {serviceData.subtitle}
+              {serviceData.productSubtitle}
             </h3>
             <p className="text-[15px] leading-relaxed text-slate-500">
-              {serviceData.description}
+              {serviceData.productInfoDesc}
             </p>
 
             <ul className="space-y-4 pt-4">
-              {serviceData.features.map((feature: string, idx: number) => (
+              {featureList.map((feature, idx) => (
                 <li key={idx} className="flex items-start space-x-3">
                   <FaCheckCircle className="text-[#1B36B0] text-lg shrink-0 mt-0.5" />
                   <span className="text-slate-700 font-medium">{feature}</span>

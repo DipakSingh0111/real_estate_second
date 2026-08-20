@@ -27,8 +27,8 @@ const itemVariants = {
 };
 
 export default function GalleryPage() {
-  const sectionData = site.galleryPage;
-  const galleryImages = sectionData.images;
+  const sectionData = site.GalleryPage.variants.RealEstateGalleryCollection1;
+  const galleryImages = sectionData.galleryItems;
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -66,11 +66,11 @@ export default function GalleryPage() {
     };
   }, [selectedIndex]);
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
       {/* MAIN CONTAINER */}
-      <div className="page-container pt-12 space-y-12">
+      <div className="page-container pt-8 sm:pt-10 md:pt-12 space-y-12">
         {/* 2. SECTION TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,14 +80,14 @@ export default function GalleryPage() {
           className="text-center space-y-2"
         >
           <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">
-            {sectionData.eyebrow}
+            {sectionData.pretitle}
           </span>
           <div className="w-8 h-0.5 bg-blue-600 mx-auto rounded-full" />
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight pt-1">
-            {sectionData.heading}
+            {sectionData.title}
           </h2>
           <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
-            {sectionData.description}
+            {sectionData.desc}
           </p>
         </motion.div>
 
@@ -103,13 +103,13 @@ export default function GalleryPage() {
           >
             {galleryImages.slice(0, 3).map((image, i) => (
               <motion.div
-                key={image.id}
+                key={`gallery-${i}`}
                 variants={itemVariants}
                 onClick={() => setSelectedIndex(i)}
                 className="overflow-hidden rounded-2xl shadow-sm border border-slate-100/80 group h-56 sm:h-64 cursor-pointer bg-slate-200"
               >
                 <motion.img
-                  src={image.src}
+                  src={image.image}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -127,13 +127,13 @@ export default function GalleryPage() {
           >
             {galleryImages.slice(3, 7).map((image, i) => (
               <motion.div
-                key={image.id}
+                key={`gallery-${i + 3}`}
                 variants={itemVariants}
                 onClick={() => setSelectedIndex(i + 3)}
                 className="overflow-hidden rounded-2xl shadow-sm border border-slate-100/80 group h-48 sm:h-52 cursor-pointer bg-slate-200"
               >
                 <motion.img
-                  src={image.src}
+                  src={image.image}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -151,13 +151,13 @@ export default function GalleryPage() {
           >
             {galleryImages.slice(7, 12).map((image, i) => (
               <motion.div
-                key={image.id}
+                key={`gallery-${i + 7}`}
                 variants={itemVariants}
                 onClick={() => setSelectedIndex(i + 7)}
                 className="overflow-hidden rounded-2xl shadow-sm border border-slate-100/80 group h-36 sm:h-44 cursor-pointer bg-slate-200"
               >
                 <motion.img
-                  src={image.src}
+                  src={image.image}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -211,7 +211,7 @@ export default function GalleryPage() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                src={galleryImages[selectedIndex].src}
+                src={galleryImages[selectedIndex].image}
                 alt={galleryImages[selectedIndex].alt}
                 className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
               />

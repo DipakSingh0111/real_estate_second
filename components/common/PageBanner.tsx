@@ -68,10 +68,11 @@ export default function PageBanner({ data: propData, className }: SectionProps<P
   const pathname = usePathname();
   const segment = (pathname || "").split("/")[1] || "about";
   const pathKey = segment.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-  const data = propData || (site.pageBanners as any)[segment] || (site.pageBanners as any)[pathKey] || site.pageBanners['about'];
+  const innerBanners = site.PageBanner.variants.RealEstateInnerBanner1;
+  const data = propData || (innerBanners as any)[segment] || (innerBanners as any)[pathKey] || innerBanners.about;
   if (!data) return null;
   return (
-    <section className="relative h-[340px] w-full overflow-hidden sm:h-[400px]">
+    <section className="relative h-[220px] w-full overflow-hidden sm:h-[280px] md:h-[320px] lg:h-[360px]">
       <Image
         src={data.backgroundImage}
         alt={data.backgroundImageAlt}
@@ -85,12 +86,12 @@ export default function PageBanner({ data: propData, className }: SectionProps<P
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-[108px] text-center text-white sm:pt-[122px]"
+        className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-16 text-center text-white sm:pt-20 md:pt-24"
       >
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight px-2">
           {data.title}
         </h1>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-200/90">
+        <div className="mt-3 sm:mt-4 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-slate-200/90 px-2">
           {data.breadcrumb.map((item, index) => {
             const isLast = index === data.breadcrumb.length - 1;
             const href = item.href ?? getBreadcrumbHref(item.label);

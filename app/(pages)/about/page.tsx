@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="bg-[#F8FAFC] min-h-screen font-sans text-gray-800">
       {/* PageBanner */}
       <PageBanner />
-      <section className="page-container py-16">
+      <section className="page-container py-8 sm:py-10 md:py-14">
         {/* About */}
         <About />
         {/* 3. VISION & MISSION */}

@@ -9,11 +9,11 @@ import {
   Send,
   ExternalLink,
 } from "lucide-react";
-import { 
-  FaFacebookF, 
-  FaLinkedinIn, 
+import {
+  FaFacebookF,
+  FaLinkedinIn,
   FaInstagram,
-  FaYoutube
+  FaYoutube,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -28,6 +28,11 @@ const socialIconMap = {
 };
 
 export default function ContactUs() {
+  const contact = site.Contact.variants.RealEstateContact1;
+  const titleWords = contact.title.trim().split(/\s+/);
+  const titleHighlight = titleWords.pop() ?? "";
+  const titleMain = titleWords.join(" ");
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -45,7 +50,7 @@ export default function ContactUs() {
       <PageBanner />
 
       {/* MAIN CONTAINER */}
-      <div className="page-container py-12 space-y-12">
+      <div className="page-container py-8 sm:py-10 md:py-12 space-y-12">
         {/* 2. CONTACT INFO & FORM SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Contact Information */}
@@ -56,16 +61,23 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-                  {site.contactPage.heading.eyebrow}
+                  {contact.pretitle}
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  {site.contactPage.heading.main1} <span className="text-blue-600">{site.contactPage.heading.mainHighlight}</span>
+                  {titleMain ? (
+                    <>
+                      {titleMain}{" "}
+                      <span className="text-blue-600">{titleHighlight}</span>
+                    </>
+                  ) : (
+                    <span className="text-blue-600">{titleHighlight}</span>
+                  )}
                 </h2>
               </div>
             </div>
 
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
-              {site.contactPage.description}
+              {contact.desc}
             </p>
 
             {/* Address Card */}
@@ -75,13 +87,13 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs text-slate-400 font-medium">
-                  {site.contactPage.office.label}
+                  {contact.office.label}
                 </span>
                 <p className="text-sm font-semibold text-slate-700">
-                  {site.contactPage.office.line1}
+                  {contact.office.line1}
                 </p>
                 <p className="text-xs text-slate-400">
-                  {site.contactPage.office.line2}
+                  {contact.office.line2}
                 </p>
               </div>
             </div>
@@ -93,13 +105,13 @@ export default function ContactUs() {
               </div>
               <div>
                 <span className="text-xs text-slate-400 font-medium">
-                  {site.contactPage.phone.label}
+                  {contact.phone.label}
                 </span>
                 <p className="text-sm font-bold text-slate-800">
-                  {site.contactPage.phone.number}
+                  {contact.phone.number}
                 </p>
                 <p className="text-xs text-slate-400">
-                  {site.contactPage.phone.workingHours}
+                  {contact.phone.workingHours}
                 </p>
               </div>
             </div>
@@ -110,13 +122,13 @@ export default function ContactUs() {
                 Follow Us
               </p>
               <div className="flex space-x-3">
-                {site.footer.socialLinks.map((socialLink) => {
-                  const Icon = socialIconMap[socialLink.platform as keyof typeof socialIconMap] ?? FaYoutube;
+                {site.Footer.variants.RealEstateFooter1.socialLinks.map((socialLink) => {
+                  const Icon = socialIconMap[socialLink.label as keyof typeof socialIconMap] ?? FaYoutube;
                   return (
                     <a
-                      key={socialLink.platform}
+                      key={socialLink.label}
                       href={socialLink.href}
-                      target="_blank" 
+                      target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Follow us on ${socialLink.label}`}
                       className="w-9 h-9 rounded-full bg-[#E8EEFF] text-[#2A39CE] flex items-center justify-center hover:bg-[#2A39CE] hover:text-white transition"
@@ -214,10 +226,10 @@ export default function ContactUs() {
                   <span>I'm not a robot</span>
                 </label>
                 <div className="flex flex-col items-center justify-center">
-                  <img 
-                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png" 
-                    alt="reCAPTCHA" 
-                    className="w-8 h-8 object-contain mb-0.5" 
+                  <img
+                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+                    alt="reCAPTCHA"
+                    className="w-8 h-8 object-contain mb-0.5"
                   />
                   <span className="text-[9px] text-slate-500 font-medium">reCAPTCHA</span>
                 </div>
@@ -244,7 +256,7 @@ export default function ContactUs() {
           </div>
 
           <iframe
-            src={site.contactPage.mapUrl}
+            src={contact.mapUrl}
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -253,7 +265,6 @@ export default function ContactUs() {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
       </div>
     </div>
   );

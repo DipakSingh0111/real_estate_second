@@ -14,20 +14,20 @@ import {
 import PageBanner from "@/components/common/PageBanner";
 
 export default function BlogsPage() {
-  const sectionData = site.blogs;
-  const { pageBanner, posts } = sectionData;
+  const sectionData = site.Blog.variants.RealEstateBlog1;
+  const posts = sectionData.blogItems;
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-12 space-y-12">
+      <div className="page-container pt-8 sm:pt-10 md:pt-12 space-y-12">
         {/* BLOG CONTENT & SIDEBAR GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 space-y-6">
             {posts.map((blog, idx) => (
               <motion.div
-                key={blog.id}
+                key={blog.href}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -38,7 +38,7 @@ export default function BlogsPage() {
                 <div className="relative sm:w-[45%] shrink-0 h-64 sm:h-auto rounded-2xl overflow-hidden bg-slate-200">
                   <img
                     src={blog.image}
-                    alt={blog.title}
+                    alt={blog.alt || blog.title}
                     className="w-full h-full object-cover"
                   />
 
@@ -83,7 +83,7 @@ export default function BlogsPage() {
 
                   <div className="pt-6 mt-auto">
                     <Link
-                      href={`/blog/${blog.slug}`}
+                      href={blog.href}
                       className="inline-flex items-center space-x-2 text-[13px] font-semibold text-[#2042C9] border border-[#2042C9]/20 hover:border-[#2042C9] bg-transparent hover:bg-blue-50 px-5 py-2.5 rounded-lg transition-all duration-300"
                     >
                       <span>Read More</span>
@@ -129,13 +129,13 @@ export default function BlogsPage() {
               <div className="space-y-4 pt-1">
                 {posts.slice(0, 3).map((post) => (
                   <Link
-                    key={post.id}
-                    href={`/blog/${post.slug}`}
+                    key={post.href}
+                    href={post.href}
                     className="flex items-center space-x-4 group cursor-pointer"
                   >
                     <img
                       src={post.image}
-                      alt={post.title}
+                      alt={post.alt || post.title}
                       className="w-20 h-16 object-cover rounded-xl shrink-0 bg-slate-100"
                     />
                     <div className="space-y-1.5 flex-1">

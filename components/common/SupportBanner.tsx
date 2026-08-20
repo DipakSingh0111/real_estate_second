@@ -5,11 +5,11 @@ import { site, SectionProps, SupportBannerData } from "@/data";
 
 
 export default function SupportBanner({ data: propData, className }: SectionProps<SupportBannerData> = {}) {
-  const data = propData || site.supportBanner;
+  const data = propData || site.SupportBanner.variants.RealEstateSupportBanner1;
   return (
-    <section className="bg-white py-8 lg:py-10">
+    <section className="bg-white py-6 sm:py-8 lg:py-10">
       <div className="page-container">
-        <div className="relative flex min-h-[170px] w-full overflow-hidden rounded-[22px] bg-[#1B36B0] text-white">
+        <div className="relative flex min-h-[150px] sm:min-h-[170px] w-full overflow-hidden rounded-[18px] sm:rounded-[22px] bg-[#1B36B0] text-white">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute bottom-4 left-5 z-[1] grid grid-cols-4 gap-x-[7px] gap-y-[7px] opacity-45"
@@ -28,20 +28,20 @@ export default function SupportBanner({ data: propData, className }: SectionProp
           />
 
           <div className="relative z-10 flex w-full flex-col lg:flex-row lg:items-stretch">
-            <div className="flex flex-1 flex-col justify-center gap-6 px-6 py-7 sm:px-8 md:flex-row md:items-center md:gap-7 lg:gap-8 lg:px-9">
+            <div className="flex flex-1 flex-col justify-center gap-4 sm:gap-6 px-4 py-5 sm:px-6 sm:py-7 md:px-8 md:flex-row md:items-center md:gap-7 lg:gap-8 lg:px-9">
               <div className="relative shrink-0 self-start md:self-center">
                 <div className="absolute inset-0 scale-110 rounded-[26px] bg-[#8FB0FF]/55 blur-md" />
-                <div className="relative flex h-[96px] w-[96px] items-center justify-center rounded-[24px] bg-white text-[#1B36B0] shadow-[0_10px_24px_rgba(107,140,255,0.45)]">
+                <div className="relative flex h-[72px] w-[72px] sm:h-[96px] sm:w-[96px] items-center justify-center rounded-[20px] sm:rounded-[24px] bg-white text-[#1B36B0] shadow-[0_10px_24px_rgba(107,140,255,0.45)]">
                   <Headset247 />
                 </div>
               </div>
 
               <div className="min-w-0 max-w-[320px] text-white">
-                <h3 className="text-2xl sm:text-3xl font-bold leading-tight tracking-tight text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight tracking-tight text-white">
                   {data.title}
                 </h3>
-                <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-white/90">
-                  {data.description}
+                <p className="mt-2 sm:mt-2.5 text-sm sm:text-base leading-relaxed text-white/90">
+                  {data.desc}
                 </p>
               </div>
 

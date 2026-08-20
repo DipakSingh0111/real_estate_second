@@ -16,16 +16,13 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
   FaArrowRight,
-  FaArrowUp,
 } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
 import {
   User,
   Mail,
   Phone,
-  Briefcase,
   Link as LinkIcon,
-  MessageSquare,
   CheckCircle2,
   Loader2,
 } from "lucide-react";
@@ -38,7 +35,10 @@ const careerIcons: Record<string, React.ReactNode> = {
 };
 
 export default function CareerPage() {
-  const sectionData = site.careersPage;
+  const sectionData = site.CareerPage.variants.RealEstateCareerPage1;
+  const titleWords = sectionData.title.trim().split(/\s+/);
+  const titleHighlight = titleWords.pop() ?? "";
+  const titleMain = titleWords.join(" ");
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -46,7 +46,6 @@ export default function CareerPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSubmitting(false);
     setIsSubmitted(true);
@@ -56,15 +55,11 @@ export default function CareerPage() {
     setOpenAccordion(openAccordion === id ? null : id);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-10 space-y-12">
+      <div className="page-container pt-8 sm:pt-10 space-y-12">
         {/* TWO COLUMN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* LEFT COLUMN */}
@@ -78,8 +73,8 @@ export default function CareerPage() {
             >
               {/* Background Image */}
               <img
-                src={sectionData.heroImage}
-                alt={sectionData.heroImageAlt}
+                src={sectionData.sideImage}
+                alt={sectionData.sideImageTitle}
                 className="w-full h-full object-cover absolute inset-0 z-0 object-right"
               />
 
@@ -88,55 +83,53 @@ export default function CareerPage() {
 
               {/* Card Content */}
               <div className="relative z-20 w-full sm:w-[65%] lg:w-[58%] p-6 sm:p-8 flex flex-col justify-center space-y-3 text-white">
-                {/* Dots Pattern Top-Left */}
                 <div className="absolute top-4 left-4 grid grid-cols-4 gap-1 opacity-15 pointer-events-none">
                   {[...Array(12)].map((_, i) => (
                     <div key={i} className="w-1 h-1 bg-white rounded-full" />
                   ))}
                 </div>
 
-                {/* Dots Pattern */}
                 <div className="absolute top-4 right-8 grid grid-cols-4 gap-1 opacity-20 pointer-events-none hidden sm:grid">
                   {[...Array(12)].map((_, i) => (
                     <div key={i} className="w-1 h-1 bg-white rounded-full" />
                   ))}
                 </div>
 
-                {/* White Circle Icon Badge */}
                 <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#1d4ed8] shadow-md">
                   <FaHome className="text-2xl" />
                 </div>
 
-                {/* Title */}
                 <div>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-                    {sectionData.titleLine1}
+                  <span className="text-xs font-bold uppercase tracking-widest text-blue-200">
+                    {sectionData.pretitle}
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight mt-1">
+                    {titleMain}
                   </h2>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3b82f6] tracking-tight leading-tight">
-                    {sectionData.titleLine2}
+                    {titleHighlight}
                   </h2>
                   <div className="w-10 h-1 bg-[#3b82f6] mt-2 rounded-full" />
                 </div>
 
-                {/* Subtext */}
                 <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-xs sm:max-w-sm pt-1">
-                  {sectionData.description}
+                  {sectionData.desc}
                 </p>
               </div>
             </motion.div>
 
-            {/* ACCORDION FEATURES LIST */}
+            {/* ACCORDION BENEFITS LIST */}
             <div className="space-y-3.5">
-              {sectionData.features.map((item, index) => (
+              {sectionData.benefits.map((item, index) => (
                 <motion.div
-                  key={item.id}
+                  key={`${item.title}-${index}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="bg-white rounded-2xl border border-slate-100 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-300"
                 >
                   <button
-                    onClick={() => toggleAccordion(item.id)}
+                    onClick={() => toggleAccordion(index)}
                     className="w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none"
                   >
                     <div className="flex items-center space-x-4 pr-3">
@@ -148,13 +141,13 @@ export default function CareerPage() {
                           {item.title}
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-400 mt-0.5 leading-tight">
-                          {item.description}
+                          {item.desc}
                         </p>
                       </div>
                     </div>
 
                     <div className="text-blue-600 shrink-0 ml-2">
-                      {openAccordion === item.id ? (
+                      {openAccordion === index ? (
                         <FaMinus className="text-xs" />
                       ) : (
                         <FaPlus className="text-xs" />
@@ -163,7 +156,7 @@ export default function CareerPage() {
                   </button>
 
                   <AnimatePresence>
-                    {openAccordion === item.id && (
+                    {openAccordion === index && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
@@ -189,7 +182,6 @@ export default function CareerPage() {
               className="bg-white rounded-[24px] p-8 lg:p-10 border border-slate-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden flex flex-col justify-between"
             >
               <div className="relative z-10">
-                {/* Header */}
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0">
                     <FaEnvelope className="text-2xl" />
@@ -202,16 +194,13 @@ export default function CareerPage() {
                   </div>
                 </div>
 
-                {/* Description */}
                 <p className="text-[13px] text-slate-500 font-medium leading-relaxed mt-6 mb-6">
-                  {sectionData.contactText}
+                  {sectionData.desc}
                 </p>
 
                 <div className="border-t border-slate-100 mb-6" />
 
-                {/* Contact Details */}
                 <div className="space-y-6">
-                  {/* Email */}
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0">
                       <FaEnvelope className="text-lg" />
@@ -224,7 +213,6 @@ export default function CareerPage() {
                     </div>
                   </div>
 
-                  {/* Phone */}
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0">
                       <FaPhoneAlt className="text-lg" />
@@ -237,7 +225,6 @@ export default function CareerPage() {
                     </div>
                   </div>
 
-                  {/* Address */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0 mt-0.5">
                       <FaMapMarkerAlt className="text-lg" />
@@ -256,7 +243,6 @@ export default function CareerPage() {
                   </div>
                 </div>
 
-                {/* WhatsApp Button */}
                 <a
                   href={sectionData.whatsappHref}
                   target="_blank"
@@ -271,7 +257,6 @@ export default function CareerPage() {
                 </a>
               </div>
 
-              {/* Bottom City Watermark Effect */}
               <div className="absolute bottom-0 left-0 right-0 w-full z-0 opacity-80 pointer-events-none text-[#e8f0fe] pt-10">
                 <svg viewBox="0 0 400 60" className="w-full h-auto fill-current" preserveAspectRatio="none">
                    <path d="M0,60 L0,30 L10,30 L10,25 L15,20 L20,25 L20,30 L30,30 L30,10 L45,10 L45,35 L60,35 L60,15 L70,10 L80,15 L80,35 L95,35 L95,40 L120,40 L120,20 L135,10 L150,20 L150,45 L170,45 L170,15 L190,15 L190,40 L210,40 L210,25 L225,25 L225,40 L240,40 L240,20 L260,20 L260,35 L280,35 L280,10 L300,10 L300,35 L320,35 L320,15 L340,15 L340,40 L360,40 L360,25 L380,25 L380,45 L400,45 L400,60 Z" />
@@ -286,7 +271,6 @@ export default function CareerPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden"
             >
-              {/* Header */}
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-slate-900">
                   Apply Now
@@ -297,7 +281,6 @@ export default function CareerPage() {
                 </p>
               </div>
 
-              {/* Form */}
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -384,7 +367,6 @@ export default function CareerPage() {
                     </div>
                   </div>
 
-                  {/* Submit */}
                   <div className="flex justify-end pt-2">
                     <button
                       type="submit"

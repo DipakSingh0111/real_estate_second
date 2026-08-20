@@ -55,7 +55,7 @@ export default function GetQuotePage() {
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-8">
       <PageBanner />
 
-      <div className="page-container pt-10 pb-8">
+      <div className="page-container pt-8 sm:pt-10 pb-8">
         {/* TWO COLUMN SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* LEFT COLUMN: QUOTE FORM (7 COLS) */}
@@ -68,10 +68,10 @@ export default function GetQuotePage() {
             {/* Form Header */}
             <div className="space-y-1">
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                {site.getQuotePage.formHeader.title}
+                {site.GetQuotePage.variants.RealEstateGetQuotePage1.formHeader.title}
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 pt-0.5 leading-relaxed">
-                {site.getQuotePage.formHeader.description}
+                {site.GetQuotePage.variants.RealEstateGetQuotePage1.formHeader.description}
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select an option</option>
-                    {site.formOptions.contactMethod.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.contactMethod.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -170,7 +170,7 @@ export default function GetQuotePage() {
                     required
                   >
                     <option value="">Select property type</option>
-                    {site.formOptions.propertyType.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.propertyType.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -190,7 +190,7 @@ export default function GetQuotePage() {
                     required
                   >
                     <option value="">Select location</option>
-                    {site.formOptions.location.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.location.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -212,7 +212,7 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select budget range</option>
-                    {site.formOptions.budget.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.budget.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -231,7 +231,7 @@ export default function GetQuotePage() {
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all bg-slate-50/30 text-slate-600"
                   >
                     <option value="">Select purpose</option>
-                    {site.formOptions.purpose.map((opt) => (
+                    {site.FormOptions.variants.RealEstateFormOptions1.purpose.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
@@ -270,21 +270,21 @@ export default function GetQuotePage() {
                   htmlFor="agreed"
                   className="text-[11px] text-slate-500 cursor-pointer"
                 >
-                  {site.formOptions.agreement.prefix}
+                  {site.FormOptions.variants.RealEstateFormOptions1.agreement.prefix}
                   <a
-                    href={site.formOptions.agreement.privacyPolicyUrl}
+                    href={site.FormOptions.variants.RealEstateFormOptions1.agreement.privacyPolicyUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {site.formOptions.agreement.privacyPolicyText}
+                    {site.FormOptions.variants.RealEstateFormOptions1.agreement.privacyPolicyText}
                   </a>
-                  {site.formOptions.agreement.middleText}
+                  {site.FormOptions.variants.RealEstateFormOptions1.agreement.middleText}
                   <a
-                    href={site.formOptions.agreement.termsUrl}
+                    href={site.FormOptions.variants.RealEstateFormOptions1.agreement.termsUrl}
                     className="text-red-500 font-semibold hover:underline"
                   >
-                    {site.formOptions.agreement.termsText}
+                    {site.FormOptions.variants.RealEstateFormOptions1.agreement.termsText}
                   </a>
-                  {site.formOptions.agreement.suffix}
+                  {site.FormOptions.variants.RealEstateFormOptions1.agreement.suffix}
                 </label>
               </div>
 
@@ -311,7 +311,7 @@ export default function GetQuotePage() {
             {/* Header */}
             <div className="space-y-1.5">
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                {site.getQuotePage.whyGetQuote.title}
+                {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.title}
               </h3>
               <div className="w-8 h-0.5 bg-red-500 rounded-full" />
             </div>
@@ -325,10 +325,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                    {site.getQuotePage.whyGetQuote.features[0].title}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[0].title}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
-                    {site.getQuotePage.whyGetQuote.features[0].description}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[0].description}
                   </p>
                 </div>
               </div>
@@ -340,10 +340,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                    {site.getQuotePage.whyGetQuote.features[1].title}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[1].title}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
-                    {site.getQuotePage.whyGetQuote.features[1].description}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[1].description}
                   </p>
                 </div>
               </div>
@@ -355,10 +355,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                    {site.getQuotePage.whyGetQuote.features[2].title}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[2].title}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
-                    {site.getQuotePage.whyGetQuote.features[2].description}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[2].description}
                   </p>
                 </div>
               </div>
@@ -370,10 +370,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                    {site.getQuotePage.whyGetQuote.features[3].title}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[3].title}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
-                    {site.getQuotePage.whyGetQuote.features[3].description}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[3].description}
                   </p>
                 </div>
               </div>
@@ -385,10 +385,10 @@ export default function GetQuotePage() {
                 </div>
                 <div>
                   <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                    {site.getQuotePage.whyGetQuote.features[4].title}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[4].title}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">
-                    {site.getQuotePage.whyGetQuote.features[4].description}
+                    {site.GetQuotePage.variants.RealEstateGetQuotePage1.whyGetQuote.features[4].description}
                   </p>
                 </div>
               </div>

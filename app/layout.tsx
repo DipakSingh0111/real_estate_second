@@ -5,6 +5,7 @@ import TopBar from "@/components/common/TopBar";
 import NavBar from "@/components/common/NavBar";
 import SupportBanner from "@/components/common/SupportBanner";
 import Footer from "@/components/common/Footer";
+import { site } from "@/data";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,12 +35,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-white text-slate-900">
         <div className="fixed inset-x-0 top-0 z-[9999] w-full">
-          <TopBar />
-          <NavBar />
+          <TopBar data={site.Topbar.variants.RealEstateTopbar1} />
+          <NavBar data={site.Header.variants.RealEstateHeader1} />
         </div>
         <main className="flex-1">{children}</main>
-        <SupportBanner />
-        <Footer />
+        <SupportBanner data={site.SupportBanner.variants.RealEstateSupportBanner1} />
+        <Footer data={site.Footer.variants.RealEstateFooter1} />
       </body>
     </html>
   );

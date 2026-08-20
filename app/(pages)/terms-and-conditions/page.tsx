@@ -8,12 +8,12 @@ import { FaCalendarAlt, FaEnvelope, FaArrowRight } from "react-icons/fa";
 import PageBanner from "@/components/common/PageBanner";
 
 export default function TermsAndConditionsPage() {
-  const sectionData = site.termsPage;
+  const sectionData = site.TermsPage.variants.RealEstateTermsContent1;
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-10 space-y-10">
+      <div className="page-container pt-8 sm:pt-10 space-y-10">
         {/* WHITE DOCUMENT CONTAINER */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -27,21 +27,21 @@ export default function TermsAndConditionsPage() {
             <span>
               Last Updated:{" "}
               <strong className="text-blue-600 font-semibold">
-                {sectionData.lastUpdated}
+                {sectionData.updatedAt}
               </strong>
             </span>
           </div>
 
           {/* INTRO PARAGRAPH */}
           <p className="text-xs text-slate-600 leading-relaxed font-normal">
-            {sectionData.intro}
+            {sectionData.desc}
           </p>
 
           {/* TERMS SECTIONS LIST */}
           <div className="space-y-6">
             {sectionData.sections.map((item, index) => (
               <motion.div
-                key={item.id}
+                key={`${item.title}-${index}`}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -52,7 +52,7 @@ export default function TermsAndConditionsPage() {
                   {item.title}
                 </h3>
                 <p className="text-xs text-slate-500 leading-relaxed font-normal">
-                  {item.content}
+                  {item.desc}
                 </p>
               </motion.div>
             ))}

@@ -6,8 +6,10 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { site, SectionProps, NavbarData } from "@/data";
 
-export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}) {
-  const data = propData || site.navbar;
+export default function Navbar({
+  data: propData,
+}: SectionProps<NavbarData> = {}) {
+  const data = propData || site.Header.variants.RealEstateHeader1;
   const pathname = usePathname();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [openChildIndex, setOpenChildIndex] = useState<number | null>(null);
@@ -62,64 +64,66 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
 
   return (
     <header
-      className={`relative w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${overImage
-        ? "bg-transparent"
-        : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
-        }`}
+      className={`relative w-full font-[family-name:var(--font-poppins)] transition-all duration-300 ${
+        overImage
+          ? "bg-transparent"
+          : "border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
+      }`}
     >
-      <div className="page-container !px-0 flex h-[72px] w-full items-center lg:h-[82px]">
-        {/* Left side: Logo */}
-        <div className="flex h-full w-full items-center justify-between pl-[var(--site-gutter)] pr-[var(--site-gutter)] lg:w-[55%] lg:pr-4 xl:w-[55%] xl:pr-8 2xl:w-[55%]">
-          <Link href="/" className="relative z-[110] shrink-0">
-            <Image
-              src={data.logo.src}
-              alt={data.logo.alt}
-              width={240}
-              height={64}
-              priority
-              className="h-12 w-auto object-contain object-left sm:h-14 md:h-16"
-              style={{ width: "auto", height: "auto" }}
-            />
-          </Link>
+      <div className="page-container flex h-[64px] w-full items-center justify-between gap-3 sm:h-[72px] lg:h-[82px] lg:pr-6 xl:pr-8">
+        <Link href="/" className="relative z-[110] shrink-0 max-w-[130px] sm:max-w-[160px] md:max-w-none">
+          <Image
+            src={"/images/logo.svg"}
+            alt={data.logo}
+            width={240}
+            height={64}
+            priority
+            className="h-10 w-auto object-contain object-left sm:h-12 md:h-14 lg:h-16"
+            style={{ width: "auto", height: "auto" }}
+          />
+        </Link>
 
-          {/* Mobile menu toggle button */}
-          <button
-            type="button"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen((v) => !v)}
-            className={`relative z-[110] inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] transition lg:hidden ${overImage
+        {/* Mobile menu toggle button */}
+        <button
+          type="button"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+          className={`relative z-[110] inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] transition lg:hidden ${
+            overImage
               ? "bg-slate-900/5 text-slate-800 hover:bg-slate-900/10"
               : "bg-white text-slate-800 shadow-[0_12px_28px_-12px_rgba(16,42,86,0.45)] hover:text-[#3F51DE]"
+          }`}
+        >
+          <span className="flex w-[18px] flex-col items-start gap-[5px]">
+            <span
+              className={`block h-[2px] rounded-full bg-current transition ${
+                mobileOpen ? "w-full translate-y-[7px] rotate-45" : "w-full"
               }`}
-          >
-            <span className="flex w-[18px] flex-col items-start gap-[5px]">
-              <span
-                className={`block h-[2px] rounded-full bg-current transition ${mobileOpen ? "w-full translate-y-[7px] rotate-45" : "w-full"
-                  }`}
-              />
-              <span
-                className={`block h-[2px] rounded-full bg-current transition ${mobileOpen ? "w-full scale-0 opacity-0" : "w-[12px]"
-                  }`}
-              />
-              <span
-                className={`block h-[2px] rounded-full bg-current transition ${mobileOpen ? "w-full -translate-y-[7px] -rotate-45" : "w-full"
-                  }`}
-              />
-            </span>
-          </button>
-        </div>
+            />
+            <span
+              className={`block h-[2px] rounded-full bg-current transition ${
+                mobileOpen ? "w-full scale-0 opacity-0" : "w-[12px]"
+              }`}
+            />
+            <span
+              className={`block h-[2px] rounded-full bg-current transition ${
+                mobileOpen ? "w-full -translate-y-[7px] -rotate-45" : "w-full"
+              }`}
+            />
+          </span>
+        </button>
 
         {/* Right side: Desktop navigation */}
-        <nav className="hidden h-full lg:flex lg:w-[55%] lg:items-center lg:justify-end lg:pl-0 xl:w-[55%] xl:pl-0 2xl:w-[55%]">
-          <ul className="flex flex-nowrap items-center gap-x-1 xl:gap-x-2 2xl:gap-x-3">
-            {data.navLinks.map((link, index) => {
+        <nav className="hidden h-full min-w-0 flex-1 items-center justify-end lg:flex">
+          <ul className="flex flex-nowrap items-center justify-end gap-x-1 xl:gap-x-2 2xl:gap-x-3">
+            {data.menu.map((link, index) => {
               const active =
                 Boolean((link as any).active) ||
                 pathname === link.href ||
                 (link.href !== "/" && pathname.startsWith(link.href));
               const hasDropdown =
-                link.hasDropdown && link.dropdown && link.dropdown.length > 0;
+                !!link.children && link.children && link.children.length > 0;
               const isOpen = openIndex === index;
               const isContactUs = link.label.toUpperCase() === "CONTACT US";
 
@@ -134,14 +138,16 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
                     href={link.href}
                     className={
                       isContactUs
-                        ? `relative flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] whitespace-nowrap transition-all xl:text-[14px] ${overImage
-                          ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
-                          : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
-                        }`
-                        : `group relative flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap transition-colors xl:text-[14px] ${active
-                          ? "text-[#3b55ce]"
-                          : "text-slate-800 hover:text-[#3b55ce]"
-                        }`
+                        ? `relative flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] whitespace-nowrap transition-all xl:text-[14px] ${
+                            overImage
+                              ? "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
+                              : "bg-[#3F51DE] text-white shadow-md hover:bg-[#2c3ab8]"
+                          }`
+                        : `group relative flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap transition-colors xl:text-[14px] ${
+                            active
+                              ? "text-[#3b55ce]"
+                              : "text-slate-800 hover:text-[#3b55ce]"
+                          }`
                     }
                   >
                     {link.label}
@@ -172,18 +178,20 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
                     )}
                   </Link>
 
-                  {hasDropdown && link.dropdown ? (
+                  {hasDropdown && link.children ? (
                     <div
-                      className={`absolute left-0 top-full z-[120] pt-3 transition duration-150 ${isOpen
-                        ? "visible translate-y-0 opacity-100"
-                        : "invisible -translate-y-1 opacity-0"
-                        }`}
+                      className={`absolute left-0 top-full z-[120] pt-3 transition duration-150 ${
+                        isOpen
+                          ? "visible translate-y-0 opacity-100"
+                          : "invisible -translate-y-1 opacity-0"
+                      }`}
                       onMouseEnter={() => handleOpenMenu(index)}
                     >
                       <div className="min-w-[230px] overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)]">
-                        {link.dropdown.map((item, itemIndex) => {
+                        {link.children.map((item, itemIndex) => {
                           const hasChildren =
-                            (item as any).children && (item as any).children.length > 0;
+                            (item as any).children &&
+                            (item as any).children.length > 0;
                           const isChildOpen =
                             isOpen && openChildIndex === itemIndex;
 
@@ -206,10 +214,11 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
 
                               {hasChildren && (item as any).children ? (
                                 <div
-                                  className={`absolute left-full top-0 ml-1 min-w-[210px] rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition ${isChildOpen
-                                    ? "visible opacity-100"
-                                    : "invisible opacity-0"
-                                    }`}
+                                  className={`absolute left-full top-0 ml-1 min-w-[210px] rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition ${
+                                    isChildOpen
+                                      ? "visible opacity-100"
+                                      : "invisible opacity-0"
+                                  }`}
                                 >
                                   {(item as any).children.map((child) => (
                                     <Link
@@ -236,24 +245,26 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
       </div>
       {/* Mobile overlay menu */}
       <div
-        className={`fixed inset-0 z-[90] bg-[#0B1A33]/45 backdrop-blur-[2px] transition lg:hidden ${mobileOpen
-          ? "pointer-events-auto opacity-100"
-          : "pointer-events-none opacity-0"
-          }`}
+        className={`fixed inset-0 z-[90] bg-[#0B1A33]/45 backdrop-blur-[2px] transition lg:hidden ${
+          mobileOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
         onClick={() => setMobileOpen(false)}
         aria-hidden={!mobileOpen}
       />
 
       <div
-        className={`absolute inset-x-0 top-full z-[95] max-h-[min(78vh,640px)] overflow-y-auto border-t border-slate-100 bg-white shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition duration-300 lg:hidden ${mobileOpen
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none -translate-y-2 opacity-0"
-          }`}
+        className={`absolute inset-x-0 top-full z-[95] max-h-[min(78vh,640px)] overflow-y-auto border-t border-slate-100 bg-white shadow-[0_28px_60px_-28px_rgba(16,42,86,0.45)] transition duration-300 lg:hidden ${
+          mobileOpen
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
       >
         <ul className="page-container py-3">
-          {data.navLinks.map((link, index) => {
+          {data.menu.map((link, index) => {
             const hasDropdown =
-              link.hasDropdown && link.dropdown && link.dropdown.length > 0;
+              !!link.children && link.children && link.children.length > 0;
             const isOpen = mobileDropdown === index;
             const active =
               pathname === link.href ||
@@ -272,8 +283,9 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
                       onClick={() =>
                         setMobileDropdown((v) => (v === index ? null : index))
                       }
-                      className={`flex flex-1 items-center justify-between px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${active ? "text-[#3F51DE]" : "text-[#1A2744]"
-                        }`}
+                      className={`flex flex-1 items-center justify-between px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${
+                        active ? "text-[#3F51DE]" : "text-[#1A2744]"
+                      }`}
                     >
                       <span>{link.label}</span>
                       <span className="flex h-10 w-10 items-center justify-center text-slate-500">
@@ -298,16 +310,17 @@ export default function Navbar({ data: propData }: SectionProps<NavbarData> = {}
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className={`flex-1 px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${active ? "text-[#3F51DE]" : "text-[#1A2744]"
-                        }`}
+                      className={`flex-1 px-1 py-3.5 text-[14px] font-semibold uppercase tracking-[0.05em] ${
+                        active ? "text-[#3F51DE]" : "text-[#1A2744]"
+                      }`}
                     >
                       {link.label}
                     </Link>
                   )}
                 </div>
-                {hasDropdown && link.dropdown && isOpen ? (
+                {hasDropdown && link.children && isOpen ? (
                   <ul className="mb-2 ml-2 space-y-0.5 border-l border-slate-200 pl-3">
-                    {link.dropdown.map((item) => (
+                    {link.children.map((item) => (
                       <li key={item.href}>
                         <Link
                           href={item.href}

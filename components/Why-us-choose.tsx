@@ -20,22 +20,22 @@ const whyIcons = {
 };
 
 export default function WhyUsChoose({ data: propData, className }: SectionProps<AboutPageData> = {}) {
-  const sectionData = propData || site.aboutPage;
+  const sectionData = propData || site.AboutPage.variants.RealEstateAboutPage1;
 
   return (
-    <div className="mt-12 pt-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch overflow-hidden">
+    <div className="mt-8 sm:mt-12 pt-2 sm:pt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-stretch overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="lg:col-span-5 relative flex flex-col h-full min-h-[500px] lg:min-h-[580px]"
+          className="lg:col-span-5 relative flex flex-col h-full min-h-[320px] sm:min-h-[420px] lg:min-h-[580px]"
         >
-          <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-md border border-gray-100 bg-gray-50">
+          <div className="relative w-full h-full rounded-[24px] sm:rounded-[40px] overflow-hidden shadow-md border border-gray-100 bg-gray-50">
             <Image
-              src={sectionData.whyImage}
-              alt={sectionData.whyImageAlt}
+              src={sectionData.why.image}
+              alt={sectionData.why.imageAlt}
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
               className="object-cover"
@@ -54,10 +54,10 @@ export default function WhyUsChoose({ data: propData, className }: SectionProps<
             <div className="absolute bottom-6 left-6 bg-[#1A43BF] text-white px-6 py-5 rounded-[24px] shadow-xl z-20 min-w-[150px] text-center flex flex-col items-center">
               <Home className="w-6 h-6 mb-1.5 stroke-[1.8]" />
               <span className="text-2xl font-extrabold tracking-tight leading-none mb-1">
-                {sectionData.whyStatValue}
+                {"25+"}
               </span>
               <span className="text-[11px] font-medium opacity-90">
-                {sectionData.whyStatLabel}
+                {"Years of Experience"}
               </span>
             </div>
           </div>
@@ -73,26 +73,26 @@ export default function WhyUsChoose({ data: propData, className }: SectionProps<
           <div>
             <div className="mb-2">
               <span className="text-xs font-bold uppercase tracking-wider text-[#1A43BF] block mb-1">
-                {sectionData.whyEyebrow}
+                {sectionData.why.eyebrow}
               </span>
               <span className="w-8 h-[2px] bg-[#1A43BF] block mb-3" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B132A] leading-tight tracking-tight mb-3">
-              {sectionData.whyHeading} <br />
-              <span className="text-[#1A43BF]">{sectionData.whyHeadingHighlight}</span>
+              {sectionData.why.heading} <br />
+              {/* removed titleHighlight since it's missing in json */}
             </h2>
 
             <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
-              {sectionData.whyDescription}
+              {sectionData.why.desc}
             </p>
           </div>
 
           <div className="space-y-6">
-            {sectionData.whyFeatures.map((feature, index) => {
+            {sectionData.why.features.map((feature, index) => {
               const Icon =
                 whyIcons[feature.iconName as keyof typeof whyIcons] ?? Home;
-              const isLast = index === sectionData.whyFeatures.length - 1;
+              const isLast = index === sectionData.why.features.length - 1;
               return (
                 <div
                   key={feature.title}

@@ -38,13 +38,13 @@ const sitemapIcons: Record<string, React.ReactNode> = {
 };
 
 export default function SitemapPage() {
-  const sectionData = site.sitemapPage;
+  const sectionData = site.SitemapPage.variants.RealEstateSitemapLinks1;
   return (
     <div className="bg-[#f8fafc] text-slate-800 font-sans pb-8">
       <PageBanner />
 
       {/* MAIN CONTAINER */}
-      <div className="page-container pt-10 space-y-12">
+      <div className="page-container pt-8 sm:pt-10 space-y-12">
         {/* SECTION HEADER */}
         <div className="text-center space-y-2">
           <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 mx-auto flex items-center justify-center">
@@ -55,15 +55,15 @@ export default function SitemapPage() {
           </h2>
           <div className="w-8 h-0.5 bg-red-500 mx-auto rounded-full" />
           <p className="text-sm sm:text-base text-slate-500 pt-1 leading-relaxed max-w-lg mx-auto">
-            {sectionData.description}
+            {sectionData.desc}
           </p>
         </div>
 
         {/* SITEMAP GRID (3 COLUMNS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sectionData.sections.map((section, index) => (
+          {sectionData.groups.map((section, index) => (
             <motion.div
-              key={section.id}
+              key={section.title}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -90,7 +90,7 @@ export default function SitemapPage() {
                       href={link.href}
                       className="hover:text-red-500 transition-colors"
                     >
-                      {link.name}
+                      {link.label}
                     </Link>
                   </li>
                 ))}

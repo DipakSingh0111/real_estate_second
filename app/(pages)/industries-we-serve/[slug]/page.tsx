@@ -15,13 +15,13 @@ interface IndustryDetailPageProps {
 
 export default function IndustryDetailPage({ params }: IndustryDetailPageProps) {
   const { slug } = use(params);
-  const industryItem = site.industriesPage.items.find(
-    (item: any) => item.slug === slug,
+  const industryItem = site.Industries.variants.RealEstateIndustries1.items.find(
+    (item) => item.slug === slug,
   );
 
   const bannerData = industryItem
     ? {
-      ...site.pageBanners["industries-we-serve"],
+      ...site.PageBanner.variants.RealEstateInnerBanner1["industries-we-serve"],
       title: industryItem.title,
       breadcrumb: [
         { label: "Home", href: "/" },
@@ -29,7 +29,7 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
         { label: industryItem.title },
       ],
     }
-    : site.pageBanners["industries-we-serve"];
+    : site.PageBanner.variants.RealEstateInnerBanner1["industries-we-serve"];
 
   if (!industryItem) {
     return (
@@ -54,7 +54,7 @@ export default function IndustryDetailPage({ params }: IndustryDetailPageProps) 
     <main className="bg-[#f8fafc] font-sans text-slate-900 min-h-screen">
       <PageBanner />
 
-      <section className="page-container py-12">
+      <section className="page-container py-8 sm:py-10 md:py-12">
         <Link
           href="/industries-we-serve"
           className="mb-8 inline-flex items-center gap-2 text-blue-600 hover:underline font-semibold text-sm"

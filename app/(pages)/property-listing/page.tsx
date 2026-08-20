@@ -5,7 +5,7 @@ import { useState } from "react";
 import PropertyCard from "@/components/PropertyCard";
 import PageBanner from "@/components/common/PageBanner";
 import Pagination from "@/components/common/Pagination";
-const properties: any[] = site.topDealsSection.deals;
+const properties: any[] = site.Properties.variants.RealEstateProperties1.listings;
 const pageSize = 6;
 
 export default function PropertyListingPage() {
@@ -21,7 +21,7 @@ export default function PropertyListingPage() {
     <main className="bg-slate-50">
       <PageBanner />
 
-      <section className="page-container py-12">
+      <section className="page-container py-8 sm:py-10 md:py-12">
         <div className="mb-8">
           <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#2A39CE]">
             Top Deals

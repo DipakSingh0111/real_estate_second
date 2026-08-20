@@ -5,7 +5,7 @@ import { useState } from "react";
 import PropertyCard from "@/components/PropertyCard";
 import PageBanner from "@/components/common/PageBanner";
 import Pagination from "@/components/common/Pagination";
-const properties: any[] = site.topDealsSection.deals;
+const properties: any[] = site.Properties.variants.RealEstateProperties1.listings;
 const pageSize = 6;
 
 export default function ListingsPage() {
@@ -21,7 +21,7 @@ export default function ListingsPage() {
     <main className="bg-slate-50">
       <PageBanner />
 
-      <section className="page-container py-12">
+      <section className="page-container py-8 sm:py-10 md:py-12">
         <div className="mb-8">
           <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#2A39CE]">
             All Properties
@@ -32,8 +32,8 @@ export default function ListingsPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleProperties.map((property) => (
-            <PropertyCard key={property.id} data={property} />
+          {visibleProperties.map((property, id) => (
+            <PropertyCard key={id} data={property} />
           ))}
         </div>
 

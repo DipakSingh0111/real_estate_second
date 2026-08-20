@@ -1,26 +1,21 @@
 import { site } from "@/data";
 import { notFound } from "next/navigation";
-import { findPropertyBySlug } from "@/lib/property";
+import { findAnyPropertyBySlug, getAllProperties } from "@/lib/property";
 import PropertyDetail from "@/components/PropertyDetail";
 
-export default async function PropertyDetailPage(
-  props: any
-) {
+export default async function PropertyDetailPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await props.params;
 
-  const deals = site.topDealsSection.deals;
-  const serviceProperties = site.servicesPage.properties;
-
-  const property =
-    findPropertyBySlug(deals, slug) ||
-    serviceProperties.find((p) => p.slug === slug);
+  const property = findAnyPropertyBySlug(slug);
 
   if (!property) {
     notFound();
   }
 
-  const galleryImages = deals
-    .filter((deal) => deal.id !== property.id)
+  const galleryImages = getAllProperties()
+    .filter((deal) => deal.slug !== property.slug)
     .map((deal) => deal.image)
     .slice(0, 4);
 
@@ -29,7 +24,8 @@ export default async function PropertyDetailPage(
       data={{
         property,
         galleryImages,
-        banner: site.pageBanners['property-listing'],
+        banner: site.PageBanner.variants.RealEstateInnerBanner1
+          .propertyListing as any,
       }}
     />
   );

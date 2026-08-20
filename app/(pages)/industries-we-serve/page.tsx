@@ -43,12 +43,12 @@ const itemVariants = {
 };
 
 export default function IndustryWeServePage() {
-  const sectionData = site.industriesPage;
+  const sectionData = site.Industries.variants.RealEstateIndustries1;
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-16">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans pb-10 sm:pb-14">
       <PageBanner />
 
-      <div className="page-container pt-12 space-y-10">
+      <div className="page-container pt-8 sm:pt-10 md:pt-12 space-y-10">
         {/* 2. SECTION TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function IndustryWeServePage() {
           </h2>
           <div className="w-8 h-0.5 bg-blue-600 mx-auto rounded-full" />
           <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
-            {sectionData.description}
+            {sectionData.desc}
           </p>
         </motion.div>
 

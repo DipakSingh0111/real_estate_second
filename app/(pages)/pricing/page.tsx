@@ -7,13 +7,13 @@ import PageBanner from "@/components/common/PageBanner";
 const pricingIcons = { send: Send, home: Home, crown: Crown };
 
 export default function PricingSection() {
-  const sectionData = site.pricingPage;
+  const sectionData = site.Pricing.variants.RealEstatePricing1;
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
       <PageBanner />
 
       {/* Main Content Area */}
-      <div className="page-container py-16">
+      <div className="page-container py-8 sm:py-10 md:py-14">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,14 +31,15 @@ export default function PricingSection() {
             {sectionData.heading}
           </h2>
           <p className="text-slate-500 text-sm sm:text-base mt-2 max-w-md mx-auto leading-relaxed">
-            {sectionData.description}
+            {sectionData.desc}
           </p>
         </motion.div>
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-4">
           {sectionData.plans.map((plan, index) => {
-            const Icon = pricingIcons[plan.iconName as keyof typeof pricingIcons];
+            const Icon =
+              pricingIcons[plan.iconName as keyof typeof pricingIcons];
             return (
               <motion.div
                 key={plan.id}
@@ -47,10 +48,11 @@ export default function PricingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 whileHover={{ y: -6 }}
-                className={`relative bg-white rounded-2xl flex flex-col justify-between overflow-hidden transition-all duration-300 ${plan.isPopular
+                className={`relative bg-white rounded-2xl flex flex-col justify-between overflow-hidden transition-all duration-300 ${
+                  plan.isPopular
                     ? "border-2 border-blue-600 shadow-xl shadow-blue-500/10"
                     : "border border-slate-200 shadow-md hover:shadow-lg"
-                  }`}
+                }`}
               >
                 {/* Popular Ribbon Tag */}
                 {plan.isPopular && (
@@ -120,10 +122,7 @@ export default function PricingSection() {
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`w-full max-w-[200px] py-2.5 px-4 rounded-lg font-semibold text-xs transition-all duration-200 flex items-center justify-center gap-2 ${plan.buttonVariant === "primary"
-                          ? "bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/25"
-                          : "border border-blue-600 text-blue-600 hover:bg-blue-50"
-                        }`}
+                      className="w-full max-w-[200px] py-2.5 px-4 rounded-lg font-semibold text-xs transition-all duration-200 flex items-center justify-center gap-2 hover:bg-blue-600 shadow-md shadow-blue-500/25"
                     >
                       {plan.buttonText} <ArrowRight className="w-3.5 h-3.5" />
                     </motion.button>
@@ -145,7 +144,6 @@ export default function PricingSection() {
           })}
         </div>
       </div>
-
     </div>
   );
 }
