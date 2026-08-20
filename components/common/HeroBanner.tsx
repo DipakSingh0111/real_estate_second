@@ -64,7 +64,6 @@ export default function HeroBanner({
               {data.pretitle.split("·")[1]?.trim()}
             </span>
           </div>
-
           <h1 className="text-[40px] font-bold leading-[1.08] tracking-tight text-black sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px] lg:leading-[1.1]">
             {hasHighlight ? (
               <>
