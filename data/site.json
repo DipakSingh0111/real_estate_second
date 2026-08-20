@@ -1820,8 +1820,8 @@
                 },
                 {
                   "id": 2,
-                  "name": "Godrej Properties",
-                  "logo": "/images/godrej.png"
+                  "name": "Knight",
+                  "logo": "/images/Knight.webp"
                 },
                 {
                   "id": 3,
@@ -1831,7 +1831,7 @@
                 {
                   "id": 4,
                   "name": "Tata Projects",
-                  "logo": "/images/tata.png"
+                  "logo": "/images/Tata.png"
                 },
                 {
                   "id": 5,
@@ -1846,12 +1846,12 @@
                 {
                   "id": 7,
                   "name": "Brigade Group",
-                  "logo": "/images/brigdha.png"
+                  "logo": "/images/Brigdha.png"
                 },
                 {
                   "id": 8,
                   "name": "Mahindra Lifespaces",
-                  "logo": "/images/mahindra.png"
+                  "logo": "/images/Mahindra.png"
                 },
                 {
                   "id": 9,
@@ -1861,7 +1861,7 @@
                 {
                   "id": 10,
                   "name": "Prestige Group",
-                  "logo": "/images/prestige.png"
+                  "logo": "/images/Prestige.png"
                 }
               ]
             }

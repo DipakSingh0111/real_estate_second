@@ -100,42 +100,81 @@ export default function HowItWorks() {
               variants={itemVariants}
               className="relative z-10 flex flex-col items-center w-full"
             >
-              {/* Horizontal connector (desktop only) */}
+              {/* Horizontal dotted connector + arrow (desktop) */}
               {index < sectionData.steps.length - 1 && (
-                <div className="hidden lg:flex absolute top-[40px] left-[calc(50%+2.5rem)] right-[-2rem] xl:left-[calc(50%+2.75rem)] xl:right-[-2.5rem] items-center z-[-1]">
-                  <div className="w-full border-t-[2px] border-dotted border-[#B4C6FC]" />
-                  <div className="absolute left-1/2 -translate-x-1/2 text-[#1A43BF] bg-[#F8FAFC] px-1">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="m9 18 6-6-6-6" />
+                <div
+                  className="pointer-events-none absolute top-10 left-[calc(50%+2.75rem)] right-[calc(-50%+2.75rem)] z-0 hidden items-center lg:flex"
+                  aria-hidden
+                >
+                  <div
+                    className="h-[2px] w-full"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle, #7B93E8 1.15px, transparent 1.2px)",
+                      backgroundSize: "8px 2px",
+                      backgroundRepeat: "repeat-x",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                  <span className="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 bg-[#F8FAFC] px-1.5">
+                    <svg
+                      width="10"
+                      height="12"
+                      viewBox="0 0 10 12"
+                      fill="#1A43BF"
+                      aria-hidden
+                    >
+                      <path d="M1 1.5L8.5 6L1 10.5V1.5Z" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               )}
 
               {/* Step number + icon circle */}
-              <div className="relative">
-                <div className="absolute -top-2 -left-2 bg-[#1A43BF] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center z-20">
+              <div className="relative z-10">
+                <div className="absolute -top-2 -left-2 z-20 flex h-5 w-5 items-center justify-center rounded-full bg-[#1A43BF] text-[10px] font-bold text-white">
                   {step.step}
                 </div>
-                <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(26,67,191,0.08)] text-[#1A43BF] z-10 relative border-2 border-white">
-                  {getIcon(step.iconName, "w-8 h-8 lg:w-10 lg:h-10 stroke-[1.5]")}
+                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 border-white bg-white text-[#1A43BF] shadow-[0_4px_20px_rgba(26,67,191,0.1)] sm:h-[4.5rem] sm:w-[4.5rem] lg:h-20 lg:w-20">
+                  {getIcon(
+                    step.iconName,
+                    "w-8 h-8 lg:w-10 lg:h-10 stroke-[1.5]",
+                  )}
                 </div>
               </div>
 
-              {/* Vertical dotted connector (desktop only) */}
-              <div className="hidden lg:block h-5 border-l-[2px] border-dotted border-[#B4C6FC] my-2" />
+              {/* Vertical dotted connector ending with solid blue dot */}
+              <div
+                className="relative z-0 my-2 flex flex-col items-center"
+                aria-hidden
+              >
+                <div
+                  className="h-5 w-[2px] sm:h-6"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle, #7B93E8 1.1px, transparent 1.15px)",
+                    backgroundSize: "2px 7px",
+                    backgroundRepeat: "repeat-y",
+                    backgroundPosition: "center",
+                  }}
+                />
+                <span className="mt-0.5 block h-1.5 w-1.5 rounded-full bg-[#1A43BF]" />
+              </div>
 
               {/* Card */}
-              <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.03)] text-left flex flex-col w-full h-full mt-2 lg:mt-0 border border-slate-100/80">
-                <div className="w-5 h-[2px] bg-[#1A43BF] mb-3" />
-                <h3 className="font-bold text-[#0B132A] mb-1.5 text-[14px] sm:text-[15px]">
+              <div className="mt-0 flex h-full w-full flex-col rounded-2xl border border-slate-100/80 bg-white p-4 text-left shadow-[0_8px_30px_rgba(0,0,0,0.03)] sm:p-5 lg:p-6">
+                <div className="mb-3 h-[2px] w-5 bg-[#1A43BF]" />
+                <h3 className="mb-1.5 text-[14px] font-bold text-[#0B132A] sm:text-[15px]">
                   {step.title}
                 </h3>
-                <p className="text-[12px] sm:text-[13px] text-gray-500 leading-[1.6] mb-4 flex-1">
+                <p className="mb-4 flex-1 text-[12px] leading-[1.6] text-gray-500 sm:text-[13px]">
                   {step.desc}
                 </p>
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F0F4FF] flex items-center justify-center text-[#1A43BF] mt-auto">
-                  {getIcon((step as any).bottomIconName || step.iconName, "w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]")}
+                <div className="mt-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#F0F4FF] text-[#1A43BF] sm:h-11 sm:w-11">
+                  {getIcon(
+                    (step as any).bottomIconName || step.iconName,
+                    "w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]",
+                  )}
                 </div>
               </div>
             </motion.div>
