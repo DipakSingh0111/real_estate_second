@@ -68,12 +68,12 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex flex-wrap items-center gap-2 sm:gap-3">
-              <span className="rounded-full bg-blue-600 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
-                {data.pretitle.split("·")[0]}
+            <div className="inline-flex items-stretch overflow-hidden rounded-full border border-slate-200 bg-white shadow-[0_6px_18px_rgba(15,23,42,0.08)]">
+              <span className="bg-[#2563eb] px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
+                {data.pretitle.split("·")[0]?.trim()}
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-600">
-                {data.pretitle.split("·")[1]}
+              <span className="px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-medium uppercase tracking-wider text-slate-600">
+                {data.pretitle.split("·")[1]?.trim()}
               </span>
             </div>
 
