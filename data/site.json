@@ -567,10 +567,10 @@
               "buttons": [
                 {
                   "label": "Discover More",
-                  "href": "#"
+                  "href": "/about"
                 }
               ],
-              "imageUrl": "/images/hero_banner.png",
+              "imageUrl": "/images/hero-banner.png",
               "imageAlt": "Modern house architecture",
               "stat": {
                 "value": "25+",
