@@ -14,6 +14,7 @@ import {
   Bath,
   Maximize2,
 } from "lucide-react";
+import PropertyCard from "@/components/PropertyCard";
 import { site, SectionProps, TopDealsSectionData } from "@/data";
 import { propertySlug } from "@/lib/property";
 
@@ -100,70 +101,7 @@ export default function TopDealsSection({ data: propData, className }: SectionPr
         >
           {[...data.deals, ...data.deals, ...data.deals].map((item, index) => (
             <SwiperSlide key={`${item.id}-${index}`}>
-              <Link
-                href={`/property-listing/${propertySlug(item.title)}`}
-                className="block h-full"
-              >
-                <div
-                  className="group flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
-                >
-                  <div>
-                    <div className="relative h-56 w-full overflow-hidden rounded-t-[24px]">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                        priority={true}
-                      />
-                      <div className="absolute bottom-3 right-3 rounded-xl bg-[#2A39CE] px-4 py-2 text-sm font-extrabold text-white shadow-lg">
-                        {item.price}
-                      </div>
-                    </div>
-
-                    <div className="p-6">
-                      <h3 className="mb-3 text-xl font-extrabold leading-snug text-[#0B132A] transition-colors group-hover:text-[#2A39CE]">
-                        {item.title}
-                      </h3>
-                      <div className="mb-6 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2A39CE]">
-                        <MapPin className="h-3.5 w-3.5 stroke-[3]" />
-                        <span>{item.location}</span>
-                      </div>
-                      <div className="mb-6 h-px w-full bg-gray-100" />
-                      <div className="grid grid-cols-3 gap-2 text-gray-500">
-                        <div>
-                          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
-                            <Bed className="h-4 w-4 text-[#2A39CE]" />
-                            <span>{data.propertyLabels.bedrooms}</span>
-                          </div>
-                          <p className="text-lg font-bold text-[#0B132A]">
-                            {item.bedrooms}
-                          </p>
-                        </div>
-                        <div>
-                          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
-                            <Bath className="h-4 w-4 text-[#2A39CE]" />
-                            <span>{data.propertyLabels.bathrooms}</span>
-                          </div>
-                          <p className="text-lg font-bold text-[#0B132A]">
-                            {item.bathrooms}
-                          </p>
-                        </div>
-                        <div>
-                          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
-                            <Maximize2 className="h-4 w-4 text-[#2A39CE]" />
-                            <span>{data.propertyLabels.squareFeet}</span>
-                          </div>
-                          <p className="text-lg font-bold text-[#0B132A]">
-                            {item.sqft}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              <PropertyCard data={item} />
             </SwiperSlide>
           ))}
         </Swiper>

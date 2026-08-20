@@ -484,6 +484,52 @@ const oldData = {
           "Community Center",
           "Walking Trails"
         ]
+      },
+      {
+        "id": 11,
+        "slug": "sunset-valley-mansion",
+        "title": "Sunset Valley Mansion",
+        "location": "BEVERLY HILLS",
+        "price": "$85,000",
+        "pricePerMonth": "$7,083",
+        "bedrooms": 6,
+        "bathrooms": 5,
+        "sqft": 4500,
+        "image": "/images/night-city-skyline.jpg",
+        "type": "Mansion",
+        "yearBuilt": 2022,
+        "parking": 4,
+        "description": "Luxurious mansion offering breathtaking sunset views. Features state-of-the-art amenities, sprawling gardens, and an infinity pool.",
+        "features": [
+          "Infinity Pool",
+          "Home Theater",
+          "Smart Home",
+          "Wine Cellar",
+          "Panoramic Views"
+        ]
+      },
+      {
+        "id": 12,
+        "slug": "crystal-tower-apartment",
+        "title": "Crystal Tower Apartment",
+        "location": "DOWNTOWN",
+        "price": "$32,000",
+        "pricePerMonth": "$2,666",
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "sqft": 1150,
+        "image": "/images/cityscape (1).jpg",
+        "type": "Apartment",
+        "yearBuilt": 2023,
+        "parking": 1,
+        "description": "Premium apartment in the iconic Crystal Tower. Enjoy world-class facilities and unobstructed city views in the heart of downtown.",
+        "features": [
+          "Gym Access",
+          "Concierge Service",
+          "City Views",
+          "Balcony",
+          "High Ceilings"
+        ]
       }
     ]
   },
@@ -510,7 +556,7 @@ const oldData = {
       }
     ],
     "learnMoreLabel": "Learn more",
-    "learnMoreLink": "#",
+    "learnMoreLink": "/industries-we-serve",
     "playButtonLabel": "Play video"
   },
   "servicesSection": {
@@ -769,9 +815,6 @@ const oldData = {
         },
         {
           "label": "About Us"
-        },
-        {
-          "label": "About Company"
         }
       ],
       "backgroundImage": "/images/modern-buildings.jpg",
@@ -856,9 +899,6 @@ const oldData = {
         {
           "label": "Home",
           "href": "/"
-        },
-        {
-          "label": "Legal"
         },
         {
           "label": "Privacy Policy"
@@ -1084,9 +1124,6 @@ const oldData = {
         {
           "label": "Home",
           "href": "/"
-        },
-        {
-          "label": "Legal"
         },
         {
           "label": "Terms & Conditions"
@@ -1337,27 +1374,27 @@ const oldData = {
       {
         "platform": "youtube",
         "label": "YouTube",
-        "href": "#"
+        "href": "https://www.youtube.com/"
       },
       {
         "platform": "linkedin",
         "label": "LinkedIn",
-        "href": "#"
+        "href": "https://www.linkedin.com/"
       },
       {
         "platform": "twitter",
         "label": "Twitter",
-        "href": "#"
+        "href": "https://x.com/"
       },
       {
         "platform": "facebook",
         "label": "Facebook",
-        "href": "#"
+        "href": "https://www.facebook.com/"
       },
       {
         "platform": "instagram",
         "label": "Instagram",
-        "href": "#"
+        "href": "https://www.instagram.com/"
       }
     ],
     "linkGroups": [
@@ -1408,6 +1445,10 @@ const oldData = {
           {
             "label": "Terms & Conditions",
             "href": "/terms-and-conditions"
+          },
+          {
+            "label": "Site Map",
+            "href": "/site-map"
           }
         ]
       }
@@ -1418,9 +1459,10 @@ const oldData = {
         "77 Highfield Road",
         "London N36 7SB"
       ],
+      "email": "info@realestate.com",
       "phoneNumber": "987 654 3210"
     },
-    "copyright": "Copyright ┬⌐ 2026. All rights reserved. Powered by Lestow"
+    "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow"
   },
   "servicesPage": {
     "eyebrow": "WHAT WE DO",

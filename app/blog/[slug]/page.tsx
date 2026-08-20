@@ -76,7 +76,7 @@ export default function BlogDetailPage() {
           {/* Main Content */}
           <div className="lg:col-span-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="bg-white rounded-2xl shadow-sm border border-slate-100/80 overflow-hidden"
@@ -134,7 +134,7 @@ export default function BlogDetailPage() {
 
                 {/* Author Bio Section */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="bg-blue-50 rounded-xl p-6 border border-blue-100"
@@ -187,7 +187,7 @@ export default function BlogDetailPage() {
           <div className="lg:col-span-4 space-y-6">
             {/* Related Posts */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 space-y-4"
@@ -234,7 +234,7 @@ export default function BlogDetailPage() {
 
             {/* Categories */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
@@ -244,29 +244,28 @@ export default function BlogDetailPage() {
               <div className="w-8 h-1 bg-blue-600 rounded-full" />
 
               <div className="space-y-2">
-                {[
-                  "Market News",
-                  "Buying Guides",
-                  "Selling Tips",
-                  "Investment Advice",
-                  "Home Design",
-                ].map((category) => (
-                  <button
-                    key={category}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-all ${post.category === category
-                        ? "bg-blue-600 text-white"
-                        : "bg-slate-50 text-slate-700 hover:bg-blue-50"
-                      }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+                {Array.from(new Set(posts.map((p) => p.category))).map((category) => {
+                  const catPost = posts.find((p) => p.category === category);
+                  if (!catPost) return null;
+                  return (
+                    <Link
+                      key={category}
+                      href={`/blog/${catPost.slug}`}
+                      className={`block w-full text-left px-4 py-2 rounded-lg transition-all ${post.category === category
+                          ? "bg-blue-600 text-white"
+                          : "bg-slate-50 text-slate-700 hover:bg-blue-50"
+                        }`}
+                    >
+                      {category}
+                    </Link>
+                  );
+                })}
               </div>
             </motion.div>
 
             {/* Newsletter Subscribe */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}

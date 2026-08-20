@@ -186,88 +186,97 @@ export default function CareerPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden flex flex-col justify-between space-y-6"
+              className="bg-white rounded-[24px] p-8 lg:p-10 border border-slate-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] relative overflow-hidden flex flex-col justify-between"
             >
-              {/* Header */}
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                  <FaEnvelope className="text-lg" />
+              <div className="relative z-10">
+                {/* Header */}
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <FaEnvelope className="text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-[22px] font-extrabold text-[#0a1b4d] leading-tight">
+                      Interested in Joining<br />Our Team?
+                    </h3>
+                    <div className="w-10 h-0.5 bg-[#1d4ed8] mt-3" />
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">
-                    {sectionData.contactTitle}
-                  </h3>
-                  <div className="w-8 h-0.5 bg-blue-600 my-2 rounded-full" />
-                  <p className="text-[11px] text-slate-400 leading-relaxed">
-                    {sectionData.contactText}
-                  </p>
+
+                {/* Description */}
+                <p className="text-[13px] text-slate-500 font-medium leading-relaxed mt-6 mb-6">
+                  {sectionData.contactText}
+                </p>
+
+                <div className="border-t border-slate-100 mb-6" />
+
+                {/* Contact Details */}
+                <div className="space-y-6">
+                  {/* Email */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                      <FaEnvelope className="text-lg" />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[13px] font-bold text-[#1d4ed8]">Email</span>
+                      <a href={`mailto:${sectionData.email}`} className="text-[13px] font-semibold text-slate-700 hover:text-blue-600 transition-colors">
+                        {sectionData.email}
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                      <FaPhoneAlt className="text-lg" />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[13px] font-bold text-[#1d4ed8]">Phone</span>
+                      <a href={sectionData.phoneHref} className="text-[13px] font-semibold text-slate-700 hover:text-blue-600 transition-colors">
+                        {sectionData.phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Address */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eef4ff] text-[#1d4ed8] flex items-center justify-center shrink-0 mt-0.5">
+                      <FaMapMarkerAlt className="text-lg" />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[13px] font-bold text-[#1d4ed8]">Office Address</span>
+                      <div className="text-[13px] font-medium text-slate-600 leading-relaxed mt-1">
+                        {sectionData.addressLines.map((line: string, i: number) => (
+                          <React.Fragment key={i}>
+                            {line}
+                            {i < sectionData.addressLines.length - 1 && <br />}
+                          </React.Fragment>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="border-t border-slate-100" />
-              {/* Contact Details */}
-            {/* Contact Details */}
-            <div className="space-y-4 pt-2 pb-2 pl-4">
-              {/* Address */}
-              <div className="relative ml-4">
-                <div className="bg-[#eef1f6] rounded-xl py-4 pr-4 pl-10 w-full min-h-[64px] flex items-center">
-                  <p className="text-[13px] font-medium text-slate-700 leading-relaxed">
-                    {sectionData.addressLines.map((line: string, i: number) => (
-                      <React.Fragment key={i}>
-                        {line}
-                        {i < sectionData.addressLines.length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
-                  </p>
-                </div>
-                <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#274abc] text-white flex items-center justify-center shadow-sm">
-                  <FaBuilding className="text-[18px]" />
-                </div>
+
+                {/* WhatsApp Button */}
+                <a
+                  href={sectionData.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#133ab8] hover:bg-[#0f2c90] text-white rounded-xl p-4 flex items-center justify-between text-[13.5px] font-bold shadow-[0_4px_12px_rgba(29,78,216,0.3)] transition-all duration-300 group mt-8"
+                >
+                  <div className="flex items-center space-x-3">
+                    <FaWhatsapp className="text-xl" />
+                    <span>Chat on WhatsApp</span>
+                  </div>
+                  <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
 
-              {/* Phone */}
-              <div className="relative ml-4">
-                <div className="bg-[#eef1f6] rounded-xl py-4 pr-4 pl-10 w-full min-h-[64px] flex items-center">
-                  <a
-                    href={sectionData.phoneHref}
-                    className="text-[13px] font-medium text-slate-700 hover:text-blue-600 transition-colors"
-                  >
-                    {sectionData.phone}
-                  </a>
-                </div>
-                <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#274abc] text-white flex items-center justify-center shadow-sm">
-                  <FaPhoneAlt className="text-[16px]" />
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="relative ml-4">
-                <div className="bg-[#eef1f6] rounded-xl py-4 pr-4 pl-10 w-full min-h-[64px] flex items-center">
-                  <a
-                    href={`mailto:${sectionData.email}`}
-                    className="text-[13px] font-medium text-slate-700 hover:text-blue-600 transition-colors"
-                  >
-                    {sectionData.email}
-                  </a>
-                </div>
-                <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#274abc] text-white flex items-center justify-center shadow-sm">
-                  <FaEnvelope className="text-[16px]" />
-                </div>
-              </div>
-            </div>  {/* WhatsApp Button */}
-              <a
-                href={sectionData.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#1d4ed8] hover:bg-blue-700 text-white rounded-xl p-3.5 flex items-center justify-between text-xs font-bold shadow-md transition-all duration-300 group mt-4"
-              >
-                <div className="flex items-center space-x-2">
-                  <FaWhatsapp className="text-base" />
-                  <span>Chat on WhatsApp</span>
-                </div>
-                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
-              </a>
               {/* Bottom City Watermark Effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none opacity-10 bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:8px_8px]" />
+              <div className="absolute bottom-0 left-0 right-0 w-full z-0 opacity-80 pointer-events-none text-[#e8f0fe] pt-10">
+                <svg viewBox="0 0 400 60" className="w-full h-auto fill-current" preserveAspectRatio="none">
+                   <path d="M0,60 L0,30 L10,30 L10,25 L15,20 L20,25 L20,30 L30,30 L30,10 L45,10 L45,35 L60,35 L60,15 L70,10 L80,15 L80,35 L95,35 L95,40 L120,40 L120,20 L135,10 L150,20 L150,45 L170,45 L170,15 L190,15 L190,40 L210,40 L210,25 L225,25 L225,40 L240,40 L240,20 L260,20 L260,35 L280,35 L280,10 L300,10 L300,35 L320,35 L320,15 L340,15 L340,40 L360,40 L360,25 L380,25 L380,45 L400,45 L400,60 Z" />
+                </svg>
+              </div>
             </motion.div>
 
             {/* JOB APPLICATION FORM */}

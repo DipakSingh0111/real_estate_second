@@ -36,16 +36,13 @@ export default function FaqSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex-1"
         >
-          <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-wider mb-2">
-            <HelpCircle className="w-4 h-4" /> {sectionData.eyebrow}
-          </div>
-
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
             {sectionData.heading}{" "}
             <span className="text-blue-600 block">{sectionData.headingHighlight}</span>
           </h2>
+          <div className="w-12 h-1 bg-blue-600 mt-5 mb-5 rounded-full" />
 
-          <p className="text-slate-500 text-sm sm:text-base mt-3 mb-8 max-w-md leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-base mb-8 max-w-md leading-relaxed">
             {sectionData.description}
           </p>
 
@@ -66,21 +63,21 @@ export default function FaqSection() {
                 >
                   <button
                     onClick={() => toggleFaq(item.id)}
-                    className="w-full p-4 flex items-center justify-between text-left font-bold text-slate-800 text-sm hover:text-blue-600 transition-colors"
+                    className="w-full p-5 flex items-center justify-between text-left font-bold text-slate-800 text-[15px] hover:text-blue-600 transition-colors"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
                       <motion.span
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isOpen
-                            ? "bg-blue-600 text-white"
+                        className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${isOpen
+                            ? "bg-blue-600 text-white shadow-md"
                             : "bg-blue-50 text-blue-600"
                           }`}
                       >
                         {isOpen ? (
-                          <Minus className="w-3.5 h-3.5" />
+                          <Minus className="w-4 h-4" strokeWidth={3} />
                         ) : (
-                          <Plus className="w-3.5 h-3.5" />
+                          <Plus className="w-4 h-4" strokeWidth={3} />
                         )}
                       </motion.span>
                       {item.question}
@@ -88,8 +85,13 @@ export default function FaqSection() {
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
+                      className="shrink-0 ml-4"
                     >
-                      <ChevronDown className="w-4 h-4 text-blue-600" />
+                      {isOpen ? (
+                        <Minus className="w-5 h-5 text-blue-600" strokeWidth={2} />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-blue-600" strokeWidth={2} />
+                      )}
                     </motion.div>
                   </button>
 
@@ -122,7 +124,7 @@ export default function FaqSection() {
                           },
                         }}
                       >
-                        <div className="px-5 pb-5 text-slate-500 text-xs leading-relaxed">
+                        <div className="pl-[68px] pr-5 pb-5 text-slate-500 text-[13px] leading-relaxed">
                           {item.answer}
                         </div>
                       </motion.div>
@@ -139,15 +141,15 @@ export default function FaqSection() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-full lg:w-[420px] shrink-0"
+          className="w-full lg:w-[480px] shrink-0"
         >
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden relative">
+          <div className="bg-white rounded-[24px] shadow-2xl overflow-hidden relative border border-slate-100 h-[600px]">
             {/* Dotted Grid Background */}
-            <div className="absolute top-5 left-5 grid grid-cols-4 gap-2 z-10 opacity-60">
+            <div className="absolute top-6 left-6 grid grid-cols-4 gap-3 z-10">
               {[...Array(16)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-1.5 h-1.5 bg-blue-600 rounded-full"
+                  className="w-1.5 h-1.5 bg-blue-700/80 rounded-full"
                 ></div>
               ))}
             </div>
@@ -156,32 +158,37 @@ export default function FaqSection() {
             <img
               src={sectionData.sideImage}
               alt={sectionData.sideImageAlt}
-              className="w-full h-96 object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* Bottom Stats Footer */}
-            <div className="bg-blue-700 py-5 px-3 grid grid-cols-3 gap-2 text-center text-white">
+            {/* Bottom Stats Footer with Glassmorphism */}
+            <div className="absolute bottom-0 left-0 right-0 bg-[#1839a8]/80 backdrop-blur-md pt-[56px] pb-8 flex text-center text-white z-10 divide-x divide-white/20">
               {sectionData.stats.map((stat) => {
                 const Icon =
                   faqStatIcons[stat.iconName as keyof typeof faqStatIcons];
                 return (
-                  <motion.div
+                  <div
                     key={stat.value}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex flex-col items-center"
+                    className="relative flex flex-1 flex-col items-center justify-start h-full px-2"
                   >
-                    <div className="w-9 h-9 rounded-full bg-white text-blue-700 flex items-center justify-center mb-2">
-                      <Icon
-                        className={`w-4 h-4${stat.iconName === "star" ? " fill-blue-700" : ""}`}
-                      />
+                    {/* The overlapping circle wrapper for the bump effect */}
+                    <div className="absolute -top-[94px] flex items-center justify-center w-[76px] h-[76px] rounded-full bg-[#1839a8]/80 backdrop-blur-md">
+                      <div className="w-[52px] h-[52px] rounded-full bg-white text-[#1839a8] flex items-center justify-center shadow-lg shrink-0">
+                        <Icon
+                          className={`w-[22px] h-[22px]${stat.iconName === "star" ? " fill-[#1839a8]" : ""}`}
+                        />
+                      </div>
                     </div>
-                    <span className="font-extrabold text-lg leading-none">
+                    
+                    <span className="font-extrabold text-[24px] leading-tight mb-2">
                       {stat.value}
                     </span>
-                    <span className="text-[10px] text-blue-200 mt-1 leading-tight">
-                      {stat.label}
+                    <span className="text-[12px] text-blue-100 leading-[1.3] font-medium max-w-[90px]">
+                      {stat.label.split(' ').map((word, i) => (
+                        <span key={i} className="block">{word}</span>
+                      ))}
                     </span>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>

@@ -1,66 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Bath, BedDouble, Building2, MapPin, Square } from "lucide-react";
+import { Bath, Bed, Maximize2, MapPin } from "lucide-react";
 import { SectionProps, PropertyDeal } from "@/data";
 import { propertySlug } from "@/lib/property";
 
-export default function PropertyCard({ data: property, className }: SectionProps<PropertyDeal> = {}) {
+export default function PropertyCard({ data: property, className = "" }: SectionProps<PropertyDeal> & { className?: string }) {
   if (!property) return null;
-  const stats = [
-    { label: "Bedrooms", value: property.bedrooms, icon: BedDouble },
-    { label: "Bathrooms", value: property.bathrooms, icon: Bath },
-    { label: "Square Ft", value: property.sqft, icon: Square },
-  ];
 
   return (
     <Link
       href={`/property-listing/${propertySlug(property.title)}`}
-      className="group block overflow-hidden rounded-[26px] border border-slate-200 bg-white shadow-[0_18px_40px_-28px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-36px_rgba(15,23,42,0.3)]"
+      className={`block h-full ${className}`}
     >
-      <div className="relative overflow-hidden rounded-t-[26px] bg-slate-100">
-        <div className="relative h-64 sm:h-72">
-          <Image
-            src={property.image}
-            alt={property.title}
-            fill
-            className="object-cover transition duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
-
-        <div className="absolute left-4 top-4 rounded-xl bg-[#2A39CE] px-3 py-2 text-sm font-bold text-white shadow-lg">
-          {property.price}
-        </div>
-      </div>
-
-      <div className="space-y-4 p-5">
+      <div className="group flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
         <div>
-          <h3 className="text-2xl font-semibold leading-tight text-slate-900 transition group-hover:text-[#2A39CE]">
-            {property.title}
-          </h3>
-          <div className="mt-2 flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-slate-500">
-            <MapPin className="h-3.5 w-3.5 text-[#2A39CE]" />
-            <span>{property.location}</span>
+          <div className="relative h-56 w-full overflow-hidden rounded-t-[24px]">
+            <Image
+              src={property.image}
+              alt={property.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <div className="absolute bottom-3 right-3 rounded-xl bg-[#2A39CE] px-4 py-2 text-sm font-extrabold text-white shadow-lg">
+              {property.price}
+            </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-3 gap-2 rounded-[18px] bg-slate-50 p-3">
-          {stats.map(({ label, value, icon: Icon }) => (
-            <div
-              key={label}
-              className="rounded-xl bg-white p-2 text-center shadow-sm"
-            >
-              <div className="mb-2 flex items-center justify-center text-[#2A39CE]">
-                <Icon className="h-3.5 w-3.5" />
+          <div className="p-6">
+            <h3 className="mb-3 text-xl font-extrabold leading-snug text-[#0B132A] transition-colors group-hover:text-[#2A39CE]">
+              {property.title}
+            </h3>
+            <div className="mb-6 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2A39CE]">
+              <MapPin className="h-3.5 w-3.5 stroke-[3]" />
+              <span>{property.location}</span>
+            </div>
+            <div className="mb-6 h-px w-full bg-gray-100" />
+            <div className="grid grid-cols-3 gap-2 text-gray-500">
+              <div>
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                  <Bed className="h-4 w-4 text-[#2A39CE]" />
+                  <span>Bedrooms</span>
+                </div>
+                <p className="text-lg font-bold text-[#0B132A]">
+                  {property.bedrooms}
+                </p>
               </div>
-              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
-                {label}
+              <div>
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                  <Bath className="h-4 w-4 text-[#2A39CE]" />
+                  <span>Bathrooms</span>
+                </div>
+                <p className="text-lg font-bold text-[#0B132A]">
+                  {property.bathrooms}
+                </p>
               </div>
-              <div className="mt-1 text-lg font-bold text-slate-900">
-                {value}
+              <div>
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                  <Maximize2 className="h-4 w-4 text-[#2A39CE]" />
+                  <span>Square Ft</span>
+                </div>
+                <p className="text-lg font-bold text-[#0B132A]">
+                  {property.sqft}
+                </p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </Link>

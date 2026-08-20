@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, Phone } from "lucide-react";
+import { Building2, Phone, Mail } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { site, SectionProps, FooterData } from "@/data";
 
 
@@ -15,7 +15,7 @@ import { site, SectionProps, FooterData } from "@/data";
 const socialIconMap = {
   youtube: FaYoutube,
   linkedin: FaLinkedinIn,
-  twitter: FaTwitter,
+  twitter: FaXTwitter,
   facebook: FaFacebookF,
   instagram: FaInstagram,
 };
@@ -36,7 +36,14 @@ export default function Footer({ data: propData, className }: SectionProps<Foote
               {data.socialLinks.map((socialLink) => {
                 const Icon = socialIconMap[socialLink.platform as keyof typeof socialIconMap] ?? FaYoutube;
                 return (
-                  <Link key={socialLink.platform} href={socialLink.href} aria-label={socialLink.label} className="text-[#9AADE0] transition-colors duration-200 hover:text-[#294FC1]">
+                  <Link 
+                    key={socialLink.platform} 
+                    href={socialLink.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label={socialLink.label} 
+                    className="text-[#9AADE0] transition-colors duration-200 hover:text-[#294FC1]"
+                  >
                     <Icon size={18} />
                   </Link>
                 );
@@ -61,8 +68,21 @@ export default function Footer({ data: propData, className }: SectionProps<Foote
                   {data.contact.address.map((line) => <span key={line} className="block">{line}</span>)}
                 </p>
               </ContactBox>
+              {data.contact.email && (
+                <ContactBox icon={<Mail size={20} strokeWidth={2} />}>
+                  <p className="text-[13px] sm:text-[14px] font-normal text-[#555555]">
+                    <a href={`mailto:${data.contact.email}`} className="hover:text-[#294FC1] transition-colors duration-200">
+                      {data.contact.email}
+                    </a>
+                  </p>
+                </ContactBox>
+              )}
               <ContactBox icon={<Phone size={20} strokeWidth={2} />}>
-                <p className="text-[13px] sm:text-[14px] font-normal text-[#555555]">{data.contact.phoneNumber}</p>
+                <p className="text-[13px] sm:text-[14px] font-normal text-[#555555]">
+                  <a href={`tel:${data.contact.phoneNumber.replace(/\s+/g, '')}`} className="hover:text-[#294FC1] transition-colors duration-200">
+                    {data.contact.phoneNumber}
+                  </a>
+                </p>
               </ContactBox>
             </div>
           </div>

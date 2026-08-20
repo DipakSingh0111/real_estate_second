@@ -68,7 +68,7 @@ export default function PageBanner({ data: propData, className }: SectionProps<P
   const pathname = usePathname();
   const segment = (pathname || "").split("/")[1] || "about";
   const pathKey = segment.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-  const data = propData || (site.pageBanners as any)[pathKey] || site.pageBanners['about'];
+  const data = propData || (site.pageBanners as any)[segment] || (site.pageBanners as any)[pathKey] || site.pageBanners['about'];
   if (!data) return null;
   return (
     <section className="relative h-[340px] w-full overflow-hidden sm:h-[400px]">

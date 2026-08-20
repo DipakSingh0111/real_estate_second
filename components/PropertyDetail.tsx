@@ -30,7 +30,13 @@ import {
   ShieldCheck,
   Utensils,
 } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { 
+  FaFacebookF, 
+  FaLinkedinIn, 
+  FaYoutube, 
+  FaInstagram 
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { site, PropertyDeal, PageBannerData, SectionProps } from "@/data";
 import PageBanner from "@/components/common/PageBanner";
 import ContactFormSidebar from "@/components/common/ContactFormSidebar";
@@ -44,6 +50,14 @@ type PropertyDetailProps = {
 };
 
 type TabKey = "overview" | "details" | "features";
+
+const socialIconMap = {
+  youtube: FaYoutube,
+  linkedin: FaLinkedinIn,
+  twitter: FaXTwitter,
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+};
 
 export default function PropertyDetail({
   data: propData,
@@ -189,27 +203,21 @@ export default function PropertyDetail({
                 <span className="text-sm font-medium text-slate-500">
                   Share:
                 </span>
-                <a
-                  href="#"
-                  aria-label="Share on LinkedIn"
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8EEFF] text-[#2A39CE] transition hover:bg-[#2A39CE] hover:text-white"
-                >
-                  <FaLinkedinIn className="h-3.5 w-3.5" />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Share on Twitter"
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8EEFF] text-[#2A39CE] transition hover:bg-[#2A39CE] hover:text-white"
-                >
-                  <FaTwitter className="h-3.5 w-3.5" />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Share on Facebook"
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8EEFF] text-[#2A39CE] transition hover:bg-[#2A39CE] hover:text-white"
-                >
-                  <FaFacebookF className="h-3.5 w-3.5" />
-                </a>
+                {site.footer.socialLinks.map((socialLink) => {
+                  const Icon = socialIconMap[socialLink.platform as keyof typeof socialIconMap] ?? FaYoutube;
+                  return (
+                    <a
+                      key={socialLink.platform}
+                      href={socialLink.href}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={`Share on ${socialLink.label}`}
+                      className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8EEFF] text-[#2A39CE] transition hover:bg-[#2A39CE] hover:text-white"
+                    >
+                      <Icon className="h-3.5 w-3.5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
@@ -220,7 +228,7 @@ export default function PropertyDetail({
                   <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
                     Overview
                   </h2>
-                  <div className="w-12 h-[3px] bg-gradient-to-r from-[#2A39CE] to-[#F97316] rounded-full"></div>
+                  <div className="w-12 h-[3px] bg-[#1A43BF] rounded-full"></div>
                 </div>
                 <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)]">
                   <div className="divide-y divide-slate-100">
@@ -253,7 +261,7 @@ export default function PropertyDetail({
                   <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
                     Property Details
                   </h2>
-                  <div className="w-12 h-[3px] bg-gradient-to-r from-[#2A39CE] to-[#F97316] rounded-full"></div>
+                  <div className="w-12 h-[3px] bg-[#1A43BF] rounded-full"></div>
                 </div>
                 <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600">
                   <p>
@@ -278,7 +286,7 @@ export default function PropertyDetail({
                   <h2 className="text-2xl font-bold text-[#0B1A33] mb-3">
                     Features
                   </h2>
-                  <div className="w-12 h-[3px] bg-gradient-to-r from-[#2A39CE] to-[#F97316] rounded-full"></div>
+                  <div className="w-12 h-[3px] bg-[#1A43BF] rounded-full"></div>
                 </div>
                 <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 sm:p-8">
                   <ul className="grid gap-4 sm:grid-cols-2">

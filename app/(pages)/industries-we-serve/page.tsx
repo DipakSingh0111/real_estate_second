@@ -5,23 +5,22 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  FaBriefcase,
-  FaShoppingBag,
-  FaIndustry,
-  FaHospital,
-  FaGraduationCap,
-  FaHotel,
-  FaArrowRight,
-} from "react-icons/fa";
+  Briefcase,
+  ShoppingBag,
+  Factory,
+  Hospital,
+  GraduationCap,
+  ConciergeBell,
+} from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
 
 const industryIcons: Record<string, React.ReactNode> = {
-  briefcase: <FaBriefcase className="text-blue-600 text-lg" />,
-  shoppingBag: <FaShoppingBag className="text-blue-600 text-lg" />,
-  industry: <FaIndustry className="text-blue-600 text-lg" />,
-  hospital: <FaHospital className="text-blue-600 text-lg" />,
-  graduationCap: <FaGraduationCap className="text-blue-600 text-lg" />,
-  hotel: <FaHotel className="text-blue-600 text-lg" />,
+  briefcase: <Briefcase className="text-blue-600 w-6 h-6" strokeWidth={1.5} />,
+  shoppingBag: <ShoppingBag className="text-blue-600 w-6 h-6" strokeWidth={1.5} />,
+  industry: <Factory className="text-blue-600 w-6 h-6" strokeWidth={1.5} />,
+  hospital: <Hospital className="text-blue-600 w-6 h-6" strokeWidth={1.5} />,
+  graduationCap: <GraduationCap className="text-blue-600 w-6 h-6" strokeWidth={1.5} />,
+  hotel: <ConciergeBell className="text-blue-600 w-6 h-6" strokeWidth={1.5} />,
 };
 
 const containerVariants = {
@@ -80,28 +79,28 @@ export default function IndustryWeServePage() {
               <motion.div
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.06)] hover:shadow-md transition-all duration-300 flex flex-col group h-full"
+                className="bg-white rounded-[20px] overflow-hidden border border-slate-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col group h-full relative"
               >
-                {/* Image Section with Overlapping Floating Badge */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-200">
+                {/* Image Section */}
+                <div className="h-[220px] w-full overflow-hidden bg-slate-200">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
+                </div>
 
-                  {/* Floating Round Icon Badge */}
-                  <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-blue-50 border-2 border-white shadow-md flex items-center justify-center z-10">
-                    {industryIcons[item.iconName]}
-                  </div>
+                {/* Floating Round Icon Badge - Absolute positioned over the boundary */}
+                <div className="absolute top-[220px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[72px] h-[72px] rounded-full bg-[#eef4ff] border-[6px] border-white flex items-center justify-center z-10">
+                  {industryIcons[item.iconName]}
                 </div>
 
                 {/* Text Content */}
-                <div className="pt-8 pb-6 px-6 text-center space-y-2 flex-1 flex flex-col justify-start">
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <div className="pt-12 pb-10 px-8 text-center space-y-2 flex-1 flex flex-col justify-start">
+                  <h3 className="text-[17px] font-extrabold text-[#0a1b4d] group-hover:text-blue-600 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">
+                  <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
                     {item.description}
                   </p>
                 </div>

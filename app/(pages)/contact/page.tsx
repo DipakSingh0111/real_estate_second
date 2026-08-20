@@ -9,14 +9,24 @@ import {
   Send,
   ExternalLink,
 } from "lucide-react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
+import { 
+  FaFacebookF, 
+  FaLinkedinIn, 
   FaInstagram,
+  FaYoutube
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import PageBanner from "@/components/common/PageBanner";
+
+const socialIconMap = {
+  youtube: FaYoutube,
+  linkedin: FaLinkedinIn,
+  twitter: FaXTwitter,
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+};
+
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -100,30 +110,21 @@ export default function ContactUs() {
                 Follow Us
               </p>
               <div className="flex space-x-3">
-                <a
-                  href={site.contactPage.socials.facebook}
-                  className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center hover:opacity-90 transition"
-                >
-                  <FaFacebookF className="w-4 h-4" />
-                </a>
-                <a
-                  href={site.contactPage.socials.twitter}
-                  className="w-9 h-9 rounded-full bg-sky-400 text-white flex items-center justify-center hover:opacity-90 transition"
-                >
-                  <FaTwitter className="w-4 h-4" />
-                </a>
-                <a
-                  href={site.contactPage.socials.linkedin}
-                  className="w-9 h-9 rounded-full bg-blue-700 text-white flex items-center justify-center hover:opacity-90 transition"
-                >
-                  <FaLinkedinIn className="w-4 h-4" />
-                </a>
-                <a
-                  href={site.contactPage.socials.instagram}
-                  className="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center hover:opacity-90 transition"
-                >
-                  <FaInstagram className="w-4 h-4" />
-                </a>
+                {site.footer.socialLinks.map((socialLink) => {
+                  const Icon = socialIconMap[socialLink.platform as keyof typeof socialIconMap] ?? FaYoutube;
+                  return (
+                    <a
+                      key={socialLink.platform}
+                      href={socialLink.href}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={`Follow us on ${socialLink.label}`}
+                      className="w-9 h-9 rounded-full bg-[#E8EEFF] text-[#2A39CE] flex items-center justify-center hover:bg-[#2A39CE] hover:text-white transition"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
