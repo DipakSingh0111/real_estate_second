@@ -48,12 +48,7 @@ export default function HeroBanner({
             />
           </div>
         ))}
-
-        {/* Light dark fade only — keeps image clear, text readable */}
-        {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15" /> */}
       </div>
-
       <div className="page-container relative z-10 flex min-h-[100svh] w-full flex-col justify-center pb-28 pt-[6.75rem] sm:pt-32 md:pt-36 lg:pb-24 lg:pt-36">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -88,22 +83,6 @@ export default function HeroBanner({
             {data.desc}
           </p>
         </motion.div>
-
-        <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 sm:bottom-10 sm:gap-3 md:bottom-12">
-          {slides.map((slide, index) => (
-            <button
-              key={`dot-${slide.title}-${index}`}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              className={`h-2 rounded-full transition-all duration-300 sm:h-2.5 ${
-                index === activeIndex
-                  ? "w-7 bg-[#2563eb] sm:w-10"
-                  : "w-2 bg-white/80 ring-1 ring-white/30 hover:bg-white sm:w-2.5"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
