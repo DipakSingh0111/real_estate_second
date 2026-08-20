@@ -98,14 +98,20 @@ export default function ServicesPage() {
               const href = `/services/${service.slug}`;
 
               return (
-                <Link href={href} key={service.slug} className="block h-full group/link cursor-pointer">
+                <Link
+                  href={href}
+                  key={service.slug}
+                  className="block h-full group/link cursor-pointer"
+                >
                   <motion.div
                     variants={itemVariants}
                     whileHover={{ y: -5 }}
                     className="rounded-2xl p-6 border transition-all duration-300 flex flex-col items-center text-center relative h-full group bg-white border-slate-100 text-slate-800 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] group-hover/link:bg-[#1d4ed8] group-hover/link:border-[#1d4ed8] group-hover/link:text-white group-hover/link:shadow-lg group-hover/link:shadow-blue-500/20"
                   >
                     <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover/link:scale-110 bg-blue-50 text-[#1d4ed8] group-hover/link:bg-white/20 group-hover/link:text-white">
-                      {serviceIcons[service.icon] ?? <FaHome className="text-xl" />}
+                      {serviceIcons[service.icon] ?? (
+                        <FaHome className="text-xl" />
+                      )}
                     </div>
 
                     <h3 className="text-base sm:text-lg font-bold mb-2 text-slate-900 group-hover/link:text-white">
@@ -168,11 +174,7 @@ export default function ServicesPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6"
           >
             {slides.map((item) => (
-              <PropertyCard
-                key={item.slug}
-                data={item}
-                saleLabel={featured.saleLabel}
-              />
+              <PropertyCard key={item.slug} data={item} />
             ))}
           </motion.div>
         </section>

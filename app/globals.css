@@ -26,6 +26,14 @@ body {
   background: #ffffff;
   color: #0b1a33;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scroll from decorative offsets */
+img,
+video,
+svg {
+  max-width: 100%;
 }
 
 /* Global animations */
@@ -122,12 +130,21 @@ body {
 :root {
   --site-gutter: 1rem;
   --site-max: 1440px;
-  --section-y: 2.5rem;
+  --section-y: 2.25rem;
+  --header-offset: 6rem; /* topbar + navbar on mobile */
 }
 
 @media (width >= 40rem) {
   :root {
     --site-gutter: 1.5rem;
+    --section-y: 2.75rem;
+    --header-offset: 6.75rem;
+  }
+}
+
+@media (width >= 48rem) {
+  :root {
+    --site-gutter: 2rem;
     --section-y: 3rem;
   }
 }
@@ -136,6 +153,7 @@ body {
   :root {
     --site-gutter: 2.5rem;
     --section-y: 3.5rem;
+    --header-offset: 7.75rem;
   }
 }
 
@@ -162,6 +180,10 @@ body {
 
 @utility section-y {
   padding-block: var(--section-y);
+}
+
+@utility header-offset {
+  padding-top: var(--header-offset);
 }
 
 @media (prefers-color-scheme: dark) {

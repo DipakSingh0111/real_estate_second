@@ -2,14 +2,15 @@ import Image from "next/image";
 import { Phone, PhoneCall } from "lucide-react";
 import { site, SectionProps, SupportBannerData } from "@/data";
 
-
-
-export default function SupportBanner({ data: propData, className }: SectionProps<SupportBannerData> = {}) {
+export default function SupportBanner({
+  data: propData,
+  className,
+}: SectionProps<SupportBannerData> = {}) {
   const data = propData || site.SupportBanner.variants.RealEstateSupportBanner1;
   return (
     <section className="bg-white py-6 sm:py-8 lg:py-10">
       <div className="page-container">
-        <div className="relative flex min-h-[150px] sm:min-h-[170px] w-full overflow-hidden rounded-[18px] sm:rounded-[22px] bg-[#1B36B0] text-white">
+        <div className="relative flex min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] w-full overflow-hidden rounded-[18px] sm:rounded-[22px] bg-[#1B36B0] text-white">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute bottom-4 left-5 z-[1] grid grid-cols-4 gap-x-[7px] gap-y-[7px] opacity-45"
@@ -62,29 +63,26 @@ export default function SupportBanner({ data: propData, className }: SectionProp
               </div>
             </div>
 
-            <div className="relative hidden min-w-[270px] w-[34%] shrink-0 lg:block">
-              <div
-                className="absolute inset-y-0 right-0 w-full"
-                style={{ clipPath: "ellipse(92% 120% at 100% 50%)" }}
-              >
+            <div className="relative hidden min-h-full min-w-[300px] w-[38%] shrink-0 self-stretch lg:block">
+              <div className="absolute inset-0 overflow-hidden rounded-l-[140px]">
                 <Image
                   src={data.imageUrl}
                   alt={data.imageAlt}
                   fill
-                  sizes="34vw"
-                  className="object-cover object-center"
+                  sizes="38vw"
+                  className="object-cover object-[52%_28%]"
                   priority
                 />
               </div>
             </div>
 
-            <div className="relative h-44 w-full lg:hidden">
+            <div className="relative h-48 w-full overflow-hidden sm:h-56 lg:hidden">
               <Image
                 src={data.imageUrl}
                 alt={data.imageAlt}
                 fill
                 sizes="100vw"
-                className="object-cover"
+                className="object-cover object-[50%_28%]"
               />
             </div>
           </div>

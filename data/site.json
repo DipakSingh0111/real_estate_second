@@ -567,7 +567,7 @@
               "buttons": [
                 {
                   "label": "Discover More",
-                  "href": "/about"
+                  "href": "/how-it-work"
                 }
               ],
               "imageUrl": "/images/hero-banner.png",
@@ -618,7 +618,6 @@
                   ],
                   "price": "$26,500",
                   "statusText": "Built 2020",
-                  "category": "For Sale",
                   "propertyType": "Apartment",
                   "button": {
                     "label": "Book a visit",
@@ -692,7 +691,7 @@
                   ],
                   "price": "$34,500",
                   "statusText": "Built 2019",
-                  "category": "For Sale",
+                  
                   "propertyType": "Villa",
                   "button": {
                     "label": "Book a visit",
@@ -729,7 +728,7 @@
                   ],
                   "price": "$45,000",
                   "statusText": "Built 2021",
-                  "category": "For Sale",
+                  
                   "propertyType": "Penthouse",
                   "button": {
                     "label": "Book a visit",
@@ -766,7 +765,7 @@
                   ],
                   "price": "$52,000",
                   "statusText": "Built 2017",
-                  "category": "For Sale",
+                 
                   "propertyType": "Cottage",
                   "button": {
                     "label": "Book a visit",
@@ -803,7 +802,7 @@
                   ],
                   "price": "$28,000",
                   "statusText": "Built 2019",
-                  "category": "For Sale",
+                
                   "propertyType": "Apartment",
                   "button": {
                     "label": "Book a visit",
@@ -840,7 +839,7 @@
                   ],
                   "price": "$75,000",
                   "statusText": "Built 2015",
-                  "category": "For Sale",
+                  
                   "propertyType": "Mansion",
                   "button": {
                     "label": "Book a visit",
@@ -877,7 +876,7 @@
                   ],
                   "price": "$22,900",
                   "statusText": "Built 2021",
-                  "category": "For Sale",
+                 
                   "propertyType": "Apartment",
                   "button": {
                     "label": "Book a visit",
@@ -914,7 +913,7 @@
                   ],
                   "price": "$38,000",
                   "statusText": "Built 2016",
-                  "category": "For Sale",
+                  
                   "propertyType": "House",
                   "button": {
                     "label": "Book a visit",
@@ -951,7 +950,7 @@
                   ],
                   "price": "$41,200",
                   "statusText": "Built 2020",
-                  "category": "For Sale",
+                  
                   "propertyType": "Apartment",
                   "button": {
                     "label": "Book a visit",
@@ -965,7 +964,7 @@
               "categories": [
                 {
                   "title": "For Sale",
-                  "category": "For Sale",
+                
                   "desc": "Browse verified homes for purchase.",
                   "image": "/images/cityscape (1).jpg",
                   "alt": "Homes for sale",
@@ -979,8 +978,7 @@
                   "field": "all"
                 },
                 {
-                  "label": "For Sale",
-                  "value": "For Sale",
+                  
                   "field": "category"
                 }
               ],
@@ -1347,7 +1345,7 @@
                 "eyebrow": "TOP DEALS",
                 "heading": "OF THE WEEK",
                 "desc": "Handpicked properties with great locations and unbeatable value. Find your perfect place to call home.",
-                "saleLabel": "FOR SALE",
+                
                 "properties": [
                   {
                     "id": 1,
@@ -1518,7 +1516,7 @@
               "callLabel": "Call Us Anytime",
               "phoneNumber": "+1 234 567 8900",
               "phoneHref": "tel:+12345678900",
-              "imageUrl": "/images/support-handshake.jpg",
+              "imageUrl": "/images/support-image.png",
               "imageAlt": "Two professionals shaking hands in a modern office"
             }
           }
@@ -1733,6 +1731,10 @@
                     {
                       "label": "Contact Us",
                       "href": "/contact"
+                    },
+                    {
+                      "label": "Site Map",
+                      "href": "/site-map"
                     }
                   ]
                 },
@@ -1758,10 +1760,6 @@
                     {
                       "label": "Terms & Conditions",
                       "href": "/terms-and-conditions"
-                    },
-                    {
-                      "label": "Site Map",
-                      "href": "/site-map"
                     }
                   ]
                 }

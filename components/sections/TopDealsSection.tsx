@@ -88,7 +88,7 @@ export default function TopDealsSection({
         >
           {[...data.listings, ...data.listings].map((item, index) => (
             <SwiperSlide key={`${item.slug}-${index}`}>
-              <PropertyCard data={item} saleLabel={featured.saleLabel} />
+              <PropertyCard data={item} />
             </SwiperSlide>
           ))}
         </Swiper>

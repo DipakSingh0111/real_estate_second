@@ -33,12 +33,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-white text-slate-900">
+      <body className="min-h-full overflow-x-hidden bg-white text-slate-900">
         <div className="fixed inset-x-0 top-0 z-[9999] w-full">
           <TopBar data={site.Topbar.variants.RealEstateTopbar1} />
           <NavBar data={site.Header.variants.RealEstateHeader1} />
         </div>
-        <main className="flex-1">{children}</main>
+        <main className="relative w-full flex-1 overflow-x-hidden">{children}</main>
         <SupportBanner data={site.SupportBanner.variants.RealEstateSupportBanner1} />
         <Footer data={site.Footer.variants.RealEstateFooter1} />
       </body>

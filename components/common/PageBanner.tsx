@@ -72,7 +72,7 @@ export default function PageBanner({ data: propData, className }: SectionProps<P
   const data = propData || (innerBanners as any)[segment] || (innerBanners as any)[pathKey] || innerBanners.about;
   if (!data) return null;
   return (
-    <section className="relative h-[220px] w-full overflow-hidden sm:h-[280px] md:h-[320px] lg:h-[360px]">
+    <section className="relative h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[300px] lg:h-[360px]">
       <Image
         src={data.backgroundImage}
         alt={data.backgroundImageAlt}
@@ -86,12 +86,12 @@ export default function PageBanner({ data: propData, className }: SectionProps<P
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-16 text-center text-white sm:pt-20 md:pt-24"
+        className="page-container relative z-10 flex h-full flex-col items-center justify-center pt-14 text-center text-white sm:pt-16 md:pt-20"
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight px-2">
+        <h1 className="px-2 text-xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {data.title}
         </h1>
-        <div className="mt-3 sm:mt-4 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-slate-200/90 px-2">
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-1.5 px-2 text-[11px] text-slate-200/90 sm:mt-3 sm:gap-2 sm:text-sm">
           {data.breadcrumb.map((item, index) => {
             const isLast = index === data.breadcrumb.length - 1;
             const href = item.href ?? getBreadcrumbHref(item.label);

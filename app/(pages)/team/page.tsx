@@ -113,7 +113,7 @@ export default function TeamPage() {
                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="w-[320px] sm:w-[380px] lg:w-[400px] shrink-0 relative h-[380px] sm:h-[440px] lg:h-[480px] mx-auto"
+                className="w-full max-w-[320px] sm:max-w-[380px] lg:w-[400px] shrink-0 relative h-[300px] sm:h-[400px] lg:h-[480px] mx-auto"
               >
                 {/* Blue Background Block */}
                 <div

@@ -122,11 +122,14 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 
 function ContactBox({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="relative ml-[23px]">
-      <div className="flex min-h-[70px] w-full items-center rounded-[10px] bg-[#E8ECF8] pl-[36px] pr-[16px]">
+    <div className="relative ml-0 sm:ml-[23px]">
+      <div className="flex min-h-[64px] w-full items-center rounded-[10px] bg-[#E8ECF8] px-4 py-3 pl-4 sm:min-h-[70px] sm:pl-[36px] sm:pr-4">
+        <div className="mr-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2D53C4] text-white shadow-sm sm:hidden">
+          {icon}
+        </div>
         {children}
       </div>
-      <div className="absolute -left-[23px] top-1/2 -translate-y-1/2 flex h-[46px] w-[46px] items-center justify-center rounded-full bg-[#2D53C4] text-white shadow-sm">
+      <div className="absolute -left-[23px] top-1/2 hidden h-[46px] w-[46px] -translate-y-1/2 items-center justify-center rounded-full bg-[#2D53C4] text-white shadow-sm sm:flex">
         {icon}
       </div>
     </div>

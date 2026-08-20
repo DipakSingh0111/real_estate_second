@@ -11,14 +11,14 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
   return (
     <motion.section
       id="services"
-      className="relative w-full section-y pb-4 lg:pb-6 font-sans overflow-hidden"
+      className="relative w-full section-y pb-4 lg:pb-6 font-sans overflow-x-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="page-container relative z-10">
-        <div className="relative text-white bg-[#050b1a] rounded-[28px] sm:rounded-[40px] lg:rounded-[60px] p-6 sm:p-10 md:p-12 lg:p-16 shadow-2xl overflow-hidden">
+      <div className="page-container relative z-10 overflow-visible">
+        <div className="relative text-white bg-[#050b1a] rounded-[28px] sm:rounded-[40px] lg:rounded-[60px] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl overflow-hidden">
           {/* Background Waves Line Accent */}
         <div className="absolute inset-0 pointer-events-none opacity-20 flex items-end justify-start">
           <svg className="w-full h-[60%] sm:h-full max-w-4xl" viewBox="0 0 1000 400" fill="none" preserveAspectRatio="none">
@@ -86,18 +86,18 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
 
           {/* Right Side Image Block */}
           <motion.div
-            className="lg:col-span-6 relative flex justify-center lg:justify-end mt-8 lg:mt-0 pr-2 sm:pr-4 pb-2 sm:pb-4"
+            className="lg:col-span-6 relative flex justify-center lg:justify-end mt-8 lg:mt-0 pr-0 sm:pr-2 md:pr-4 pb-2 sm:pb-4 overflow-visible"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[550px] aspect-[4/3]">
+            <div className="relative w-full max-w-full aspect-[4/3] overflow-visible sm:max-w-[550px]">
               {/* Custom Asymmetric Orange Outer Border Frame */}
-              <div className="absolute inset-0 border-2 border-[#F97316] rounded-tl-[60px] rounded-br-[60px] sm:rounded-tl-[100px] sm:rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px] sm:rounded-tr-[30px] sm:rounded-bl-[30px] pointer-events-none transform translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4" />
+              <div className="absolute inset-0 border-2 border-[#F97316] rounded-tl-[48px] rounded-br-[48px] sm:rounded-tl-[80px] sm:rounded-br-[80px] lg:rounded-tl-[100px] lg:rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px] sm:rounded-tr-[30px] sm:rounded-bl-[30px] pointer-events-none transform translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 md:translate-x-4 md:translate-y-4" />
 
               {/* Image Box */}
-              <div className="relative w-full h-full rounded-tl-[60px] rounded-br-[60px] sm:rounded-tl-[100px] sm:rounded-br-[100px] rounded-tr-[24px] rounded-bl-[24px] sm:rounded-tr-[30px] sm:rounded-bl-[30px] overflow-hidden z-10 border-4 border-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+              <div className="relative w-full h-full rounded-tl-[48px] rounded-br-[48px] sm:rounded-tl-[80px] sm:rounded-br-[80px] lg:rounded-tl-[100px] lg:rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px] sm:rounded-tr-[30px] sm:rounded-bl-[30px] overflow-hidden z-10 border-4 border-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 <Image
                   src={data.imageUrl}
                   alt={data.imageAlt}
@@ -110,7 +110,7 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
 
               {/* Floating 25+ Experience Badge */}
               <motion.div
-                className="absolute top-1/2 -translate-y-1/2 -left-3 sm:-left-8 md:-left-12 bg-white text-gray-900 rounded-2xl sm:rounded-[24px] shadow-2xl flex flex-col items-center justify-center z-20 w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px]"
+                className="absolute top-1/2 -translate-y-1/2 left-0 sm:-left-3 md:-left-8 lg:-left-12 bg-white text-gray-900 rounded-2xl sm:rounded-[24px] shadow-2xl flex flex-col items-center justify-center z-20 w-[88px] h-[88px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}

@@ -5,9 +5,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { site, SectionProps, HeroBannerData } from "@/data";
 
-
-
-export default function HeroBanner({ data: propData, className }: SectionProps<HeroBannerData> = {}) {
+export default function HeroBanner({
+  data: propData,
+}: SectionProps<HeroBannerData> = {}) {
   const data = propData || site.Banner.variants.RealEstateBanner1;
   const [beforeHighlight, afterHighlight] = data.title.split(
     data.highlightedTitleText,
@@ -15,7 +15,6 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
   const hasHighlight = afterHighlight !== undefined;
 
   const slides = data.bannerSlides || [];
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -23,28 +22,21 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
     const timer = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const goToPrevious = () =>
-    setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
-  const goToNext = () =>
-    setActiveIndex((current) => (current + 1) % slides.length);
-
   const activeSlide = slides[activeIndex] || slides[0];
-
   if (!activeSlide) return null;
 
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen w-full overflow-hidden bg-slate-900 font-['Times_New_Roman',_Times,_serif]">
-      {/* Background Slides */}
+    <section className="relative min-h-[100svh] w-full overflow-hidden bg-slate-900 font-[family-name:var(--font-poppins)]">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
             key={`${slide.title}-${index}`}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === activeIndex ? "opacity-100" : "opacity-0"
-              }`}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              index === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
           >
             <Image
               src={slide.image}
@@ -52,61 +44,62 @@ export default function HeroBanner({ data: propData, className }: SectionProps<H
               fill
               priority={index === 0}
               sizes="100vw"
-              className="object-cover object-center"
+              className="object-cover object-[72%_center] sm:object-[62%_center] lg:object-center"
             />
           </div>
         ))}
-        {/* Mobile white overlay for readability since the image's baked-in curve shrinks */}
-        <div className="absolute inset-0 bg-white/80 lg:hidden" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:hidden" />
+
+        {/* Light dark fade only — keeps image clear, text readable */}
+        {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15" /> */}
       </div>
 
-      <div className="page-container relative z-10 flex min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen w-full flex-col justify-center pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-20 lg:pt-32">
-        <div className="w-full lg:w-[60%] xl:w-[50%]">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="inline-flex items-stretch overflow-hidden rounded-full border border-slate-200 bg-white shadow-[0_6px_18px_rgba(15,23,42,0.08)]">
-              <span className="bg-[#2563eb] px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
-                {data.pretitle.split("·")[0]?.trim()}
-              </span>
-              <span className="px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-medium uppercase tracking-wider text-slate-600">
-                {data.pretitle.split("·")[1]?.trim()}
-              </span>
-            </div>
+      <div className="page-container relative z-10 flex min-h-[100svh] w-full flex-col justify-center pb-28 pt-[6.75rem] sm:pt-32 md:pt-36 lg:pb-24 lg:pt-36">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
+          className="flex w-full max-w-xl flex-col gap-5 sm:max-w-2xl sm:gap-6 lg:w-[58%] lg:max-w-none xl:w-[50%]"
+        >
+          <div className="inline-flex w-fit max-w-full items-stretch overflow-hidden rounded-full border border-white/20 bg-white/95 shadow-[0_8px_24px_rgba(15,23,42,0.18)]">
+            <span className="shrink-0 bg-[#2563eb] px-3.5 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-black sm:px-4 sm:text-xs">
+              {data.pretitle.split("·")[0]?.trim()}
+            </span>
+            <span className="truncate px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.12em] text-slate-600 sm:px-4 sm:text-xs">
+              {data.pretitle.split("·")[1]?.trim()}
+            </span>
+          </div>
 
-            <h1 className="mt-3 sm:mt-4 text-[28px] font-extrabold tracking-tight text-[#0B132A] sm:text-4xl md:text-5xl lg:text-[64px] leading-[1.15]">
-              {hasHighlight ? (
-                <>
-                  {beforeHighlight}
-                  <span className="text-blue-500">
-                    {data.highlightedTitleText}
-                  </span>
-                  {afterHighlight}
-                </>
-              ) : (
-                data.title
-              )}
-            </h1>
+          <h1 className="text-[40px] font-bold leading-[1.08] tracking-tight text-black sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px] lg:leading-[1.1]">
+            {hasHighlight ? (
+              <>
+                {beforeHighlight}
+                <span className="text-[#60a5fa]">
+                  {data.highlightedTitleText}
+                </span>
+                {afterHighlight}
+              </>
+            ) : (
+              data.title
+            )}
+          </h1>
 
-            <p className="mt-3 sm:mt-4 max-w-lg text-sm leading-relaxed text-slate-600 sm:text-base lg:text-lg">
-              {data.desc}
-            </p>
-          </motion.div>
-        </div>
-        {/* Slide dots indicators */}
-        <div className="absolute bottom-8 sm:bottom-12 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2.5 sm:gap-3">
+          <p className="max-w-md text-[15px] leading-relaxed text-black/85 sm:max-w-lg sm:text-base md:text-[17px] lg:text-lg">
+            {data.desc}
+          </p>
+        </motion.div>
+
+        <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 sm:bottom-10 sm:gap-3 md:bottom-12">
           {slides.map((slide, index) => (
             <button
               key={`dot-${slide.title}-${index}`}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
-                ? "w-8 sm:w-10 bg-[#3b55ce]"
-                : "w-2 sm:w-2.5 bg-slate-300 hover:bg-slate-400"
-                }`}
+              className={`h-2 rounded-full transition-all duration-300 sm:h-2.5 ${
+                index === activeIndex
+                  ? "w-7 bg-[#2563eb] sm:w-10"
+                  : "w-2 bg-white/80 ring-1 ring-white/30 hover:bg-white sm:w-2.5"
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

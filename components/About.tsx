@@ -18,9 +18,9 @@ export default function About({ data: propData, className }: SectionProps<AboutP
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="lg:col-span-6 relative flex justify-center lg:justify-start py-4 sm:py-6 lg:py-8"
+        className="lg:col-span-6 relative flex justify-center lg:justify-start py-4 sm:py-6 lg:py-8 px-4 sm:px-8 lg:px-0"
       >
-        <div className="relative w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[460px] aspect-[4/4.6]">
+        <div className="relative w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[460px] aspect-[4/4.6]">
           {/* Main Image */}
           <div
             className="absolute inset-0 z-10"
@@ -41,7 +41,7 @@ export default function About({ data: propData, className }: SectionProps<AboutP
 
           {/* Hexagon Badge */}
           <div
-            className="absolute -left-16 sm:-left-20 top-[45%] -translate-y-1/2 w-[140px] sm:w-[180px] aspect-[4/4.6] bg-[#1B36B0] text-white flex flex-col items-center justify-center text-center p-4 z-20"
+            className="absolute -left-6 sm:-left-14 lg:-left-16 top-[45%] -translate-y-1/2 w-[100px] sm:w-[150px] lg:w-[180px] aspect-[4/4.6] bg-[#1B36B0] text-white flex flex-col items-center justify-center text-center p-2 sm:p-4 z-20"
             style={{
               WebkitMaskImage: roundedHexagonMask,
               WebkitMaskSize: "100% 100%",
@@ -49,20 +49,20 @@ export default function About({ data: propData, className }: SectionProps<AboutP
               maskSize: "100% 100%",
             }}
           >
-            <span className="text-3xl sm:text-4xl font-bold leading-none mb-2 mt-2">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-none mb-1 sm:mb-2 mt-1 sm:mt-2">
               {sectionData.stats[0]?.value}
             </span>
-            <span className="text-[11px] sm:text-[13px] font-semibold text-white leading-tight mb-3 px-2">
+            <span className="text-[9px] sm:text-[11px] lg:text-[13px] font-semibold text-white leading-tight mb-2 sm:mb-3 px-1 sm:px-2">
               {sectionData.pretitle.split(" ").slice(0, 2).join(" ")} <br />{" "}
               {sectionData.pretitle.split(" ").slice(2).join(" ")}
             </span>
-            <span className="w-6 h-[2px] bg-white mb-3 inline-block" />
-            <Home className="w-6 h-6 stroke-[1.5] text-white mb-2" />
+            <span className="w-5 sm:w-6 h-[2px] bg-white mb-2 sm:mb-3 inline-block" />
+            <Home className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5] text-white mb-1 sm:mb-2" />
           </div>
 
           {/* Secondary Image with White Border */}
           <div
-            className="absolute -right-8 sm:-right-12 -bottom-8 sm:-bottom-12 w-[150px] sm:w-[210px] aspect-[4/4.6] z-30 bg-white"
+            className="absolute -right-4 sm:-right-10 lg:-right-12 -bottom-4 sm:-bottom-10 lg:-bottom-12 w-[110px] sm:w-[170px] lg:w-[210px] aspect-[4/4.6] z-30 bg-white"
             style={{
               WebkitMaskImage: roundedHexagonMask,
               WebkitMaskSize: "100% 100%",

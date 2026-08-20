@@ -96,15 +96,15 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
                   <motion.div
                     whileHover={{ y: -8 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="flex w-full h-full min-h-[360px] flex-col items-center justify-between rounded-2xl bg-white p-5 text-center shadow-md transition-colors duration-300 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-6"
+                    className="flex h-full w-full flex-col rounded-2xl bg-white p-4 text-left shadow-md transition-colors duration-300 hover:bg-gradient-to-br hover:from-blue-50/70 hover:to-orange-50/70 hover:shadow-xl sm:p-5 lg:min-h-[300px] lg:justify-between lg:p-6"
                   >
                     <div className="w-full">
-                      <div className="mb-4 flex justify-center sm:mb-6">
+                      <div className="mb-3 flex justify-start sm:mb-4">
                         <div
-                          className={`${iconBg} flex h-24 w-24 items-center justify-center rounded-2xl`}
+                          className={`${iconBg} flex h-14 w-14 items-center justify-center rounded-xl sm:h-16 sm:w-16 sm:rounded-2xl lg:h-20 lg:w-20`}
                         >
                           <Icon
-                            className={`${iconColor} h-8 w-8 sm:h-9 sm:w-9`}
+                            className={`${iconColor} h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8`}
                             strokeWidth={1.5}
                           />
                         </div>
@@ -115,16 +115,16 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
                           {service.title}
                         </h3>
 
-                        <div className="mb-3 h-0.5 w-6 bg-orange-400 sm:mb-4"></div>
+                        <div className="mb-2.5 h-0.5 w-6 bg-orange-400 sm:mb-3"></div>
 
-                        <p className="mb-6 text-xs leading-relaxed text-gray-500 sm:mb-8 sm:text-sm">
+                        <p className="mb-4 text-xs leading-relaxed text-gray-500 sm:mb-5 sm:text-sm lg:mb-0">
                           {service.description}
                         </p>
                       </div>
                     </div>
 
                     <span
-                      className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 group-hover/card:gap-3 group-hover/card:text-blue-900"
+                      className="mt-auto flex items-center gap-2 pt-1 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 group-hover/card:gap-3 group-hover/card:text-blue-900"
                     >
                       READ MORE <ArrowRight className="h-4 w-4 transition-transform" />
                     </span>

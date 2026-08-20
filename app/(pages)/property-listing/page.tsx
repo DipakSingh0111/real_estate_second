@@ -32,8 +32,11 @@ export default function PropertyListingPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleProperties.map((property) => (
-            <PropertyCard key={property.id} data={property} />
+          {visibleProperties.map((property, index) => (
+            <PropertyCard
+              key={property.slug || property.title || `property-${index}`}
+              data={property}
+            />
           ))}
         </div>
 
