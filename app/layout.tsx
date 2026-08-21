@@ -23,7 +23,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Real Estate Company",
+  title: "skyline realty",
   description: "Premium property listings and real estate services.",
 };
 
@@ -38,8 +38,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <TopBar data={site.Topbar.variants.RealEstateTopbar1} />
           <NavBar data={site.Header.variants.RealEstateHeader1} />
         </div>
-        <main className="relative w-full flex-1 overflow-x-hidden">{children}</main>
-        <SupportBanner data={site.SupportBanner.variants.RealEstateSupportBanner1} />
+        <main className="relative w-full flex-1 overflow-x-hidden">
+          {children}
+        </main>
+        <SupportBanner
+          data={site.SupportBanner.variants.RealEstateSupportBanner1}
+        />
         <Footer data={site.Footer.variants.RealEstateFooter1} />
       </body>
     </html>
