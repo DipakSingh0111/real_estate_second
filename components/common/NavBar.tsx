@@ -71,15 +71,14 @@ export default function Navbar({
       }`}
     >
       <div className="page-container flex h-[64px] w-full items-center justify-between gap-3 sm:h-[72px] lg:h-[82px] lg:pr-6 xl:pr-8">
-        <Link href="/" className="relative z-[110] shrink-0 max-w-[130px] sm:max-w-[160px] md:max-w-none">
+        <Link href="/" className="relative z-[110] shrink-0 max-w-[210px] sm:max-w-[220px] md:max-w-none">
           <Image
             src={"/images/logo.svg"}
             alt={data.logo}
             width={240}
             height={64}
             priority
-            className="h-10 w-auto object-contain object-left sm:h-12 md:h-14 lg:h-16"
-            style={{ width: "auto", height: "auto" }}
+            className="h-14 w-auto object-contain object-left sm:h-16 md:h-14 lg:h-16"
           />
         </Link>
 

@@ -54,21 +54,22 @@ export default function HeroBanner({
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="flex w-full max-w-xl flex-col gap-5 sm:max-w-2xl sm:gap-6 lg:w-[58%] lg:max-w-none xl:w-[50%]"
+          className="flex w-full max-w-xl flex-col gap-5 rounded-2xl bg-black/45 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.25)] backdrop-blur-md sm:max-w-2xl sm:gap-6 sm:p-6 md:p-7 lg:w-[58%] lg:max-w-none lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none xl:w-[50%]"
         >
-          <div className="inline-flex w-fit max-w-full items-stretch overflow-hidden rounded-full border border-white/20 bg-white/95 shadow-[0_8px_24px_rgba(15,23,42,0.18)]">
-            <span className="shrink-0 bg-[#2563eb] px-3.5 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-black sm:px-4 sm:text-xs">
+          <div className="inline-flex w-fit max-w-full items-stretch overflow-hidden rounded-full border border-white/25 bg-white/95 shadow-[0_8px_24px_rgba(15,23,42,0.18)]">
+            <span className="shrink-0 bg-[#2563eb] px-3.5 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white sm:px-4 sm:text-xs">
               {data.pretitle.split("·")[0]?.trim()}
             </span>
             <span className="truncate px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.12em] text-slate-600 sm:px-4 sm:text-xs">
               {data.pretitle.split("·")[1]?.trim()}
             </span>
           </div>
-          <h1 className="text-[40px] font-bold leading-[1.08] tracking-tight text-black sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px] lg:leading-[1.1]">
+
+          <h1 className="text-[40px] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[56px] lg:text-black xl:text-[64px] lg:leading-[1.1]">
             {hasHighlight ? (
               <>
                 {beforeHighlight}
-                <span className="text-[#60a5fa]">
+                <span className="text-[#93c5fd] lg:text-[#2563eb]">
                   {data.highlightedTitleText}
                 </span>
                 {afterHighlight}
@@ -78,7 +79,7 @@ export default function HeroBanner({
             )}
           </h1>
 
-          <p className="max-w-md text-[15px] leading-relaxed text-black/85 sm:max-w-lg sm:text-base md:text-[17px] lg:text-lg text-justify">
+          <p className="max-w-md text-[15px] leading-relaxed text-white/90 text-justify sm:max-w-lg sm:text-base md:text-[17px] lg:text-lg lg:text-black/85">
             {data.desc}
           </p>
         </motion.div>
