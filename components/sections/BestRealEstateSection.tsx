@@ -34,11 +34,12 @@ export default function BestRealEstateSection({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative pt-6 sm:pt-8"
+          className="relative pt-6 pb-14 sm:pt-8 sm:pb-16"
         >
           <div className="relative z-10 w-full aspect-[4/3] max-w-[550px] mx-auto lg:mx-0">
-            <div className="absolute left-[8%] right-[8%] -bottom-6 h-1/2 rounded-b-[40px] bg-[#e8e8e8]" />
-            <div className="absolute left-[14%] right-[14%] -bottom-9 h-1/2 rounded-b-[40px] bg-[#f2f2f2] -z-10" />
+            {/* Stacked base layers — equal width, even bottom steps */}
+            <div className="pointer-events-none absolute left-[6%] right-[6%] -bottom-7 h-[52%] rounded-b-[28px] sm:rounded-b-[40px] bg-[#e0e0e0]" />
+            <div className="pointer-events-none absolute left-[6%] right-[6%] -bottom-12 h-[52%] rounded-b-[28px] sm:rounded-b-[40px] bg-[#eeeeee] -z-10" />
 
             <div className="relative z-10 w-full h-full overflow-hidden rounded-[28px] sm:rounded-[40px] bg-slate-100 shadow-sm">
               {images.map((image, index) => (

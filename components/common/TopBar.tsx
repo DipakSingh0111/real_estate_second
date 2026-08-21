@@ -1,7 +1,10 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site, SectionProps, TopBarData } from "@/data";
 
-export default function TopBar({ data: propData, className }: SectionProps<TopBarData> = {}) {
+export default function TopBar({
+  data: propData,
+  className,
+}: SectionProps<TopBarData> = {}) {
   const data = propData || site.Topbar.variants.RealEstateTopbar1;
   return (
     <div className="w-full bg-[#0B1A33] font-[family-name:var(--font-poppins)] text-white">
@@ -11,8 +14,13 @@ export default function TopBar({ data: propData, className }: SectionProps<TopBa
             href={data.phoneHref}
             className="inline-flex items-center gap-1.5 sm:gap-2 transition-colors hover:text-[#9BB4FF]"
           >
-            <Phone className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0 stroke-[2.2]" aria-hidden />
-            <span className="font-medium tracking-wide truncate">{data.phone}</span>
+            <Phone
+              className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0 stroke-[2.2]"
+              aria-hidden
+            />
+            <span className="font-medium tracking-wide truncate">
+              {data.phone}
+            </span>
           </a>
 
           <a
