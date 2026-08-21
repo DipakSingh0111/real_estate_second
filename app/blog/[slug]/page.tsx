@@ -113,7 +113,7 @@ export default function BlogDetailPage() {
                     .map((paragraph, index) => (
                       <p
                         key={index}
-                        className="text-slate-700 leading-relaxed text-sm md:text-base"
+                        className="text-slate-700 leading-relaxed text-sm md:text-base text-justify"
                       >
                         {paragraph}
                       </p>
@@ -136,7 +136,7 @@ export default function BlogDetailPage() {
                       <h3 className="font-semibold text-slate-900 text-lg">
                         {post.author}
                       </h3>
-                      <p className="text-sm text-slate-600 mt-2">
+                      <p className="text-sm text-slate-600 mt-2 text-justify">
                         Expert real estate writer with years of experience in
                         the industry. Passionate about helping people find their
                         dream homes and make informed property decisions.
@@ -256,7 +256,7 @@ export default function BlogDetailPage() {
               <h3 className="font-bold text-lg">
                 {sectionData.sidebar.newsletter.title}
               </h3>
-              <p className="text-sm text-blue-100">
+              <p className="text-sm text-blue-100 text-justify">
                 {sectionData.sidebar.newsletter.description}
               </p>
               <div className="space-y-2">

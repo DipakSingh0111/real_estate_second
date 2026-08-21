@@ -68,7 +68,7 @@ export default function CtaSection({ data: propData, className }: SectionProps<C
             </h2>
 
             {/* Description Paragraph */}
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed sm:leading-loose max-w-lg mb-6 sm:mb-10 font-normal">
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed sm:leading-loose max-w-lg mb-6 sm:mb-10 font-normal text-justify">
               {data.desc}
             </p>
 

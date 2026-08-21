@@ -83,7 +83,7 @@ export default function WhyUsChoose({ data: propData, className }: SectionProps<
               {/* removed titleHighlight since it's missing in json */}
             </h2>
 
-            <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
+            <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6 text-justify">
               {sectionData.why.desc}
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function WhyUsChoose({ data: propData, className }: SectionProps<
                     <h4 className="text-[15px] font-bold text-[#0B132A] mb-1">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-500 text-[13px] leading-[1.6]">
+                    <p className="text-gray-500 text-[13px] leading-[1.6] text-justify">
                       {feature.text}
                     </p>
                   </div>

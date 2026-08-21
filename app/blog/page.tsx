@@ -76,7 +76,7 @@ export default function BlogsPage() {
                       {blog.title}
                     </h3>
 
-                    <p className="text-[14px] text-slate-500 leading-relaxed line-clamp-3">
+                    <p className="text-[14px] text-slate-500 leading-relaxed line-clamp-3 text-justify">
                       {blog.excerpt}
                     </p>
                   </div>
@@ -166,7 +166,7 @@ export default function BlogsPage() {
                   {sectionData.sidebar.newsletter.title}
                 </h4>
               </div>
-              <p className="text-[13px] text-slate-500 leading-relaxed pt-1">
+              <p className="text-[13px] text-slate-500 leading-relaxed pt-1 text-justify">
                 {sectionData.sidebar.newsletter.description}
               </p>
 

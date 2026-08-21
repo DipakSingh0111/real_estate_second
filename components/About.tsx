@@ -110,7 +110,7 @@ export default function About({ data: propData, className }: SectionProps<AboutP
           <span className="text-[#1B36B0]">{sectionData.titleHighlight}</span>
         </h2>
 
-        <div className="space-y-4 sm:space-y-6 text-[#4F5B73] text-sm sm:text-[15px] md:text-[16px] leading-[1.8] font-medium max-w-[95%]">
+        <div className="space-y-4 sm:space-y-6 text-[#4F5B73] text-sm sm:text-[15px] md:text-[16px] leading-[1.8] font-medium max-w-[95%] text-justify">
           {[sectionData.desc].map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}

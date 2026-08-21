@@ -368,7 +368,7 @@
               "headerBackgroundColor": "#ffffff",
               "headerGradientColor": "#ffffff",
               "headerTextColor": "#141414",
-              "logo": "Real Estate Company",
+              "logo": "Skyline Realty",
               "menu": [
                 {
                   "label": "HOME",
@@ -1706,7 +1706,7 @@
         "Footer": {
           "variants": {
             "RealEstateFooter1": {
-              "logo": "Real Estate Company",
+              "logo": "Skyline Realty",
               "desc": "Find your perfect space with our comprehensive real estate services. We make buying and selling simple and stress-free.",
               "footerColumns": [
                 {
@@ -1729,12 +1729,12 @@
                       "href": "/blog"
                     },
                     {
-                      "label": "Contact Us",
-                      "href": "/contact"
-                    },
-                    {
                       "label": "Site Map",
                       "href": "/site-map"
+                    },
+                     {
+                      "label": "Contact Us",
+                      "href": "/contact"
                     }
                   ]
                 },
@@ -1765,9 +1765,9 @@
                 }
               ],
               "footerContact": {
-                "location": "77 Highfield Road, London N36 7SB",
+                "location": "Sector 62, Noida, Uttar Pradesh, India",
                 "email": "info@realestate.com",
-                "phone": "987 654 3210"
+                "phone": "+91 9876542190"
               },
               "footerLegalLinks": [
                 {
@@ -1801,7 +1801,7 @@
                   "href": "https://www.instagram.com/"
                 }
               ],
-              "copyrightText": "Copyright © 2026. All rights reserved. Powered by Lestow"
+              "copyrightText": "Copyright © 2026. All rights reserved. Powered by Skyline Realty"
             }
           }
         },

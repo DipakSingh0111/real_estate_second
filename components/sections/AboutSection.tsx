@@ -6,17 +6,24 @@ import { motion } from "framer-motion";
 import { site, SectionProps } from "@/data";
 import Link from "next/link";
 
-
-
 const iconMap = {
   building: Building2,
   home: Home,
   shield: HandCoins,
 } as const;
 
-const AboutSection = ({ data: propData, services: propServices, className }: any) => {
+const AboutSection = ({
+  data: propData,
+  services: propServices,
+  className,
+}: any) => {
   const data = propData || site.About.variants.RealEstateAbout1;
-  const services = propServices || site.ServicesOverview.variants.RealEstateServicesOverview1.items.slice(0, 3);
+  const services =
+    propServices ||
+    site.ServicesOverview.variants.RealEstateServicesOverview1.items.slice(
+      0,
+      3,
+    );
 
   return (
     <section className="bg-[#f0f2f5] section-y font-sans">
@@ -42,7 +49,7 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
                 {data.title}
               </h2>
 
-              <p className="mb-6 sm:mb-8 max-w-sm text-sm sm:text-base leading-relaxed text-gray-500 sm:mb-10">
+              <p className="mb-6 sm:mb-8 max-w-sm text-sm sm:text-base leading-relaxed text-gray-500 sm:mb-10 text-justify">
                 {data.desc}
               </p>
             </div>
@@ -51,7 +58,8 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
               href="/about"
               className="flex w-fit cursor-pointer items-center gap-4 rounded bg-[#0a183d] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#122452] sm:px-8 sm:py-4"
             >
-              {(data.buttons && data.buttons[0]?.label) || "Explore More"} <ArrowRight className="h-4 w-4" />
+              {(data.buttons && data.buttons[0]?.label) || "Explore More"}{" "}
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
 
@@ -72,7 +80,7 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/30 to-transparent"></div>
           </motion.div>
 
-          {/* SECTION 3: SERVICES GRID WITH GENEROUS CARD WIDTH */}
+          {/* SECTION  */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,16 +91,19 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
             {services.map((service: any, index: number) => {
               const Icon =
                 (iconMap as Record<string, typeof Building2>)[
-                service.iconName
+                  service.iconName
                 ] || Building2;
-              const iconColor = (index === 1)
-                ? "text-orange-500"
-                : "text-blue-700";
-              const iconBg = (index === 1) ? "bg-orange-100" : "bg-blue-100";
+              const iconColor =
+                index === 1 ? "text-orange-500" : "text-blue-700";
+              const iconBg = index === 1 ? "bg-orange-100" : "bg-blue-100";
               const slug = service.title.toLowerCase().replace(/ /g, "-");
 
               return (
-                <Link href={`/services/${slug}`} key={index} className="block h-full group/card cursor-pointer">
+                <Link
+                  href={`/services/${slug}`}
+                  key={index}
+                  className="block h-full group/card cursor-pointer"
+                >
                   <motion.div
                     whileHover={{ y: -8 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -123,10 +134,9 @@ const AboutSection = ({ data: propData, services: propServices, className }: any
                       </div>
                     </div>
 
-                    <span
-                      className="mt-auto flex items-center gap-2 pt-1 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 group-hover/card:gap-3 group-hover/card:text-blue-900"
-                    >
-                      READ MORE <ArrowRight className="h-4 w-4 transition-transform" />
+                    <span className="mt-auto flex items-center gap-2 pt-1 text-xs font-bold uppercase tracking-wide text-blue-700 transition-all duration-300 group-hover/card:gap-3 group-hover/card:text-blue-900">
+                      READ MORE{" "}
+                      <ArrowRight className="h-4 w-4 transition-transform" />
                     </span>
                   </motion.div>
                 </Link>

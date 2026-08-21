@@ -78,7 +78,7 @@ export default function HeroBanner({
             )}
           </h1>
 
-          <p className="max-w-md text-[15px] leading-relaxed text-black/85 sm:max-w-lg sm:text-base md:text-[17px] lg:text-lg">
+          <p className="max-w-md text-[15px] leading-relaxed text-black/85 sm:max-w-lg sm:text-base md:text-[17px] lg:text-lg text-justify">
             {data.desc}
           </p>
         </motion.div>

@@ -110,7 +110,7 @@ export default function BestRealEstateSection({
 
           <div className="mb-4 sm:mb-6 w-8 h-[2px] bg-[#1243c6]" />
 
-          <p className="mb-6 sm:mb-8 text-sm sm:text-[15px] leading-relaxed text-gray-500">
+          <p className="mb-6 sm:mb-8 text-sm sm:text-[15px] leading-relaxed text-gray-500 text-justify">
             {data.desc}
           </p>
 
@@ -164,7 +164,6 @@ export default function BestRealEstateSection({
                 playsInline
               >
                 <source src="/images/video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
             </motion.div>
           </motion.div>

@@ -211,7 +211,7 @@ export default function PropertyDetail({
                 {property.title}
               </h1>
 
-              <p className="mt-4 sm:mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500">
+              <p className="mt-4 sm:mt-5 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-500 text-justify">
                 {
                   site.PropertyDetail.variants.RealEstatePropertyDetail1
                     .description
@@ -261,7 +261,7 @@ export default function PropertyDetail({
                   </h2>
                   <div className="w-12 h-[3px] bg-[#1A43BF] rounded-full"></div>
                 </div>
-                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600 space-y-3">
+                <div className="rounded-[24px] border border-slate-100 bg-white overflow-hidden shadow-[0_10px_40px_rgba(27,54,176,0.02)] p-6 text-sm sm:text-base leading-relaxed text-slate-600 space-y-3 text-justify">
                   <p>
                     {
                       site.PropertyDetail.variants.RealEstatePropertyDetail1

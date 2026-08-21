@@ -61,7 +61,7 @@ export default function TopDealsSection({
             </div>
           </div>
 
-          <p className="mt-2 sm:mt-3 max-w-xl text-sm leading-relaxed text-slate-500 sm:text-base">
+          <p className="mt-2 sm:mt-3 max-w-xl text-sm leading-relaxed text-slate-500 sm:text-base text-justify">
             {featured.desc}
           </p>
         </motion.div>

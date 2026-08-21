@@ -25,7 +25,7 @@ export default function VisionMission({ data: propData, className }: SectionProp
             <span className="w-8 h-[3px] bg-[#1A43BF] block mt-1" />
           </div>
         </div>
-        <p className="text-[#4F5B73] text-sm sm:text-base leading-[1.8]">
+        <p className="text-[#4F5B73] text-sm sm:text-base leading-[1.8] text-justify">
           {sectionData.mission.text}
         </p>
       </motion.div>
@@ -46,7 +46,7 @@ export default function VisionMission({ data: propData, className }: SectionProp
             <span className="w-8 h-[3px] bg-[#1A43BF] block mt-1" />
           </div>
         </div>
-        <p className="text-[#4F5B73] text-sm sm:text-base leading-[1.8]">
+        <p className="text-[#4F5B73] text-sm sm:text-base leading-[1.8] text-justify">
           {sectionData.philosophyDesc}
         </p>
       </motion.div>

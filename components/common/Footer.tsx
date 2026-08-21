@@ -39,7 +39,7 @@ export default function Footer({ data: propData, className }: SectionProps<Foote
               />
             </Link>
             <h2 className="text-[20px] font-bold leading-snug text-slate-900">{data.logo}</h2>
-            <p className="text-[13px] sm:text-[14px] font-normal leading-relaxed text-[#555555] max-w-[320px]">{data.desc}</p>
+            <p className="text-[13px] sm:text-[14px] font-normal leading-relaxed text-[#555555] max-w-[320px] text-justify">{data.desc}</p>
             <div className="flex items-center gap-[20px] pt-2">
               {data.socialLinks.map((socialLink) => {
                 const platformKey = socialLink.label.toLowerCase();

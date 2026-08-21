@@ -41,7 +41,7 @@ export default function SupportBanner({
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight tracking-tight text-white">
                   {data.title}
                 </h3>
-                <p className="mt-2 sm:mt-2.5 text-sm sm:text-base leading-relaxed text-white/90">
+                <p className="mt-2 sm:mt-2.5 text-sm sm:text-base leading-relaxed text-white/90 text-justify">
                   {data.desc}
                 </p>
               </div>

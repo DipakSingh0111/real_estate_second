@@ -41,7 +41,7 @@ export default function FeatureCard({
         {title}
       </h3>
 
-      <p className="mt-4 text-[15px] leading-[1.9] text-[#5A6274]">{text}</p>
+      <p className="mt-4 text-[15px] leading-[1.9] text-[#5A6274] text-justify">{text}</p>
 
       <button
         type="button"
